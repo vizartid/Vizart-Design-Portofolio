@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(46, 33%, 95%);
+  --foreground: hsl(220, 13%, 18%);
+  --muted: hsl(210, 11%, 96%);
+  --muted-foreground: hsl(215, 13%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 13%, 18%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 13%, 18%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(210, 11%, 96%);
+  --secondary-foreground: hsl(222, 13%, 11%);
+  --accent: hsl(210, 11%, 96%);
+  --accent-foreground: hsl(222, 13%, 11%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 11%, 98%);
+  --ring: hsl(220, 13%, 18%);
+  --radius: 0.5rem;
+  
+  /* Custom colors */
+  --bone-white: hsl(46, 33%, 95%);
+  --electric-blue: hsl(207, 90%, 54%);
+  --charcoal: hsl(220, 13%, 18%);
+  --light-gray: hsl(210, 11%, 96%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background-color: var(--bone-white);
+  }
+}
+
+@layer utilities {
+  .font-instrument {
+    font-family: 'Instrument Serif', serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .bg-bone-white {
+    background-color: var(--bone-white);
+  }
+  
+  .text-electric-blue {
+    color: var(--electric-blue);
+  }
+  
+  .bg-electric-blue {
+    background-color: var(--electric-blue);
+  }
+  
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  
+  .bg-light-gray {
+    background-color: var(--light-gray);
+  }
+
+  /* Wave texture background */
+  .wave-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,50 Q250,20 500,50 T1000,50 L1000,100 L0,100 Z' fill='%23e5e7eb' opacity='0.15'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: bottom;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bone-white);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(220, 13%, 91%);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(215, 13%, 70%);
+  }
+
+  /* Hide scrollbar for carousel */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar-visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Infinite scroll animation */
+  .infinite-scroll {
+    animation: scroll-left 40s linear infinite;
+  }
+
+  .infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Project carousel infinite scroll - no pause on hover */
+  .project-carousel-scroll {
+    animation: scroll-left-fast 45s linear infinite;
+  }
+
+  /* Hero sections carousel infinite scroll - no pause on hover */
+  .hero-sections-carousel-scroll {
+    animation: scroll-left-fast 50s linear infinite;
+  }
+
+  @keyframes scroll-left-fast {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Smooth pause on hover for individual items */
+  .scroll-item {
+    transition: transform 0.3s ease;
+  }
+
+  .scroll-item:hover {
+    transform: scale(1.05) translateY(-4px);
+  }
+
+  /* Project card hover effects */
+  .project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  .project-card:hover {
+    transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .project-image {
+    transition: all 0.5s ease;
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.1);
+  }
+
+  /* Enhanced shadow for showcase items */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

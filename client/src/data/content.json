@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "We Deliver Standout Websites",
+    "titleHighlight": "Standout Websites",
+    "subtitle": "with Effortless Collaboration",
+    "stats": "70+ Amazing Websites Created So Far",
+    "ctaText": "Book a Call",
+    "acceptingText": "Accepting new projects",
+    "toolsText": "We use industry standard tools like",
+    "tools": [
+      { "name": "Figma", "color": "purple-500" },
+      { "name": "Framer", "color": "blue-500" },
+      { "name": "Webflow", "color": "indigo-500" },
+      { "name": "NextJS", "color": "cyan-500" }
+    ]
+  },
+  "services": {
+    "heroTitle": "Specialized in Crafting Brand",
+    "heroSubtitle": "Defining Hero Sections",
+    "heroFeatures": [
+      "Positive Initial Impressions",
+      "Clear Brand Introduction Message",
+      "Improved Conversion Rates"
+    ],
+    "mainTitle": "Our Services",
+    "services": [
+      {
+        "title": "Logo & Branding",
+        "description": "A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.",
+        "icon": "Palette"
+      },
+      {
+        "title": "Websites",
+        "description": "A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.",
+        "icon": "Code"
+      }
+    ],
+    "additionalText": "We also offer other design services like pitch decks, social media creatives, and more.",
+    "features": [
+      "Smooth Communication",
+      "Flexible revisions",
+      "Post-Project Support"
+    ],
+    "ctaText": "Book a Call"
+  },
+  "winningEdge": {
+    "title": "Our Winning Edge",
+    "subtitle": "Discover our unique strengths and distinctive value we offer",
+    "features": [
+      {
+        "title": "SEO Optimized",
+        "description": "Our SEO-centric design approach enhances your online visibility, driving organic traffic by ensuring your site ranks high on Google searches.",
+        "icon": "Search",
+        "color": "blue-500"
+      },
+      {
+        "title": "High Converting Design",
+        "description": "Our engaging design techniques drive remarkable increases in conversion rates by optimizing user experience and encouraging action.",
+        "icon": "TrendingUp",
+        "color": "orange-500"
+      },
+      {
+        "title": "Peak Performance on Any Screen",
+        "description": "Our fluid website experience guarantees flawless performance across all screens, from desktops and laptops to tablets and mobile.",
+        "icon": "Gauge",
+        "color": "green-500"
+      },
+      {
+        "title": "Fast Turnaround Time",
+        "description": "Launch your landing pages swiftly within 7 to 14 days, ensuring fast access to online opportunities without sacrificing quality.",
+        "icon": "Clock",
+        "color": "purple-500"
+      },
+      {
+        "title": "Quality Without Overcharge",
+        "description": "Always receive exceptional quality without any additional costs, ensuring outstanding value and trust in every service we provide.",
+        "icon": "Star",
+        "color": "pink-500"
+      },
+      {
+        "title": "Effortless Experience",
+        "description": "Our streamlined process and world-class systems minimize your involvement, saving you time while maximizing efficiency.",
+        "icon": "Sparkles",
+        "color": "yellow-500"
+      }
+    ]
+  },
+  "heroSectionsShowcase": {
+    "title": "Specialized in Crafting Brand Defining Hero Sections",
+    "subtitle": "We create compelling first impressions that convert visitors into customers",
+    "description": "Every hero section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "E-commerce hero section design with conversion focus",
+        "overlay": "E-commerce Focus"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "SaaS landing page hero with product showcase",
+        "overlay": "SaaS Landing"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Creative portfolio hero section",
+        "overlay": "Portfolio Design"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1504707748692-419802cf939d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Professional agency hero section",
+        "overlay": "Agency Landing"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Tech startup hero with innovation focus",
+        "overlay": "Tech Startup"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Healthcare hero section with trust elements",
+        "overlay": "Healthcare"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Financial services hero section",
+        "overlay": "FinTech"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Educational platform hero design",
+        "overlay": "Education"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real feedback from real people we've worked with"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about our services and process",
+    "items": [
+      {
+        "id": 1,
+        "question": "How long does it take to complete a 1-page and 5-page website?",
+        "answer": "A 1-page website typically takes 1-2 weeks, while a 5-page website usually requires 3-4 weeks. This includes design, development, revisions, and testing. Timeline may vary based on project complexity and feedback response time."
+      },
+      {
+        "id": 2,
+        "question": "Do you offer ongoing support and maintenance services?",
+        "answer": "Yes, we provide comprehensive maintenance packages including security updates, content updates, performance optimization, and technical support. Our maintenance plans start at $99/month and can be customized based on your needs."
+      },
+      {
+        "id": 3,
+        "question": "How do I get started?",
+        "answer": "Simply book a free consultation call with our team. We'll discuss your project requirements, goals, and timeline. After that, we'll provide a detailed proposal with pricing and project scope. Once approved, we begin with a 50% deposit."
+      },
+      {
+        "id": 4,
+        "question": "What happens if I'm not satisfied with the final result?",
+        "answer": "We offer unlimited revisions during the design phase and a 30-day satisfaction guarantee after project completion. If you're not completely happy, we'll work with you to make it right or provide a full refund."
+      },
+      {
+        "id": 5,
+        "question": "Are there any additional costs I should be aware of?",
+        "answer": "Our quotes are comprehensive and include all design and development work. Additional costs may include premium plugins ($50-200), custom integrations, or third-party services like hosting ($10-50/month) and domain registration ($15/year)."
+      },
+      {
+        "id": 6,
+        "question": "Do you offer website re-design services?",
+        "answer": "Absolutely! We specialize in complete website redesigns to improve user experience, conversion rates, and modern design standards. We can work with your existing content or help create new content that better serves your goals."
+      }
+    ]
+  },
+  "finalCta": {
+    "home": {
+      "title": "Ready to Launch Your Dream Project?",
+      "subtitle": "Let's work together to create something amazing that drives real results for your business.",
+      "ctaText": "Book a Call Today"
+    },
+    "works": {
+      "title": "Let's Create Something Amazing Together",
+      "subtitle": "Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.",
+      "ctaText": "Start Your Project"
+    }
+  },
+  "works": {
+    "title": "Showcase of Our",
+    "titleHighlight": "Best Works",
+    "subtitle": "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
+    "categories": [
+      { "id": "all", "label": "All Works" },
+      { "id": "websites", "label": "Websites" },
+      { "id": "branding", "label": "Logo & Branding" }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Suprema",
+      "description": "Create a clear roadmap, track progress, and smoothly guide your project from idea to successful launch.",
+      "longDescription": "Our comprehensive platform helps teams stay organized and efficient throughout the entire development lifecycle. With advanced analytics and intuitive project management tools, Suprema empowers teams to deliver exceptional results while maintaining transparency and collaboration at every step.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Prismo",
+      "description": "Perfect solution to automate workflows, enhance collaboration, and drive success.",
+      "longDescription": "Built with modern design principles and user-centric approach, Prismo provides an intuitive experience that scales with your growing business needs while maintaining peak performance.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "TeamFlow",
+      "description": "Revolutionary collaboration platform that connects teams across different time zones.",
+      "longDescription": "Featuring real-time updates, advanced notification systems, and integration capabilities with popular productivity tools to streamline your team's workflow and boost overall productivity.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1504707748692-419802cf939d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "DataViz",
+      "description": "Advanced analytics platform that transforms complex data into actionable insights.",
+      "longDescription": "Built with cutting-edge technology to handle large datasets while maintaining exceptional performance and user experience across all devices and platforms.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "ShopCraft", 
+      "description": "Complete e-commerce solution designed to maximize conversions.",
+      "longDescription": "Integrated with modern payment systems and inventory management tools to provide a seamless experience for both customers and store administrators.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 6,
+      "title": "FinTech Pro",
+      "description": "Modern financial dashboard with real-time analytics and secure transactions.",
+      "longDescription": "Revolutionary fintech platform that combines cutting-edge security with intuitive user experience for seamless financial management.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    }
+  ],
+  "footer": {
+    "description": "We deliver standout websites with effortless collaboration, helping businesses create impactful digital experiences that drive real results.",
+    "copyright": "© 2024 Lander Studio. All rights reserved.",
+    "services": [
+      "Website Design",
+      "Logo & Branding", 
+      "Pitch Decks",
+      "Social Media"
+    ],
+    "company": [
+      "About",
+      "Contact",
+      "Privacy Policy",
+      "Terms of Service"
+    ]
+  }
+}
