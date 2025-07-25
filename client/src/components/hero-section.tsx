@@ -23,7 +23,7 @@ export default function HeroSection() {
             70+ Amazing Websites Created So Far
           </p>
 
-          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3">
+          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
               src="/profile-foto.png"
               alt="Profile"
