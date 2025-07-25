@@ -20,8 +20,8 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:text-5xl mb-4 text-charcoal">{heroSectionsShowcase.title}</h2>
-        <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
+        <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:desktop-text-5xl mb-4 text-charcoal">{heroSectionsShowcase.title}</h2>
+        <p className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
       {/* Container dengan max width untuk batas */}
@@ -37,7 +37,7 @@ export default function HeroSectionsShowcase() {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => window.open('#case-study', '_blank')}
               >
-                <div className="relative w-[350px] h-[250px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
+                <div className="relative w-[350px] h-[250px] lg:desktop-w-400 lg:desktop-h-280 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img 
                     src={image.url}
                     alt={image.alt}
@@ -57,10 +57,10 @@ export default function HeroSectionsShowcase() {
                             {image.overlay}
                           </span>
                         </div>
-                        <h3 className="text-white font-poppins font-semibold text-lg mb-2">
+                        <h3 className="text-white font-poppins font-semibold text-lg lg:desktop-text-xl mb-2">
                           Hero Section Design
                         </h3>
-                        <p className="text-white/90 text-sm leading-relaxed mb-3">
+                        <p className="text-white/90 text-sm lg:text-base leading-relaxed mb-3">
                           Conversion-optimized design with clear value proposition and compelling call-to-action.
                         </p>
                         <div className="flex items-center space-x-4 text-white/80 text-xs">

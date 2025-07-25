@@ -12,7 +12,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-4">
+          <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">
             Specialized in Crafting Brand<br />
             Defining Hero Sections
           </h2>
@@ -42,7 +42,7 @@ export default function ServicesSection() {
               <img 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
                 alt="Automated candidate screening interface"
-                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
               />
             </motion.div>
             
@@ -79,7 +79,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-4">Our Services</h2>
+          <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">Our Services</h2>
         </motion.div>
 
         <motion.div 
@@ -89,10 +89,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="mb-6">
-              <Palette className="w-8 h-8 text-electric-blue mb-4" />
-              <h3 className="font-poppins font-semibold text-xl mb-3">Logo & Branding</h3>
+              <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
+              <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">Logo & Branding</h3>
               <p className="text-gray-600 leading-relaxed">
                 A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.
               </p>

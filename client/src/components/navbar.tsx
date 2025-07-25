@@ -32,18 +32,18 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Leaf className="text-electric-blue text-xl" />
-            <span className="font-poppins font-semibold text-xl">Vizart</span>
+            <Leaf className="text-electric-blue text-xl lg:text-2xl" />
+            <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">Vizart</span>
           </Link>
 
           {/* Central Navigation (Desktop) */}
-          <div className="hidden md:flex bg-light-gray rounded-full p-1">
+          <div className="hidden md:flex bg-light-gray rounded-full p-1 lg:p-2">
             <Link href="/">
               <button
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-full font-medium lg:desktop-text-xl transition-all duration-200 ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -54,7 +54,7 @@ export default function Navbar() {
             </Link>
             <Link href="/works">
               <button
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-full font-medium lg:desktop-text-xl transition-all duration-200 ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -67,7 +67,7 @@ export default function Navbar() {
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="bg-charcoal text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
+            <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-full font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200">
               Book a Call
             </button>
           </div>

@@ -28,13 +28,13 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:text-5xl mb-6 text-charcoal">
+          <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:desktop-text-5xl mb-6 text-charcoal">
             Ready to Launch Your Dream Project?
           </h2>
-          <p className="text-charcoal/70 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-charcoal/70 text-lg lg:desktop-text-xl mb-8 max-w-2xl mx-auto">
             Let's work together to create something amazing that drives real results for your business.
           </p>
-          <button className="bg-electric-blue text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-electric-blue/90 transition-all duration-300 hover:scale-105 shadow-lg">
+          <button className="bg-electric-blue text-white px-8 py-4 lg:desktop-p-16 rounded-full font-medium text-lg lg:desktop-text-xl hover:bg-electric-blue/90 transition-all duration-300 hover:scale-105 shadow-lg">
             Book a Call Today
           </button>
         </div>

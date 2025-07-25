@@ -30,11 +30,11 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument text-4xl sm:text-5xl lg:text-6xl mb-6">
+            <h1 className="font-instrument text-4xl sm:text-5xl lg:desktop-text-6xl mb-6">
               Showcase of Our<br />
               <span className="text-electric-blue">Best Works</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg lg:desktop-text-xl text-gray-600 max-w-2xl mx-auto">
               Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.
             </p>
           </motion.div>

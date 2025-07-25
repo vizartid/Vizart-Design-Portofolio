@@ -19,7 +19,7 @@ export default function ProjectCarousel() {
               onClick={() => window.open(project.projectUrl || '#', '_blank')}
             >
               {/* Simple image without laptop frame - just clean photos */}
-              <div className="relative w-[400px] h-[280px] rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative w-[400px] h-[280px] lg:desktop-w-400 lg:desktop-h-280 rounded-xl overflow-hidden shadow-2xl">
                 <img 
                   src={project.imageUrl}
                   alt={`${project.title} website`}

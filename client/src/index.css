@@ -31,6 +31,11 @@
   --electric-blue: hsl(207, 90%, 54%);
   --charcoal: hsl(220, 13%, 18%);
   --light-gray: hsl(210, 11%, 96%);
+  
+  /* Desktop scaling variables */
+  --desktop-text-scale: 1.2;
+  --desktop-spacing-scale: 1.15;
+  --desktop-card-scale: 1.25;
 }
 
 .dark {
@@ -97,6 +102,34 @@
   
   .bg-light-gray {
     background-color: var(--light-gray);
+  }
+
+  /* Desktop scaling classes */
+  @media (min-width: 1024px) {
+    /* Text scaling untuk desktop */
+    .lg\\:desktop-text-xl { font-size: calc(1.25rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-2xl { font-size: calc(1.5rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-3xl { font-size: calc(1.875rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-4xl { font-size: calc(2.25rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-5xl { font-size: calc(3rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-6xl { font-size: calc(3.75rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-7xl { font-size: calc(4.5rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-8xl { font-size: calc(6rem * var(--desktop-text-scale)) !important; }
+    
+    /* Spacing scaling untuk desktop */
+    .lg\\:desktop-p-8 { padding: calc(2rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-p-12 { padding: calc(3rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-p-16 { padding: calc(4rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-p-20 { padding: calc(5rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-py-16 { padding-top: calc(4rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(4rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-py-20 { padding-top: calc(5rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(5rem * var(--desktop-spacing-scale)) !important; }
+    .lg\\:desktop-py-24 { padding-top: calc(6rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(6rem * var(--desktop-spacing-scale)) !important; }
+    
+    /* Card dan gambar scaling untuk desktop */
+    .lg\\:desktop-w-400 { width: calc(400px * var(--desktop-card-scale)) !important; }
+    .lg\\:desktop-h-280 { height: calc(280px * var(--desktop-card-scale)) !important; }
+    .lg\\:desktop-w-320 { width: calc(320px * var(--desktop-card-scale)) !important; }
+    .lg\\:desktop-h-240 { height: calc(240px * var(--desktop-card-scale)) !important; }
   }
 
   /* Wave texture background */

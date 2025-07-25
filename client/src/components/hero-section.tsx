@@ -13,15 +13,15 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6">
+          <h1 className="font-instrument text-4xl sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl leading-tight mb-6">
             We Deliver <span className="text-electric-blue">Standout Websites</span><br />
             with Effortless Collaboration
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl lg:desktop-text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
             70+ Amazing Websites Created So Far
           </p>
           
-          <button className="bg-charcoal text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-gray-800 transition-colors duration-200 mb-4">
+          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-full font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4">
             Book a Call
           </button>
           
