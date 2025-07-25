@@ -134,6 +134,13 @@
     .lg\\:desktop-h-240 { height: calc(240px * var(--desktop-card-scale)) !important; }
   }
 
+  /* Hero section background pattern */
+  .hero-pattern-bg {
+    background-color: #e5e5f7;
+    opacity: 0.2;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), repeating-linear-gradient(#00000055, #000000);
+  }
+
   /* Wave texture background */
   .wave-bg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,50 Q250,20 500,50 T1000,50 L1000,100 L0,100 Z' fill='%23e5e7eb' opacity='0.15'/%3E%3C/svg%3E");
