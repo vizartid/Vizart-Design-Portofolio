@@ -1,20 +1,10 @@
-import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import content from "@/data/content.json";
 
 export default function HeroSectionsShowcase() {
   const { heroSectionsShowcase } = content;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Use scroll-based animation with boundaries
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-  
-  // Transform scroll progress to horizontal movement with controlled boundaries
-  const x = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["10%", "-20%", "-40%", "-20%"]);
 
   // Safety check for images array
   if (!heroSectionsShowcase?.images || heroSectionsShowcase.images.length === 0) {
@@ -22,7 +12,7 @@ export default function HeroSectionsShowcase() {
   }
 
   return (
-    <section ref={containerRef} className="py-16 overflow-hidden relative">
+    <section className="py-16 overflow-hidden relative">
       <motion.div 
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -34,15 +24,34 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      {/* Container with max width for boundaries */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl">
-          <motion.div 
-            className="flex space-x-6 py-8"
-            style={{ x }}
-          >
-            {/* Use original images without duplication for bounded scroll */}
-            {heroSectionsShowcase.images.map((image, index) => (
+      {/* Container with custom left-moving animation */}
+      <div className="relative overflow-hidden">
+        <motion.div 
+          className="flex space-x-6 py-8"
+          initial={{ x: "100%" }}
+          animate={{ 
+            x: [
+              "100%",    // Start dari kanan
+              "0%",      // Masuk ke center  
+              "-30%",    // Gerak ke kiri
+              "-50%",    // Lebih ke kiri
+              "-30%",    // Kembali sedikit
+              "0%",      // Kembali ke center
+              "100%"     // Keluar ke kanan (reset)
+            ]
+          }}
+          transition={{
+            duration: 20,           // Total durasi 20 detik
+            ease: "easeInOut",      // Easing yang smooth
+            repeat: Infinity,       // Repeat terus menerus
+            repeatType: "loop"      // Loop animation
+          }}
+          whileHover={{ 
+            animationPlayState: "paused" 
+          }}
+        >
+          {/* Duplicate images untuk smooth transition */}
+          {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
@@ -90,23 +99,56 @@ export default function HeroSectionsShowcase() {
                 </div>
               </div>
             ))}
-          </motion.div>
-          
-          {/* Subtle gradient borders for visual boundaries */}
-          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white/20 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white/20 to-transparent pointer-events-none z-10"></div>
-        </div>
+        </motion.div>
         
-        {/* Progress indicator */}
-        <div className="mt-8 flex justify-center">
+        {/* Enhanced gradient overlays untuk visual boundaries */}
+        <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
+        <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
+        
+        {/* Animation indicator */}
+        <div className="mt-6 flex justify-center">
           <motion.div 
-            className="w-24 h-1 bg-gray-200 rounded-full overflow-hidden"
+            className="flex space-x-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
           >
             <motion.div 
-              className="h-full bg-electric-blue rounded-full"
-              style={{ 
-                scaleX: useTransform(scrollYProgress, [0, 1], [0, 1]),
-                originX: 0
+              className="w-2 h-2 bg-electric-blue rounded-full"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="w-2 h-2 bg-electric-blue/60 rounded-full"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.8, 0.5]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+            />
+            <motion.div 
+              className="w-2 h-2 bg-electric-blue/40 rounded-full"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
               }}
             />
           </motion.div>
