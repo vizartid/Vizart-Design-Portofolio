@@ -14,7 +14,7 @@ export default function HeroSectionsShowcase() {
   return (
     <section className="py-16 overflow-hidden">
       <motion.div 
-        className="mb-12 text-center"
+        className="mb-12 text-center px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -24,9 +24,9 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      {/* Container dengan max width untuk batas */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl">
+      {/* Full width showcase animation - sampai ujung desktop tanpa padding */}
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="relative overflow-hidden">
           <div className="flex space-x-6 hero-sections-carousel-seamless">
             {/* Quintuple images untuk true seamless infinite scroll */}
             {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
@@ -79,9 +79,7 @@ export default function HeroSectionsShowcase() {
             ))}
           </div>
           
-          {/* Gradient borders untuk visual boundaries */}
-          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white/20 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white/20 to-transparent pointer-events-none z-10"></div>
+          {/* Gradient borders untuk visual boundaries - dihapus agar full width */}
         </div>
       </div>
     </section>
