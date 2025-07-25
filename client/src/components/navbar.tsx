@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="hidden md:flex bg-light-gray rounded-md p-1 lg:p-2">
             <Link href="/">
               <button
-                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-md font-medium lg:desktop-text-xl transition-all duration-200 ${
+                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -56,7 +56,7 @@ export default function Navbar() {
             </Link>
             <Link href="/works">
               <button
-                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-md font-medium lg:desktop-text-xl transition-all duration-200 ${
+                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -69,8 +69,12 @@ export default function Navbar() {
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-md font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2">
-              <img src="/profile-foto.png" alt="Profile" className="w-6 h-6 lg:w-8 lg:h-8 rounded-full object-cover" />
+            <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2">
+              <img
+                src="/profile-foto.png"
+                alt="Profile"
+                className="w-6 h-6 lg:w-8 lg:h-8 rounded-full object-cover"
+              />
               <span>Book a Call</span>
             </button>
           </div>
@@ -100,7 +104,11 @@ export default function Navbar() {
               <span className="block text-gray-600 font-medium">Works</span>
             </Link>
             <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4 flex items-center justify-center space-x-2">
-              <img src="/profile-foto.png" alt="Profile" className="w-6 h-6 rounded-full object-cover" />
+              <img
+                src="/profile-foto.png"
+                alt="Profile"
+                className="w-6 h-6 rounded-full object-cover"
+              />
               <span>Book a Call</span>
             </button>
           </div>

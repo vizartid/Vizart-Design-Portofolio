@@ -7,25 +7,31 @@ export default function HeroSection() {
     <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
       <div className="max-w-7xl mx-auto">
         {/* Hero Text */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-instrument text-4xl sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl leading-tight mb-6">
-            We Deliver <span className="text-electric-blue">Standout Websites</span><br />
+            We Deliver{" "}
+            <span className="text-electric-blue">Standout Websites</span>
+            <br />
             with Effortless Collaboration
           </h1>
           <p className="text-lg sm:text-xl lg:desktop-text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
             70+ Amazing Websites Created So Far
           </p>
-          
+
           <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3">
-            <img src="/profile-foto.png" alt="Profile" className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover" />
+            <img
+              src="/profile-foto.png"
+              alt="Profile"
+              className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
+            />
             <span>Book a Call</span>
           </button>
-          
+
           <div className="flex items-center justify-center space-x-2 text-sm lg:desktop-text-base text-gray-600">
             <Check className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" />
             <span>Accepting new projects</span>
@@ -34,9 +40,9 @@ export default function HeroSection() {
 
         {/* Project Showcase Carousel - Full Width */}
       </div>
-      
+
       {/* Project Carousel Full Width - sampai ujung desktop */}
-      <motion.div 
+      <motion.div
         className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -44,17 +50,18 @@ export default function HeroSection() {
       >
         <ProjectCarousel />
       </motion.div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tools Used Section */}
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-6">We use industry standard tools like</p>
+          <p className="text-gray-600 mb-6">
+            We use industry standard tools like
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
               <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
