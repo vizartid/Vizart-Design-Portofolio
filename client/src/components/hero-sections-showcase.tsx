@@ -13,8 +13,8 @@ export default function HeroSectionsShowcase() {
     offset: ["start end", "end start"]
   });
   
-  // Transform scroll progress to horizontal movement with boundaries
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+  // Transform scroll progress to horizontal movement with controlled boundaries
+  const x = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["10%", "-20%", "-40%", "-20%"]);
 
   // Safety check for images array
   if (!heroSectionsShowcase?.images || heroSectionsShowcase.images.length === 0) {
@@ -22,7 +22,7 @@ export default function HeroSectionsShowcase() {
   }
 
   return (
-    <section ref={containerRef} className="py-16 overflow-hidden">
+    <section ref={containerRef} className="py-16 overflow-hidden relative">
       <motion.div 
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -34,15 +34,15 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      <div className="relative overflow-hidden">
-        {/* Controlled Scrolling Carousel with Boundaries */}
-        <div className="relative overflow-hidden">
+      {/* Container with max width for boundaries */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl">
           <motion.div 
-            className="flex space-x-4"
+            className="flex space-x-6 py-8"
             style={{ x }}
           >
-            {/* Double the images for smooth loop with boundaries */}
-            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+            {/* Use original images without duplication for bounded scroll */}
+            {heroSectionsShowcase.images.map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
@@ -50,7 +50,7 @@ export default function HeroSectionsShowcase() {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => window.open('#case-study', '_blank')}
               >
-                <div className="relative w-[400px] h-[280px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
+                <div className="relative w-[350px] h-[250px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img 
                     src={image.url}
                     alt={image.alt}
@@ -92,16 +92,24 @@ export default function HeroSectionsShowcase() {
             ))}
           </motion.div>
           
-          {/* Enhanced Gradient Overlays for Boundaries */}
-          <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
-          
-          {/* Scroll Indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-            <div className="w-2 h-2 bg-electric-blue rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-electric-blue/40 rounded-full"></div>
-            <div className="w-2 h-2 bg-electric-blue/40 rounded-full"></div>
-          </div>
+          {/* Subtle gradient borders for visual boundaries */}
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white/20 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white/20 to-transparent pointer-events-none z-10"></div>
+        </div>
+        
+        {/* Progress indicator */}
+        <div className="mt-8 flex justify-center">
+          <motion.div 
+            className="w-24 h-1 bg-gray-200 rounded-full overflow-hidden"
+          >
+            <motion.div 
+              className="h-full bg-electric-blue rounded-full"
+              style={{ 
+                scaleX: useTransform(scrollYProgress, [0, 1], [0, 1]),
+                originX: 0
+              }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>
