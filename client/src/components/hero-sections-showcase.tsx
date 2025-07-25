@@ -12,7 +12,7 @@ export default function HeroSectionsShowcase() {
   }
 
   return (
-    <section className="py-16 overflow-hidden relative">
+    <section className="py-16 overflow-hidden">
       <motion.div 
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -24,34 +24,12 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      {/* Container with custom left-moving animation */}
       <div className="relative overflow-hidden">
-        <motion.div 
-          className="flex space-x-6 py-8"
-          initial={{ x: "100%" }}
-          animate={{ 
-            x: [
-              "100%",    // Start dari kanan
-              "0%",      // Masuk ke center  
-              "-30%",    // Gerak ke kiri
-              "-50%",    // Lebih ke kiri
-              "-30%",    // Kembali sedikit
-              "0%",      // Kembali ke center
-              "100%"     // Keluar ke kanan (reset)
-            ]
-          }}
-          transition={{
-            duration: 20,           // Total durasi 20 detik
-            ease: "easeInOut",      // Easing yang smooth
-            repeat: Infinity,       // Repeat terus menerus
-            repeatType: "loop"      // Loop animation
-          }}
-          whileHover={{ 
-            animationPlayState: "paused" 
-          }}
-        >
-          {/* Duplicate images untuk smooth transition */}
-          {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+        {/* Seamless Infinite Scrolling Carousel with Hover Effects seperti di ProjectCarousel */}
+        <div className="relative overflow-hidden">
+          <div className="flex space-x-4 hero-sections-carousel-scroll">
+            {/* Quintuple the images for ultra-smooth seamless loop */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
@@ -59,7 +37,7 @@ export default function HeroSectionsShowcase() {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => window.open('#case-study', '_blank')}
               >
-                <div className="relative w-[350px] h-[250px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
+                <div className="relative w-[400px] h-[280px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img 
                     src={image.url}
                     alt={image.alt}
@@ -99,59 +77,11 @@ export default function HeroSectionsShowcase() {
                 </div>
               </div>
             ))}
-        </motion.div>
-        
-        {/* Enhanced gradient overlays untuk visual boundaries */}
-        <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
-        <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
-        
-        {/* Animation indicator */}
-        <div className="mt-6 flex justify-center">
-          <motion.div 
-            className="flex space-x-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            <motion.div 
-              className="w-2 h-2 bg-electric-blue rounded-full"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className="w-2 h-2 bg-electric-blue/60 rounded-full"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.5, 0.8, 0.5]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5
-              }}
-            />
-            <motion.div 
-              className="w-2 h-2 bg-electric-blue/40 rounded-full"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-          </motion.div>
+          </div>
+          
+          {/* Gradient Overlays seperti di ProjectCarousel */}
+          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bone-white to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bone-white to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
