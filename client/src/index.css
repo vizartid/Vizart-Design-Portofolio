@@ -25,15 +25,15 @@
   --destructive-foreground: hsl(210, 11%, 98%);
   --ring: hsl(220, 13%, 18%);
   --radius: 0.5rem;
-  
+
   /* Custom colors */
   --bone-white: hsl(46, 33%, 95%);
   --electric-blue: hsl(207, 90%, 54%);
   --charcoal: hsl(220, 13%, 18%);
   --light-gray: hsl(210, 11%, 96%);
-  
+
   /* Desktop scaling variables */
-  --desktop-text-scale: 1.4;
+  --desktop-text-scale: 2.4;
   --desktop-spacing-scale: 1.15;
   --desktop-card-scale: 1.25;
 }
@@ -75,63 +75,75 @@
   .font-instrument {
     font-family: 'Instrument Serif', serif;
   }
-  
+
   .font-poppins {
     font-family: 'Poppins', sans-serif;
   }
-  
+
   .bg-bone-white {
     background-color: var(--bone-white);
   }
-  
+
   .text-electric-blue {
     color: var(--electric-blue);
   }
-  
+
   .bg-electric-blue {
     background-color: var(--electric-blue);
   }
-  
+
   .text-charcoal {
     color: var(--charcoal);
   }
-  
+
   .bg-charcoal {
     background-color: var(--charcoal);
   }
-  
+
   .bg-light-gray {
     background-color: var(--light-gray);
   }
 
-  /* Desktop scaling classes */
+  /* DESKTOP SCALING SYSTEM - Mudah disesuaikan */
+  /* Untuk mengubah ukuran teks di desktop, ganti angka di bawah ini: */
   @media (min-width: 1024px) {
-    /* Text scaling untuk desktop */
-    .lg\\:desktop-text-base { font-size: calc(1rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-lg { font-size: calc(1.125rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-xl { font-size: calc(1.25rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-2xl { font-size: calc(1.5rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-3xl { font-size: calc(1.875rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-4xl { font-size: calc(2.25rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-5xl { font-size: calc(3rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-6xl { font-size: calc(3.75rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-7xl { font-size: calc(4.5rem * var(--desktop-text-scale)) !important; }
-    .lg\\:desktop-text-8xl { font-size: calc(6rem * var(--desktop-text-scale)) !important; }
     
-    /* Spacing scaling untuk desktop */
-    .lg\\:desktop-p-8 { padding: calc(2rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-p-12 { padding: calc(3rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-p-16 { padding: calc(4rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-p-20 { padding: calc(5rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-py-16 { padding-top: calc(4rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(4rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-py-20 { padding-top: calc(5rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(5rem * var(--desktop-spacing-scale)) !important; }
-    .lg\\:desktop-py-24 { padding-top: calc(6rem * var(--desktop-spacing-scale)) !important; padding-bottom: calc(6rem * var(--desktop-spacing-scale)) !important; }
+    /* TEXT SIZES - Ganti angka ini untuk memperbesar/memperkecil teks */
+    .lg\:desktop-text-base { font-size: 1.4rem !important; }      /* Basic text */
+    .lg\:desktop-text-lg { font-size: 1.6rem !important; }        /* Large text */  
+    .lg\:desktop-text-xl { font-size: 1.8rem !important; }        /* Extra large */
+    .lg\:desktop-text-2xl { font-size: 2.1rem !important; }       /* 2X large */
+    .lg\:desktop-text-3xl { font-size: 2.6rem !important; }       /* 3X large */
+    .lg\:desktop-text-4xl { font-size: 3.2rem !important; }       /* 4X large */
+    .lg\:desktop-text-5xl { font-size: 4.2rem !important; }       /* 5X large */
+    .lg\:desktop-text-6xl { font-size: 5.3rem !important; }       /* 6X large */
+    .lg\:desktop-text-7xl { font-size: 6.3rem !important; }       /* 7X large */
+    .lg\:desktop-text-8xl { font-size: 8.4rem !important; }       /* 8X large */
+
     
-    /* Card dan gambar scaling untuk desktop */
-    .lg\\:desktop-w-400 { width: calc(400px * var(--desktop-card-scale)) !important; }
-    .lg\\:desktop-h-280 { height: calc(280px * var(--desktop-card-scale)) !important; }
-    .lg\\:desktop-w-320 { width: calc(320px * var(--desktop-card-scale)) !important; }
-    .lg\\:desktop-h-240 { height: calc(240px * var(--desktop-card-scale)) !important; }
+    /* SPACING SIZES - Ganti angka ini untuk memperbesar/memperkecil spacing */
+    .lg\:desktop-p-8 { padding: 2.3rem !important; }             /* Padding 8 */
+    .lg\:desktop-p-12 { padding: 3.5rem !important; }            /* Padding 12 */
+    .lg\:desktop-p-16 { padding: 4.6rem !important; }            /* Padding 16 */
+    .lg\:desktop-p-20 { padding: 5.8rem !important; }            /* Padding 20 */
+    .lg\:desktop-py-16 { 
+      padding-top: 4.6rem !important; 
+      padding-bottom: 4.6rem !important; 
+    }
+    .lg\:desktop-py-20 { 
+      padding-top: 5.8rem !important; 
+      padding-bottom: 5.8rem !important; 
+    }
+    .lg\:desktop-py-24 { 
+      padding-top: 6.9rem !important; 
+      padding-bottom: 6.9rem !important; 
+    }
+    
+    /* CARD SIZES - Ganti angka ini untuk memperbesar/memperkecil card */
+    .lg\:desktop-w-400 { width: 500px !important; }              /* Card width */
+    .lg\:desktop-h-280 { height: 350px !important; }             /* Card height */
+    .lg\:desktop-w-320 { width: 400px !important; }              /* Small card width */
+    .lg\:desktop-h-240 { height: 300px !important; }             /* Small card height */
   }
 
   /* Wave texture background */
@@ -146,16 +158,16 @@
     width: 8px;
     height: 8px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: var(--bone-white);
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: hsl(220, 13%, 91%);
     border-radius: 4px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(215, 13%, 70%);
   }
@@ -165,7 +177,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -176,7 +188,7 @@
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
   }
-  
+
   .navbar-visible {
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
@@ -195,6 +207,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
@@ -221,6 +234,7 @@
     0% {
       transform: translateX(0%);
     }
+
     100% {
       transform: translateX(-20%);
     }
@@ -230,6 +244,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }

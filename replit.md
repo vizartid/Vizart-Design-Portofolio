@@ -19,9 +19,11 @@ Preferred communication style: Simple, everyday language.
 - ✓ All showcase content fully editable via content.json (images, text, overlays)
 - ✓ Project carousel content fully editable via content.json
 - ✓ Slowed down animation speeds for better user experience
-- ✓ Implemented responsive desktop UI scaling (1.2x text, 1.15x spacing, 1.25x cards)
+- ✓ Implemented responsive desktop UI scaling with fixed values (easy to customize)
 - ✓ Applied proportional scaling to all major components (navbar, hero, cards, text)
 - ✓ Enhanced desktop typography, spacing, and visual hierarchy
+- ✓ Created simple desktop scaling system - edit values directly in CSS
+- ✓ Added DESKTOP_SCALING_GUIDE.md for easy customization instructions
 
 ## System Architecture
 
