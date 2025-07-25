@@ -1,20 +1,10 @@
-import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import content from "@/data/content.json";
 
 export default function HeroSectionsShowcase() {
   const { heroSectionsShowcase } = content;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Use scroll-based animation with boundaries
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-  
-  // Transform scroll progress to horizontal movement with controlled boundaries
-  const x = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["10%", "-20%", "-40%", "-20%"]);
 
   // Safety check for images array
   if (!heroSectionsShowcase?.images || heroSectionsShowcase.images.length === 0) {
@@ -22,7 +12,7 @@ export default function HeroSectionsShowcase() {
   }
 
   return (
-    <section ref={containerRef} className="py-16 overflow-hidden relative">
+    <section className="py-16 overflow-hidden">
       <motion.div 
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -34,15 +24,12 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      {/* Container with max width for boundaries */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl">
-          <motion.div 
-            className="flex space-x-6 py-8"
-            style={{ x }}
-          >
-            {/* Use original images without duplication for bounded scroll */}
-            {heroSectionsShowcase.images.map((image, index) => (
+      <div className="relative overflow-hidden">
+        {/* Infinite Scrolling Carousel with Hover Pause */}
+        <div className="relative overflow-hidden">
+          <div className="flex space-x-4 hero-sections-carousel-scroll">
+            {/* Duplicate images for seamless infinite loop */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
