@@ -32,9 +32,7 @@ export default function ProjectCarousel() {
           ))}
         </div>
         
-        {/* Gradient Overlays */}
-        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bone-white to-transparent pointer-events-none z-10"></div>
-        <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bone-white to-transparent pointer-events-none z-10"></div>
+        {/* Gradient Overlays - dihapus agar full width */}
       </div>
     </div>
   );

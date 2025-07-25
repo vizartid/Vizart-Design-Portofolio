@@ -32,15 +32,20 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Project Showcase Carousel */}
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <ProjectCarousel />
-        </motion.div>
+        {/* Project Showcase Carousel - Full Width */}
+      </div>
+      
+      {/* Project Carousel Full Width - sampai ujung desktop */}
+      <motion.div 
+        className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <ProjectCarousel />
+      </motion.div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Tools Used Section */}
         <motion.div 
