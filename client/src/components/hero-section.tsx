@@ -21,8 +21,9 @@ export default function HeroSection() {
             70+ Amazing Websites Created So Far
           </p>
           
-          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-full font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4">
-            Book a Call
+          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3">
+            <img src="/profile-foto.png" alt="Profile" className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover" />
+            <span>Book a Call</span>
           </button>
           
           <div className="flex items-center justify-center space-x-2 text-sm lg:desktop-text-base text-gray-600">
@@ -51,25 +52,25 @@ export default function HeroSection() {
           <p className="text-gray-600 mb-6">We use industry standard tools like</p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-purple-500 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
                 <span className="text-white font-bold text-sm">F</span>
               </div>
               <span className="font-medium">Figma</span>
             </div>
             <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
                 <span className="text-white font-bold text-sm">&lt;/&gt;</span>
               </div>
               <span className="font-medium">Framer</span>
             </div>
             <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-indigo-500 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-indigo-500 rounded-md flex items-center justify-center">
                 <span className="text-white font-bold text-sm">W</span>
               </div>
               <span className="font-medium">Webflow</span>
             </div>
             <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-cyan-500 rounded-md flex items-center justify-center">
                 <span className="text-white font-bold text-sm">N</span>
               </div>
               <span className="font-medium">NextJS</span>

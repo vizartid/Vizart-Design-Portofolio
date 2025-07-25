@@ -46,12 +46,12 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-light-gray rounded-full p-1 inline-flex">
+            <div className="bg-light-gray rounded-md p-1 inline-flex">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                  className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
                     activeCategory === category.id
                       ? 'bg-white shadow-sm text-charcoal'
                       : 'text-gray-600 hover:text-charcoal'
@@ -100,7 +100,7 @@ export default function Works() {
                         {project.longDescription}
                       </p>
                     )}
-                    <button className="bg-charcoal text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <button className="bg-charcoal text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200">
                       {project.category === 'branding' ? 'View Brand Guide' : 'Open Website'}
                     </button>
                   </div>
@@ -126,8 +126,9 @@ export default function Works() {
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
             Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.
           </p>
-          <button className="bg-charcoal text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-800 transition-colors duration-200">
-            Start Your Project
+          <button className="bg-charcoal text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
+            <img src="/profile-foto.png" alt="Profile" className="w-8 h-8 rounded-full object-cover" />
+            <span>Start Your Project</span>
           </button>
         </div>
       </motion.section>

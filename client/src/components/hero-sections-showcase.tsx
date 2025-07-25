@@ -53,7 +53,7 @@ export default function HeroSectionsShowcase() {
                         hoveredIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                       }`}>
                         <div className="mb-3">
-                          <span className="px-3 py-1 bg-electric-blue text-white text-xs rounded-full font-medium">
+                          <span className="px-3 py-1 bg-electric-blue text-white text-xs rounded-md font-medium">
                             {image.overlay}
                           </span>
                         </div>
