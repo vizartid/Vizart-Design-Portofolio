@@ -175,6 +175,29 @@
     animation: scroll-left-fast 50s linear infinite;
   }
 
+  /* Hero sections carousel dengan bounded loop */
+  .hero-sections-carousel-loop {
+    animation: bounded-loop 15s linear infinite;
+  }
+
+  @keyframes bounded-loop {
+    0% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    75% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   @keyframes scroll-left-fast {
     0% {
       transform: translateX(0);

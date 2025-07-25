@@ -24,12 +24,12 @@ export default function HeroSectionsShowcase() {
         <p className="text-charcoal/70 text-lg max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
       </motion.div>
       
-      <div className="relative overflow-hidden">
-        {/* Seamless Infinite Scrolling Carousel with Hover Effects seperti di ProjectCarousel */}
-        <div className="relative overflow-hidden">
-          <div className="flex space-x-4 hero-sections-carousel-scroll">
-            {/* Quintuple the images for ultra-smooth seamless loop */}
-            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+      {/* Container dengan max width untuk batas */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="flex space-x-6 hero-sections-carousel-loop">
+            {/* Double the images untuk smooth looping dari akhir ke awal */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
@@ -37,7 +37,7 @@ export default function HeroSectionsShowcase() {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => window.open('#case-study', '_blank')}
               >
-                <div className="relative w-[400px] h-[280px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
+                <div className="relative w-[350px] h-[250px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img 
                     src={image.url}
                     alt={image.alt}
@@ -79,9 +79,9 @@ export default function HeroSectionsShowcase() {
             ))}
           </div>
           
-          {/* Gradient Overlays seperti di ProjectCarousel */}
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bone-white to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bone-white to-transparent pointer-events-none z-10"></div>
+          {/* Gradient borders untuk visual boundaries */}
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white/20 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white/20 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
