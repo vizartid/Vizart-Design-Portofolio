@@ -4,7 +4,7 @@ import ProjectCarousel from "./project-carousel";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 hero-pattern-bg">
+    <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
       <div className="max-w-7xl mx-auto">
         {/* Hero Text */}
         <motion.div 
