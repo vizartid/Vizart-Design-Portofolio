@@ -25,8 +25,8 @@ export default function HeroSection() {
             Book a Call
           </button>
           
-          <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-            <Check className="w-4 h-4 text-green-500" />
+          <div className="flex items-center justify-center space-x-2 text-sm lg:desktop-text-base text-gray-600">
+            <Check className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" />
             <span>Accepting new projects</span>
           </div>
         </motion.div>

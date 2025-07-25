@@ -60,10 +60,10 @@ export default function HeroSectionsShowcase() {
                         <h3 className="text-white font-poppins font-semibold text-lg lg:desktop-text-xl mb-2">
                           Hero Section Design
                         </h3>
-                        <p className="text-white/90 text-sm lg:text-base leading-relaxed mb-3">
+                        <p className="text-white/90 text-sm lg:desktop-text-base leading-relaxed mb-3">
                           Conversion-optimized design with clear value proposition and compelling call-to-action.
                         </p>
-                        <div className="flex items-center space-x-4 text-white/80 text-xs">
+                        <div className="flex items-center space-x-4 text-white/80 text-xs lg:desktop-text-base">
                           <span>• Mobile First</span>
                           <span>• A/B Tested</span>
                           <span>• High Converting</span>

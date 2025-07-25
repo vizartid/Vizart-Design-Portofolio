@@ -17,7 +17,7 @@ export default function ServicesSection() {
             Defining Hero Sections
           </h2>
           
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-12 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-12 text-sm lg:desktop-text-base">
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
               <span>Positive Initial Impressions</span>
@@ -93,17 +93,17 @@ export default function ServicesSection() {
             <div className="mb-6">
               <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
               <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">Logo & Branding</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 lg:desktop-text-lg leading-relaxed">
                 A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="mb-6">
-              <Code className="w-8 h-8 text-electric-blue mb-4" />
-              <h3 className="font-poppins font-semibold text-xl mb-3">Websites</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
+              <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">Websites</h3>
+              <p className="text-gray-600 lg:desktop-text-lg leading-relaxed">
                 A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.
               </p>
             </div>
@@ -117,24 +117,24 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-600 mb-8">We also offer other design services like pitch decks, social media creatives, and more.</p>
+          <p className="text-gray-600 lg:desktop-text-lg mb-8">We also offer other design services like pitch decks, social media creatives, and more.</p>
           
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm">Smooth Communication</span>
+              <span className="text-sm lg:desktop-text-base">Smooth Communication</span>
             </div>
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm">Flexible revisions</span>
+              <span className="text-sm lg:desktop-text-base">Flexible revisions</span>
             </div>
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm">Post-Project Support</span>
+              <span className="text-sm lg:desktop-text-base">Post-Project Support</span>
             </div>
           </div>
           
-          <button className="bg-charcoal text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
+          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-full font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200">
             Book a Call
           </button>
         </motion.div>

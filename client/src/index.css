@@ -33,7 +33,7 @@
   --light-gray: hsl(210, 11%, 96%);
   
   /* Desktop scaling variables */
-  --desktop-text-scale: 1.2;
+  --desktop-text-scale: 1.4;
   --desktop-spacing-scale: 1.15;
   --desktop-card-scale: 1.25;
 }
@@ -107,6 +107,8 @@
   /* Desktop scaling classes */
   @media (min-width: 1024px) {
     /* Text scaling untuk desktop */
+    .lg\\:desktop-text-base { font-size: calc(1rem * var(--desktop-text-scale)) !important; }
+    .lg\\:desktop-text-lg { font-size: calc(1.125rem * var(--desktop-text-scale)) !important; }
     .lg\\:desktop-text-xl { font-size: calc(1.25rem * var(--desktop-text-scale)) !important; }
     .lg\\:desktop-text-2xl { font-size: calc(1.5rem * var(--desktop-text-scale)) !important; }
     .lg\\:desktop-text-3xl { font-size: calc(1.875rem * var(--desktop-text-scale)) !important; }
