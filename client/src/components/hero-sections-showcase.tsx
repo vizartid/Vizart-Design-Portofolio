@@ -1,10 +1,20 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import content from "@/data/content.json";
 
 export default function HeroSectionsShowcase() {
   const { heroSectionsShowcase } = content;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Use scroll-based animation with boundaries
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  
+  // Transform scroll progress to horizontal movement with boundaries
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   // Safety check for images array
   if (!heroSectionsShowcase?.images || heroSectionsShowcase.images.length === 0) {
@@ -12,7 +22,7 @@ export default function HeroSectionsShowcase() {
   }
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section ref={containerRef} className="py-16 overflow-hidden">
       <motion.div 
         className="mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -25,11 +35,14 @@ export default function HeroSectionsShowcase() {
       </motion.div>
       
       <div className="relative overflow-hidden">
-        {/* Seamless Infinite Scrolling Carousel with Hover Effects */}
+        {/* Controlled Scrolling Carousel with Boundaries */}
         <div className="relative overflow-hidden">
-          <div className="flex space-x-4 hero-sections-carousel-scroll">
-            {/* Quintuple the images for ultra-smooth seamless loop */}
-            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+          <motion.div 
+            className="flex space-x-4"
+            style={{ x }}
+          >
+            {/* Double the images for smooth loop with boundaries */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
@@ -77,11 +90,18 @@ export default function HeroSectionsShowcase() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
           
-          {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bone-white to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bone-white to-transparent pointer-events-none z-10"></div>
+          {/* Enhanced Gradient Overlays for Boundaries */}
+          <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-bone-white via-bone-white/80 to-transparent pointer-events-none z-10"></div>
+          
+          {/* Scroll Indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+            <div className="w-2 h-2 bg-electric-blue rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-electric-blue/40 rounded-full"></div>
+            <div className="w-2 h-2 bg-electric-blue/40 rounded-full"></div>
+          </div>
         </div>
       </div>
     </section>

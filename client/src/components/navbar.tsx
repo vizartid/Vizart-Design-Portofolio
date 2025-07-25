@@ -11,49 +11,55 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 bg-bone-white/95 backdrop-blur-sm border-b border-gray-200/50 transition-transform duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 bg-bone-white/95 backdrop-blur-sm border-b border-gray-200/50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Leaf className="text-electric-blue text-xl" />
-            <span className="font-poppins font-semibold text-xl">Lander</span>
+            <span className="font-poppins font-semibold text-xl">Vizart</span>
           </Link>
 
           {/* Central Navigation (Desktop) */}
           <div className="hidden md:flex bg-light-gray rounded-full p-1">
             <Link href="/">
-              <button className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                location === '/' 
-                  ? 'bg-white shadow-sm text-charcoal' 
-                  : 'text-gray-600 hover:text-charcoal'
-              }`}>
+              <button
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                  location === "/"
+                    ? "bg-white shadow-sm text-charcoal"
+                    : "text-gray-600 hover:text-charcoal"
+                }`}
+              >
                 Home
               </button>
             </Link>
             <Link href="/works">
-              <button className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                location === '/works' 
-                  ? 'bg-white shadow-sm text-charcoal' 
-                  : 'text-gray-600 hover:text-charcoal'
-              }`}>
+              <button
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                  location === "/works"
+                    ? "bg-white shadow-sm text-charcoal"
+                    : "text-gray-600 hover:text-charcoal"
+                }`}
+              >
                 Works
               </button>
             </Link>
@@ -67,11 +73,15 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
+            {isMenuOpen ? (
+              <X className="text-xl" />
+            ) : (
+              <Menu className="text-xl" />
+            )}
           </button>
         </div>
       </div>
