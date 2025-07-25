@@ -27,9 +27,9 @@ export default function HeroSectionsShowcase() {
       {/* Container dengan max width untuk batas */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl">
-          <div className="flex space-x-6 hero-sections-carousel-loop">
-            {/* Triple images untuk seamless infinite scroll tanpa blink */}
-            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+          <div className="flex space-x-6 hero-sections-carousel-seamless">
+            {/* Quintuple images untuk true seamless infinite scroll */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"

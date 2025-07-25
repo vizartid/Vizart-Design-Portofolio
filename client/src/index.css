@@ -175,17 +175,18 @@
     animation: scroll-left-fast 50s linear infinite;
   }
 
-  /* Hero sections carousel dengan seamless infinite scroll tanpa blink */
-  .hero-sections-carousel-loop {
-    animation: seamless-infinite-scroll 18s linear infinite;
+  /* Hero sections carousel dengan true seamless infinite scroll */
+  .hero-sections-carousel-seamless {
+    animation: true-seamless-scroll 25s linear infinite;
+    width: max-content;
   }
 
-  @keyframes seamless-infinite-scroll {
+  @keyframes true-seamless-scroll {
     0% {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-33.333%);
+      transform: translateX(-20%);
     }
   }
 
