@@ -175,17 +175,17 @@
     animation: scroll-left-fast 50s linear infinite;
   }
 
-  /* Hero sections carousel dengan seamless loop ke kiri */
+  /* Hero sections carousel dengan seamless infinite scroll tanpa blink */
   .hero-sections-carousel-loop {
-    animation: seamless-left-loop 12s linear infinite;
+    animation: seamless-infinite-scroll 18s linear infinite;
   }
 
-  @keyframes seamless-left-loop {
+  @keyframes seamless-infinite-scroll {
     0% {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-33.333%);
     }
   }
 

@@ -28,8 +28,8 @@ export default function HeroSectionsShowcase() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl">
           <div className="flex space-x-6 hero-sections-carousel-loop">
-            {/* Double the images untuk smooth looping dari akhir ke awal */}
-            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
+            {/* Triple images untuk seamless infinite scroll tanpa blink */}
+            {[...heroSectionsShowcase.images, ...heroSectionsShowcase.images, ...heroSectionsShowcase.images].map((image, index) => (
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
