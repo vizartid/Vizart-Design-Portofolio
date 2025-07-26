@@ -66,7 +66,7 @@ export function EditableText({
       className={cn(
         "outline-none",
         isEditing && "ring-2 ring-blue-500 ring-opacity-50",
-        !disabled && "cursor-text hover:bg-gray-50 dark:hover:bg-gray-800/50",
+        !disabled && "cursor-text hover:bg-transparent",
         disabled && "cursor-not-allowed opacity-60",
         className
       )}
