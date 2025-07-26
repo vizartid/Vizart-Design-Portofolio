@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
 import ProcessSection from "@/components/process-section";
@@ -14,8 +13,7 @@ import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-bone-white">
-      <Navbar />
+    <div>
       <HeroSection />
       <ServicesSection />
       <WinningEdgeSection />

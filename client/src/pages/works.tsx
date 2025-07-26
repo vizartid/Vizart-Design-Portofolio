@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { WorksVisualEditor } from "@/components/works-visual-editor";
 import { projects } from "@/data/projects";
@@ -63,9 +62,8 @@ export default function Works() {
       : allProjects.filter((project) => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-bone-white">
+    <div>
       <WorksVisualEditor />
-      <Navbar />
       {/* Works Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
