@@ -55,7 +55,7 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument sm:text-4xl lg:desktop-text-5xl mb-4 text-[70px]">
+        <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light">
           <EditableText
             value={heroSectionsShowcase.title}
             onChange={(value) => handleUpdateShowcase("title", value)}

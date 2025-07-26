@@ -89,14 +89,31 @@ export function WorksVisualEditor() {
   };
 
   const saveWorksData = () => {
-    localStorage.setItem('worksPageData', JSON.stringify(worksData));
-    
-    // Emit event untuk notify komponen works
-    window.dispatchEvent(new CustomEvent('worksDataChanged', { 
-      detail: { worksData } 
-    }));
-    
-    alert('Data works berhasil disimpan!');
+    try {
+      // Validasi data sebelum menyimpan
+      if (!worksData || !worksData.title) {
+        alert('Error: Data tidak valid');
+        return;
+      }
+
+      localStorage.setItem('worksPageData', JSON.stringify(worksData));
+      
+      // Emit event untuk notify komponen works
+      const event = new CustomEvent('worksDataChanged', { 
+        detail: { worksData } 
+      });
+      window.dispatchEvent(event);
+      
+      // Paksa refresh halaman untuk memastikan perubahan tersimpan
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+      
+      alert('Data works berhasil disimpan!');
+    } catch (error) {
+      console.error('Error saving works data:', error);
+      alert('Error: Gagal menyimpan data');
+    }
   };
 
   const resetToDefault = () => {
