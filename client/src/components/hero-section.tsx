@@ -13,7 +13,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl mb-6 text-[96px]">
+          <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl mb-6 text-[96px] font-light">
             We Deliver{" "}
             <span className="text-electric-blue">Standout Websites</span>
             <br />
