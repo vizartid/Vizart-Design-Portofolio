@@ -9,6 +9,7 @@ export default function Navbar() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { data: content } = useContent();
 
@@ -16,10 +17,18 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Handle navbar visibility
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
+      }
+
+      // Handle navbar size/styling changes
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
 
       setLastScrollY(currentScrollY);
@@ -31,12 +40,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 bg-bone-white/95 backdrop-blur-sm border-b border-gray-200/50 transition-transform duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
+        isScrolled 
+          ? "bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm" 
+          : "bg-white border-b border-gray-200/30"
+      } ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
+          isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+        }`}>
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             {content?.branding?.logoUrl ? (
@@ -44,16 +59,24 @@ export default function Navbar() {
                 <img
                   src={content.branding.logoUrl}
                   alt="Logo"
-                  className="h-8 lg:h-10 object-contain"
+                  className={`object-contain transition-all duration-500 ease-in-out ${
+                    isScrolled ? "h-6 lg:h-8" : "h-8 lg:h-10"
+                  }`}
                 />
-                <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
+                <span className={`font-poppins font-semibold transition-all duration-500 ease-in-out ${
+                  isScrolled ? "text-lg lg:text-xl" : "text-xl lg:desktop-text-xl"
+                }`}>
                   {content?.branding?.logoText || "Vizart"}
                 </span>
               </>
             ) : (
               <>
-                <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />
-                <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
+                <Leaf className={`text-electric-blue lucide-glow transition-all duration-500 ease-in-out ${
+                  isScrolled ? "text-lg lg:text-xl" : "text-xl lg:text-2xl"
+                }`} />
+                <span className={`font-poppins font-semibold transition-all duration-500 ease-in-out ${
+                  isScrolled ? "text-lg lg:text-xl" : "text-xl lg:desktop-text-xl"
+                }`}>
                   {content?.branding?.logoText || "Vizart"}
                 </span>
               </>
@@ -61,10 +84,16 @@ export default function Navbar() {
           </Link>
 
           {/* Central Navigation (Desktop) */}
-          <div className="hidden md:flex bg-light-gray rounded-md p-1 lg:p-2">
+          <div className={`hidden md:flex bg-light-gray rounded-md transition-all duration-500 ease-in-out ${
+            isScrolled ? "p-1" : "p-1 lg:p-2"
+          }`}>
             <Link href="/">
               <button
-                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
+                className={`rounded-xl font-medium transition-all duration-500 ease-in-out ${
+                  isScrolled 
+                    ? "px-4 py-2 text-base" 
+                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                } ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -75,7 +104,11 @@ export default function Navbar() {
             </Link>
             <Link href="/works">
               <button
-                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
+                className={`rounded-xl font-medium transition-all duration-500 ease-in-out ${
+                  isScrolled 
+                    ? "px-4 py-2 text-base" 
+                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                } ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -86,7 +119,11 @@ export default function Navbar() {
             </Link>
             <Link href="/tools-editor">
               <button
-                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
+                className={`rounded-xl font-medium transition-all duration-500 ease-in-out ${
+                  isScrolled 
+                    ? "px-4 py-2 text-base" 
+                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                } ${
                   location === "/tools-editor"
                     ? "bg-white shadow-sm text-charcoal"
                     : "text-gray-600 hover:text-charcoal"
@@ -99,11 +136,17 @@ export default function Navbar() {
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2">
+            <button className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-500 ease-in-out flex items-center space-x-2 ${
+              isScrolled 
+                ? "px-4 py-2 text-base" 
+                : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+            }`}>
               <img
                 src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
                 alt="Profile"
-                className="w-6 h-6 lg:w-8 lg:h-8 rounded-full object-cover"
+                className={`rounded-full object-cover transition-all duration-500 ease-in-out ${
+                  isScrolled ? "w-5 h-5" : "w-6 h-6 lg:w-8 lg:h-8"
+                }`}
               />
               <span>Book a Call</span>
             </button>
