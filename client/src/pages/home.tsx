@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
+import ProcessSection from "@/components/process-section";
 import WinningEdgeSection from "@/components/winning-edge-section";
 import HeroSectionsShowcase from "@/components/hero-sections-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
@@ -13,6 +14,7 @@ import { motion } from "framer-motion";
 const SECTION_COMPONENTS = {
   HeroSection,
   ServicesSection,
+  ProcessSection,
   WinningEdgeSection,
   HeroSectionsShowcase,
   TestimonialsSection,
@@ -22,6 +24,7 @@ const SECTION_COMPONENTS = {
 const DEFAULT_SECTIONS = [
   { id: "hero", name: "Hero Section", component: "HeroSection" },
   { id: "services", name: "Services", component: "ServicesSection" },
+  { id: "process", name: "Process", component: "ProcessSection" },
   { id: "winning-edge", name: "Winning Edge", component: "WinningEdgeSection" },
   { id: "hero-showcase", name: "Hero Showcase", component: "HeroSectionsShowcase" },
   { id: "testimonials", name: "Testimonials", component: "TestimonialsSection" },

@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for Glow Effects */
+:root {
+  --glow-color-primary: #3b82f6; /* Electric Blue */
+  --glow-color-secondary: #8b5cf6; /* Purple */
+  --glow-intensity: 8px;
+  --glow-spread: 4px;
+}
+
 :root {
   --background: hsl(46, 33%, 95%);
   --foreground: hsl(220, 13%, 18%);
@@ -382,5 +390,48 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* Glow Effects for Icons and Elements */
+  .lucide-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) var(--glow-color-primary));
+    transition: filter 0.3s ease;
+  }
+
+  .lucide-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) var(--glow-color-primary));
+  }
+
+  /* Icon container glow */
+  .icon-glow {
+    box-shadow: 
+      0 0 var(--glow-spread) rgba(59, 130, 246, 0.3),
+      inset 0 0 var(--glow-spread) rgba(59, 130, 246, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .icon-glow:hover {
+    box-shadow: 
+      0 0 calc(var(--glow-spread) * 2) rgba(59, 130, 246, 0.5),
+      inset 0 0 calc(var(--glow-spread) * 1.5) rgba(59, 130, 246, 0.2);
+  }
+
+  /* Blue dots/indicators glow */
+  .blue-dot-glow {
+    box-shadow: 0 0 var(--glow-intensity) var(--glow-color-primary);
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) / 2) var(--glow-color-primary));
+  }
+
+  /* Step number glow for process section */
+  .step-number-glow {
+    box-shadow: 
+      0 0 var(--glow-spread) rgba(59, 130, 246, 0.6),
+      0 0 calc(var(--glow-spread) * 2) rgba(59, 130, 246, 0.3);
+    filter: drop-shadow(0 0 var(--glow-intensity) rgba(59, 130, 246, 0.8));
+  }
+
+  /* Animation for smooth transitions */
+  .section-transition {
+    transition: all 0.5s ease-in-out;
   }
 }

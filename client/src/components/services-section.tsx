@@ -99,9 +99,9 @@ export default function ServicesSection() {
             <div key={service.id} className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="mb-6">
                 {service.icon === "Palette" ? (
-                  <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
+                  <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4 lucide-glow" />
                 ) : (
-                  <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
+                  <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4 lucide-glow" />
                 )}
                 <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">
                   <EditableText
@@ -142,7 +142,7 @@ export default function ServicesSection() {
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
             {servicesData.features.map((feature, index) => (
               <div key={index} className="flex items-center space-x-2">
-                <Circle className="w-2 h-2 text-electric-blue fill-current" />
+                <Circle className="w-2 h-2 text-electric-blue fill-current blue-dot-glow" />
                 <span className="custom-accepting">
                   <EditableText
                     value={feature.text}

@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Leaf className="text-electric-blue text-xl lg:text-2xl" />
+            <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />
             <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
               Vizart
             </span>
@@ -87,9 +87,9 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="text-xl" />
+              <X className="text-xl lucide-glow" />
             ) : (
-              <Menu className="text-xl" />
+              <Menu className="text-xl lucide-glow" />
             )}
           </button>
         </div>

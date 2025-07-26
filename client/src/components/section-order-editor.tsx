@@ -16,6 +16,7 @@ interface SectionItem {
 const DEFAULT_SECTIONS: SectionItem[] = [
   { id: "hero", name: "Hero Section", component: "HeroSection" },
   { id: "services", name: "Services", component: "ServicesSection" },
+  { id: "process", name: "Process", component: "ProcessSection" },
   { id: "winning-edge", name: "Winning Edge", component: "WinningEdgeSection" },
   { id: "hero-showcase", name: "Hero Showcase", component: "HeroSectionsShowcase" },
   { id: "testimonials", name: "Testimonials", component: "TestimonialsSection" },
