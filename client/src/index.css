@@ -304,6 +304,15 @@
     width: max-content;
   }
 
+  /* Safe hero sections carousel with proper frame handling */
+  .hero-sections-carousel-safe {
+    animation: safe-seamless-scroll 40s linear infinite;
+    width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
   @keyframes true-seamless-scroll {
     0% {
       transform: translateX(0%);
@@ -321,6 +330,16 @@
 
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes safe-seamless-scroll {
+    0% {
+      transform: translate3d(0%, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-20%, 0, 0);
     }
   }
 

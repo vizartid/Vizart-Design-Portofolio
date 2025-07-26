@@ -55,7 +55,7 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:desktop-text-5xl mb-4 text-charcoal">
+        <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">
           <EditableText
             value={heroSectionsShowcase.title}
             onChange={(value) => handleUpdateShowcase("title", value)}
@@ -74,7 +74,7 @@ export default function HeroSectionsShowcase() {
       {/* Full width showcase animation - sampai ujung desktop tanpa padding */}
       <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <div className="relative overflow-hidden">
-          <div className="flex space-x-6 hero-sections-carousel-seamless">
+          <div className="flex space-x-6 hero-sections-carousel-safe">
             {/* Quintuple images untuk true seamless infinite scroll */}
             {[
               ...heroSectionsShowcase.images,

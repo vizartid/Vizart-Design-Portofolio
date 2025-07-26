@@ -13,8 +13,8 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">
-            Specialized in Crafting Brand<br />
-            Defining Hero Sections
+            Specialized in Crafting<br />
+            Brand Defining Hero Sections
           </h2>
         </motion.div>
 
