@@ -45,7 +45,7 @@ function Router() {
       </AnimatePresence>
       
       {/* Bottom blur effect */}
-      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bone-white via-bone-white/60 to-transparent backdrop-blur-sm pointer-events-none z-10"></div>
+      <div className="fixed bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-bone-white/80 via-bone-white/30 to-transparent backdrop-blur-xs pointer-events-none z-10"></div>
     </div>
   );
 }
