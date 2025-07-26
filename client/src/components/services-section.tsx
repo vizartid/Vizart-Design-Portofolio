@@ -104,14 +104,16 @@ export default function ServicesSection() {
           {servicesData.services.map((service, index) => (
             <div
               key={service.id}
-              className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
             >
               <div className="mb-6">
-                {service.icon === "Palette" ? (
-                  <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4 lucide-glow" />
-                ) : (
-                  <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4 lucide-glow" />
-                )}
+                <div className="flex justify-center mb-4">
+                  {service.icon === "Palette" ? (
+                    <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
+                  ) : (
+                    <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
+                  )}
+                </div>
                 <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">
                   <EditableText
                     value={service.title}

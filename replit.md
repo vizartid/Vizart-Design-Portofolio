@@ -28,6 +28,8 @@ Preferred communication style: Simple, everyday language.
 - ✓ Icons larger (w-12 h-12) with color-specific drop-shadow glow effects
 - ✓ Step numbers repositioned to small, subtle badges in top-right corner
 - ✓ Cards now compact and aligned properly without excessive spacing
+- ✓ Centered layout for Services section - icons and text aligned to center
+- ✓ Icons moved to center with proper flex justify-center wrapper
 
 **Previous - July 26, 2025**: Logo Fix and Process Section Layout Update
 - ✓ Fixed missing "Vizart" logo text in navbar and footer
