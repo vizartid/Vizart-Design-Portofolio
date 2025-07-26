@@ -175,7 +175,7 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
+          <button className="text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto bg-[#000000]">
             <img
               src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
