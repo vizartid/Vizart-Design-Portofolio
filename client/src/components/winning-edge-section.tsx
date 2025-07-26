@@ -57,7 +57,7 @@ export default function WinningEdgeSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument custom-about-title mb-4 text-[60px] font-medium">Our Winning Edge</h2>
+          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">Our Winning Edge</h2>
           <p className="text-gray-600 custom-about-text max-w-2xl mx-auto text-[18px]">
             Discover our unique strengths and distinctive value we offer
           </p>
