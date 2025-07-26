@@ -65,7 +65,7 @@ export default function FAQSection() {
             />
           </motion.h2>
           <motion.p
-            className="custom-about-text text-charcoal/70 max-w-2xl mx-auto"
+            className="custom-about-text text-charcoal/70 max-w-2xl mx-auto text-[18px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}

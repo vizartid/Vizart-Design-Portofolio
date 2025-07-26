@@ -196,7 +196,7 @@ export default function ProcessSection() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="font-instrument font-semibold mb-3 text-charcoal text-[24px]">
+                    <h3 className="font-instrument font-semibold mb-3 text-charcoal text-[30px]">
                       <EditableText
                         value={step.title}
                         onChange={(value) =>
