@@ -25,7 +25,7 @@ function Router() {
   const [location] = useLocation();
   
   return (
-    <div className="min-h-screen bg-bone-white">
+    <div className="min-h-screen bg-bone-white relative">
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -43,6 +43,9 @@ function Router() {
           </Switch>
         </motion.div>
       </AnimatePresence>
+      
+      {/* Bottom blur effect */}
+      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bone-white via-bone-white/60 to-transparent backdrop-blur-sm pointer-events-none z-10"></div>
     </div>
   );
 }
