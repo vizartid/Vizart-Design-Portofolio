@@ -12,9 +12,9 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              {(content?.branding as any)?.footerLogoUrl ? (
+              {content?.branding?.footerLogoUrl ? (
                 <img
-                  src={(content.branding as any).footerLogoUrl}
+                  src={content.branding.footerLogoUrl}
                   alt="Footer Logo"
                   className="h-6 object-contain"
                 />
@@ -22,7 +22,7 @@ export default function Footer() {
                 <>
                   <Leaf className="text-electric-blue text-xl" />
                   <span className="font-poppins font-semibold text-xl">
-                    {(content?.branding as any)?.footerLogoText || "Lander"}
+                    {content?.branding?.footerLogoText || "Vizart"}
                   </span>
                 </>
               )}

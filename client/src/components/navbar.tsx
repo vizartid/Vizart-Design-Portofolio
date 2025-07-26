@@ -39,9 +39,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            {(content?.branding as any)?.logoUrl ? (
+            {content?.branding?.logoUrl ? (
               <img
-                src={(content.branding as any).logoUrl}
+                src={content.branding.logoUrl}
                 alt="Logo"
                 className="h-8 lg:h-10 object-contain"
               />
@@ -49,7 +49,7 @@ export default function Navbar() {
               <>
                 <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />
                 <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
-                  {(content?.branding as any)?.logoText || "Vizart"}
+                  {content?.branding?.logoText || "Vizart"}
                 </span>
               </>
             )}

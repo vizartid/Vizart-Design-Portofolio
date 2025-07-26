@@ -2,6 +2,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 
 export interface ContentData {
+  branding: {
+    logoUrl?: string;
+    logoText?: string;
+    footerLogoUrl?: string;
+    footerLogoText?: string;
+  };
   hero: {
     title: string;
     titleHighlight: string;
