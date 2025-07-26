@@ -39,7 +39,7 @@ export default function Home() {
             Let's work together to create something amazing that drives real
             results for your business.
           </p>
-          <button className="bg-electric-blue text-white px-8 py-4 lg:desktop-p-16 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-electric-blue/90 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-3 mx-auto">
+          <button className="bg-black text-white px-8 py-4 lg:desktop-p-16 rounded-xl font-medium text-lg lg:desktop-text-xl hover:bg-gray-900 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-3 mx-auto">
             <img
               src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"

@@ -87,7 +87,7 @@ export default function WinningEdgeSection() {
                     className={`${feature.color} w-8 h-8 lucide-glow`}
                   />
                 </div>
-                <h3 className="font-instrument font-semibold custom-project-title mb-3 text-[24px]">
+                <h3 className="font-instrument custom-project-title mb-3 text-[30px] font-semibold">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 custom-project-desc leading-relaxed">
