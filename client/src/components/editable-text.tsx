@@ -63,7 +63,13 @@ export function EditableText({
   return (
     <Tag
       ref={ref}
-      className="outline-none cursor-text hover:bg-transparent inline text-[20px]"
+      className={cn(
+        "outline-none",
+        isEditing && "ring-2 ring-blue-500 ring-opacity-50",
+        !disabled && "cursor-text hover:bg-transparent",
+        disabled && "cursor-not-allowed opacity-60",
+        className
+      )}
       contentEditable={!disabled}
       suppressContentEditableWarning
       onClick={handleClick}
