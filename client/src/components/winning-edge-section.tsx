@@ -77,7 +77,7 @@ export default function WinningEdgeSection() {
                 <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
                   <feature.icon className={`${feature.color} w-8 h-8 lucide-glow`} />
                 </div>
-                <h3 className="font-poppins font-semibold custom-project-title mb-3">{feature.title}</h3>
+                <h3 className="font-poppins font-semibold custom-project-title mb-3 text-[24px]">{feature.title}</h3>
                 <p className="text-gray-600 custom-project-desc leading-relaxed">
                   {feature.description}
                 </p>
