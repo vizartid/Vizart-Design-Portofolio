@@ -7,37 +7,23 @@ import HeroSectionsShowcase from "@/components/hero-sections-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
-import { SECTION_ORDER_CONFIG } from "@/App";
 
 import { motion } from "framer-motion";
 
 import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
-const SECTION_COMPONENTS = {
-  HeroSection,
-  ServicesSection,
-  ProcessSection,
-  WinningEdgeSection,
-  HeroSectionsShowcase,
-  TestimonialsSection,
-  FAQSection,
-};
-
 export default function Home() {
-  // Menggunakan konfigurasi section order dari App.tsx
-  const sectionOrder = SECTION_ORDER_CONFIG;
 
   return (
     <div className="min-h-screen bg-bone-white">
       <Navbar />
-      {/* Render sections sesuai urutan dari App.tsx */}
-      {sectionOrder.map((section) => {
-        const SectionComponent =
-          SECTION_COMPONENTS[
-            section.component as keyof typeof SECTION_COMPONENTS
-          ];
-        return SectionComponent ? <SectionComponent key={section.id} /> : null;
-      })}
+      <HeroSection />
+      <ServicesSection />
+      <ProcessSection />
+      <WinningEdgeSection />
+      <HeroSectionsShowcase />
+      <TestimonialsSection />
+      <FAQSection />
       {/* Final CTA Section */}
       <motion.section
         className="py-16 px-4 sm:px-6 lg:px-8"

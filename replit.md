@@ -10,7 +10,7 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**July 26, 2025**: Navbar Cleanup and Section Order Management
+**July 26, 2025**: Navbar Cleanup and Section Management
 - ✓ Removed "Tools Editor" navigation link from navbar and mobile menu
 - ✓ Removed Section Order Editor component from homepage
 - ✓ Removed tools-editor route from application routing
@@ -19,9 +19,8 @@ Preferred communication style: Simple, everyday language.
 - ✓ Added 500ms smooth transitions for navbar height, logo size, and button sizing
 - ✓ Logo and text scale down appropriately when scrolling (maintains "Vizart" visibility)
 - ✓ All navbar elements (navigation buttons, CTA button) adapt to scrolled state
-- ✓ Moved section order configuration to App.tsx for easy manual editing
-- ✓ Added clear instructions and documentation for changing section order
-- ✓ Section order now controlled via simple array modification in App.tsx
+- ✓ Reverted section order configuration back to static layout in home.tsx
+- ✓ Section order now fixed: Hero → Services → Process → Winning Edge → Hero Showcase → Testimonials → FAQ
 
 **Previous - July 26, 2025**: Logo Fix and Process Section Layout Update
 - ✓ Fixed missing "Vizart" logo text in navbar and footer
