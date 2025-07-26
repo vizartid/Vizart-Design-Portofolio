@@ -116,7 +116,7 @@ export default function ServicesSection() {
                     <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
                   )}
                 </div>
-                <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">
+                <h3 className="font-poppins font-semibold lg:desktop-text-2xl mb-3 text-[30px]">
                   <EditableText
                     value={service.title}
                     onChange={(value) =>
@@ -125,7 +125,7 @@ export default function ServicesSection() {
                     tag="span"
                   />
                 </h3>
-                <p className="text-gray-600 lg:desktop-text-lg leading-relaxed">
+                <p className="text-gray-600 lg:desktop-text-lg text-[18px]">
                   <EditableText
                     value={service.description}
                     onChange={(value) =>
