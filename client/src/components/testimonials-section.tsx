@@ -1,8 +1,48 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
+import { useLocalStorage } from "@/hooks/use-local-storage";
+import { EditableText } from "./editable-text";
+
+interface TestimonialData {
+  title: string;
+  subtitle: string;
+  testimonials: Array<{
+    id: number;
+    name: string;
+    company: string;
+    role: string;
+    content: string;
+    avatarUrl: string;
+    rating: number;
+  }>;
+}
+
+const DEFAULT_TESTIMONIALS_DATA: TestimonialData = {
+  title: "What Our Clients Say",
+  subtitle: "Real feedback from real people we've worked with",
+  testimonials: testimonials
+};
 
 export default function TestimonialsSection() {
+  const [testimonialsData, setTestimonialsData] = useLocalStorage<TestimonialData>('testimonialsData', DEFAULT_TESTIMONIALS_DATA);
+
+  const handleUpdateField = (field: keyof TestimonialData, value: any) => {
+    setTestimonialsData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleUpdateTestimonial = (id: number, field: string, value: any) => {
+    setTestimonialsData(prev => ({
+      ...prev,
+      testimonials: prev.testimonials.map(testimonial =>
+        testimonial.id === id ? { ...testimonial, [field]: value } : testimonial
+      )
+    }));
+  };
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -13,12 +53,24 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument sm:text-4xl lg:text-5xl mb-4 text-[70px]">What Our Clients Say</h2>
-          <p className="text-gray-600 text-lg">Real feedback from real people we've worked with</p>
+          <h2 className="font-instrument sm:text-4xl lg:text-5xl mb-4 text-[70px]">
+            <EditableText
+              value={testimonialsData.title}
+              onChange={(value) => handleUpdateField('title', value)}
+              tag="span"
+            />
+          </h2>
+          <p className="text-gray-600 text-lg">
+            <EditableText
+              value={testimonialsData.subtitle}
+              onChange={(value) => handleUpdateField('subtitle', value)}
+              tag="span"
+            />
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonialsData.testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
               className="bg-white rounded-2xl p-6 shadow-lg"
@@ -33,7 +85,12 @@ export default function TestimonialsSection() {
                 ))}
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "{testimonial.content}"
+                "<EditableText
+                  value={testimonial.content}
+                  onChange={(value) => handleUpdateTestimonial(testimonial.id, 'content', value)}
+                  tag="span"
+                  multiline={true}
+                />"
               </p>
               <div className="flex items-center">
                 <img 
@@ -42,8 +99,24 @@ export default function TestimonialsSection() {
                   className="w-12 h-12 rounded-full object-cover mr-3" 
                 />
                 <div>
-                  <p className="font-medium">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</p>
+                  <p className="font-medium">
+                    <EditableText
+                      value={testimonial.name}
+                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'name', value)}
+                      tag="span"
+                    />
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    <EditableText
+                      value={testimonial.role}
+                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'role', value)}
+                      tag="span"
+                    />, <EditableText
+                      value={testimonial.company}
+                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'company', value)}
+                      tag="span"
+                    />
+                  </p>
                 </div>
               </div>
             </motion.div>
