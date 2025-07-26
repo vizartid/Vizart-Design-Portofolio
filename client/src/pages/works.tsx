@@ -1,25 +1,70 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { WorksVisualEditor } from "@/components/works-visual-editor";
 import { projects } from "@/data/projects";
 
 const categories = [
   { id: "all", label: "All Works" },
-  { id: "websites", label: "Websites" },
-  { id: "branding", label: "Logo & Branding" },
+  { id: "website", label: "Websites" },
+  { id: "branding", label: "Branding" },
+  { id: "app", label: "Mobile App" },
+  { id: "ecommerce", label: "E-commerce" },
 ];
+
+interface WorksPageData {
+  title: string;
+  subtitle: string;
+  ctaTitle: string;
+  ctaDescription: string;
+  ctaButtonText: string;
+  projects: any[];
+}
+
+const DEFAULT_WORKS_DATA: WorksPageData = {
+  title: "Showcase of Our Best Works",
+  subtitle: "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
+  ctaTitle: "Let's Create Something Amazing Together",
+  ctaDescription: "Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.",
+  ctaButtonText: "Start Your Project",
+  projects: []
+};
 
 export default function Works() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [worksData, setWorksData] = useState<WorksPageData>(DEFAULT_WORKS_DATA);
 
+  useEffect(() => {
+    // Load works data dari localStorage
+    const savedData = localStorage.getItem('worksPageData');
+    if (savedData) {
+      setWorksData(JSON.parse(savedData));
+    }
+
+    // Listen untuk perubahan works data
+    const handleWorksDataChange = (event: CustomEvent) => {
+      setWorksData(event.detail.worksData);
+    };
+
+    window.addEventListener('worksDataChanged', handleWorksDataChange as EventListener);
+    
+    return () => {
+      window.removeEventListener('worksDataChanged', handleWorksDataChange as EventListener);
+    };
+  }, []);
+
+  // Use custom projects if available, otherwise fallback to default
+  const allProjects = worksData.projects.length > 0 ? worksData.projects : projects;
+  
   const filteredProjects =
     activeCategory === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      ? allProjects
+      : allProjects.filter((project) => project.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-bone-white">
+      <WorksVisualEditor />
       <Navbar />
       {/* Works Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -31,13 +76,14 @@ export default function Works() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl mb-6 font-light text-[80px]">
-              Showcase of Our
-              <br />
-              <span className="text-electric-blue">Best Works</span>
+              {worksData.title.split(' ').map((word, index) => (
+                <span key={index}>
+                  {word === 'Best' ? <span className="text-electric-blue">{word}</span> : word}{' '}
+                </span>
+              ))}
             </h1>
             <p className="text-lg lg:desktop-text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our carefully curated portfolio of successful projects
-              that demonstrate our expertise and creativity.
+              {worksData.subtitle}
             </p>
           </motion.div>
 
@@ -109,7 +155,10 @@ export default function Works() {
                         {project.longDescription}
                       </p>
                     )}
-                    <button className="bg-charcoal text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <button 
+                      onClick={() => window.open(project.projectUrl || '#', '_blank')}
+                      className="bg-charcoal text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200"
+                    >
                       {project.category === "branding"
                         ? "View Brand Guide"
                         : "Open Website"}
@@ -131,11 +180,10 @@ export default function Works() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-6">
-            Let's Create Something Amazing Together
+            {worksData.ctaTitle}
           </h2>
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-            Ready to join our portfolio of successful projects? Let's discuss
-            how we can bring your vision to life.
+            {worksData.ctaDescription}
           </p>
           <button className="bg-charcoal text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
             <img
@@ -143,7 +191,7 @@ export default function Works() {
               alt="Profile"
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span>Start Your Project</span>
+            <span>{worksData.ctaButtonText}</span>
           </button>
         </div>
       </motion.section>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
@@ -6,18 +7,59 @@ import HeroSectionsShowcase from "@/components/hero-sections-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
+import { SectionOrderEditor } from "@/components/section-order-editor";
 import { motion } from "framer-motion";
 
+const SECTION_COMPONENTS = {
+  HeroSection,
+  ServicesSection,
+  WinningEdgeSection,
+  HeroSectionsShowcase,
+  TestimonialsSection,
+  FAQSection
+};
+
+const DEFAULT_SECTIONS = [
+  { id: "hero", name: "Hero Section", component: "HeroSection" },
+  { id: "services", name: "Services", component: "ServicesSection" },
+  { id: "winning-edge", name: "Winning Edge", component: "WinningEdgeSection" },
+  { id: "hero-showcase", name: "Hero Showcase", component: "HeroSectionsShowcase" },
+  { id: "testimonials", name: "Testimonials", component: "TestimonialsSection" },
+  { id: "faq", name: "FAQ", component: "FAQSection" }
+];
+
 export default function Home() {
+  const [sectionOrder, setSectionOrder] = useState(DEFAULT_SECTIONS);
+
+  useEffect(() => {
+    // Load section order dari localStorage
+    const savedOrder = localStorage.getItem('sectionOrder');
+    if (savedOrder) {
+      setSectionOrder(JSON.parse(savedOrder));
+    }
+
+    // Listen untuk perubahan section order
+    const handleSectionOrderChange = (event: CustomEvent) => {
+      setSectionOrder(event.detail.sections);
+    };
+
+    window.addEventListener('sectionOrderChanged', handleSectionOrderChange as EventListener);
+    
+    return () => {
+      window.removeEventListener('sectionOrderChanged', handleSectionOrderChange as EventListener);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-bone-white">
+      <SectionOrderEditor />
       <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <WinningEdgeSection />
-      <HeroSectionsShowcase />
-      <TestimonialsSection />
-      <FAQSection />
+      
+      {/* Render sections sesuai urutan */}
+      {sectionOrder.map((section) => {
+        const SectionComponent = SECTION_COMPONENTS[section.component as keyof typeof SECTION_COMPONENTS];
+        return SectionComponent ? <SectionComponent key={section.id} /> : null;
+      })}
       
       {/* Final CTA Section */}
       <motion.section 
