@@ -23,11 +23,13 @@ interface WorksPageData {
 
 const DEFAULT_WORKS_DATA: WorksPageData = {
   title: "Showcase of Our Best Works",
-  subtitle: "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
+  subtitle:
+    "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
   ctaTitle: "Let's Create Something Amazing Together",
-  ctaDescription: "Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.",
+  ctaDescription:
+    "Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.",
   ctaButtonText: "Start Your Project",
-  projects: []
+  projects: [],
 };
 
 export default function Works() {
@@ -36,7 +38,7 @@ export default function Works() {
 
   useEffect(() => {
     // Load works data dari localStorage
-    const savedData = localStorage.getItem('worksPageData');
+    const savedData = localStorage.getItem("worksPageData");
     if (savedData) {
       setWorksData(JSON.parse(savedData));
     }
@@ -46,16 +48,23 @@ export default function Works() {
       setWorksData(event.detail.worksData);
     };
 
-    window.addEventListener('worksDataChanged', handleWorksDataChange as EventListener);
-    
+    window.addEventListener(
+      "worksDataChanged",
+      handleWorksDataChange as EventListener,
+    );
+
     return () => {
-      window.removeEventListener('worksDataChanged', handleWorksDataChange as EventListener);
+      window.removeEventListener(
+        "worksDataChanged",
+        handleWorksDataChange as EventListener,
+      );
     };
   }, []);
 
   // Use custom projects if available, otherwise fallback to default
-  const allProjects = worksData.projects.length > 0 ? worksData.projects : projects;
-  
+  const allProjects =
+    worksData.projects.length > 0 ? worksData.projects : projects;
+
   const filteredProjects =
     activeCategory === "all"
       ? allProjects
@@ -73,16 +82,18 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl mb-6 font-light text-[80px]">
-              {worksData.title.split(' ').map((word, index) => (
+            <h1 className="font-instrument custom-about-title mb-4 font-medium text-[80px]">
+              {worksData.title.split(" ").map((word, index) => (
                 <span key={index}>
-                  {word === 'Best' ? <span className="text-electric-blue">{word}</span> : word}{' '}
+                  {word === "Best" ? (
+                    <span className="text-electric-blue">{word}</span>
+                  ) : (
+                    word
+                  )}{" "}
                 </span>
               ))}
             </h1>
-            <p className="text-lg lg:desktop-text-xl text-gray-600 max-w-2xl mx-auto">
-              {worksData.subtitle}
-            </p>
+            
           </motion.div>
 
           {/* Category Filters */}
@@ -153,8 +164,10 @@ export default function Works() {
                         {project.longDescription}
                       </p>
                     )}
-                    <button 
-                      onClick={() => window.open(project.projectUrl || '#', '_blank')}
+                    <button
+                      onClick={() =>
+                        window.open(project.projectUrl || "#", "_blank")
+                      }
                       className="bg-charcoal text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200"
                     >
                       {project.category === "branding"
