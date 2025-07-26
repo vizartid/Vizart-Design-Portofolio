@@ -489,6 +489,55 @@
     filter: drop-shadow(0 0 var(--glow-intensity) rgba(59, 130, 246, 0.8));
   }
 
+  /* Color-specific glow effects for process cards */
+  .blue-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #3b82f6);
+    transition: filter 0.3s ease;
+  }
+  .blue-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #3b82f6);
+  }
+
+  .purple-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #8b5cf6);
+    transition: filter 0.3s ease;
+  }
+  .purple-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #8b5cf6);
+  }
+
+  .green-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #22c55e);
+    transition: filter 0.3s ease;
+  }
+  .green-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #22c55e);
+  }
+
+  .orange-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #f97316);
+    transition: filter 0.3s ease;
+  }
+  .orange-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #f97316);
+  }
+
+  .red-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #ef4444);
+    transition: filter 0.3s ease;
+  }
+  .red-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #ef4444);
+  }
+
+  .indigo-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #6366f1);
+    transition: filter 0.3s ease;
+  }
+  .indigo-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
+  }
+
   /* Animation for smooth transitions */
   .section-transition {
     transition: all 0.5s ease-in-out;

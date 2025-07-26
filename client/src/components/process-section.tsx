@@ -116,15 +116,27 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Process Steps - Flexbox Layout (2 cards per row) */}
-        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
+        {/* Process Steps - One Card Per Row Layout */}
+        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
           {processData.steps.map((step, index) => {
             const IconComponent = iconMap[step.icon as keyof typeof iconMap];
+            
+            // Define different colors for each card
+            const cardColors = [
+              { bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-600', number: 'bg-blue-600', glow: 'blue-glow' },
+              { bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-600', number: 'bg-purple-600', glow: 'purple-glow' },
+              { bg: 'bg-green-50', border: 'border-green-200', icon: 'text-green-600', number: 'bg-green-600', glow: 'green-glow' },
+              { bg: 'bg-orange-50', border: 'border-orange-200', icon: 'text-orange-600', number: 'bg-orange-600', glow: 'orange-glow' },
+              { bg: 'bg-red-50', border: 'border-red-200', icon: 'text-red-600', number: 'bg-red-600', glow: 'red-glow' },
+              { bg: 'bg-indigo-50', border: 'border-indigo-200', icon: 'text-indigo-600', number: 'bg-indigo-600', glow: 'indigo-glow' }
+            ];
+            
+            const colorTheme = cardColors[index % cardColors.length];
             
             return (
               <motion.div
                 key={step.id}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full sm:w-[calc(50%-12px)] relative"
+                className={`${colorTheme.bg} rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border ${colorTheme.border} w-full relative`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -132,13 +144,11 @@ export default function ProcessSection() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-start space-x-4">
-                  {/* Icon with Glow Effect */}
+                  {/* Icon without Background - Direct Glow Effect */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-electric-blue/10 rounded-xl flex items-center justify-center icon-glow">
-                      {IconComponent && (
-                        <IconComponent className="w-6 h-6 text-electric-blue lucide-glow" />
-                      )}
-                    </div>
+                    {IconComponent && (
+                      <IconComponent className={`w-8 h-8 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`} />
+                    )}
                   </div>
                   
                   {/* Content */}
@@ -161,8 +171,8 @@ export default function ProcessSection() {
                   </div>
                 </div>
 
-                {/* Step Number */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold text-sm step-number-glow relative">
+                {/* Step Number with Matching Color */}
+                <div className={`absolute -top-3 -left-3 w-8 h-8 ${colorTheme.number} rounded-full flex items-center justify-center text-white font-bold text-sm ${colorTheme.glow} relative`}>
                   {index + 1}
                 </div>
               </motion.div>

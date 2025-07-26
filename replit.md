@@ -10,7 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**July 26, 2025**: Logo Customization System and Tools Editor Enhancement
+**July 26, 2025**: Process Section Layout Update - Single Card Per Row
+- ✓ Modified Process section to display one card per row using Flexbox column layout
+- ✓ Removed icon background containers for cleaner appearance
+- ✓ Implemented different colored cards for each process step (blue, purple, green, orange, red, indigo)
+- ✓ Added matching glow effects for each card color theme
+- ✓ Icons now display directly with color-matched glow effects without background boxes
+- ✓ Step numbers maintain color coordination with their respective cards
+- ✓ Enhanced visual hierarchy with distinct color themes for better user experience
+
+**Previous - July 26, 2025**: Logo Customization System and Tools Editor Enhancement
 - ✓ Created comprehensive logo customization system for navbar and footer
 - ✓ Added new "branding" section to content structure with logoUrl, logoText, footerLogoUrl, footerLogoText
 - ✓ Enhanced Tools Visual Editor to include logo management interface ("Edit Logos" button)
