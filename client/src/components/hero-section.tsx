@@ -1,8 +1,40 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import ProjectCarousel from "./project-carousel";
+import { EditableText } from "./editable-text";
+import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
 export default function HeroSection() {
+  const { data: content, isLoading } = useContent();
+  const updateSection = useUpdateContentSection();
+
+  const handleUpdateHero = (field: string, value: any) => {
+    if (!content) return;
+    
+    const updatedHero = {
+      ...content.hero,
+      [field]: value,
+    };
+    
+    updateSection.mutate({
+      section: "hero",
+      data: updatedHero,
+    });
+  };
+
+  if (isLoading || !content) {
+    return (
+      <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="animate-pulse">
+            <div className="h-24 bg-gray-200 rounded mb-6"></div>
+            <div className="h-8 bg-gray-200 rounded mb-8 max-w-2xl mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
       <div className="max-w-7xl mx-auto">
@@ -14,13 +46,30 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl mb-6 text-[96px] font-light">
-            We Deliver{" "}
-            <span className="text-electric-blue">Standout Websites</span>
+            <EditableText
+              value={content.hero.title}
+              onChange={(value) => handleUpdateHero("title", value)}
+              className="inline"
+            />{" "}
+            <span className="text-electric-blue">
+              <EditableText
+                value={content.hero.titleHighlight}
+                onChange={(value) => handleUpdateHero("titleHighlight", value)}
+                className="inline"
+              />
+            </span>
             <br />
-            with Effortless Collaboration
+            <EditableText
+              value={content.hero.subtitle}
+              onChange={(value) => handleUpdateHero("subtitle", value)}
+              className="inline"
+            />
           </h1>
           <p className="text-lg sm:text-xl lg:desktop-text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            70+ Amazing Websites Created So Far
+            <EditableText
+              value={content.hero.stats}
+              onChange={(value) => handleUpdateHero("stats", value)}
+            />
           </p>
 
           <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
@@ -29,12 +78,24 @@ export default function HeroSection() {
               alt="Profile"
               className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
             />
-            <span>Book a Call</span>
+            <span>
+              <EditableText
+                value={content.hero.ctaText}
+                onChange={(value) => handleUpdateHero("ctaText", value)}
+                className="inline"
+              />
+            </span>
           </button>
 
           <div className="flex items-center justify-center space-x-2 text-sm lg:desktop-text-base text-gray-600">
             <Check className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" />
-            <span>Accepting new projects</span>
+            <span>
+              <EditableText
+                value={content.hero.acceptingText}
+                onChange={(value) => handleUpdateHero("acceptingText", value)}
+                className="inline"
+              />
+            </span>
           </div>
         </motion.div>
 
@@ -58,33 +119,32 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-gray-600 mb-6">
-            We use industry standard tools like
+            <EditableText
+              value={content.hero.toolsText}
+              onChange={(value) => handleUpdateHero("toolsText", value)}
+            />
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">F</span>
+            {content.hero.tools.map((tool, index) => (
+              <div key={index} className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+                <div className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center`}>
+                  <span className="text-white font-bold text-sm">
+                    {tool.name.charAt(0)}
+                  </span>
+                </div>
+                <span className="font-medium">
+                  <EditableText
+                    value={tool.name}
+                    onChange={(value) => {
+                      const updatedTools = [...content.hero.tools];
+                      updatedTools[index] = { ...tool, name: value };
+                      handleUpdateHero("tools", updatedTools);
+                    }}
+                    className="inline"
+                  />
+                </span>
               </div>
-              <span className="font-medium">Figma</span>
-            </div>
-            <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">&lt;/&gt;</span>
-              </div>
-              <span className="font-medium">Framer</span>
-            </div>
-            <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-indigo-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">W</span>
-              </div>
-              <span className="font-medium">Webflow</span>
-            </div>
-            <div className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-              <div className="w-8 h-8 bg-cyan-500 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
-              <span className="font-medium">NextJS</span>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>
