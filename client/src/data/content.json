@@ -10,19 +10,18 @@
     "tools": [
       {
         "name": "Figma",
-        "color": "purple-500"
+        "color": "purple-500",
+        "icon": "Figma"
       },
       {
         "name": "Framer",
-        "color": "blue-500"
+        "color": "blue-500",
+        "icon": "Frame"
       },
       {
         "name": "Webflow",
-        "color": "indigo-500"
-      },
-      {
-        "name": "NextJS",
-        "color": "cyan-500"
+        "color": "indigo-500",
+        "icon": "Layers"
       }
     ]
   },

@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Figma, Frame, Layers } from "lucide-react";
 import ProjectCarousel from "./project-carousel";
 import { EditableText } from "./editable-text";
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
 import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+
+const iconMap = {
+  Figma,
+  Frame,
+  Layers
+};
 
 export default function HeroSection() {
   const { data: content, isLoading } = useContent();
@@ -127,26 +133,29 @@ export default function HeroSection() {
             />
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {content.hero.tools.map((tool, index) => (
-              <div key={index} className="flex items-center space-x-2 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
-                <div className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center`}>
-                  <span className="text-white font-bold text-sm">
-                    {tool.name.charAt(0)}
+            {content.hero.tools.map((tool, index) => {
+              const IconComponent = iconMap[(tool as any).icon as keyof typeof iconMap];
+              return (
+                <div key={index} className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105">
+                  <div className="flex items-center justify-center">
+                    {IconComponent && (
+                      <IconComponent className={`w-8 h-8 text-${tool.color} lucide-glow`} />
+                    )}
+                  </div>
+                  <span className="font-medium text-gray-700">
+                    <EditableText
+                      value={tool.name}
+                      onChange={(value) => {
+                        const updatedTools = [...content.hero.tools];
+                        updatedTools[index] = { ...tool, name: value };
+                        handleUpdateHero("tools", updatedTools);
+                      }}
+                      className="inline"
+                    />
                   </span>
                 </div>
-                <span className="font-medium">
-                  <EditableText
-                    value={tool.name}
-                    onChange={(value) => {
-                      const updatedTools = [...content.hero.tools];
-                      updatedTools[index] = { ...tool, name: value };
-                      handleUpdateHero("tools", updatedTools);
-                    }}
-                    className="inline"
-                  />
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>

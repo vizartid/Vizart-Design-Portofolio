@@ -447,6 +447,20 @@
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #eab308);
   }
 
+  .text-purple-500.lucide-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #a855f7);
+  }
+  .text-purple-500.lucide-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #a855f7);
+  }
+
+  .text-indigo-500.lucide-glow {
+    filter: drop-shadow(0 0 var(--glow-intensity) #6366f1);
+  }
+  .text-indigo-500.lucide-glow:hover {
+    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
+  }
+
   /* Icon container glow */
   .icon-glow {
     box-shadow:
