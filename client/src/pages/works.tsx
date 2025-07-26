@@ -96,7 +96,7 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-light-gray rounded-md p-1 inline-flex">
+            <div className="bg-gray-300 rounded-md p-1 inline-flex">
               {categories.map((category) => (
                 <button
                   key={category.id}
@@ -104,7 +104,7 @@ export default function Works() {
                   className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
                     activeCategory === category.id
                       ? "bg-white shadow-sm text-charcoal"
-                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
+                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   {category.label}

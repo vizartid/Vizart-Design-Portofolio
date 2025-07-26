@@ -130,7 +130,7 @@ export default function Navbar() {
 
             {/* Central Navigation (Desktop) */}
             <div
-              className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
+              className={`hidden md:flex bg-gray-300 rounded-xl transition-all duration-700 ease-out ${
                 isScrolled ? "p-1" : "p-1 lg:p-2"
               }`}
             >
@@ -143,7 +143,7 @@ export default function Navbar() {
                   } ${
                     location === "/"
                       ? "bg-white shadow-sm text-charcoal"
-                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
+                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   Home
@@ -158,7 +158,7 @@ export default function Navbar() {
                   } ${
                     location === "/works"
                       ? "bg-white shadow-sm text-charcoal"
-                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
+                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   Works
