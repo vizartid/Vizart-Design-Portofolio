@@ -55,7 +55,7 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">
+        <h2 className="font-instrument sm:text-4xl lg:desktop-text-5xl mb-4 text-[70px]">
           <EditableText
             value={heroSectionsShowcase.title}
             onChange={(value) => handleUpdateShowcase("title", value)}
@@ -70,7 +70,6 @@ export default function HeroSectionsShowcase() {
           />
         </p>
       </motion.div>
-
       {/* Full width showcase animation - sampai ujung desktop tanpa padding */}
       <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <div className="relative overflow-hidden">
