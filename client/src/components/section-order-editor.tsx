@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import ErrorBoundary from "./error-boundary";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 
 interface SectionItem {
   id: string;
@@ -23,21 +24,21 @@ const DEFAULT_SECTIONS: SectionItem[] = [
 
 export function SectionOrderEditor() {
   const [isOpen, setIsOpen] = useState(false);
-  const [sections, setSections] = useState<SectionItem[]>(DEFAULT_SECTIONS);
+  const [sections, setSections] = useLocalStorage<SectionItem[]>('sectionOrder', DEFAULT_SECTIONS);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem('sectionOrder');
-    if (saved) {
-      try {
-        setSections(JSON.parse(saved));
-      } catch (error) {
-        console.error('Error parsing saved section order:', error);
-        setSections(DEFAULT_SECTIONS);
-      }
-    }
   }, []);
+
+  // Emit event setiap kali urutan section berubah
+  useEffect(() => {
+    if (mounted) {
+      window.dispatchEvent(new CustomEvent('sectionOrderChanged', { 
+        detail: { sections } 
+      }));
+    }
+  }, [sections, mounted]);
 
   const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
@@ -50,21 +51,12 @@ export function SectionOrderEditor() {
   };
 
   const applySectionOrder = () => {
-    // Simpan urutan ke localStorage
-    localStorage.setItem('sectionOrder', JSON.stringify(sections));
-    
-    // Emit custom event untuk notify komponen lain
-    window.dispatchEvent(new CustomEvent('sectionOrderChanged', { 
-      detail: { sections } 
-    }));
-    
-    // Reload halaman untuk memastikan perubahan terlihat
+    // Data sudah otomatis tersimpan, hanya perlu reload
     window.location.reload();
   };
 
   const resetToDefault = () => {
     setSections(DEFAULT_SECTIONS);
-    localStorage.removeItem('sectionOrder');
     window.location.reload();
   };
 

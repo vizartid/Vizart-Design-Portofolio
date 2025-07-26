@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Edit3, Save, Plus, Trash2, Image, Type, Link } from "lucide-react";
 import ErrorBoundary from "./error-boundary";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -39,12 +40,16 @@ const DEFAULT_WORKS_DATA: WorksPageData = {
 
 export function WorksVisualEditor() {
   const [isOpen, setIsOpen] = useState(false);
-  const [worksData, setWorksData] = useState<WorksPageData>(() => {
-    const saved = localStorage.getItem('worksPageData');
-    return saved ? JSON.parse(saved) : DEFAULT_WORKS_DATA;
-  });
-
+  const [worksData, setWorksData] = useLocalStorage<WorksPageData>('worksPageData', DEFAULT_WORKS_DATA);
   const [editingProject, setEditingProject] = useState<WorksProject | null>(null);
+
+  // Emit event untuk notify komponen works setiap kali data berubah
+  useEffect(() => {
+    const event = new CustomEvent('worksDataChanged', { 
+      detail: { worksData } 
+    });
+    window.dispatchEvent(event);
+  }, [worksData]);
 
   const handleUpdateField = (field: keyof WorksPageData, value: any) => {
     setWorksData(prev => ({
@@ -103,11 +108,6 @@ export function WorksVisualEditor() {
         detail: { worksData } 
       });
       window.dispatchEvent(event);
-      
-      // Paksa refresh halaman untuk memastikan perubahan tersimpan
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
       
       alert('Data works berhasil disimpan!');
     } catch (error) {
