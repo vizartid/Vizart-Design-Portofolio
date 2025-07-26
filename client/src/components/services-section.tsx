@@ -12,7 +12,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:desktop-text-5xl mb-4">
+          <h2 className="font-instrument sm:text-4xl lg:desktop-text-5xl mb-4 text-[70px]">
             Our Services
           </h2>
         </motion.div>
@@ -78,7 +78,7 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3">
+          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
               src="/profile-foto.png"
               alt="Profile"
