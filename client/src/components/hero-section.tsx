@@ -73,7 +73,7 @@ export default function HeroSection() {
               className="inline"
             />
           </h1>
-          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-[18px] font-medium">
             <EditableText
               value={content.hero.stats}
               onChange={(value) => handleUpdateHero("stats", value)}
