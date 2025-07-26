@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Leaf, Menu, X } from "lucide-react";
+import { useContent } from "@/hooks/use-content";
 
 import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
@@ -9,6 +10,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { data: content } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +39,20 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />
-            <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
-              Vizart
-            </span>
+            {(content?.branding as any)?.logoUrl ? (
+              <img
+                src={(content.branding as any).logoUrl}
+                alt="Logo"
+                className="h-8 lg:h-10 object-contain"
+              />
+            ) : (
+              <>
+                <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />
+                <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
+                  {(content?.branding as any)?.logoText || "Vizart"}
+                </span>
+              </>
+            )}
           </Link>
 
           {/* Central Navigation (Desktop) */}

@@ -1,7 +1,10 @@
 import { Leaf } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
+import { useContent } from "@/hooks/use-content";
 
 export default function Footer() {
+  const { data: content } = useContent();
+  
   return (
     <footer className="bg-bone-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -9,8 +12,20 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="text-electric-blue text-xl" />
-              <span className="font-poppins font-semibold text-xl">Lander</span>
+              {(content?.branding as any)?.footerLogoUrl ? (
+                <img
+                  src={(content.branding as any).footerLogoUrl}
+                  alt="Footer Logo"
+                  className="h-6 object-contain"
+                />
+              ) : (
+                <>
+                  <Leaf className="text-electric-blue text-xl" />
+                  <span className="font-poppins font-semibold text-xl">
+                    {(content?.branding as any)?.footerLogoText || "Lander"}
+                  </span>
+                </>
+              )}
             </div>
             <p className="text-gray-600 leading-relaxed">
               We deliver standout websites with effortless collaboration, helping businesses create impactful digital experiences that drive real results.
