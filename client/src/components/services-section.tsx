@@ -96,49 +96,45 @@ export default function ServicesSection() {
           </h2>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
+        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto mb-12">
           {servicesData.services.map((service, index) => (
-            <div
+            <motion.div
               key={service.id}
-              className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className="mb-6">
-                <div className="flex justify-center mb-4">
-                  {service.icon === "Palette" ? (
-                    <Palette className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
-                  ) : (
-                    <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
-                  )}
-                </div>
-                <h3 className="font-instrument font-semibold lg:desktop-text-2xl mb-3 text-[28px]">
-                  <EditableText
-                    value={service.title}
-                    onChange={(value) =>
-                      handleUpdateService(service.id, "title", value)
-                    }
-                    tag="span"
-                  />
-                </h3>
-                <p className="text-gray-600 lg:desktop-text-lg text-[18px]">
-                  <EditableText
-                    value={service.description}
-                    onChange={(value) =>
-                      handleUpdateService(service.id, "description", value)
-                    }
-                    tag="span"
-                    multiline={true}
-                  />
-                </p>
+              <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                {service.icon === "Palette" ? (
+                  <Palette className="w-8 h-8 text-electric-blue lucide-glow" />
+                ) : (
+                  <Code className="w-8 h-8 text-electric-blue lucide-glow" />
+                )}
               </div>
-            </div>
+              <h3 className="font-instrument mb-3 font-semibold text-[28px]">
+                <EditableText
+                  value={service.title}
+                  onChange={(value) =>
+                    handleUpdateService(service.id, "title", value)
+                  }
+                  tag="span"
+                />
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                <EditableText
+                  value={service.description}
+                  onChange={(value) =>
+                    handleUpdateService(service.id, "description", value)
+                  }
+                  tag="span"
+                  multiline={true}
+                />
+              </p>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <motion.div
           className="text-center"
