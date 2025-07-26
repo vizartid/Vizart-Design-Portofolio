@@ -79,7 +79,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument sm:text-4xl lg:desktop-text-5xl mb-4 text-[70px]">
+          <h2 className="font-instrument sm:text-4xl lg:desktop-text-5xl mb-4 text-[41px]">
             <EditableText
               value={servicesData.title}
               onChange={(value) => handleUpdateField('title', value)}
