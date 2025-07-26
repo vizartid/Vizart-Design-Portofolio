@@ -16,49 +16,46 @@ export default function ServicesSection() {
             Specialized in Crafting Brand<br />
             Defining Hero Sections
           </h2>
-          
-
-          </div>
-
-          {/* Hero Examples Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <motion.div 
-              className="group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-                alt="Automated candidate screening interface"
-                className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
-              />
-            </motion.div>
-            
-            <motion.div 
-              className="group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-                alt="Design interface focused on business growth"
-                className="w-full h-64 object-cover rounded-xl shadow-lg"
-              />
-            </motion.div>
-            
-            <motion.div 
-              className="group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-                alt="Team hiring and collaboration interface"
-                className="w-full h-64 object-cover rounded-xl shadow-lg"
-              />
-            </motion.div>
-          </div>
         </motion.div>
+
+        {/* Hero Examples Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <motion.div 
+            className="group cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              alt="Automated candidate screening interface"
+              className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+            />
+          </motion.div>
+          
+          <motion.div 
+            className="group cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              alt="Design interface focused on business growth"
+              className="w-full h-64 object-cover rounded-xl shadow-lg"
+            />
+          </motion.div>
+          
+          <motion.div 
+            className="group cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              alt="Team hiring and collaboration interface"
+              className="w-full h-64 object-cover rounded-xl shadow-lg"
+            />
+          </motion.div>
+        </div>
 
         <motion.div 
           className="text-center mb-16"
