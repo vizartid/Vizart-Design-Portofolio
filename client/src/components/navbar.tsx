@@ -104,7 +104,7 @@ export default function Navbar() {
           {/* Central Navigation (Desktop) */}
           <div 
             className={`hidden md:flex rounded-xl p-1.5 transition-all duration-700 ease-out ${
-              isScrolled ? "bg-light-gray" : "bg-light-gray"
+              isScrolled ? "bg-light-gray" : "bg-light-gray/80 backdrop-blur-sm"
             }`}
           >
             <Link href="/">
@@ -112,7 +112,7 @@ export default function Navbar() {
                 className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                 }`}
               >
                 Home
@@ -123,7 +123,7 @@ export default function Navbar() {
                 className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                 }`}
               >
                 Works
