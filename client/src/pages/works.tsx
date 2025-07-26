@@ -83,8 +83,15 @@ export default function Works() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-instrument custom-about-title mb-4 font-medium text-[80px]">
-              Showcase of My <br />
-              <span style={{ color: '#182baf' }}>Best Works</span>
+              {worksData.title.split(" ").map((word, index) => (
+                <span key={index}>
+                  {word === "Best" ? (
+                    <span className="text-electric-blue">{word}</span>
+                  ) : (
+                    word
+                  )}{" "}
+                </span>
+              ))}
             </h1>
             
           </motion.div>
