@@ -45,7 +45,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument custom-hero-title mb-6 font-light">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
             <EditableText
               value={content.hero.title}
               onChange={(value) => handleUpdateHero("title", value)}
