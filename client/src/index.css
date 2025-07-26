@@ -232,7 +232,7 @@
 
   /* Wave texture background */
   .wave-bg {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,50 Q250,20 500,50 T1000,50 L1000,100 L0,100 Z' fill='%23e5e7eb' opacity='0.15'/%3E%3C/svg%3E");
+    background-image: url("attached_assets/backgound-wave.jpg");
     background-repeat: repeat-x;
     background-position: bottom;
   }
