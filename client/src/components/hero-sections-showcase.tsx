@@ -70,9 +70,9 @@ export default function HeroSectionsShowcase() {
           />
         </p>
       </motion.div>
-      {/* Full width showcase animation - sampai ujung desktop tanpa padding */}
-      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="relative overflow-hidden">
+      {/* Showcase animation with boundaries - tidak sampai ujung desktop */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl">
           <div className="flex space-x-6 hero-sections-carousel-safe">
             {/* Quintuple images untuk true seamless infinite scroll */}
             {[
