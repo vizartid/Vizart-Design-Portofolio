@@ -16,7 +16,7 @@
 
 :root {
   --background: hsl(0, 0%, 96%);
-  --foreground: hsl(220, 13%, 18%);
+  --foreground: hsl(0, 0%, 0%);
   --muted: hsl(210, 11%, 96%);
   --muted-foreground: hsl(215, 13%, 45%);
   --popover: hsl(0, 0%, 100%);
@@ -38,8 +38,8 @@
 
   /* Custom colors */
   --bone-white: #f4f4f4;
-  --electric-blue: hsl(207, 90%, 54%);
-  --charcoal: hsl(220, 13%, 18%);
+  --electric-blue: #3554f4;
+  --charcoal: hsl(0, 0%, 0%);
   --light-gray: hsl(210, 11%, 96%);
 
   /* Desktop scaling variables */
@@ -408,6 +408,7 @@
   .text-blue-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #3b82f6);
   }
+
   .text-blue-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #3b82f6);
   }
@@ -415,6 +416,7 @@
   .text-orange-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #f97316);
   }
+
   .text-orange-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #f97316);
   }
@@ -422,6 +424,7 @@
   .text-green-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #22c55e);
   }
+
   .text-green-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #22c55e);
   }
@@ -429,6 +432,7 @@
   .text-purple-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #a855f7);
   }
+
   .text-purple-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #a855f7);
   }
@@ -436,6 +440,7 @@
   .text-pink-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #ec4899);
   }
+
   .text-pink-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #ec4899);
   }
@@ -443,6 +448,7 @@
   .text-yellow-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #eab308);
   }
+
   .text-yellow-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #eab308);
   }
@@ -450,6 +456,7 @@
   .text-purple-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #a855f7);
   }
+
   .text-purple-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #a855f7);
   }
@@ -457,6 +464,7 @@
   .text-indigo-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #6366f1);
   }
+
   .text-indigo-500.lucide-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
   }
@@ -494,6 +502,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #3b82f6);
     transition: filter 0.3s ease;
   }
+
   .blue-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #3b82f6);
   }
@@ -502,6 +511,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #8b5cf6);
     transition: filter 0.3s ease;
   }
+
   .purple-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #8b5cf6);
   }
@@ -510,6 +520,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #22c55e);
     transition: filter 0.3s ease;
   }
+
   .green-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #22c55e);
   }
@@ -518,6 +529,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #f97316);
     transition: filter 0.3s ease;
   }
+
   .orange-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #f97316);
   }
@@ -526,6 +538,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #ef4444);
     transition: filter 0.3s ease;
   }
+
   .red-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #ef4444);
   }
@@ -534,6 +547,7 @@
     filter: drop-shadow(0 0 var(--glow-intensity) #6366f1);
     transition: filter 0.3s ease;
   }
+
   .indigo-glow:hover {
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
   }
