@@ -57,7 +57,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : ""}`}
+      } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : "pt-4 px-4"}`}
     >
       <div
         className={`transition-all duration-700 ease-out ${
@@ -102,14 +102,19 @@ export default function Navbar() {
           </Link>
 
           {/* Central Navigation (Desktop) */}
-          <div className="hidden md:flex bg-light-gray rounded-xl p-1.5">
-          
+          <div 
+            className={`hidden md:flex rounded-xl p-1.5 transition-all duration-700 ease-out ${
+              isScrolled ? "bg-light-gray" : "bg-light-gray"
+            }`}
+          >
             <Link href="/">
               <button
-                className={`rounded-xl font-medium px-5 py-2 text-base transition-colors duration-200 ${
+                className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : isScrolled
+                    ? "text-gray-600 hover:text-charcoal"
+                    : "bg-white/90 text-charcoal hover:bg-white"
                 }`}
               >
                 Home
@@ -117,10 +122,12 @@ export default function Navbar() {
             </Link>
             <Link href="/works">
               <button
-                className={`rounded-xl font-medium px-5 py-2 text-base transition-colors duration-200 ${
+                className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : isScrolled
+                    ? "text-gray-600 hover:text-charcoal"
+                    : "bg-white/90 text-charcoal hover:bg-white"
                 }`}
               >
                 Works
