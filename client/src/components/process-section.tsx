@@ -69,6 +69,7 @@ const iconMap = {
 };
 
 export default function ProcessSection() {
+  console.log('ProcessSection component is rendering'); // Debug log
   const [processData, setProcessData] = useLocalStorage<ProcessData>('processData', DEFAULT_PROCESS_DATA);
 
   const handleUpdateField = (field: keyof ProcessData, value: any) => {
@@ -115,15 +116,15 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Process Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Process Steps - Flexbox Layout (2 cards per row) */}
+        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
           {processData.steps.map((step, index) => {
             const IconComponent = iconMap[step.icon as keyof typeof iconMap];
             
             return (
               <motion.div
                 key={step.id}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full sm:w-[calc(50%-12px)] relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

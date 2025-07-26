@@ -39,6 +39,9 @@ export default function Home() {
     const savedOrder = localStorage.getItem('sectionOrder');
     if (savedOrder) {
       setSectionOrder(JSON.parse(savedOrder));
+    } else {
+      // If no saved order, make sure Process section is included
+      setSectionOrder(DEFAULT_SECTIONS);
     }
 
     // Listen untuk perubahan section order
