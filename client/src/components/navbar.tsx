@@ -59,7 +59,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-4 w-full z-50 transition-all duration-700 ease-out ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+        isVisible ? "translate-y-0" : "-translate-y-[120%]"
       } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : ""}`}
     >
       <div
