@@ -14,6 +14,7 @@ export default function Navbar() {
   const [scrollDirection, setScrollDirection] = useState<
     "up" | "down" | "none"
   >("none");
+  const [isAtTop, setIsAtTop] = useState(true);
   const { data: content } = useContent();
 
   useEffect(() => {
@@ -45,6 +46,9 @@ export default function Navbar() {
         setIsScrolled(false);
       }
 
+      // Track if we're at the very top
+      setIsAtTop(currentScrollY < 50);
+
       setLastScrollY(currentScrollY);
     };
 
@@ -58,7 +62,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 w-full z-50 transition-all duration-700 ease-out ${
+      className={`fixed top-4 w-full z-50 ${
+        isAtTop && scrollDirection === "down" && !isVisible 
+          ? "transition-none" 
+          : "transition-all duration-700 ease-out"
+      } ${
         isVisible ? "translate-y-0" : "-translate-y-[120%]"
       } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : ""}`}
     >
