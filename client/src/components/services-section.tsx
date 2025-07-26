@@ -102,8 +102,8 @@ export default function ServicesSection() {
           <div className="bg-white rounded-2xl p-8 lg:desktop-p-12 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="mb-6">
               <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue mb-4" />
-              <h3 className="font-poppins font-semibold text-xl lg:desktop-text-2xl mb-3">Websites</h3>
-              <p className="text-gray-600 lg:desktop-text-lg leading-relaxed">
+              <h3 className="font-poppins font-semibold custom-project-title mb-3">Websites</h3>
+              <p className="text-gray-600 custom-project-desc leading-relaxed">
                 A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.
               </p>
             </div>
@@ -117,24 +117,24 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-600 lg:desktop-text-lg mb-8">We also offer other design services like pitch decks, social media creatives, and more.</p>
+          <p className="text-gray-600 custom-about-text mb-8">We also offer other design services like pitch decks, social media creatives, and more.</p>
           
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm lg:desktop-text-base">Smooth Communication</span>
+              <span className="custom-accepting">Smooth Communication</span>
             </div>
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm lg:desktop-text-base">Flexible revisions</span>
+              <span className="custom-accepting">Flexible revisions</span>
             </div>
             <div className="flex items-center space-x-2">
               <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span className="text-sm lg:desktop-text-base">Post-Project Support</span>
+              <span className="custom-accepting">Post-Project Support</span>
             </div>
           </div>
           
-          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3">
+          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3">
             <img src="/profile-foto.png" alt="Profile" className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover" />
             <span>Book a Call</span>
           </button>

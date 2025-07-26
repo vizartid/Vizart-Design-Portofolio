@@ -52,7 +52,7 @@ export default function FAQSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-instrument-serif font-bold text-charcoal mb-6"
+            className="custom-about-title font-instrument-serif font-bold text-charcoal mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -65,7 +65,7 @@ export default function FAQSection() {
             />
           </motion.h2>
           <motion.p
-            className="text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto"
+            className="custom-about-text text-charcoal/70 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}

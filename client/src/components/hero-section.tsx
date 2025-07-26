@@ -45,7 +45,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl xl:desktop-text-7xl mb-6 text-[96px] font-light">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light">
             <EditableText
               value={content.hero.title}
               onChange={(value) => handleUpdateHero("title", value)}
@@ -65,14 +65,14 @@ export default function HeroSection() {
               className="inline"
             />
           </h1>
-          <p className="text-lg sm:text-xl lg:desktop-text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto">
             <EditableText
               value={content.hero.stats}
               onChange={(value) => handleUpdateHero("stats", value)}
             />
           </p>
 
-          <button className="bg-charcoal text-white px-8 py-3 lg:desktop-p-12 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
+          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
               src="/profile-foto.png"
               alt="Profile"
@@ -87,7 +87,7 @@ export default function HeroSection() {
             </span>
           </button>
 
-          <div className="flex items-center justify-center space-x-2 text-sm lg:desktop-text-base text-gray-600">
+          <div className="flex items-center justify-center space-x-2 custom-accepting text-gray-600">
             <Check className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" />
             <span>
               <EditableText

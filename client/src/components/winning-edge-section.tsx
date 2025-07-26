@@ -57,8 +57,8 @@ export default function WinningEdgeSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-4">Our Winning Edge</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h2 className="font-instrument custom-about-title mb-4">Our Winning Edge</h2>
+          <p className="text-gray-600 custom-about-text max-w-2xl mx-auto">
             Discover our unique strengths and distinctive value we offer
           </p>
         </motion.div>
@@ -77,8 +77,8 @@ export default function WinningEdgeSection() {
                 <div className={`w-12 h-12 ${feature.bgColor} rounded-lg flex items-center justify-center mx-auto mb-4`}>
                   <feature.icon className={`${feature.color} w-6 h-6`} />
                 </div>
-                <h3 className="font-poppins font-semibold text-lg mb-3">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="font-poppins font-semibold custom-project-title mb-3">{feature.title}</h3>
+                <p className="text-gray-600 custom-project-desc leading-relaxed">
                   {feature.description}
                 </p>
               </div>
