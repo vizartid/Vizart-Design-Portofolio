@@ -41,17 +41,22 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm"
-          : "bg-white border-b border-gray-200/30"
-      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } ${isScrolled ? "pt-4 px-4" : ""}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
-            isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
-          }`}
-        >
+      <div
+        className={`transition-all duration-500 ease-in-out ${
+          isScrolled
+            ? "max-w-4xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/80 shadow-lg rounded-2xl"
+            : "w-full bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
+              isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+            }`}
+          >
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             {content?.branding?.logoUrl ? (
@@ -95,7 +100,7 @@ export default function Navbar() {
 
           {/* Central Navigation (Desktop) */}
           <div
-            className={`hidden md:flex bg-light-gray rounded-xl	 transition-all duration-500 ease-in-out ${
+            className={`hidden md:flex bg-light-gray rounded-xl  transition-all duration-500 ease-in-out ${
               isScrolled ? "p-1" : "p-1 lg:p-2"
             }`}
           >
@@ -134,19 +139,12 @@ export default function Navbar() {
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
             <button
-              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-500 ease-in-out flex items-center space-x-2 ${
+              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-500 ease-in-out ${
                 isScrolled
                   ? "px-4 py-2 text-base"
                   : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
               }`}
             >
-              <img
-                src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
-                alt="Profile"
-                className={`rounded-full object-cover transition-all duration-500 ease-in-out ${
-                  isScrolled ? "w-5 h-5" : "w-6 h-6 lg:w-8 lg:h-8"
-                }`}
-              />
               <span>Book a Call</span>
             </button>
           </div>
@@ -162,6 +160,7 @@ export default function Navbar() {
               <Menu className="text-xl lucide-glow" />
             )}
           </button>
+          </div>
         </div>
       </div>
       {/* Mobile menu */}
@@ -174,12 +173,7 @@ export default function Navbar() {
             <Link href="/works" onClick={() => setIsMenuOpen(false)}>
               <span className="block text-gray-600 font-medium">Works</span>
             </Link>
-            <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4 flex items-center justify-center space-x-2">
-              <img
-                src="/profile-foto.png"
-                alt="Profile"
-                className="w-6 h-6 rounded-full object-cover"
-              />
+            <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4">
               <span>Book a Call</span>
             </button>
           </div>

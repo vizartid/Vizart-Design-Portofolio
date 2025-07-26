@@ -32,6 +32,10 @@ Preferred communication style: Simple, everyday language.
 - ✓ Icons moved to center with proper flex justify-center wrapper
 - ✓ Replaced Circle icons with simple div dots that have glow effect
 - ✓ Removed icon stroke/fill styling and used pure background color with drop-shadow glow
+- ✓ Removed profile image from CTA button in navbar and mobile menu
+- ✓ Made navbar transparent at top, with card wrapper and margin when scrolled
+- ✓ Added smooth transitions for navbar container transform with rounded corners
+- ✓ Navbar now has white card background with shadow when scrolled, transparent when at top
 
 **Previous - July 26, 2025**: Logo Fix and Process Section Layout Update
 - ✓ Fixed missing "Vizart" logo text in navbar and footer
