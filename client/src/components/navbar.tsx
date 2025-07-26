@@ -73,12 +73,12 @@ export default function Navbar() {
       <div
         className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-6xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
+            ? "max-w-7xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
             : "w-full bg-transparent scale-100"
         } ${scrollDirection === "up" && isScrolled ? "scale-100" : ""} ${scrollDirection === "down" && isScrolled ? "scale-95" : ""}`}
       >
         <div
-          className={`transition-all duration-700 ease-out ${isScrolled ? "max-w-6xl" : "max-w-7xl"} mx-auto px-4 sm:px-6 lg:px-8`}
+          className={`transition-all duration-700 ease-out ${isScrolled ? "max-w-7xl" : "max-w-7xl"} mx-auto ${isScrolled ? "px-8 sm:px-10 lg:px-12" : "px-4 sm:px-6 lg:px-8"}`}
         >
           <div
             className={`flex justify-between items-center transition-all duration-700 ease-out ${
@@ -133,7 +133,7 @@ export default function Navbar() {
               className={`hidden md:flex rounded-xl transition-all duration-700 ease-out ${
                 isScrolled ? "p-1.5" : "p-1 lg:p-2"
               }`}
-              style={{ backgroundColor: '#e6e6e6' }}
+              style={{ backgroundColor: "#e6e6e6" }}
             >
               <Link href="/">
                 <button
