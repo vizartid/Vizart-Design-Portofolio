@@ -20,7 +20,6 @@ export default function Works() {
   return (
     <div className="min-h-screen bg-bone-white">
       <Navbar />
-      
       {/* Works Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -30,7 +29,7 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument text-4xl sm:text-5xl lg:desktop-text-6xl mb-6">
+            <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl mb-6 text-[96px] font-light">
               Showcase of Our<br />
               <span className="text-electric-blue">Best Works</span>
             </h1>
@@ -64,7 +63,6 @@ export default function Works() {
           </motion.div>
         </div>
       </section>
-
       {/* Project Grid */}
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto space-y-12">
@@ -110,7 +108,6 @@ export default function Works() {
           </AnimatePresence>
         </div>
       </section>
-
       {/* Works Final CTA */}
       <motion.section 
         className="py-16 px-4 sm:px-6 lg:px-8"
@@ -132,7 +129,6 @@ export default function Works() {
           </button>
         </div>
       </motion.section>
-
       <Footer />
     </div>
   );
