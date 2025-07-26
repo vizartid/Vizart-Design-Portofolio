@@ -116,8 +116,8 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Process Steps - Compact Square Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Process Steps - Single Column Compact Cards */}
+        <div className="flex flex-col gap-6 max-w-3xl mx-auto">
           {processData.steps.map((step, index) => {
             const IconComponent = iconMap[step.icon as keyof typeof iconMap];
             
@@ -136,37 +136,39 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={step.id}
-                className={`${colorTheme.bg} rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 aspect-square flex flex-col justify-center items-center text-center relative`}
+                className={`${colorTheme.bg} rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 w-full relative`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.02 }}
+                whileHover={{ y: -5 }}
               >
-                {/* Icon with Glow Effect Only */}
-                <div className="mb-4">
-                  {IconComponent && (
-                    <IconComponent className={`w-12 h-12 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`} />
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className="flex-1 flex flex-col justify-center">
-                  <h3 className="font-poppins font-semibold text-lg mb-3 text-charcoal">
-                    <EditableText
-                      value={step.title}
-                      onChange={(value) => handleUpdateStep(step.id, 'title', value)}
-                      tag="span"
-                    />
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    <EditableText
-                      value={step.description}
-                      onChange={(value) => handleUpdateStep(step.id, 'description', value)}
-                      tag="span"
-                      multiline={true}
-                    />
-                  </p>
+                <div className="flex items-center space-x-6 text-center">
+                  {/* Icon with Glow Effect Only */}
+                  <div className="flex-shrink-0">
+                    {IconComponent && (
+                      <IconComponent className={`w-12 h-12 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`} />
+                    )}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="font-poppins font-semibold text-xl mb-3 text-charcoal">
+                      <EditableText
+                        value={step.title}
+                        onChange={(value) => handleUpdateStep(step.id, 'title', value)}
+                        tag="span"
+                      />
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      <EditableText
+                        value={step.description}
+                        onChange={(value) => handleUpdateStep(step.id, 'description', value)}
+                        tag="span"
+                        multiline={true}
+                      />
+                    </p>
+                  </div>
                 </div>
 
                 {/* Step Number - Small and Subtle */}

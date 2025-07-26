@@ -21,12 +21,13 @@ Preferred communication style: Simple, everyday language.
 - ✓ All navbar elements (navigation buttons, CTA button) adapt to scrolled state
 - ✓ Reverted section order configuration back to static layout in home.tsx
 - ✓ Section order now fixed: Hero → Services → Process → Winning Edge → Hero Showcase → Testimonials → FAQ
-- ✓ Redesigned Process section cards to compact square format (aspect-square)
-- ✓ Changed layout from vertical list to responsive grid (1/2/3 columns)
+- ✓ Redesigned Process section with single column layout (max-w-3xl)
+- ✓ Changed to horizontal card layout with icon on left, content on right
 - ✓ Applied glow effects only to icons, not cards or numbers
 - ✓ Used clean white cards with subtle shadows and gray borders
-- ✓ Icons now larger (w-12 h-12) with color-specific drop-shadow glow effects
+- ✓ Icons larger (w-12 h-12) with color-specific drop-shadow glow effects
 - ✓ Step numbers repositioned to small, subtle badges in top-right corner
+- ✓ Cards now compact and aligned properly without excessive spacing
 
 **Previous - July 26, 2025**: Logo Fix and Process Section Layout Update
 - ✓ Fixed missing "Vizart" logo text in navbar and footer
