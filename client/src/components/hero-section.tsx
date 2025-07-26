@@ -4,6 +4,8 @@ import ProjectCarousel from "./project-carousel";
 import { EditableText } from "./editable-text";
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
+import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+
 export default function HeroSection() {
   const { data: content, isLoading } = useContent();
   const updateSection = useUpdateContentSection();
@@ -74,7 +76,7 @@ export default function HeroSection() {
 
           <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
-              src="/profile-foto.png"
+              src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
               className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
             />
