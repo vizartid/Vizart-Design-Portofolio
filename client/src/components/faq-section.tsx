@@ -11,12 +11,12 @@ export default function FAQSection() {
 
   const handleUpdateFAQ = (field: string, value: any) => {
     if (!content) return;
-    
+
     const updatedFAQ = {
       ...content.faq,
       [field]: value,
     };
-    
+
     updateSection.mutate({
       section: "faq",
       data: updatedFAQ,
@@ -52,7 +52,7 @@ export default function FAQSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
-            className="custom-about-title font-instrument-serif font-bold text-charcoal mb-6"
+            className="custom-about-title font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -99,7 +99,9 @@ export default function FAQSection() {
                     value={item.question}
                     onChange={(value) => {
                       const updatedItems = [...faq.items];
-                      const itemIndex = updatedItems.findIndex(i => i.id === item.id);
+                      const itemIndex = updatedItems.findIndex(
+                        (i) => i.id === item.id,
+                      );
                       if (itemIndex !== -1) {
                         updatedItems[itemIndex] = { ...item, question: value };
                         handleUpdateFAQ("items", updatedItems);
@@ -141,9 +143,14 @@ export default function FAQSection() {
                             value={item.answer}
                             onChange={(value) => {
                               const updatedItems = [...faq.items];
-                              const itemIndex = updatedItems.findIndex(i => i.id === item.id);
+                              const itemIndex = updatedItems.findIndex(
+                                (i) => i.id === item.id,
+                              );
                               if (itemIndex !== -1) {
-                                updatedItems[itemIndex] = { ...item, answer: value };
+                                updatedItems[itemIndex] = {
+                                  ...item,
+                                  answer: value,
+                                };
                                 handleUpdateFAQ("items", updatedItems);
                               }
                             }}

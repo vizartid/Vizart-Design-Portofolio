@@ -21,49 +21,55 @@ interface TestimonialData {
 const DEFAULT_TESTIMONIALS_DATA: TestimonialData = {
   title: "What Our Clients Say",
   subtitle: "Real feedback from real people we've worked with",
-  testimonials: testimonials
+  testimonials: testimonials,
 };
 
 export default function TestimonialsSection() {
-  const [testimonialsData, setTestimonialsData] = useLocalStorage<TestimonialData>('testimonialsData', DEFAULT_TESTIMONIALS_DATA);
+  const [testimonialsData, setTestimonialsData] =
+    useLocalStorage<TestimonialData>(
+      "testimonialsData",
+      DEFAULT_TESTIMONIALS_DATA,
+    );
 
   const handleUpdateField = (field: keyof TestimonialData, value: any) => {
-    setTestimonialsData(prev => ({
+    setTestimonialsData((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
   const handleUpdateTestimonial = (id: number, field: string, value: any) => {
-    setTestimonialsData(prev => ({
+    setTestimonialsData((prev) => ({
       ...prev,
-      testimonials: prev.testimonials.map(testimonial =>
-        testimonial.id === id ? { ...testimonial, [field]: value } : testimonial
-      )
+      testimonials: prev.testimonials.map((testimonial) =>
+        testimonial.id === id
+          ? { ...testimonial, [field]: value }
+          : testimonial,
+      ),
     }));
   };
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument sm:text-4xl lg:text-5xl mb-4 text-[70px]">
+          <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light">
             <EditableText
               value={testimonialsData.title}
-              onChange={(value) => handleUpdateField('title', value)}
+              onChange={(value) => handleUpdateField("title", value)}
               tag="span"
             />
           </h2>
           <p className="text-gray-600 text-lg">
             <EditableText
               value={testimonialsData.subtitle}
-              onChange={(value) => handleUpdateField('subtitle', value)}
+              onChange={(value) => handleUpdateField("subtitle", value)}
               tag="span"
             />
           </p>
@@ -81,39 +87,58 @@ export default function TestimonialsSection() {
             >
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current lucide-glow" />
+                  <Star
+                    key={i}
+                    className="w-4 h-4 text-yellow-400 fill-current lucide-glow"
+                  />
                 ))}
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "<EditableText
+                "
+                <EditableText
                   value={testimonial.content}
-                  onChange={(value) => handleUpdateTestimonial(testimonial.id, 'content', value)}
+                  onChange={(value) =>
+                    handleUpdateTestimonial(testimonial.id, "content", value)
+                  }
                   tag="span"
                   multiline={true}
-                />"
+                />
+                "
               </p>
               <div className="flex items-center">
-                <img 
+                <img
                   src={testimonial.avatarUrl}
                   alt={`${testimonial.name} headshot`}
-                  className="w-12 h-12 rounded-full object-cover mr-3" 
+                  className="w-12 h-12 rounded-full object-cover mr-3"
                 />
                 <div>
                   <p className="font-medium">
                     <EditableText
                       value={testimonial.name}
-                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'name', value)}
+                      onChange={(value) =>
+                        handleUpdateTestimonial(testimonial.id, "name", value)
+                      }
                       tag="span"
                     />
                   </p>
                   <p className="text-sm text-gray-500">
                     <EditableText
                       value={testimonial.role}
-                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'role', value)}
+                      onChange={(value) =>
+                        handleUpdateTestimonial(testimonial.id, "role", value)
+                      }
                       tag="span"
-                    />, <EditableText
+                    />
+                    ,{" "}
+                    <EditableText
                       value={testimonial.company}
-                      onChange={(value) => handleUpdateTestimonial(testimonial.id, 'company', value)}
+                      onChange={(value) =>
+                        handleUpdateTestimonial(
+                          testimonial.id,
+                          "company",
+                          value,
+                        )
+                      }
                       tag="span"
                     />
                   </p>
