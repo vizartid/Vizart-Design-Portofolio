@@ -60,10 +60,10 @@ export default function Navbar() {
       } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : "pt-4 px-4"}`}
     >
       <div
-        className={`transition-all duration-700 ease-out ${
+        className={`transition-all duration-700 ease-out max-w-5xl mx-auto ${
           isScrolled
-            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
-            : "max-w-5xl mx-auto bg-transparent"
+            ? "bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
+            : "bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
         }`}
       >
         <div className="px-4 sm:px-6 lg:px-8">
@@ -112,9 +112,7 @@ export default function Navbar() {
                 className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
-                    : isScrolled
-                    ? "text-gray-600 hover:text-charcoal"
-                    : "bg-white/90 text-charcoal hover:bg-white"
+                    : "text-gray-600 hover:text-charcoal"
                 }`}
               >
                 Home
@@ -125,9 +123,7 @@ export default function Navbar() {
                 className={`rounded-xl font-medium px-5 py-2 text-base transition-all duration-700 ease-out ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
-                    : isScrolled
-                    ? "text-gray-600 hover:text-charcoal"
-                    : "bg-white/90 text-charcoal hover:bg-white"
+                    : "text-gray-600 hover:text-charcoal"
                 }`}
               >
                 Works
