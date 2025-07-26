@@ -11,6 +11,8 @@ import Footer from "@/components/footer";
 import { SectionOrderEditor } from "@/components/section-order-editor";
 import { motion } from "framer-motion";
 
+import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+
 const SECTION_COMPONENTS = {
   HeroSection,
   ServicesSection,
@@ -74,7 +76,6 @@ export default function Home() {
     <div className="min-h-screen bg-bone-white">
       <SectionOrderEditor />
       <Navbar />
-
       {/* Render sections sesuai urutan */}
       {sectionOrder.map((section) => {
         const SectionComponent =
@@ -83,7 +84,6 @@ export default function Home() {
           ];
         return SectionComponent ? <SectionComponent key={section.id} /> : null;
       })}
-
       {/* Final CTA Section */}
       <motion.section
         className="py-16 px-4 sm:px-6 lg:px-8"
@@ -102,7 +102,7 @@ export default function Home() {
           </p>
           <button className="bg-electric-blue text-white px-8 py-4 lg:desktop-p-16 rounded-md font-medium text-lg lg:desktop-text-xl hover:bg-electric-blue/90 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-3 mx-auto">
             <img
-              src="/profile-foto.png"
+              src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
               className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
             />
@@ -110,7 +110,6 @@ export default function Home() {
           </button>
         </div>
       </motion.section>
-
       <Footer />
     </div>
   );
