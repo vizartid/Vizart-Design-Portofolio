@@ -40,7 +40,7 @@ export default function Works() {
 
           {/* Category Filters */}
           <motion.div 
-            className="flex justify-center mb-12"
+            className="flex justify-center mb-12 ml-[10px] mr-[10px] text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px] text-[18px]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
