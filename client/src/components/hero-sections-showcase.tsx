@@ -1,10 +1,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import content from "@/data/content.json";
+import { EditableText } from "./editable-text";
+import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
 export default function HeroSectionsShowcase() {
-  const { heroSectionsShowcase } = content;
+  const { data: content, isLoading } = useContent();
+  const updateSection = useUpdateContentSection();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const handleUpdateShowcase = (field: string, value: any) => {
+    if (!content) return;
+    
+    const updatedShowcase = {
+      ...content.heroSectionsShowcase,
+      [field]: value,
+    };
+    
+    updateSection.mutate({
+      section: "heroSectionsShowcase",
+      data: updatedShowcase,
+    });
+  };
+
+  // Loading state
+  if (isLoading || !content) {
+    return (
+      <section className="py-16 overflow-hidden">
+        <div className="mb-12 text-center px-4 sm:px-6 lg:px-8">
+          <div className="animate-pulse">
+            <div className="h-12 bg-gray-200 rounded mb-4 max-w-2xl mx-auto"></div>
+            <div className="h-6 bg-gray-200 rounded max-w-3xl mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const { heroSectionsShowcase } = content;
 
   // Safety check for images array
   if (!heroSectionsShowcase?.images || heroSectionsShowcase.images.length === 0) {
@@ -20,8 +52,20 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:desktop-text-5xl mb-4 text-charcoal">{heroSectionsShowcase.title}</h2>
-        <p className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">{heroSectionsShowcase.subtitle}</p>
+        <h2 className="font-instrument-serif text-3xl sm:text-4xl lg:desktop-text-5xl mb-4 text-charcoal">
+          <EditableText
+            value={heroSectionsShowcase.title}
+            onChange={(value) => handleUpdateShowcase("title", value)}
+            tag="span"
+          />
+        </h2>
+        <p className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">
+          <EditableText
+            value={heroSectionsShowcase.subtitle}
+            onChange={(value) => handleUpdateShowcase("subtitle", value)}
+            tag="span"
+          />
+        </p>
       </motion.div>
       
       {/* Full width showcase animation - sampai ujung desktop tanpa padding */}

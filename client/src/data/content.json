@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "We Deliver Standout Websites",
+    "title": "We Deliver Standot Websites",
     "titleHighlight": "Standout Websites",
     "subtitle": "with Effortless Collaboration",
     "stats": "70+ Amazing Websites Created So Far",
@@ -8,10 +8,22 @@
     "acceptingText": "Accepting new projects",
     "toolsText": "We use industry standard tools like",
     "tools": [
-      { "name": "Figma", "color": "purple-500" },
-      { "name": "Framer", "color": "blue-500" },
-      { "name": "Webflow", "color": "indigo-500" },
-      { "name": "NextJS", "color": "cyan-500" }
+      {
+        "name": "Figma",
+        "color": "purple-500"
+      },
+      {
+        "name": "Framer",
+        "color": "blue-500"
+      },
+      {
+        "name": "Webflow",
+        "color": "indigo-500"
+      },
+      {
+        "name": "NextJS",
+        "color": "cyan-500"
+      }
     ]
   },
   "services": {
@@ -189,9 +201,18 @@
     "titleHighlight": "Best Works",
     "subtitle": "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
     "categories": [
-      { "id": "all", "label": "All Works" },
-      { "id": "websites", "label": "Websites" },
-      { "id": "branding", "label": "Logo & Branding" }
+      {
+        "id": "all",
+        "label": "All Works"
+      },
+      {
+        "id": "websites",
+        "label": "Websites"
+      },
+      {
+        "id": "branding",
+        "label": "Logo & Branding"
+      }
     ]
   },
   "projects": [
@@ -241,7 +262,7 @@
     },
     {
       "id": 5,
-      "title": "ShopCraft", 
+      "title": "ShopCraft",
       "description": "Complete e-commerce solution designed to maximize conversions.",
       "longDescription": "Integrated with modern payment systems and inventory management tools to provide a seamless experience for both customers and store administrators.",
       "category": "websites",
@@ -267,7 +288,7 @@
     "copyright": "© 2024 Lander Studio. All rights reserved.",
     "services": [
       "Website Design",
-      "Logo & Branding", 
+      "Logo & Branding",
       "Pitch Decks",
       "Social Media"
     ],
