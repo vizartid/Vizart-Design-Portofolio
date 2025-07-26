@@ -73,7 +73,7 @@ export default function Navbar() {
       <div
         className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
+            ? "max-w-6xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
             : "w-full bg-transparent scale-100"
         } ${scrollDirection === "up" && isScrolled ? "scale-100" : ""} ${scrollDirection === "down" && isScrolled ? "scale-95" : ""}`}
       >
@@ -131,7 +131,7 @@ export default function Navbar() {
             {/* Central Navigation (Desktop) */}
             <div
               className={`hidden md:flex rounded-xl transition-all duration-700 ease-out ${
-                isScrolled ? "p-1" : "p-1 lg:p-2"
+                isScrolled ? "p-1.5" : "p-1 lg:p-2"
               }`}
               style={{ backgroundColor: '#e6e6e6' }}
             >
