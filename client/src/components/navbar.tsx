@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Leaf, Menu, X } from "lucide-react";
 
+import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+
 export default function Navbar() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +73,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2">
               <img
-                src="profile-foto.png"
+                src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
                 alt="Profile"
                 className="w-6 h-6 lg:w-8 lg:h-8 rounded-full object-cover"
               />
