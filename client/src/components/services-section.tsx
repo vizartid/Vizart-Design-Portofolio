@@ -17,19 +17,7 @@ export default function ServicesSection() {
             Defining Hero Sections
           </h2>
           
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-12 text-sm lg:desktop-text-base">
-            <div className="flex items-center space-x-2">
-              <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span>Positive Initial Impressions</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span>Clear Brand Introduction Message</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Circle className="w-2 h-2 text-electric-blue fill-current" />
-              <span>Improved Conversion Rates</span>
-            </div>
+
           </div>
 
           {/* Hero Examples Grid */}
