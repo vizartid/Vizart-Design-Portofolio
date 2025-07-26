@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Edit3, Save, Plus, Trash2, Image, Type, Link } from "lucide-react";
+import ErrorBoundary from "./error-boundary";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -105,7 +106,8 @@ export function WorksVisualEditor() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <ErrorBoundary>
+      <div className="fixed top-4 right-4 z-50">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
           <Button variant="outline" size="sm" className="bg-white shadow-lg">
@@ -317,5 +319,6 @@ export function WorksVisualEditor() {
         </CollapsibleContent>
       </Collapsible>
     </div>
+    </ErrorBoundary>
   );
 }

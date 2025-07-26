@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { useState, useEffect } from "react";
+import { DragDropContext, Droppable, Draggable, DropResult } from "react-beautiful-dnd";
 import { Settings, Save, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import ErrorBoundary from "./error-boundary";
 
 interface SectionItem {
   id: string;
@@ -22,12 +23,23 @@ const DEFAULT_SECTIONS: SectionItem[] = [
 
 export function SectionOrderEditor() {
   const [isOpen, setIsOpen] = useState(false);
-  const [sections, setSections] = useState<SectionItem[]>(() => {
-    const saved = localStorage.getItem('sectionOrder');
-    return saved ? JSON.parse(saved) : DEFAULT_SECTIONS;
-  });
+  const [sections, setSections] = useState<SectionItem[]>(DEFAULT_SECTIONS);
+  const [mounted, setMounted] = useState(false);
 
-  const handleDragEnd = (result: any) => {
+  useEffect(() => {
+    setMounted(true);
+    const saved = localStorage.getItem('sectionOrder');
+    if (saved) {
+      try {
+        setSections(JSON.parse(saved));
+      } catch (error) {
+        console.error('Error parsing saved section order:', error);
+        setSections(DEFAULT_SECTIONS);
+      }
+    }
+  }, []);
+
+  const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
 
     const items = Array.from(sections);
@@ -57,7 +69,8 @@ export function SectionOrderEditor() {
   };
 
   return (
-    <div className="fixed top-4 left-4 z-50">
+    <ErrorBoundary>
+      <div className="fixed top-4 left-4 z-50">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
           <Button variant="outline" size="sm" className="bg-white shadow-lg">
@@ -73,44 +86,59 @@ export function SectionOrderEditor() {
               <p className="text-sm text-gray-600">Drag untuk mengubah urutan</p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <DragDropContext onDragEnd={handleDragEnd}>
-                <Droppable droppableId="sections">
-                  {(provided) => (
-                    <div
-                      {...provided.droppableProps}
-                      ref={provided.innerRef}
-                      className="space-y-2"
-                    >
-                      {sections.map((section, index) => (
-                        <Draggable
-                          key={section.id}
-                          draggableId={section.id}
-                          index={index}
-                        >
-                          {(provided, snapshot) => (
-                            <div
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className={`flex items-center space-x-3 p-3 bg-gray-50 rounded-lg border ${
-                                snapshot.isDragging ? 'shadow-lg' : ''
-                              }`}
-                            >
-                              <GripVertical className="w-4 h-4 text-gray-400" />
-                              <div className="flex-1">
-                                <p className="font-medium text-sm">{section.name}</p>
-                                <p className="text-xs text-gray-500">{section.component}</p>
+              {mounted ? (
+                <DragDropContext onDragEnd={handleDragEnd}>
+                  <Droppable droppableId="sections">
+                    {(provided) => (
+                      <div
+                        {...provided.droppableProps}
+                        ref={provided.innerRef}
+                        className="space-y-2"
+                      >
+                        {sections.map((section, index) => (
+                          <Draggable
+                            key={section.id}
+                            draggableId={section.id}
+                            index={index}
+                          >
+                            {(provided, snapshot) => (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className={`flex items-center space-x-3 p-3 bg-gray-50 rounded-lg border ${
+                                  snapshot.isDragging ? 'shadow-lg' : ''
+                                }`}
+                              >
+                                <GripVertical className="w-4 h-4 text-gray-400" />
+                                <div className="flex-1">
+                                  <p className="font-medium text-sm">{section.name}</p>
+                                  <p className="text-xs text-gray-500">{section.component}</p>
+                                </div>
+                                <span className="text-xs text-gray-400">#{index + 1}</span>
                               </div>
-                              <span className="text-xs text-gray-400">#{index + 1}</span>
-                            </div>
-                          )}
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
+                            )}
+                          </Draggable>
+                        ))}
+                        {provided.placeholder}
+                      </div>
+                    )}
+                  </Droppable>
+                </DragDropContext>
+              ) : (
+                <div className="space-y-2">
+                  {sections.map((section, index) => (
+                    <div key={section.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg border">
+                      <GripVertical className="w-4 h-4 text-gray-400" />
+                      <div className="flex-1">
+                        <p className="font-medium text-sm">{section.name}</p>
+                        <p className="text-xs text-gray-500">{section.component}</p>
+                      </div>
+                      <span className="text-xs text-gray-400">#{index + 1}</span>
                     </div>
-                  )}
-                </Droppable>
-              </DragDropContext>
+                  ))}
+                </div>
+              )}
               
               <div className="flex gap-2 pt-4 border-t">
                 <Button onClick={applySectionOrder} className="flex-1">
@@ -130,5 +158,6 @@ export function SectionOrderEditor() {
         </CollapsibleContent>
       </Collapsible>
     </div>
+    </ErrorBoundary>
   );
 }
