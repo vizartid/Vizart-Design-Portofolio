@@ -126,7 +126,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-[18px] font-normal">
             <EditableText
               value={content.hero.toolsText}
               onChange={(value) => handleUpdateHero("toolsText", value)}
