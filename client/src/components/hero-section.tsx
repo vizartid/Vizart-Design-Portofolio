@@ -139,7 +139,7 @@ export default function HeroSection() {
                 <div key={index} className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105">
                   <div className="flex items-center justify-center">
                     {IconComponent && (
-                      <IconComponent className={`w-8 h-8 text-${tool.color} lucide-glow`} />
+                      <IconComponent className={`w-8 h-8 text-${tool.color}`} />
                     )}
                   </div>
                   <span className="font-medium text-gray-700">
