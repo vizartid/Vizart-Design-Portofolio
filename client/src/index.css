@@ -6,14 +6,16 @@
 
 /* CSS Variables for Glow Effects */
 :root {
-  --glow-color-primary: #3b82f6; /* Electric Blue */
-  --glow-color-secondary: #8b5cf6; /* Purple */
+  --glow-color-primary: #3b82f6;
+  /* Electric Blue */
+  --glow-color-secondary: #8b5cf6;
+  /* Purple */
   --glow-intensity: 8px;
   --glow-spread: 4px;
 }
 
 :root {
-  --background: hsl(46, 33%, 95%);
+  --background: hsl(0, 0%, 96%);
   --foreground: hsl(220, 13%, 18%);
   --muted: hsl(210, 11%, 96%);
   --muted-foreground: hsl(215, 13%, 45%);
@@ -404,14 +406,14 @@
 
   /* Icon container glow */
   .icon-glow {
-    box-shadow: 
+    box-shadow:
       0 0 var(--glow-spread) rgba(59, 130, 246, 0.3),
       inset 0 0 var(--glow-spread) rgba(59, 130, 246, 0.1);
     transition: box-shadow 0.3s ease;
   }
 
   .icon-glow:hover {
-    box-shadow: 
+    box-shadow:
       0 0 calc(var(--glow-spread) * 2) rgba(59, 130, 246, 0.5),
       inset 0 0 calc(var(--glow-spread) * 1.5) rgba(59, 130, 246, 0.2);
   }
@@ -424,7 +426,7 @@
 
   /* Step number glow for process section */
   .step-number-glow {
-    box-shadow: 
+    box-shadow:
       0 0 var(--glow-spread) rgba(59, 130, 246, 0.6),
       0 0 calc(var(--glow-spread) * 2) rgba(59, 130, 246, 0.3);
     filter: drop-shadow(0 0 var(--glow-intensity) rgba(59, 130, 246, 0.8));
