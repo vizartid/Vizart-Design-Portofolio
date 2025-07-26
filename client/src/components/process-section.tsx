@@ -196,7 +196,7 @@ export default function ProcessSection() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="font-poppins font-semibold text-xl mb-3 text-charcoal">
+                    <h3 className="font-instrument font-semibold mb-3 text-charcoal text-[24px]">
                       <EditableText
                         value={step.title}
                         onChange={(value) =>
@@ -217,7 +217,6 @@ export default function ProcessSection() {
                     </p>
                   </div>
                 </div>
-
                 {/* Step Number - Small and Subtle */}
                 <div className="absolute top-4 right-4 w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs">
                   {index + 1}
