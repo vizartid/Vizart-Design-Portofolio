@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-4">What Our Clients Say</h2>
+          <h2 className="font-instrument sm:text-4xl lg:text-5xl mb-4 text-[70px]">What Our Clients Say</h2>
           <p className="text-gray-600 text-lg">Real feedback from real people we've worked with</p>
         </motion.div>
 
