@@ -11,21 +11,32 @@ export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'none'>('none');
   const { data: content } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const scrollDiff = currentScrollY - lastScrollY;
 
-      // Handle navbar visibility
+      // Determine scroll direction
+      if (Math.abs(scrollDiff) > 5) { // Threshold to avoid jitter
+        if (scrollDiff > 0) {
+          setScrollDirection('down');
+        } else {
+          setScrollDirection('up');
+        }
+      }
+
+      // Handle navbar visibility with improved logic
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
-      // Handle navbar size/styling changes
-      if (currentScrollY > 50) {
+      // Handle navbar styling changes with smoother threshold
+      if (currentScrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -34,27 +45,31 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const throttledHandleScroll = () => {
+      requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", throttledHandleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", throttledHandleScroll);
   }, [lastScrollY]);
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "pt-4 px-4" : ""}`}
+      } ${isScrolled ? "pt-3 px-3 lg:pt-4 lg:px-4" : ""}`}
     >
       <div
-        className={`transition-all duration-500 ease-in-out ${
+        className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-4xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/80 shadow-lg rounded-2xl"
-            : "w-full bg-transparent"
-        }`}
+            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-95"
+            : "w-full bg-transparent scale-100"
+        } ${scrollDirection === 'up' && isScrolled ? 'scale-100' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-95' : ''}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`transition-all duration-700 ease-out ${isScrolled ? 'max-w-5xl' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
           <div
-            className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
-              isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+            className={`flex justify-between items-center transition-all duration-700 ease-out ${
+              isScrolled ? "h-12 lg:h-14 py-2" : "h-16 lg:h-20 py-3 lg:py-4"
             }`}
           >
           {/* Logo */}
@@ -81,14 +96,14 @@ export default function Navbar() {
             ) : (
               <>
                 <Leaf
-                  className={`text-electric-blue lucide-glow transition-all duration-500 ease-in-out ${
-                    isScrolled ? "text-lg lg:text-xl" : "text-xl lg:text-2xl"
+                  className={`text-electric-blue lucide-glow transition-all duration-700 ease-out ${
+                    isScrolled ? "w-5 h-5 lg:w-6 lg:h-6" : "w-6 h-6 lg:w-8 lg:h-8"
                   }`}
                 />
                 <span
-                  className={`font-poppins font-semibold transition-all duration-500 ease-in-out ${
+                  className={`font-poppins font-semibold transition-all duration-700 ease-out ${
                     isScrolled
-                      ? "text-lg lg:text-xl"
+                      ? "text-base lg:text-lg"
                       : "text-xl lg:desktop-text-xl"
                   }`}
                 >
@@ -100,15 +115,15 @@ export default function Navbar() {
 
           {/* Central Navigation (Desktop) */}
           <div
-            className={`hidden md:flex bg-light-gray rounded-xl  transition-all duration-500 ease-in-out ${
-              isScrolled ? "p-1" : "p-1 lg:p-2"
+            className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
+              isScrolled ? "p-1 scale-95" : "p-1 lg:p-2 scale-100"
             }`}
           >
             <Link href="/">
               <button
-                className={`rounded-xl font-medium transition-all duration-500 ease-in-out ${
+                className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-4 py-2 text-base"
+                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/"
@@ -121,9 +136,9 @@ export default function Navbar() {
             </Link>
             <Link href="/works">
               <button
-                className={`rounded-xl font-medium transition-all duration-500 ease-in-out ${
+                className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-4 py-2 text-base"
+                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/works"
@@ -139,10 +154,10 @@ export default function Navbar() {
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
             <button
-              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-500 ease-in-out ${
+              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out transform ${
                 isScrolled
-                  ? "px-4 py-2 text-base"
-                  : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                  ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base scale-95"
+                  : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl scale-100"
               }`}
             >
               <span>Book a Call</span>
