@@ -8,7 +8,7 @@ import HeroSectionsShowcase from "@/components/hero-sections-showcase";
 import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
-import { SectionOrderEditor } from "@/components/section-order-editor";
+
 import { motion } from "framer-motion";
 
 import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
@@ -74,7 +74,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-bone-white">
-      <SectionOrderEditor />
       <Navbar />
       {/* Render sections sesuai urutan */}
       {sectionOrder.map((section) => {
