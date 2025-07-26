@@ -29,7 +29,7 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl mb-6 font-light text-[80px]">
+            <h1 className="font-instrument sm:text-5xl lg:desktop-text-6xl mb-6 font-light text-[59px]">
               Showcase of Our<br />
               <span className="text-electric-blue">Best Works</span>
             </h1>
