@@ -62,7 +62,7 @@ export default function Navbar() {
       <div
         className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-95"
+            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
             : "w-full bg-transparent scale-100"
         } ${scrollDirection === 'up' && isScrolled ? 'scale-100' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-95' : ''}`}
       >
@@ -116,19 +116,19 @@ export default function Navbar() {
           {/* Central Navigation (Desktop) */}
           <div
             className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
-              isScrolled ? "p-1 scale-95" : "p-1 lg:p-2 scale-100"
+              isScrolled ? "p-1" : "p-1 lg:p-2"
             }`}
           >
             <Link href="/">
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
+                    ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                 }`}
               >
                 Home
@@ -138,12 +138,12 @@ export default function Navbar() {
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
+                    ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/works"
                     ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal"
+                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
                 }`}
               >
                 Works
@@ -154,10 +154,10 @@ export default function Navbar() {
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
             <button
-              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out transform ${
+              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out ${
                 isScrolled
-                  ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base scale-95"
-                  : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl scale-100"
+                  ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
+                  : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
               }`}
             >
               <span>Book a Call</span>
