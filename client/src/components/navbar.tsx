@@ -40,11 +40,16 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             {content?.branding?.logoUrl ? (
-              <img
-                src={content.branding.logoUrl}
-                alt="Logo"
-                className="h-8 lg:h-10 object-contain"
-              />
+              <>
+                <img
+                  src={content.branding.logoUrl}
+                  alt="Logo"
+                  className="h-8 lg:h-10 object-contain"
+                />
+                <span className="font-poppins font-semibold text-xl lg:desktop-text-xl">
+                  {content?.branding?.logoText || "Vizart"}
+                </span>
+              </>
             ) : (
               <>
                 <Leaf className="text-electric-blue text-xl lg:text-2xl lucide-glow" />

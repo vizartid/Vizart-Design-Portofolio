@@ -13,11 +13,16 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               {content?.branding?.footerLogoUrl ? (
-                <img
-                  src={content.branding.footerLogoUrl}
-                  alt="Footer Logo"
-                  className="h-6 object-contain"
-                />
+                <>
+                  <img
+                    src={content.branding.footerLogoUrl}
+                    alt="Footer Logo"
+                    className="h-6 object-contain"
+                  />
+                  <span className="font-poppins font-semibold text-xl">
+                    {content?.branding?.footerLogoText || "Vizart"}
+                  </span>
+                </>
               ) : (
                 <>
                   <Leaf className="text-electric-blue text-xl" />
