@@ -116,7 +116,7 @@ export default function ServicesSection() {
                     <Code className="w-8 h-8 lg:w-10 lg:h-10 text-electric-blue lucide-glow" />
                   )}
                 </div>
-                <h3 className="font-poppins font-semibold lg:desktop-text-2xl mb-3 text-[30px]">
+                <h3 className="font-instrument font-semibold lg:desktop-text-2xl mb-3 text-[28px]">
                   <EditableText
                     value={service.title}
                     onChange={(value) =>

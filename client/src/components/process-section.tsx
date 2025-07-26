@@ -184,38 +184,38 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center space-x-6 text-center">
-                  {/* Icon with Glow Effect Only */}
-                  <div className="flex-shrink-0">
+                <div className="text-center">
+                  {/* Icon with Glow Effect Only - Centered at top */}
+                  <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
                     {IconComponent && (
                       <IconComponent
-                        className={`w-12 h-12 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`}
+                        className={`w-8 h-8 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`}
                       />
                     )}
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="font-instrument font-semibold mb-3 text-charcoal text-[30px]">
-                      <EditableText
-                        value={step.title}
-                        onChange={(value) =>
-                          handleUpdateStep(step.id, "title", value)
-                        }
-                        tag="span"
-                      />
-                    </h3>
-                    <p className="text-gray-600 text-[18px]">
-                      <EditableText
-                        value={step.description}
-                        onChange={(value) =>
-                          handleUpdateStep(step.id, "description", value)
-                        }
-                        tag="span"
-                        multiline={true}
-                      />
-                    </p>
-                  </div>
+                  {/* Title */}
+                  <h3 className="font-instrument font-semibold mb-3 text-charcoal text-[28px]">
+                    <EditableText
+                      value={step.title}
+                      onChange={(value) =>
+                        handleUpdateStep(step.id, "title", value)
+                      }
+                      tag="span"
+                    />
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 text-[18px] leading-relaxed">
+                    <EditableText
+                      value={step.description}
+                      onChange={(value) =>
+                        handleUpdateStep(step.id, "description", value)
+                      }
+                      tag="span"
+                      multiline={true}
+                    />
+                  </p>
                 </div>
                 {/* Step Number - Small and Subtle */}
                 <div className="absolute top-4 right-4 w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs">
