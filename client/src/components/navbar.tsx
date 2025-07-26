@@ -11,7 +11,9 @@ export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'none'>('none');
+  const [scrollDirection, setScrollDirection] = useState<
+    "up" | "down" | "none"
+  >("none");
   const { data: content } = useContent();
 
   useEffect(() => {
@@ -20,11 +22,12 @@ export default function Navbar() {
       const scrollDiff = currentScrollY - lastScrollY;
 
       // Determine scroll direction
-      if (Math.abs(scrollDiff) > 5) { // Threshold to avoid jitter
+      if (Math.abs(scrollDiff) > 5) {
+        // Threshold to avoid jitter
         if (scrollDiff > 0) {
-          setScrollDirection('down');
+          setScrollDirection("down");
         } else {
-          setScrollDirection('up');
+          setScrollDirection("up");
         }
       }
 
@@ -64,117 +67,121 @@ export default function Navbar() {
           isScrolled
             ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-100"
             : "w-full bg-transparent scale-100"
-        } ${scrollDirection === 'up' && isScrolled ? 'scale-100' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-95' : ''}`}
+        } ${scrollDirection === "up" && isScrolled ? "scale-100" : ""} ${scrollDirection === "down" && isScrolled ? "scale-95" : ""}`}
       >
-        <div className={`transition-all duration-700 ease-out ${isScrolled ? 'max-w-5xl' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
+        <div
+          className={`transition-all duration-700 ease-out ${isScrolled ? "max-w-5xl" : "max-w-7xl"} mx-auto px-4 sm:px-6 lg:px-8`}
+        >
           <div
             className={`flex justify-between items-center transition-all duration-700 ease-out ${
               isScrolled ? "h-12 lg:h-14 py-2" : "h-16 lg:h-20 py-3 lg:py-4"
             }`}
           >
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            {content?.branding?.logoUrl ? (
-              <>
-                <img
-                  src={content.branding.logoUrl}
-                  alt="Logo"
-                  className={`object-contain transition-all duration-500 ease-in-out ${
-                    isScrolled ? "h-6 lg:h-8" : "h-8 lg:h-10"
-                  }`}
-                />
-                <span
-                  className={`font-poppins font-semibold transition-all duration-500 ease-in-out ${
-                    isScrolled
-                      ? "text-lg lg:text-xl"
-                      : "text-xl lg:desktop-text-xl"
-                  }`}
-                >
-                  {content?.branding?.logoText || "Vizart"}
-                </span>
-              </>
-            ) : (
-              <>
-                <Leaf
-                  className={`text-electric-blue lucide-glow transition-all duration-700 ease-out ${
-                    isScrolled ? "w-5 h-5 lg:w-6 lg:h-6" : "w-6 h-6 lg:w-8 lg:h-8"
-                  }`}
-                />
-                <span
-                  className={`font-poppins font-semibold transition-all duration-700 ease-out ${
-                    isScrolled
-                      ? "text-base lg:text-lg"
-                      : "text-xl lg:desktop-text-xl"
-                  }`}
-                >
-                  {content?.branding?.logoText || "Vizart"}
-                </span>
-              </>
-            )}
-          </Link>
-
-          {/* Central Navigation (Desktop) */}
-          <div
-            className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
-              isScrolled ? "p-1" : "p-1 lg:p-2"
-            }`}
-          >
-            <Link href="/">
-              <button
-                className={`rounded-xl font-medium transition-all duration-700 ease-out ${
-                  isScrolled
-                    ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
-                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
-                } ${
-                  location === "/"
-                    ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
-                }`}
-              >
-                Home
-              </button>
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-2">
+              {content?.branding?.logoUrl ? (
+                <>
+                  <img
+                    src={content.branding.logoUrl}
+                    alt="Logo"
+                    className={`object-contain transition-all duration-500 ease-in-out ${
+                      isScrolled ? "h-6 lg:h-8" : "h-8 lg:h-10"
+                    }`}
+                  />
+                  <span
+                    className={`font-poppins font-semibold transition-all duration-500 ease-in-out ${
+                      isScrolled
+                        ? "text-lg lg:text-xl"
+                        : "text-xl lg:desktop-text-xl"
+                    }`}
+                  >
+                    {content?.branding?.logoText || "Vizart"}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <Leaf
+                    className={`text-electric-blue lucide-glow transition-all duration-700 ease-out ${
+                      isScrolled
+                        ? "w-5 h-5 lg:w-6 lg:h-6"
+                        : "w-6 h-6 lg:w-8 lg:h-8"
+                    }`}
+                  />
+                  <span
+                    className={`font-poppins font-semibold transition-all duration-700 ease-out ${
+                      isScrolled
+                        ? "text-base lg:text-lg"
+                        : "text-xl lg:desktop-text-xl"
+                    }`}
+                  >
+                    {content?.branding?.logoText || "Vizart"}
+                  </span>
+                </>
+              )}
             </Link>
-            <Link href="/works">
-              <button
-                className={`rounded-xl font-medium transition-all duration-700 ease-out ${
-                  isScrolled
-                    ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
-                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
-                } ${
-                  location === "/works"
-                    ? "bg-white shadow-sm text-charcoal"
-                    : "text-gray-600 hover:text-charcoal hover:bg-white/50"
-                }`}
-              >
-                Works
-              </button>
-            </Link>
-          </div>
 
-          {/* CTA Button (Desktop) */}
-          <div className="hidden md:block">
-            <button
-              className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out ${
-                isScrolled
-                  ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
-                  : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+            {/* Central Navigation (Desktop) */}
+            <div
+              className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
+                isScrolled ? "p-1" : "p-1 lg:p-2"
               }`}
             >
-              <span>Book a Call</span>
-            </button>
-          </div>
+              <Link href="/">
+                <button
+                  className={`rounded-xl font-medium transition-all duration-700 ease-out ${
+                    isScrolled
+                      ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
+                      : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                  } ${
+                    location === "/"
+                      ? "bg-white shadow-sm text-charcoal"
+                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
+                  }`}
+                >
+                  Home
+                </button>
+              </Link>
+              <Link href="/works">
+                <button
+                  className={`rounded-xl font-medium transition-all duration-700 ease-out ${
+                    isScrolled
+                      ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
+                      : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                  } ${
+                    location === "/works"
+                      ? "bg-white shadow-sm text-charcoal"
+                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
+                  }`}
+                >
+                  Works
+                </button>
+              </Link>
+            </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="text-xl lucide-glow" />
-            ) : (
-              <Menu className="text-xl lucide-glow" />
-            )}
-          </button>
+            {/* CTA Button (Desktop) */}
+            <div className="hidden md:block">
+              <button
+                className={`bg-black text-white rounded-xl font-medium hover:bg-gray-900 transition-all duration-700 ease-out ${
+                  isScrolled
+                    ? "px-4 py-2 text-base lg:px-5 lg:py-2.5 lg:text-lg"
+                    : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
+                }`}
+              >
+                <span>Book a Call</span>
+              </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="text-xl lucide-glow" />
+              ) : (
+                <Menu className="text-xl lucide-glow" />
+              )}
+            </button>
           </div>
         </div>
       </div>

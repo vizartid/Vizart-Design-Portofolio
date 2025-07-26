@@ -9,7 +9,7 @@ import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48
 const iconMap = {
   Figma,
   Frame,
-  Layers
+  Layers,
 };
 
 export default function HeroSection() {
@@ -18,12 +18,12 @@ export default function HeroSection() {
 
   const handleUpdateHero = (field: string, value: any) => {
     if (!content) return;
-    
+
     const updatedHero = {
       ...content.hero,
       [field]: value,
     };
-    
+
     updateSection.mutate({
       section: "hero",
       data: updatedHero,
@@ -80,7 +80,7 @@ export default function HeroSection() {
             />
           </p>
 
-          <button className="bg-charcoal text-white px-8 py-3 rounded-md font-medium custom-button hover:bg-gray-800 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
+          <button className="bg-black text-white px-8 py-3 rounded-xl font-medium custom-button hover:bg-gray-900 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
               src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
@@ -134,11 +134,16 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {content.hero.tools.map((tool, index) => {
-              const IconComponent = iconMap[(tool as any).icon as keyof typeof iconMap];
-              const hasCustomLogo = (tool as any).logoUrl && (tool as any).logoUrl.trim() !== '';
-              
+              const IconComponent =
+                iconMap[(tool as any).icon as keyof typeof iconMap];
+              const hasCustomLogo =
+                (tool as any).logoUrl && (tool as any).logoUrl.trim() !== "";
+
               return (
-                <div key={index} className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105">
+                <div
+                  key={index}
+                  className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105"
+                >
                   <div className="flex items-center justify-center">
                     {hasCustomLogo ? (
                       <img
@@ -149,7 +154,9 @@ export default function HeroSection() {
                     ) : IconComponent ? (
                       <IconComponent className={`w-8 h-8 text-${tool.color}`} />
                     ) : (
-                      <div className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}>
+                      <div
+                        className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}
+                      >
                         {tool.name.charAt(0)}
                       </div>
                     )}

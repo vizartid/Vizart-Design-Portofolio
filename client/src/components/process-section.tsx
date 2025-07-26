@@ -205,7 +205,7 @@ export default function ProcessSection() {
                         tag="span"
                       />
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 text-[18px]">
                       <EditableText
                         value={step.description}
                         onChange={(value) =>
