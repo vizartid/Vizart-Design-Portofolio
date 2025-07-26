@@ -143,7 +143,7 @@ export default function Navbar() {
                   } ${
                     location === "/"
                       ? "bg-white shadow-sm text-charcoal"
-                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
+                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   Home
@@ -158,7 +158,7 @@ export default function Navbar() {
                   } ${
                     location === "/works"
                       ? "bg-white shadow-sm text-charcoal"
-                      : "text-gray-600 hover:text-charcoal hover:bg-white/50"
+                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   Works

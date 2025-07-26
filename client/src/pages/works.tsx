@@ -104,7 +104,7 @@ export default function Works() {
                   className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
                     activeCategory === category.id
                       ? "bg-white shadow-sm text-charcoal"
-                      : "text-gray-600 hover:text-charcoal"
+                      : "bg-gray-300 text-gray-600 hover:text-charcoal hover:bg-white/50"
                   }`}
                 >
                   {category.label}
