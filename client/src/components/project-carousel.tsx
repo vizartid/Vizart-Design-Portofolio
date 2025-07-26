@@ -43,8 +43,8 @@ export default function ProjectCarousel() {
               className="flex-none cursor-pointer"
               onClick={() => window.open(project.projectUrl || "#", "_blank")}
             >
-              {/* Simple image without laptop frame - just clean photos */}
-              <div className="relative w-[500px] h-[380px] lg:desktop-w-400 lg:desktop-h-280 rounded-xl overflow-hidden shadow-2xl">
+              {/* Simple image without laptop frame - just clean photos with gray border */}
+              <div className="relative w-[500px] h-[380px] lg:desktop-w-400 lg:desktop-h-280 rounded overflow-hidden shadow-2xl border-2 border-gray-300">
                 <img
                   src={project.imageUrl}
                   alt={`${project.title} website`}

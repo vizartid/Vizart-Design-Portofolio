@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <ServicesSection />
       <WinningEdgeSection />
       <HeroSectionsShowcase />
+      <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />
       <FAQSection />
