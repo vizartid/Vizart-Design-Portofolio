@@ -157,7 +157,7 @@ export default function ServicesSection() {
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
             {servicesData.features.map((feature, index) => (
               <div key={index} className="flex items-center space-x-2">
-                <Circle className="w-2 h-2 text-electric-blue fill-current blue-dot-glow" />
+                <div className="w-2 h-2 bg-electric-blue rounded-full drop-shadow-[0_0_6px_rgba(59,130,246,0.6)]" />
                 <span className="custom-accepting">
                   <EditableText
                     value={feature.text}
@@ -168,7 +168,7 @@ export default function ServicesSection() {
               </div>
             ))}
             <div className="flex items-center space-x-2">
-              <Circle className="w-2 h-2 text-electric-blue fill-current" />
+              <div className="w-2 h-2 bg-electric-blue rounded-full drop-shadow-[0_0_6px_rgba(59,130,246,0.6)]" />
               <span className="custom-accepting">Post-Project Support</span>
             </div>
           </div>
