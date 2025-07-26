@@ -135,11 +135,23 @@ export default function HeroSection() {
           <div className="flex flex-wrap justify-center items-center gap-8">
             {content.hero.tools.map((tool, index) => {
               const IconComponent = iconMap[(tool as any).icon as keyof typeof iconMap];
+              const hasCustomLogo = (tool as any).logoUrl && (tool as any).logoUrl.trim() !== '';
+              
               return (
                 <div key={index} className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105">
                   <div className="flex items-center justify-center">
-                    {IconComponent && (
+                    {hasCustomLogo ? (
+                      <img
+                        src={(tool as any).logoUrl}
+                        alt={tool.name}
+                        className="w-8 h-8 object-contain"
+                      />
+                    ) : IconComponent ? (
                       <IconComponent className={`w-8 h-8 text-${tool.color}`} />
+                    ) : (
+                      <div className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}>
+                        {tool.name.charAt(0)}
+                      </div>
                     )}
                   </div>
                   <span className="font-medium text-gray-700">

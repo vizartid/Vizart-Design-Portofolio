@@ -67,6 +67,17 @@ export default function Navbar() {
                 Works
               </button>
             </Link>
+            <Link href="/tools-editor">
+              <button
+                className={`px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl transition-all duration-200 ${
+                  location === "/tools-editor"
+                    ? "bg-white shadow-sm text-charcoal"
+                    : "text-gray-600 hover:text-charcoal"
+                }`}
+              >
+                Tools Editor
+              </button>
+            </Link>
           </div>
 
           {/* CTA Button (Desktop) */}
@@ -103,6 +114,9 @@ export default function Navbar() {
             </Link>
             <Link href="/works" onClick={() => setIsMenuOpen(false)}>
               <span className="block text-gray-600 font-medium">Works</span>
+            </Link>
+            <Link href="/tools-editor" onClick={() => setIsMenuOpen(false)}>
+              <span className="block text-gray-600 font-medium">Tools Editor</span>
             </Link>
             <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4 flex items-center justify-center space-x-2">
               <img

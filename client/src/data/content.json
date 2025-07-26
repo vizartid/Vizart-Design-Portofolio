@@ -11,17 +11,20 @@
       {
         "name": "Figma",
         "color": "purple-500",
-        "icon": "Figma"
+        "icon": "Figma",
+        "logoUrl": ""
       },
       {
         "name": "Framer",
         "color": "blue-500",
-        "icon": "Frame"
+        "icon": "Frame",
+        "logoUrl": ""
       },
       {
         "name": "Webflow",
         "color": "indigo-500",
-        "icon": "Layers"
+        "icon": "Layers",
+        "logoUrl": ""
       }
     ]
   },
