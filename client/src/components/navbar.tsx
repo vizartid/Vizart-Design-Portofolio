@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button className="bg-charcoal text-white px-6 py-2 lg:px-8 lg:py-3 rounded-xl font-medium lg:desktop-text-xl hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2">
               <img
-                src="/profile-foto.png"
+                src="profile-foto.png"
                 alt="Profile"
                 className="w-6 h-6 lg:w-8 lg:h-8 rounded-full object-cover"
               />
@@ -92,7 +92,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-bone-white border-t border-gray-200">

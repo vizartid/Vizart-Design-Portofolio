@@ -107,43 +107,117 @@
   /* DESKTOP SCALING SYSTEM - Mudah disesuaikan */
   /* Untuk mengubah ukuran teks di desktop, ganti angka di bawah ini: */
   @media (min-width: 1024px) {
-    
-    /* TEXT SIZES - Ganti angka ini untuk memperbesar/memperkecil teks */
-    .lg\:desktop-text-base { font-size: 1.4rem !important; }      /* Basic text */
-    .lg\:desktop-text-lg { font-size: 1.6rem !important; }        /* Large text */  
-    .lg\:desktop-text-xl { font-size: 1.8rem !important; }        /* Extra large */
-    .lg\:desktop-text-2xl { font-size: 2.1rem !important; }       /* 2X large */
-    .lg\:desktop-text-3xl { font-size: 2.6rem !important; }       /* 3X large */
-    .lg\:desktop-text-4xl { font-size: 3.2rem !important; }       /* 4X large */
-    .lg\:desktop-text-5xl { font-size: 4.2rem !important; }       /* 5X large */
-    .lg\:desktop-text-6xl { font-size: 5.3rem !important; }       /* 6X large */
-    .lg\:desktop-text-7xl { font-size: 6.3rem !important; }       /* 7X large */
-    .lg\:desktop-text-8xl { font-size: 8.4rem !important; }       /* 8X large */
 
-    
+    /* TEXT SIZES - Ganti angka ini untuk memperbesar/memperkecil teks */
+    .lg\:desktop-text-base {
+      font-size: 1.4rem !important;
+    }
+
+    /* Basic text */
+    .lg\:desktop-text-lg {
+      font-size: 1.6rem !important;
+    }
+
+    /* Large text */
+    .lg\:desktop-text-xl {
+      font-size: 1.8rem !important;
+    }
+
+    /* Extra large */
+    .lg\:desktop-text-2xl {
+      font-size: 2.1rem !important;
+    }
+
+    /* 2X large */
+    .lg\:desktop-text-3xl {
+      font-size: 2.6rem !important;
+    }
+
+    /* 3X large */
+    .lg\:desktop-text-4xl {
+      font-size: 3.2rem !important;
+    }
+
+    /* 4X large */
+    .lg\:desktop-text-5xl {
+      font-size: 4.2rem !important;
+    }
+
+    /* 5X large */
+    .lg\:desktop-text-6xl {
+      font-size: 5.3rem !important;
+    }
+
+    /* 6X large */
+    .lg\:desktop-text-7xl {
+      font-size: 6.3rem !important;
+    }
+
+    /* 7X large */
+    .lg\:desktop-text-8xl {
+      font-size: 8.4rem !important;
+    }
+
+    /* 8X large */
+
+
     /* SPACING SIZES - Ganti angka ini untuk memperbesar/memperkecil spacing */
-    .lg\:desktop-p-8 { padding: 2.3rem !important; }             /* Padding 8 */
-    .lg\:desktop-p-12 { padding: 3.5rem !important; }            /* Padding 12 */
-    .lg\:desktop-p-16 { padding: 4.6rem !important; }            /* Padding 16 */
-    .lg\:desktop-p-20 { padding: 5.8rem !important; }            /* Padding 20 */
-    .lg\:desktop-py-16 { 
-      padding-top: 4.6rem !important; 
-      padding-bottom: 4.6rem !important; 
+    .lg\:desktop-p-8 {
+      padding: 2.3rem !important;
     }
-    .lg\:desktop-py-20 { 
-      padding-top: 5.8rem !important; 
-      padding-bottom: 5.8rem !important; 
+
+    /* Padding 8 */
+    .lg\:desktop-p-12 {
+      padding: 3.5rem !important;
     }
-    .lg\:desktop-py-24 { 
-      padding-top: 6.9rem !important; 
-      padding-bottom: 6.9rem !important; 
+
+    /* Padding 12 */
+    .lg\:desktop-p-16 {
+      padding: 4.6rem !important;
     }
-    
+
+    /* Padding 16 */
+    .lg\:desktop-p-20 {
+      padding: 5.8rem !important;
+    }
+
+    /* Padding 20 */
+    .lg\:desktop-py-16 {
+      padding-top: 4.6rem !important;
+      padding-bottom: 4.6rem !important;
+    }
+
+    .lg\:desktop-py-20 {
+      padding-top: 5.8rem !important;
+      padding-bottom: 5.8rem !important;
+    }
+
+    .lg\:desktop-py-24 {
+      padding-top: 6.9rem !important;
+      padding-bottom: 6.9rem !important;
+    }
+
     /* CARD SIZES - Ganti angka ini untuk memperbesar/memperkecil card */
-    .lg\:desktop-w-400 { width: 500px !important; }              /* Card width */
-    .lg\:desktop-h-280 { height: 350px !important; }             /* Card height */
-    .lg\:desktop-w-320 { width: 400px !important; }              /* Small card width */
-    .lg\:desktop-h-240 { height: 300px !important; }             /* Small card height */
+    .lg\:desktop-w-400 {
+      width: 600px !important;
+    }
+
+    /* Card width */
+    .lg\:desktop-h-280 {
+      height: 450px !important;
+    }
+
+    /* Card height */
+    .lg\:desktop-w-320 {
+      width: 400px !important;
+    }
+
+    /* Small card width */
+    .lg\:desktop-h-240 {
+      height: 300px !important;
+    }
+
+    /* Small card height */
   }
 
   /* Wave texture background */
