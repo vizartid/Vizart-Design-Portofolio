@@ -116,19 +116,19 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Process Steps - One Card Per Row Layout */}
-        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+        {/* Process Steps - Compact Square Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {processData.steps.map((step, index) => {
             const IconComponent = iconMap[step.icon as keyof typeof iconMap];
             
-            // Define different colors for each card
+            // Define different colors for each card with clean styling
             const cardColors = [
-              { bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-600', number: 'bg-blue-600', glow: 'blue-glow' },
-              { bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-600', number: 'bg-purple-600', glow: 'purple-glow' },
-              { bg: 'bg-green-50', border: 'border-green-200', icon: 'text-green-600', number: 'bg-green-600', glow: 'green-glow' },
-              { bg: 'bg-orange-50', border: 'border-orange-200', icon: 'text-orange-600', number: 'bg-orange-600', glow: 'orange-glow' },
-              { bg: 'bg-red-50', border: 'border-red-200', icon: 'text-red-600', number: 'bg-red-600', glow: 'red-glow' },
-              { bg: 'bg-indigo-50', border: 'border-indigo-200', icon: 'text-indigo-600', number: 'bg-indigo-600', glow: 'indigo-glow' }
+              { bg: 'bg-white', icon: 'text-orange-500', glow: 'drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]' },
+              { bg: 'bg-white', icon: 'text-purple-500', glow: 'drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]' },
+              { bg: 'bg-white', icon: 'text-green-500', glow: 'drop-shadow-[0_0_8px_rgba(34,197,94,0.4)]' },
+              { bg: 'bg-white', icon: 'text-blue-500', glow: 'drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]' },
+              { bg: 'bg-white', icon: 'text-red-500', glow: 'drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]' },
+              { bg: 'bg-white', icon: 'text-indigo-500', glow: 'drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]' }
             ];
             
             const colorTheme = cardColors[index % cardColors.length];
@@ -136,43 +136,41 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={step.id}
-                className={`${colorTheme.bg} rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border ${colorTheme.border} w-full relative`}
+                className={`${colorTheme.bg} rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 aspect-square flex flex-col justify-center items-center text-center relative`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, scale: 1.02 }}
               >
-                <div className="flex items-start space-x-4">
-                  {/* Icon without Background - Direct Glow Effect */}
-                  <div className="flex-shrink-0">
-                    {IconComponent && (
-                      <IconComponent className={`w-8 h-8 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`} />
-                    )}
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="font-poppins font-semibold text-xl mb-3 text-charcoal">
-                      <EditableText
-                        value={step.title}
-                        onChange={(value) => handleUpdateStep(step.id, 'title', value)}
-                        tag="span"
-                      />
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      <EditableText
-                        value={step.description}
-                        onChange={(value) => handleUpdateStep(step.id, 'description', value)}
-                        tag="span"
-                        multiline={true}
-                      />
-                    </p>
-                  </div>
+                {/* Icon with Glow Effect Only */}
+                <div className="mb-4">
+                  {IconComponent && (
+                    <IconComponent className={`w-12 h-12 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`} />
+                  )}
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 flex flex-col justify-center">
+                  <h3 className="font-poppins font-semibold text-lg mb-3 text-charcoal">
+                    <EditableText
+                      value={step.title}
+                      onChange={(value) => handleUpdateStep(step.id, 'title', value)}
+                      tag="span"
+                    />
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    <EditableText
+                      value={step.description}
+                      onChange={(value) => handleUpdateStep(step.id, 'description', value)}
+                      tag="span"
+                      multiline={true}
+                    />
+                  </p>
                 </div>
 
-                {/* Step Number with Matching Color */}
-                <div className={`absolute -top-3 -left-3 w-8 h-8 ${colorTheme.number} rounded-full flex items-center justify-center text-white font-bold text-sm ${colorTheme.glow} relative`}>
+                {/* Step Number - Small and Subtle */}
+                <div className="absolute top-4 right-4 w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs">
                   {index + 1}
                 </div>
               </motion.div>
