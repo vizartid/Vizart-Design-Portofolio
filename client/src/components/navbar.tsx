@@ -63,7 +63,7 @@ export default function Navbar() {
         className={`transition-all duration-700 ease-out max-w-5xl mx-auto ${
           isScrolled
             ? "bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
-            : "bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
+            : "bg-transparent"
         }`}
       >
         <div className="px-4 sm:px-6 lg:px-8">
