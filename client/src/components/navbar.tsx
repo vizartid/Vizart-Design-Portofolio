@@ -36,7 +36,7 @@ export default function Navbar() {
       }
 
       // Handle navbar styling changes with smoother threshold
-      if (currentScrollY > 30) {
+      if (currentScrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -62,9 +62,17 @@ export default function Navbar() {
       <div
         className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-6xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-105"
-            : "w-full bg-transparent scale-100"
-        } ${scrollDirection === 'up' && isScrolled ? 'scale-110' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-105' : ''}`}
+            ? "max-w-6xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl"
+            : "w-full bg-transparent"
+        } ${
+          scrollDirection === 'up' && isScrolled 
+            ? 'scale-110' 
+            : scrollDirection === 'down' && isScrolled 
+            ? 'scale-95' 
+            : isScrolled 
+            ? 'scale-105' 
+            : 'scale-100'
+        }`}
       >
         <div className={`transition-all duration-700 ease-out ${isScrolled ? 'max-w-6xl' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
           <div
@@ -115,15 +123,23 @@ export default function Navbar() {
 
           {/* Central Navigation (Desktop) */}
           <div
-            className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
-              isScrolled ? "p-1.5 lg:p-2 scale-105" : "p-2 lg:p-3 scale-100"
+            className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out transform ${
+              isScrolled ? "p-1 lg:p-1.5" : "p-2 lg:p-3"
+            } ${
+              scrollDirection === 'up' && isScrolled 
+                ? 'scale-110' 
+                : scrollDirection === 'down' && isScrolled 
+                ? 'scale-95' 
+                : isScrolled 
+                ? 'scale-105' 
+                : 'scale-100'
             }`}
           >
             <Link href="/">
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg"
+                    ? "px-4 py-2 text-sm lg:px-5 lg:py-2.5 lg:text-base"
                     : "px-7 py-3 text-lg lg:px-9 lg:py-4 lg:text-xl"
                 } ${
                   location === "/"
@@ -138,7 +154,7 @@ export default function Navbar() {
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg"
+                    ? "px-4 py-2 text-sm lg:px-5 lg:py-2.5 lg:text-base"
                     : "px-7 py-3 text-lg lg:px-9 lg:py-4 lg:text-xl"
                 } ${
                   location === "/works"
@@ -156,8 +172,16 @@ export default function Navbar() {
             <button
               className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out transform ${
                 isScrolled
-                  ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg scale-105"
-                  : "px-7 py-3 text-lg lg:px-9 lg:py-4 lg:text-xl scale-100"
+                  ? "px-4 py-2 text-sm lg:px-5 lg:py-2.5 lg:text-base"
+                  : "px-7 py-3 text-lg lg:px-9 lg:py-4 lg:text-xl"
+              } ${
+                scrollDirection === 'up' && isScrolled 
+                  ? 'scale-110' 
+                  : scrollDirection === 'down' && isScrolled 
+                  ? 'scale-95' 
+                  : isScrolled 
+                  ? 'scale-105' 
+                  : 'scale-100'
               }`}
             >
               <span>Book a Call</span>
