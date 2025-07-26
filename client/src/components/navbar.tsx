@@ -63,8 +63,8 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-4 w-full z-50 ${
-        isAtTop && scrollDirection === "down" && !isVisible 
-          ? "transition-none" 
+        isAtTop && scrollDirection === "down" && !isVisible
+          ? "transition-none"
           : "transition-all duration-700 ease-out"
       } ${
         isVisible ? "translate-y-0" : "-translate-y-[120%]"
@@ -78,7 +78,7 @@ export default function Navbar() {
         } ${scrollDirection === "up" && isScrolled ? "scale-100" : ""} ${scrollDirection === "down" && isScrolled ? "scale-95" : ""}`}
       >
         <div
-          className={`transition-all duration-700 ease-out ${isScrolled ? "max-w-5xl" : "max-w-7xl"} mx-auto px-4 sm:px-6 lg:px-8`}
+          className={`transition-all duration-700 ease-out ${isScrolled ? "max-w-6xl" : "max-w-7xl"} mx-auto px-4 sm:px-6 lg:px-8`}
         >
           <div
             className={`flex justify-between items-center transition-all duration-700 ease-out ${
@@ -130,9 +130,10 @@ export default function Navbar() {
 
             {/* Central Navigation (Desktop) */}
             <div
-              className={`hidden md:flex bg-gray-300 rounded-xl transition-all duration-700 ease-out ${
+              className={`hidden md:flex rounded-xl transition-all duration-700 ease-out ${
                 isScrolled ? "p-1" : "p-1 lg:p-2"
               }`}
+              style={{ backgroundColor: '#e6e6e6' }}
             >
               <Link href="/">
                 <button

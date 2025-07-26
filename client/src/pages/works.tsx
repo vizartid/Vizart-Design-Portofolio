@@ -96,7 +96,7 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gray-300 rounded-md p-1 inline-flex">
+            <div className="rounded-md p-1 inline-flex" style={{ backgroundColor: '#e6e6e6' }}>
               {categories.map((category) => (
                 <button
                   key={category.id}
