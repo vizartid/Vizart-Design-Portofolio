@@ -62,14 +62,14 @@ export default function Navbar() {
       <div
         className={`transition-all duration-700 ease-out transform ${
           isScrolled
-            ? "max-w-5xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-95"
+            ? "max-w-6xl mx-auto bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl scale-105"
             : "w-full bg-transparent scale-100"
-        } ${scrollDirection === 'up' && isScrolled ? 'scale-100' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-95' : ''}`}
+        } ${scrollDirection === 'up' && isScrolled ? 'scale-110' : ''} ${scrollDirection === 'down' && isScrolled ? 'scale-105' : ''}`}
       >
-        <div className={`transition-all duration-700 ease-out ${isScrolled ? 'max-w-5xl' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
+        <div className={`transition-all duration-700 ease-out ${isScrolled ? 'max-w-6xl' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
           <div
             className={`flex justify-between items-center transition-all duration-700 ease-out ${
-              isScrolled ? "h-12 lg:h-14 py-2" : "h-16 lg:h-20 py-3 lg:py-4"
+              isScrolled ? "h-16 lg:h-18 py-3 lg:py-4" : "h-16 lg:h-20 py-3 lg:py-4"
             }`}
           >
           {/* Logo */}
@@ -97,13 +97,13 @@ export default function Navbar() {
               <>
                 <Leaf
                   className={`text-electric-blue lucide-glow transition-all duration-700 ease-out ${
-                    isScrolled ? "w-5 h-5 lg:w-6 lg:h-6" : "w-6 h-6 lg:w-8 lg:h-8"
+                    isScrolled ? "w-7 h-7 lg:w-8 lg:h-8" : "w-6 h-6 lg:w-8 lg:h-8"
                   }`}
                 />
                 <span
                   className={`font-poppins font-semibold transition-all duration-700 ease-out ${
                     isScrolled
-                      ? "text-base lg:text-lg"
+                      ? "text-lg lg:text-xl"
                       : "text-xl lg:desktop-text-xl"
                   }`}
                 >
@@ -116,14 +116,14 @@ export default function Navbar() {
           {/* Central Navigation (Desktop) */}
           <div
             className={`hidden md:flex bg-light-gray rounded-xl transition-all duration-700 ease-out ${
-              isScrolled ? "p-1 scale-95" : "p-1 lg:p-2 scale-100"
+              isScrolled ? "p-1.5 lg:p-2 scale-105" : "p-1 lg:p-2 scale-100"
             }`}
           >
             <Link href="/">
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
+                    ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/"
@@ -138,7 +138,7 @@ export default function Navbar() {
               <button
                 className={`rounded-xl font-medium transition-all duration-700 ease-out ${
                   isScrolled
-                    ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base"
+                    ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg"
                     : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl"
                 } ${
                   location === "/works"
@@ -156,7 +156,7 @@ export default function Navbar() {
             <button
               className={`bg-charcoal text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-700 ease-out transform ${
                 isScrolled
-                  ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base scale-95"
+                  ? "px-5 py-2.5 text-base lg:px-6 lg:py-3 lg:text-lg scale-105"
                   : "px-6 py-2 lg:px-8 lg:py-3 lg:desktop-text-xl scale-100"
               }`}
             >
