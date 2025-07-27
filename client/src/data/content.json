@@ -1,153 +1,226 @@
 {
   "branding": {
-    "logoUrl": "",
+    "logoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiB6b29tQW5kUGFuPSJtYWduaWZ5IiB2aWV3Qm94PSIwIDAgMzc1IDM3NC45OTk5OTEiIGhlaWdodD0iNTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2ZXJzaW9uPSIxLjIiPjxkZWZzPjxjbGlwUGF0aCBpZD0iYmM2OWE4OWVjOCI+PHBhdGggZD0iTSAtNzcuNTQyOTY5IC0xODguMTY0MDYyIEwgNDUzLjExNzE4OCAtMTg3LjcxODc1IEwgNDUzLjExNzE4OCAtMTg4LjE2NDA2MiBaIE0gLTc3Ljk4ODI4MSAtMTg4LjE2NDA2MiBMIC03OC4xMjEwOTQgNDEuMzU5Mzc1IEwgLTc4LjEyMTA5NCA1NjMuMTY0MDYyIEwgNDUzLjEyNSA1NjMuMTY0MDYyIEwgNDUzLjEyNSA0MC41MTE3MTkgTCA0NTIuODEyNSA1NjIuNzE4NzUgTCAtNzcuOTg4MjgxIDU2Mi43MTg3NSBMIC03Ny41NDI5NjkgLTE4OC4xNjQwNjIgWiBNIC03Ny45ODgyODEgLTE4OC4xNjQwNjIgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImQ2NWYzMzBkMTEiPjxwYXRoIGQ9Ik0gMTU1IDI3MC44ODI4MTIgTCAyMDQuNDM3NSAyNzAuODgyODEyIEwgMjA0LjQzNzUgMzEzLjY2Nzk2OSBMIDE1NSAzMTMuNjY3OTY5IFogTSAxNTUgMjcwLjg4MjgxMiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iMTI0MTFmODUzYiI+PHBhdGggZD0iTSAyMDQuMTc5Njg4IDI3MC45NjQ4NDQgTCAxNzkuODQzNzUgMzEzLjIyMjY1NiBMIDE1NS4zNzUgMjcwLjk2NDg0NCBaIE0gMjA0LjE3OTY4OCAyNzAuOTY0ODQ0ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2YTk4ZTUzNGFlIj48cGF0aCBkPSJNIDE1NC41MTk1MzEgMjcwIEwgMjA1IDI3MCBMIDIwNSAzMTQuNTU4NTk0IEwgMTU0LjUxOTUzMSAzMTQuNTU4NTk0IFogTSAxNTQuNTE5NTMxIDI3MCAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iNWJhOTM5NjQ3YyI+PHBhdGggZD0iTSAyMDQuNTc0MjE5IDI3MS4xODc1IEwgMTc5Ljg1MTU2MiAzMTQuMTEzMjgxIEwgMTU0LjYwNTQ2OSAyNzAuNTE5NTMxIEwgMjA0Ljk1NzAzMSAyNzAuNTE5NTMxIEwgMjA0LjU3NDIxOSAyNzEuMTg3NSBNIDIwMy43OTY4NzUgMjcwLjc0MjE4OCBMIDIwNC4xNzk2ODggMjcwLjk2NDg0NCBMIDIwNC4xNzk2ODggMjcxLjQxMDE1NiBMIDE1NS4zNzUgMjcxLjQxMDE1NiBMIDE1NS4zNzUgMjcwLjk2NDg0NCBMIDE1NS43NTc4MTIgMjcwLjc0MjE4OCBMIDE4MC4yMjY1NjIgMzEyLjk5NjA5NCBMIDE3OS44NDM3NSAzMTMuMjIyNjU2IEwgMTc5LjQ2MDkzOCAzMTIuOTk2MDk0IFogTSAyMDMuNzk2ODc1IDI3MC43NDIxODggIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9IjYwNzkyNTlkZjMiPjxwYXRoIGQ9Ik0gNDcuNTU0Njg4IDg1LjQ4MDQ2OSBMIDMxMSA4NS40ODA0NjkgTCAzMTEgMTI0IEwgNDcuNTU0Njg4IDEyNCBaIE0gNDcuNTU0Njg4IDg1LjQ4MDQ2OSAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iMjBhYTI5YzQ0YyI+PHBhdGggZD0iTSAzMTAuOTk2MDk0IDg1LjUyNzM0NCBMIDI4OC44NDc2NTYgMTIzLjk3MjY1NiBMIDcwLjI2MTcxOSAxMjMuOTcyNjU2IEwgNDcuOTk2MDk0IDg1LjUyNzM0NCBaIE0gMzEwLjk5NjA5NCA4NS41MjczNDQgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImUzODNkOTYyMTYiPjxwYXRoIGQ9Ik0gNDcgODUgTCAzMTIgODUgTCAzMTIgMTI0LjY5OTIxOSBMIDQ3IDEyNC42OTkyMTkgWiBNIDQ3IDg1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI4ZDRjMWE4MjczIj48cGF0aCBkPSJNIDMxMS4zNzg5MDYgODUuNzUgTCAyODkuMTA1NDY5IDEyNC40MjU3ODEgTCA2OS44Nzg5MDYgMTI0LjIwMzEyNSBMIDQ3LjIzMDQ2OSA4NS4wODIwMzEgTCAzMTEuNzYxNzE5IDg1LjA4MjAzMSBMIDMxMS4zNzg5MDYgODUuNzUgTSAzMTAuNjAxNTYyIDg1LjMwNDY4OCBMIDMxMC45ODgyODEgODUuNTI3MzQ0IEwgMzEwLjk4ODI4MSA4NS45NzI2NTYgTCA0Ny45ODgyODEgODUuNTI3MzQ0IEwgNDguMzcxMDk0IDg1LjMwNDY4OCBMIDcwLjYzNjcxOSAxMjMuNzUgTCA3MC4yNTM5MDYgMTIzLjk3MjY1NiBMIDcwLjI1MzkwNiAxMjMuNTI3MzQ0IEwgMjg4Ljg0NzY1NiAxMjMuNTI3MzQ0IEwgMjg4Ljg0NzY1NiAxMjMuOTcyNjU2IEwgMjg4LjQ2MDkzOCAxMjMuNzUgWiBNIDMxMC42MDE1NjIgODUuMzA0Njg4ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSIzYTEwYzFiMjFiIj48cGF0aCBkPSJNIDk2IDEzNSBMIDI2NSAxMzUgTCAyNjUgMjYxLjA3ODEyNSBMIDk2IDI2MS4wNzgxMjUgWiBNIDk2IDEzNSAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iYTU1YjE4NmRlYSI+PHBhdGggZD0iTSAyNjQuMjA3MDMxIDI2MS4wNjY0MDYgTCA5Ni4xOTUzMTIgMjYxLjA2NjQwNiBMIDE2OS4zOTQ1MzEgMTM1LjE5MTQwNiBMIDIxMC41MzUxNTYgMTM1LjE5MTQwNiBMIDE1OC43NzM0MzggMjI1LjE5OTIxOSBMIDI0Mi4wMzkwNjIgMjI1LjE5OTIxOSBaIE0gMjY0LjIwNzAzMSAyNjEuMDY2NDA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2YjdhOWVhMjczIj48cGF0aCBkPSJNIDk1IDEzNC41MDM5MDYgTCAyNjUuMDQ2ODc1IDEzNC41MDM5MDYgTCAyNjUuMDQ2ODc1IDI2MS45Njg3NSBMIDk1IDI2MS45Njg3NSBaIE0gOTUgMTM0LjUwMzkwNiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iZWMyNWFiZmQzYiI+PHBhdGggZD0iTSAyNjQuMjA3MDMxIDI2MS41MTU2MjUgTCA5NS40MjE4NzUgMjYxLjUxNTYyNSBMIDEyMi41OTM3NSAyMTQuNzg1MTU2IEwgMTIyLjk4MDQ2OSAyMTUuMDA3ODEyIEwgMTIyLjU5Mzc1IDIxNC43ODUxNTYgTCAxNjkuMTQ0NTMxIDEzNC43MzQzNzUgTCAyMTEuMzIwMzEyIDEzNC43MzQzNzUgTCAxOTkuMzA4NTk0IDE1NS42MTcxODggTCAxOTguOTI1NzgxIDE1NS4zOTQ1MzEgTCAxOTkuMzA4NTk0IDE1NS42MTcxODggTCAxNTkuMTY3OTY5IDIyNS40MTQwNjIgTCAxNTguNzgxMjUgMjI1LjE5MTQwNiBMIDE1OC43ODEyNSAyMjQuNzQ2MDk0IEwgMjQyLjI5Njg3NSAyMjQuNzQ2MDk0IEwgMjY1LjAwNzgxMiAyNjEuNTAzOTA2IEwgMjY0LjIwNzAzMSAyNjEuNTAzOTA2IE0gMjY0LjIwNzAzMSAyNjAuNjEzMjgxIEwgMjY0LjIwNzAzMSAyNjEuMDU4NTk0IEwgMjYzLjgyMDMxMiAyNjEuMjg5MDYyIEwgMjQxLjY2NDA2MiAyMjUuNDIxODc1IEwgMjQyLjA0Njg3NSAyMjUuMTkxNDA2IEwgMjQyLjA0Njg3NSAyMjUuNjM2NzE5IEwgMTU4LjAwNzgxMiAyMjUuNjM2NzE5IEwgMTkxLjI5Mjk2OSAxNjcuNzUzOTA2IEwgMTkxLjY3OTY4OCAxNjcuOTc2NTYyIEwgMTkxLjI5Mjk2OSAxNjcuNzUzOTA2IEwgMjEwLjE2MDE1NiAxMzQuOTQ5MjE5IEwgMjEwLjU0Mjk2OSAxMzUuMTcxODc1IEwgMjEwLjU0Mjk2OSAxMzUuNjE3MTg4IEwgMTY5LjQwMjM0NCAxMzUuNjE3MTg4IEwgMTY5LjQwMjM0NCAxMzUuMTcxODc1IEwgMTY5Ljc4NTE1NiAxMzUuMzk0NTMxIEwgOTYuNTg5ODQ0IDI2MS4yNzM0MzggTCA5Ni4yMDcwMzEgMjYxLjA1MDc4MSBMIDk2LjIwNzAzMSAyNjAuNjAxNTYyIEwgMjY0LjIwNzAzMSAyNjAuNjAxNTYyIFogTSAyNjQuMjA3MDMxIDI2MC42MTMyODEgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImUxZTk4OTlmNzIiPjxwYXRoIGQ9Ik0gMTk1IDEzNSBMIDI4Mi44NzUgMTM1IEwgMjgyLjg3NSAyMTIgTCAxOTUgMjEyIFogTSAxOTUgMTM1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2MmFkZDFhNjBkIj48cGF0aCBkPSJNIDI4Mi4zOTQ1MzEgMTM1LjE5MTQwNiBMIDIzOC4zMTY0MDYgMjExLjY5OTIxOSBMIDE5NS4zMzU5MzggMjExLjY5OTIxOSBMIDI0MC42MDkzNzUgMTM1LjE5MTQwNiBaIE0gMjgyLjM5NDUzMSAxMzUuMTkxNDA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjMDEyMDM4YmRjIj48cGF0aCBkPSJNIDE5NCAxMzQuNTAzOTA2IEwgMjgzLjc2NTYyNSAxMzQuNTAzOTA2IEwgMjgzLjc2NTYyNSAyMTIuOTQ1MzEyIEwgMTk0IDIxMi45NDUzMTIgWiBNIDE5NCAxMzQuNTAzOTA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI1YmU4NzM0NDA2Ij48cGF0aCBkPSJNIDI4Mi43NzczNDQgMTM1LjQxNDA2MiBMIDIzOC41NjY0MDYgMjEyLjE0NDUzMSBMIDE5NC41NTA3ODEgMjEyLjE0NDUzMSBMIDIwNy4wODIwMzEgMTkwLjk4NDM3NSBMIDIwNy40NjQ4NDQgMTkxLjIwNzAzMSBMIDIwNy4wODIwMzEgMTkwLjk4NDM3NSBMIDIxMy43MzA0NjkgMTc5Ljc1IEwgMjE0LjExMzI4MSAxNzkuOTcyNjU2IEwgMjEzLjczMDQ2OSAxNzkuNzUgTCAyNDAuMzU5Mzc1IDEzNC43NDIxODggTCAyODMuMTcxODc1IDEzNC43NDIxODggTCAyODIuNzg1MTU2IDEzNS40MTQwNjIgTSAyODIuMDExNzE5IDEzNC45Njg3NSBMIDI4Mi4zOTQ1MzEgMTM1LjE5MTQwNiBMIDI4Mi4zOTQ1MzEgMTM1LjYzNjcxOSBMIDI0MC42MDkzNzUgMTM1LjYzNjcxOSBMIDI0MC42MDkzNzUgMTM1LjE5MTQwNiBMIDI0MC45OTIxODggMTM1LjQxNDA2MiBMIDE5NS43MjI2NTYgMjExLjkyMTg3NSBMIDE5NS4zMzU5MzggMjExLjY5OTIxOSBMIDE5NS4zMzU5MzggMjExLjI1MzkwNiBMIDIzOC4zMTY0MDYgMjExLjI1MzkwNiBMIDIzOC4zMTY0MDYgMjExLjY5OTIxOSBMIDIzNy45MzM1OTQgMjExLjQ3NjU2MiBaIE0gMjgyLjAxMTcxOSAxMzQuOTY4NzUgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9IjA5ZDkwYmEyZDMiPjxwYXRoIGQ9Ik0gNzYuMDc4MTI1IDEzNSBMIDEzNy41ODIwMzEgMTM1IEwgMTM3LjU4MjAzMSAyMDIgTCA3Ni4wNzgxMjUgMjAyIFogTSA3Ni4wNzgxMjUgMTM1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJkMTFlYWFlMGU4Ij48cGF0aCBkPSJNIDEzNy40MTc5NjkgMTY1LjE5NTMxMiBMIDExNS4xOTUzMTIgMjAxLjU3ODEyNSBMIDc2Ljc1IDEzNS4xOTE0MDYgTCAxMTguOTUzMTI1IDEzNS4xOTE0MDYgWiBNIDEzNy40MTc5NjkgMTY1LjE5NTMxMiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iYTJlZDEyMmExYiI+PHBhdGggZD0iTSA3NS4xODc1IDEzNC41MDM5MDYgTCAxMzggMTM0LjUwMzkwNiBMIDEzOCAyMDMgTCA3NS4xODc1IDIwMyBaIE0gNzUuMTg3NSAxMzQuNTAzOTA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSIwMjU1ZDhlYjMyIj48cGF0aCBkPSJNIDEzNy44MDA3ODEgMTY1LjQyNTc4MSBMIDExNS4xOTUzMTIgMjAyLjQ1MzEyNSBMIDc1Ljk4NDM3NSAxMzQuNzQyMTg4IEwgMTE5LjIxMDkzOCAxMzQuNzQyMTg4IEwgMTM3Ljk0NTMxMiAxNjUuMTk1MzEyIEwgMTM3LjgwMDc4MSAxNjUuNDI1NzgxIE0gMTM3LjA0Mjk2OSAxNjQuOTYwOTM4IEwgMTM3LjQyNTc4MSAxNjUuMTk1MzEyIEwgMTM3LjA0Mjk2OSAxNjUuNDI1NzgxIEwgMTE4LjU4OTg0NCAxMzUuNDIxODc1IEwgMTE4Ljk3MjY1NiAxMzUuMTkxNDA2IEwgMTE4Ljk3MjY1NiAxMzUuNjM2NzE5IEwgNzYuNzUgMTM1LjYzNjcxOSBMIDc2Ljc1IDEzNS4xOTE0MDYgTCA3Ny4xMzI4MTIgMTM0Ljk2ODc1IEwgMTE1LjU4MjAzMSAyMDEuMzU1NDY5IEwgMTE1LjE5NTMxMiAyMDEuNTc4MTI1IEwgMTE0LjgxMjUgMjAxLjM0NzY1NiBMIDEzNy4wMzUxNTYgMTY0Ljk2MDkzOCBaIE0gMTM3LjA0Mjk2OSAxNjQuOTYwOTM4ICIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJlYWU3Y2JkOGE0Ij48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNiYzY5YTg5ZWM4KSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNkNjVmMzMwZDExKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMTI0MTFmODUzYikiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzZhOThlNTM0YWUpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCM1YmE5Mzk2NDdjKSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNjA3OTI1OWRmMykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzIwYWEyOWM0NGMpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNlMzgzZDk2MjE2KSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjOGQ0YzFhODI3MykiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzNhMTBjMWIyMWIpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNhNTViMTg2ZGVhKSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNmI3YTllYTI3MykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2VjMjVhYmZkM2IpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNlMWU5ODk5ZjcyKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNjJhZGQxYTYwZCkiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2MwMTIwMzhiZGMpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCM1YmU4NzM0NDA2KSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMDlkOTBiYTJkMykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2QxMWVhYWUwZTgpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNhMmVkMTIyYTFiKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMDI1NWQ4ZWIzMikiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjwvZz48L3N2Zz4=",
     "logoText": "Vizart",
-    "footerLogoUrl": "", 
+    "footerLogoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiB6b29tQW5kUGFuPSJtYWduaWZ5IiB2aWV3Qm94PSIwIDAgMzc1IDM3NC45OTk5OTEiIGhlaWdodD0iNTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2ZXJzaW9uPSIxLjIiPjxkZWZzPjxjbGlwUGF0aCBpZD0iYmM2OWE4OWVjOCI+PHBhdGggZD0iTSAtNzcuNTQyOTY5IC0xODguMTY0MDYyIEwgNDUzLjExNzE4OCAtMTg3LjcxODc1IEwgNDUzLjExNzE4OCAtMTg4LjE2NDA2MiBaIE0gLTc3Ljk4ODI4MSAtMTg4LjE2NDA2MiBMIC03OC4xMjEwOTQgNDEuMzU5Mzc1IEwgLTc4LjEyMTA5NCA1NjMuMTY0MDYyIEwgNDUzLjEyNSA1NjMuMTY0MDYyIEwgNDUzLjEyNSA0MC41MTE3MTkgTCA0NTIuODEyNSA1NjIuNzE4NzUgTCAtNzcuOTg4MjgxIDU2Mi43MTg3NSBMIC03Ny41NDI5NjkgLTE4OC4xNjQwNjIgWiBNIC03Ny45ODgyODEgLTE4OC4xNjQwNjIgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImQ2NWYzMzBkMTEiPjxwYXRoIGQ9Ik0gMTU1IDI3MC44ODI4MTIgTCAyMDQuNDM3NSAyNzAuODgyODEyIEwgMjA0LjQzNzUgMzEzLjY2Nzk2OSBMIDE1NSAzMTMuNjY3OTY5IFogTSAxNTUgMjcwLjg4MjgxMiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iMTI0MTFmODUzYiI+PHBhdGggZD0iTSAyMDQuMTc5Njg4IDI3MC45NjQ4NDQgTCAxNzkuODQzNzUgMzEzLjIyMjY1NiBMIDE1NS4zNzUgMjcwLjk2NDg0NCBaIE0gMjA0LjE3OTY4OCAyNzAuOTY0ODQ0ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2YTk4ZTUzNGFlIj48cGF0aCBkPSJNIDE1NC41MTk1MzEgMjcwIEwgMjA1IDI3MCBMIDIwNSAzMTQuNTU4NTk0IEwgMTU0LjUxOTUzMSAzMTQuNTU4NTk0IFogTSAxNTQuNTE5NTMxIDI3MCAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iNWJhOTM5NjQ3YyI+PHBhdGggZD0iTSAyMDQuNTc0MjE5IDI3MS4xODc1IEwgMTc5Ljg1MTU2MiAzMTQuMTEzMjgxIEwgMTU0LjYwNTQ2OSAyNzAuNTE5NTMxIEwgMjA0Ljk1NzAzMSAyNzAuNTE5NTMxIEwgMjA0LjU3NDIxOSAyNzEuMTg3NSBNIDIwMy43OTY4NzUgMjcwLjc0MjE4OCBMIDIwNC4xNzk2ODggMjcwLjk2NDg0NCBMIDIwNC4xNzk2ODggMjcxLjQxMDE1NiBMIDE1NS4zNzUgMjcxLjQxMDE1NiBMIDE1NS4zNzUgMjcwLjk2NDg0NCBMIDE1NS43NTc4MTIgMjcwLjc0MjE4OCBMIDE4MC4yMjY1NjIgMzEyLjk5NjA5NCBMIDE3OS44NDM3NSAzMTMuMjIyNjU2IEwgMTc5LjQ2MDkzOCAzMTIuOTk2MDk0IFogTSAyMDMuNzk2ODc1IDI3MC43NDIxODggIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9IjYwNzkyNTlkZjMiPjxwYXRoIGQ9Ik0gNDcuNTU0Njg4IDg1LjQ4MDQ2OSBMIDMxMSA4NS40ODA0NjkgTCAzMTEgMTI0IEwgNDcuNTU0Njg4IDEyNCBaIE0gNDcuNTU0Njg4IDg1LjQ4MDQ2OSAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iMjBhYTI5YzQ0YyI+PHBhdGggZD0iTSAzMTAuOTk2MDk0IDg1LjUyNzM0NCBMIDI4OC44NDc2NTYgMTIzLjk3MjY1NiBMIDcwLjI2MTcxOSAxMjMuOTcyNjU2IEwgNDcuOTk2MDk0IDg1LjUyNzM0NCBaIE0gMzEwLjk5NjA5NCA4NS41MjczNDQgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImUzODNkOTYyMTYiPjxwYXRoIGQ9Ik0gNDcgODUgTCAzMTIgODUgTCAzMTIgMTI0LjY5OTIxOSBMIDQ3IDEyNC42OTkyMTkgWiBNIDQ3IDg1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI4ZDRjMWE4MjczIj48cGF0aCBkPSJNIDMxMS4zNzg5MDYgODUuNzUgTCAyODkuMTA1NDY5IDEyNC40MjU3ODEgTCA2OS44Nzg5MDYgMTI0LjIwMzEyNSBMIDQ3LjIzMDQ2OSA4NS4wODIwMzEgTCAzMTEuNzYxNzE5IDg1LjA4MjAzMSBMIDMxMS4zNzg5MDYgODUuNzUgTSAzMTAuNjAxNTYyIDg1LjMwNDY4OCBMIDMxMC45ODgyODEgODUuNTI3MzQ0IEwgMzEwLjk4ODI4MSA4NS45NzI2NTYgTCA0Ny45ODgyODEgODUuNTI3MzQ0IEwgNDguMzcxMDk0IDg1LjMwNDY4OCBMIDcwLjYzNjcxOSAxMjMuNzUgTCA3MC4yNTM5MDYgMTIzLjk3MjY1NiBMIDcwLjI1MzkwNiAxMjMuNTI3MzQ0IEwgMjg4Ljg0NzY1NiAxMjMuNTI3MzQ0IEwgMjg4Ljg0NzY1NiAxMjMuOTcyNjU2IEwgMjg4LjQ2MDkzOCAxMjMuNzUgWiBNIDMxMC42MDE1NjIgODUuMzA0Njg4ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSIzYTEwYzFiMjFiIj48cGF0aCBkPSJNIDk2IDEzNSBMIDI2NSAxMzUgTCAyNjUgMjYxLjA3ODEyNSBMIDk2IDI2MS4wNzgxMjUgWiBNIDk2IDEzNSAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iYTU1YjE4NmRlYSI+PHBhdGggZD0iTSAyNjQuMjA3MDMxIDI2MS4wNjY0MDYgTCA5Ni4xOTUzMTIgMjYxLjA2NjQwNiBMIDE2OS4zOTQ1MzEgMTM1LjE5MTQwNiBMIDIxMC41MzUxNTYgMTM1LjE5MTQwNiBMIDE1OC43NzM0MzggMjI1LjE5OTIxOSBMIDI0Mi4wMzkwNjIgMjI1LjE5OTIxOSBaIE0gMjY0LjIwNzAzMSAyNjEuMDY2NDA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2YjdhOWVhMjczIj48cGF0aCBkPSJNIDk1IDEzNC41MDM5MDYgTCAyNjUuMDQ2ODc1IDEzNC41MDM5MDYgTCAyNjUuMDQ2ODc1IDI2MS45Njg3NSBMIDk1IDI2MS45Njg3NSBaIE0gOTUgMTM0LjUwMzkwNiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iZWMyNWFiZmQzYiI+PHBhdGggZD0iTSAyNjQuMjA3MDMxIDI2MS41MTU2MjUgTCA5NS40MjE4NzUgMjYxLjUxNTYyNSBMIDEyMi41OTM3NSAyMTQuNzg1MTU2IEwgMTIyLjk4MDQ2OSAyMTUuMDA3ODEyIEwgMTIyLjU5Mzc1IDIxNC43ODUxNTYgTCAxNjkuMTQ0NTMxIDEzNC43MzQzNzUgTCAyMTEuMzIwMzEyIDEzNC43MzQzNzUgTCAxOTkuMzA4NTk0IDE1NS42MTcxODggTCAxOTguOTI1NzgxIDE1NS4zOTQ1MzEgTCAxOTkuMzA4NTk0IDE1NS42MTcxODggTCAxNTkuMTY3OTY5IDIyNS40MTQwNjIgTCAxNTguNzgxMjUgMjI1LjE5MTQwNiBMIDE1OC43ODEyNSAyMjQuNzQ2MDk0IEwgMjQyLjI5Njg3NSAyMjQuNzQ2MDk0IEwgMjY1LjAwNzgxMiAyNjEuNTAzOTA2IEwgMjY0LjIwNzAzMSAyNjEuNTAzOTA2IE0gMjY0LjIwNzAzMSAyNjAuNjEzMjgxIEwgMjY0LjIwNzAzMSAyNjEuMDU4NTk0IEwgMjYzLjgyMDMxMiAyNjEuMjg5MDYyIEwgMjQxLjY2NDA2MiAyMjUuNDIxODc1IEwgMjQyLjA0Njg3NSAyMjUuMTkxNDA2IEwgMjQyLjA0Njg3NSAyMjUuNjM2NzE5IEwgMTU4LjAwNzgxMiAyMjUuNjM2NzE5IEwgMTkxLjI5Mjk2OSAxNjcuNzUzOTA2IEwgMTkxLjY3OTY4OCAxNjcuOTc2NTYyIEwgMTkxLjI5Mjk2OSAxNjcuNzUzOTA2IEwgMjEwLjE2MDE1NiAxMzQuOTQ5MjE5IEwgMjEwLjU0Mjk2OSAxMzUuMTcxODc1IEwgMjEwLjU0Mjk2OSAxMzUuNjE3MTg4IEwgMTY5LjQwMjM0NCAxMzUuNjE3MTg4IEwgMTY5LjQwMjM0NCAxMzUuMTcxODc1IEwgMTY5Ljc4NTE1NiAxMzUuMzk0NTMxIEwgOTYuNTg5ODQ0IDI2MS4yNzM0MzggTCA5Ni4yMDcwMzEgMjYxLjA1MDc4MSBMIDk2LjIwNzAzMSAyNjAuNjAxNTYyIEwgMjY0LjIwNzAzMSAyNjAuNjAxNTYyIFogTSAyNjQuMjA3MDMxIDI2MC42MTMyODEgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImUxZTk4OTlmNzIiPjxwYXRoIGQ9Ik0gMTk1IDEzNSBMIDI4Mi44NzUgMTM1IEwgMjgyLjg3NSAyMTIgTCAxOTUgMjEyIFogTSAxOTUgMTM1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI2MmFkZDFhNjBkIj48cGF0aCBkPSJNIDI4Mi4zOTQ1MzEgMTM1LjE5MTQwNiBMIDIzOC4zMTY0MDYgMjExLjY5OTIxOSBMIDE5NS4zMzU5MzggMjExLjY5OTIxOSBMIDI0MC42MDkzNzUgMTM1LjE5MTQwNiBaIE0gMjgyLjM5NDUzMSAxMzUuMTkxNDA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjMDEyMDM4YmRjIj48cGF0aCBkPSJNIDE5NCAxMzQuNTAzOTA2IEwgMjgzLjc2NTYyNSAxMzQuNTAzOTA2IEwgMjgzLjc2NTYyNSAyMTIuOTQ1MzEyIEwgMTk0IDIxMi45NDUzMTIgWiBNIDE5NCAxMzQuNTAzOTA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSI1YmU4NzM0NDA2Ij48cGF0aCBkPSJNIDI4Mi43NzczNDQgMTM1LjQxNDA2MiBMIDIzOC41NjY0MDYgMjEyLjE0NDUzMSBMIDE5NC41NTA3ODEgMjEyLjE0NDUzMSBMIDIwNy4wODIwMzEgMTkwLjk4NDM3NSBMIDIwNy40NjQ4NDQgMTkxLjIwNzAzMSBMIDIwNy4wODIwMzEgMTkwLjk4NDM3NSBMIDIxMy43MzA0NjkgMTc5Ljc1IEwgMjE0LjExMzI4MSAxNzkuOTcyNjU2IEwgMjEzLjczMDQ2OSAxNzkuNzUgTCAyNDAuMzU5Mzc1IDEzNC43NDIxODggTCAyODMuMTcxODc1IDEzNC43NDIxODggTCAyODIuNzg1MTU2IDEzNS40MTQwNjIgTSAyODIuMDExNzE5IDEzNC45Njg3NSBMIDI4Mi4zOTQ1MzEgMTM1LjE5MTQwNiBMIDI4Mi4zOTQ1MzEgMTM1LjYzNjcxOSBMIDI0MC42MDkzNzUgMTM1LjYzNjcxOSBMIDI0MC42MDkzNzUgMTM1LjE5MTQwNiBMIDI0MC45OTIxODggMTM1LjQxNDA2MiBMIDE5NS43MjI2NTYgMjExLjkyMTg3NSBMIDE5NS4zMzU5MzggMjExLjY5OTIxOSBMIDE5NS4zMzU5MzggMjExLjI1MzkwNiBMIDIzOC4zMTY0MDYgMjExLjI1MzkwNiBMIDIzOC4zMTY0MDYgMjExLjY5OTIxOSBMIDIzNy45MzM1OTQgMjExLjQ3NjU2MiBaIE0gMjgyLjAxMTcxOSAxMzQuOTY4NzUgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9IjA5ZDkwYmEyZDMiPjxwYXRoIGQ9Ik0gNzYuMDc4MTI1IDEzNSBMIDEzNy41ODIwMzEgMTM1IEwgMTM3LjU4MjAzMSAyMDIgTCA3Ni4wNzgxMjUgMjAyIFogTSA3Ni4wNzgxMjUgMTM1ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJkMTFlYWFlMGU4Ij48cGF0aCBkPSJNIDEzNy40MTc5NjkgMTY1LjE5NTMxMiBMIDExNS4xOTUzMTIgMjAxLjU3ODEyNSBMIDc2Ljc1IDEzNS4xOTE0MDYgTCAxMTguOTUzMTI1IDEzNS4xOTE0MDYgWiBNIDEzNy40MTc5NjkgMTY1LjE5NTMxMiAiLz48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iYTJlZDEyMmExYiI+PHBhdGggZD0iTSA3NS4xODc1IDEzNC41MDM5MDYgTCAxMzggMTM0LjUwMzkwNiBMIDEzOCAyMDMgTCA3NS4xODc1IDIwMyBaIE0gNzUuMTg3NSAxMzQuNTAzOTA2ICIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSIwMjU1ZDhlYjMyIj48cGF0aCBkPSJNIDEzNy44MDA3ODEgMTY1LjQyNTc4MSBMIDExNS4xOTUzMTIgMjAyLjQ1MzEyNSBMIDc1Ljk4NDM3NSAxMzQuNzQyMTg4IEwgMTE5LjIxMDkzOCAxMzQuNzQyMTg4IEwgMTM3Ljk0NTMxMiAxNjUuMTk1MzEyIEwgMTM3LjgwMDc4MSAxNjUuNDI1NzgxIE0gMTM3LjA0Mjk2OSAxNjQuOTYwOTM4IEwgMTM3LjQyNTc4MSAxNjUuMTk1MzEyIEwgMTM3LjA0Mjk2OSAxNjUuNDI1NzgxIEwgMTE4LjU4OTg0NCAxMzUuNDIxODc1IEwgMTE4Ljk3MjY1NiAxMzUuMTkxNDA2IEwgMTE4Ljk3MjY1NiAxMzUuNjM2NzE5IEwgNzYuNzUgMTM1LjYzNjcxOSBMIDc2Ljc1IDEzNS4xOTE0MDYgTCA3Ny4xMzI4MTIgMTM0Ljk2ODc1IEwgMTE1LjU4MjAzMSAyMDEuMzU1NDY5IEwgMTE1LjE5NTMxMiAyMDEuNTc4MTI1IEwgMTE0LjgxMjUgMjAxLjM0NzY1NiBMIDEzNy4wMzUxNTYgMTY0Ljk2MDkzOCBaIE0gMTM3LjA0Mjk2OSAxNjQuOTYwOTM4ICIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJlYWU3Y2JkOGE0Ij48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNiYzY5YTg5ZWM4KSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNkNjVmMzMwZDExKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMTI0MTFmODUzYikiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzZhOThlNTM0YWUpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCM1YmE5Mzk2NDdjKSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNjA3OTI1OWRmMykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzIwYWEyOWM0NGMpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNlMzgzZDk2MjE2KSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjOGQ0YzFhODI3MykiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoIzNhMTBjMWIyMWIpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNhNTViMTg2ZGVhKSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNmI3YTllYTI3MykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2VjMjVhYmZkM2IpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNlMWU5ODk5ZjcyKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjNjJhZGQxYTYwZCkiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2MwMTIwMzhiZGMpIj48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCM1YmU4NzM0NDA2KSI+PHJlY3QgeD0iMCIgd2lkdGg9IjM3NSIgeT0iMCIgaGVpZ2h0PSIzNzQuOTk5OTkxIiBzdHlsZT0iZmlsbDojMTgyYmFmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lOyIvPjwvZz48L2c+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMDlkOTBiYTJkMykiPjxnIGNsaXAtcnVsZT0ibm9uemVybyIgY2xpcC1wYXRoPSJ1cmwoI2QxMWVhYWUwZTgpIj48cmVjdCB4PSIwIiB3aWR0aD0iMzc1IiB5PSIwIiBoZWlnaHQ9IjM3NC45OTk5OTEiIHN0eWxlPSJmaWxsOiMxODJiYWY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7Ii8+PC9nPjwvZz48ZyBjbGlwLXJ1bGU9Im5vbnplcm8iIGNsaXAtcGF0aD0idXJsKCNhMmVkMTIyYTFiKSI+PGcgY2xpcC1ydWxlPSJub256ZXJvIiBjbGlwLXBhdGg9InVybCgjMDI1NWQ4ZWIzMikiPjxyZWN0IHg9IjAiIHdpZHRoPSIzNzUiIHk9IjAiIGhlaWdodD0iMzc0Ljk5OTk5MSIgc3R5bGU9ImZpbGw6IzE4MmJhZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTsiLz48L2c+PC9nPjwvZz48L3N2Zz4=",
     "footerLogoText": "Vizart"
   },
   "hero": {
-    "title": "We Deliver Standout Websites",
-    "titleHighlight": "with Effortless",
-    "subtitle": "Collaboration",
-    "stats": "100+ Happy Clients • 5-Star Reviews • Fast Delivery",
-    "toolsText": "Tools we use to create amazing designs",
+    "title": "Delivering Standout",
+    "titleHighlight": "Digital Solutions",
+    "subtitle": "through Effective Collaboration",
+    "stats": "20+ Successfully Completed Digital Projects\n\n",
+    "ctaText": "Get in Touch",
+    "acceptingText": "Available for New Projects.",
+    "toolsText": "Complemented by industry-standard tools:",
     "tools": [
       {
         "name": "Figma",
+        "color": "purple-500",
         "icon": "Figma",
-        "color": "blue-500",
-        "logoUrl": ""
+        "logoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjY3OCA3LjY4IiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiPjxwYXRoIGQ9Ik0yLjU2IDcuNjhBMS4yOCAxLjI4IDAgMCAwIDMuODQgNi40VjUuMTJIMi41NmExLjI4IDEuMjggMCAwIDAgMCAyLjU2eiIgZmlsbD0iIzBhY2Y4MyIvPjxwYXRoIGQ9Ik0xLjI4IDMuODRhMS4yOCAxLjI4IDAgMCAxIDEuMjgtMS4yOGgxLjI4djIuNTZIMi41NmExLjI4IDEuMjggMCAwIDEtMS4yOC0xLjI4eiIgZmlsbD0iI2EyNTlmZiIvPjxwYXRoIGQ9Ik0xLjI4IDEuMjhBMS4yOCAxLjI4IDAgMCAxIDIuNTU5IDBoMS4yOHYyLjU2SDIuNTZhMS4yOCAxLjI4IDAgMCAxLTEuMjgtMS4yOHoiIGZpbGw9IiNmMjRlMWUiLz48cGF0aCBkPSJNMy44NCAwaDEuMjhhMS4yOCAxLjI4IDAgMCAxIDAgMi41NkgzLjg0eiIgZmlsbD0iI2ZmNzI2MiIvPjxwYXRoIGQ9Ik02LjQgMy44NGExLjI4IDEuMjggMCAwIDEtMi41NiAwIDEuMjggMS4yOCAwIDAgMSAyLjU2IDB6IiBmaWxsPSIjMWFiY2ZlIi8+PC9zdmc+"
       },
       {
         "name": "Framer",
-        "icon": "Frame", 
-        "color": "purple-500",
-        "logoUrl": ""
+        "color": "blue-500",
+        "icon": "Frame",
+        "logoUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2NCA2NDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiM2N0RCRkY7fQoJLnN0MXtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwMUEzRkY7fQoJLnN0MntmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwMTYyRkY7fQo8L3N0eWxlPgo8Zz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMiwyMS4zaDIxLjdWMGgtNDN2MC4yTDMyLDIxLjN6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzIsMjEuM0gxMC4zdjIxLjNoNDN2LTAuMkwzMiwyMS4zTDMyLDIxLjN6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTAuMyw0Mi41aDIxLjVWNjRMMTAuMyw0Mi41eiIvPgo8L2c+Cjwvc3ZnPgo="
       },
       {
         "name": "Webflow",
+        "color": "indigo-500",
         "icon": "Layers",
-        "color": "green-500",
-        "logoUrl": ""
+        "logoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMiAwIDAgMiAwIC02NCkiPjxjaXJjbGUgcj0iMTYiIGN5PSI0OCIgY3g9IjE2IiBmaWxsPSIjNDM1M2ZmIi8+PHBhdGggZD0iTTIwLjcgNDYuMWwtMS40NSA0LjU3YzAtLjM1LTEtNy45My0xLTcuOTMtMi4zIDAtMy41MiAxLjYzLTQuMTYgMy4zNmwtMS43NyA0LjU4YzAtLjMzLS4yNS00LjU0LS4yNS00LjU0YTMuNzQgMy43NCAwIDAgMC0zLjYzLTMuMzlsMS44OCAxMS40OGMyLjQgMCAzLjctMS42MyA0LjM3LTMuMzZsMS41LTMuOWMwIC4xNiAxIDcuMjYgMSA3LjI2QTQuNjIgNC42MiAwIDAgMCAyMS41OSA1MWwzLjQtOC4yNmMtMi40IDAtMy42NiAxLjYzLTQuMyAzLjM2eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4="
       }
     ]
   },
   "services": {
-    "title": "What We Do",
-    "subtitle": "Comprehensive digital solutions to elevate your brand",
+    "heroTitle": "Specialized in Crafting Brand",
+    "heroSubtitle": "Defining Hero Sections",
+    "heroFeatures": [
+      "Positive Initial Impressions",
+      "Clear Brand Introduction Message",
+      "Improved Conversion Rates"
+    ],
+    "mainTitle": "Our Services",
     "services": [
       {
-        "icon": "Palette",
-        "title": "UI/UX Design",
-        "description": "Beautiful, user-centered interfaces that convert visitors into customers."
+        "title": "Logo & Branding",
+        "description": "A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.",
+        "icon": "Palette"
       },
       {
-        "icon": "Code",
-        "title": "Web Development", 
-        "description": "Fast, responsive websites built with modern technologies."
-      },
-      {
-        "icon": "Megaphone",
-        "title": "Brand Identity",
-        "description": "Complete branding solutions that make your business stand out."
+        "title": "Websites",
+        "description": "A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.",
+        "icon": "Code"
       }
-    ]
-  },
-  "process": {
-    "title": "Our Process",
-    "subtitle": "How we bring your vision to life",
-    "steps": [
-      {
-        "number": 1,
-        "icon": "MessageCircle",
-        "title": "Discovery Call",
-        "description": "We start with understanding your goals, target audience, and project requirements."
-      },
-      {
-        "number": 2,
-        "icon": "Palette",
-        "title": "Design Phase",
-        "description": "Creating wireframes, mockups, and prototypes that align with your vision."
-      },
-      {
-        "number": 3,
-        "icon": "Code",
-        "title": "Development",
-        "description": "Building your website with clean code, responsive design, and optimal performance."
-      },
-      {
-        "number": 4,
-        "icon": "Rocket",
-        "title": "Launch & Support",
-        "description": "Going live with your new website and providing ongoing support and maintenance."
-      }
-    ]
+    ],
+    "additionalText": "We also offer other design services like pitch decks, social media creatives, and more.",
+    "features": [
+      "Smooth Communication",
+      "Flexible revisions",
+      "Post-Project Support"
+    ],
+    "ctaText": "Book a Call"
   },
   "winningEdge": {
-    "title": "Why Choose Us",
-    "subtitle": "What sets us apart from the competition",
-    "features": [
+    "title": "Our Winning Edge",
+    "subtitle": "Discover our unique strengths and distinctive value we offer",
       {
-        "icon": "Zap",
-        "title": "Lightning Fast",
-        "description": "Optimized for speed and performance across all devices."
+        "features": [
+          {
+            "title": "SEO Optimized",
+            "description": "SEO-focused design enhances your online visibility, driving organic traffic for improved search ranking.",
+            "icon": "Search",
+            "color": "blue-500"
+          },
+          {
+            "title": "High Converting Design",
+            "description": "Engaging design techniques significantly increase conversion rates through optimized user experience.",
+            "icon": "TrendingUp",
+            "color": "orange-500"
+          },
+          {
+            "title": "Peak Performance on Any Device",
+            "description": "Responsive digital solutions ensure flawless performance across all devices and screen sizes.",
+            "icon": "Gauge",
+            "color": "green-500"
+          },
+          {
+            "title": "Fast Turnaround Time",
+            "description": "Projects are completed swiftly, ensuring timely market access without compromising quality.",
+            "icon": "Clock",
+            "color": "purple-500"
+          },
+          {
+            "title": "Quality Without Hidden Costs",
+            "description": "Exceptional quality is provided transparently, ensuring value and trust without additional charges.",
+            "icon": "Star",
+            "color": "pink-500"
+          },
+          {
+            "title": "Seamless Experience",
+            "description": "An efficient process minimizes client involvement, saving time while maximizing efficiency.",
+            "icon": "Sparkles",
+            "color": "yellow-500"
+          }
+    ]
+  },
+  "heroSectionsShowcase": {
+    "title": "Specialized in Crafting<br />Brand Defining Hero Sections",
+    "subtitle": "We create compelling first impressions that convert visitors into customers",
+    "description": "Every hero section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "E-commerce hero section design with conversion focus",
+        "overlay": "E-commerce Focus"
       },
       {
-        "icon": "Shield",
-        "title": "Secure & Reliable",
-        "description": "Built with security best practices and reliable hosting."
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "SaaS landing page hero with product showcase",
+        "overlay": "SaaS Landing"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Creative portfolio hero section",
+        "overlay": "Portfolio Design"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1504707748692-419802cf939d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Professional agency hero section",
+        "overlay": "Agency Landing"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Tech startup hero with innovation focus",
+        "overlay": "Tech Startup"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Healthcare hero section with trust elements",
+        "overlay": "Healthcare"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Financial services hero section",
+        "overlay": "FinTech"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        "alt": "Educational platform hero design",
+        "overlay": "Education"
       }
     ]
   },
-  "heroSections": [
-    {
-      "id": 1,
-      "title": "Suprema",
-      "overlay": "Create a clear roadmap, track progress, and smoothly guide your project from idea to successful launch.",
-      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-    },
-    {
-      "id": 2,
-      "title": "Prismo", 
-      "overlay": "Perfect solution to automate workflows, enhance collaboration, and drive success.",
-      "imageUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-    }
-  ],
   "testimonials": {
-    "title": "Client Success Stories",
-    "subtitle": "What our clients say about working with us",
-    "testimonials": [
-      {
-        "id": 1,
-        "name": "Sarah Johnson",
-        "role": "CEO, TechStart",
-        "content": "Vizart transformed our vision into a stunning website that perfectly represents our brand.",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
-      },
-      {
-        "id": 2,
-        "name": "Michael Chen",
-        "role": "Founder, InnovateLab",
-        "content": "Professional, creative, and delivered exactly what we needed. Highly recommended!",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
-      }
-    ]
+    "title": "What Our Clients Say",
+    "subtitle": "Real feedback from real people we've worked with"
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about our services",
-    "faqs": [
+    "subtitle": "Get answers to common questions about our services and process",
+    "items": [
       {
         "id": 1,
-        "question": "How long does a typical project take?",
-        "answer": "Most projects are completed within 2-4 weeks, depending on complexity and scope."
+        "question": "How long does it take to complete a 1-page and 5-page website?",
+        "answer": "A 1-page website typically takes 1-2 weeks, while a 5-page website usually requires 3-4 weeks. This includes design, development, revisions, and testing. Timeline may vary based on project complexity and feedback response time."
       },
       {
         "id": 2,
-        "question": "Do you provide ongoing maintenance?",
-        "answer": "Yes, we offer maintenance packages to keep your website updated and secure."
+        "question": "Do you offer ongoing support and maintenance services?",
+        "answer": "Yes, we provide comprehensive maintenance packages including security updates, content updates, performance optimization, and technical support. Our maintenance plans start at $99/month and can be customized based on your needs."
+      },
+      {
+        "id": 3,
+        "question": "How do I get started?",
+        "answer": "Simply book a free consultation call with our team. We'll discuss your project requirements, goals, and timeline. After that, we'll provide a detailed proposal with pricing and project scope. Once approved, we begin with a 50% deposit."
+      },
+      {
+        "id": 4,
+        "question": "What happens if I'm not satisfied with the final result?",
+        "answer": "We offer unlimited revisions during the design phase and a 30-day satisfaction guarantee after project completion. If you're not completely happy, we'll work with you to make it right or provide a full refund."
+      },
+      {
+        "id": 5,
+        "question": "Are there any additional costs I should be aware of?",
+        "answer": "Our quotes are comprehensive and include all design and development work. Additional costs may include premium plugins ($50-200), custom integrations, or third-party services like hosting ($10-50/month) and domain registration ($15/year)."
+      },
+      {
+        "id": 6,
+        "question": "Do you offer website re-design services?",
+        "answer": "Absolutely! We specialize in complete website redesigns to improve user experience, conversion rates, and modern design standards. We can work with your existing content or help create new content that better serves your goals."
+      }
+    ]
+  },
+  "finalCta": {
+    "home": {
+      "title": "Ready to Launch Your Dream Project?",
+      "subtitle": "Let's work together to create something amazing that drives real results for your business.",
+      "ctaText": "Book a Call Today"
+    },
+    "works": {
+      "title": "Let's Create Something Amazing Together",
+      "subtitle": "Ready to join our portfolio of successful projects? Let's discuss how we can bring your vision to life.",
+      "ctaText": "Start Your Project"
+    }
+  },
+  "works": {
+    "title": "Showcase of Our",
+    "titleHighlight": "Best Works",
+    "subtitle": "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
+    "categories": [
+      {
+        "id": "all",
+        "label": "All Works"
+      },
+      {
+        "id": "websites",
+        "label": "Websites"
+      },
+      {
+        "id": "branding",
+        "label": "Logo & Branding"
       }
     ]
   },
@@ -156,9 +229,10 @@
       "id": 1,
       "title": "Suprema",
       "description": "Create a clear roadmap, track progress, and smoothly guide your project from idea to successful launch.",
-      "longDescription": "Our comprehensive platform helps teams stay organized and efficient throughout the entire development lifecycle.",
+      "longDescription": "Our comprehensive platform helps teams stay organized and efficient throughout the entire development lifecycle. With advanced analytics and intuitive project management tools, Suprema empowers teams to deliver exceptional results while maintaining transparency and collaboration at every step.",
       "category": "websites",
       "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       "projectUrl": "#",
       "featured": true
     },
@@ -166,9 +240,54 @@
       "id": 2,
       "title": "Prismo",
       "description": "Perfect solution to automate workflows, enhance collaboration, and drive success.",
-      "longDescription": "Built with modern design principles and user-centric approach.",
+      "longDescription": "Built with modern design principles and user-centric approach, Prismo provides an intuitive experience that scales with your growing business needs while maintaining peak performance.",
       "category": "websites",
       "imageUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "TeamFlow",
+      "description": "Revolutionary collaboration platform that connects teams across different time zones.",
+      "longDescription": "Featuring real-time updates, advanced notification systems, and integration capabilities with popular productivity tools to streamline your team's workflow and boost overall productivity.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1504707748692-419802cf939d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "DataViz",
+      "description": "Advanced analytics platform that transforms complex data into actionable insights.",
+      "longDescription": "Built with cutting-edge technology to handle large datasets while maintaining exceptional performance and user experience across all devices and platforms.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "ShopCraft",
+      "description": "Complete e-commerce solution designed to maximize conversions.",
+      "longDescription": "Integrated with modern payment systems and inventory management tools to provide a seamless experience for both customers and store administrators.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "projectUrl": "#",
+      "featured": true
+    },
+    {
+      "id": 6,
+      "title": "FinTech Pro",
+      "description": "Modern financial dashboard with real-time analytics and secure transactions.",
+      "longDescription": "Revolutionary fintech platform that combines cutting-edge security with intuitive user experience for seamless financial management.",
+      "category": "websites",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "hoverImageUrl": "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       "projectUrl": "#",
       "featured": true
     }
@@ -178,7 +297,7 @@
     "copyright": "© 2025 Vizart Studio. All rights reserved.",
     "services": [
       "Website Design",
-      "Logo & Branding", 
+      "Logo & Branding",
       "Pitch Decks",
       "Social Media"
     ],

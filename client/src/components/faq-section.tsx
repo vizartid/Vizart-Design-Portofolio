@@ -81,7 +81,7 @@ export default function FAQSection() {
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {faq.faqs.map((item: any, index: number) => (
+          {faq.items.map((item: any, index: number) => (
             <motion.div
               key={item.id}
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md"
@@ -98,13 +98,13 @@ export default function FAQSection() {
                   <EditableText
                     value={item.question}
                     onChange={(value) => {
-                      const updatedItems = [...faq.faqs];
+                      const updatedItems = [...faq.items];
                       const itemIndex = updatedItems.findIndex(
                         (i) => i.id === item.id,
                       );
                       if (itemIndex !== -1) {
                         updatedItems[itemIndex] = { ...item, question: value };
-                        handleUpdateFAQ("faqs", updatedItems);
+                        handleUpdateFAQ("items", updatedItems);
                       }
                     }}
                     tag="span"
@@ -142,7 +142,7 @@ export default function FAQSection() {
                           <EditableText
                             value={item.answer}
                             onChange={(value) => {
-                              const updatedItems = [...faq.faqs];
+                              const updatedItems = [...faq.items];
                               const itemIndex = updatedItems.findIndex(
                                 (i) => i.id === item.id,
                               );
@@ -151,7 +151,7 @@ export default function FAQSection() {
                                   ...item,
                                   answer: value,
                                 };
-                                handleUpdateFAQ("faqs", updatedItems);
+                                handleUpdateFAQ("items", updatedItems);
                               }
                             }}
                             tag="span"
