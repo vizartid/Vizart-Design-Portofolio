@@ -32,7 +32,7 @@ export default function HeroSection() {
 
   if (isLoading || !content) {
     return (
-      <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
+      <section className="min-h-screen flex flex-col justify-center pt-40 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-pulse">
             <div className="h-24 bg-gray-200 rounded mb-6"></div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
+    <section className="min-h-screen flex flex-col justify-center pt-40 pb-16 px-4 sm:px-6 lg:px-8 wave-bg">
       <div className="max-w-7xl mx-auto">
         {/* Hero Text */}
         <motion.div

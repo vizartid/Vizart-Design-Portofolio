@@ -111,7 +111,7 @@ export default function Works() {
     <div>
       <WorksVisualEditor />
       {/* Works Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-40 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -155,7 +155,7 @@ export default function Works() {
       </section>
       {/* Project Grid */}
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <div className="space-y-8">
               {filteredProjects.map((project, index) => (
@@ -191,19 +191,21 @@ export default function Works() {
                     </div>
                     
                     {/* Content Section - Always on Right */}
-                    <div className="md:order-2 p-8 flex flex-col justify-center">
-                      <h3 className="font-instrument font-semibold mb-4 text-2xl lg:text-3xl text-gray-900">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6 text-base">
-                        {project.description}
-                      </p>
-                      <div className="flex items-center">
+                    <div className="md:order-2 p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-instrument font-semibold mb-3 text-xl text-gray-900">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                          {project.description}
+                        </p>
+                      </div>
+                      <div className="mt-auto">
                         <button
                           onClick={() =>
                             window.open(project.projectUrl || "#", "_blank")
                           }
-                          className="bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 px-8 rounded-xl font-medium transition-all duration-200 border border-gray-200"
+                          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-2.5 px-6 rounded-xl font-medium transition-all duration-200 border border-gray-200 text-sm"
                         >
                           Open Website
                         </button>
