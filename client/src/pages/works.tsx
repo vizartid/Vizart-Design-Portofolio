@@ -157,47 +157,58 @@ export default function Works() {
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
-            <div className="grid grid-cols-1 gap-8">
+            <div className="space-y-8">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 max-w-md mx-auto w-full"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  {/* Square Image Section */}
-                  <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
-                    <div className="absolute inset-0 flex items-center justify-center p-8">
-                      {/* Single mock screenshot */}
-                      <div className="bg-white border border-gray-200 rounded-lg p-6 w-full max-w-xs shadow-sm">
-                        <div className="bg-gray-200 rounded h-3 w-3/4 mb-3"></div>
-                        <div className="bg-gray-100 rounded h-2 w-full mb-2"></div>
-                        <div className="bg-gray-100 rounded h-2 w-2/3 mb-2"></div>
-                        <div className="bg-gray-100 rounded h-2 w-4/5 mb-4"></div>
-                        <div className="bg-blue-500 rounded h-8 w-full"></div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    {/* Image Section - Always on Left */}
+                    <div className="md:order-1">
+                      <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
+                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                          {/* Multiple mock screenshots like in reference */}
+                          <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
+                            <div className="bg-gray-800 rounded-lg p-3 h-32">
+                              <div className="bg-gray-700 rounded h-2 w-3/4 mb-2"></div>
+                              <div className="bg-gray-600 rounded h-1 w-full mb-1"></div>
+                              <div className="bg-gray-600 rounded h-1 w-2/3"></div>
+                            </div>
+                            <div className="bg-white border border-gray-200 rounded-lg p-3 h-32 shadow-sm">
+                              <div className="bg-gray-200 rounded h-2 w-3/4 mb-2"></div>
+                              <div className="bg-gray-100 rounded h-1 w-full mb-1"></div>
+                              <div className="bg-gray-100 rounded h-1 w-2/3"></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Content Section */}
-                  <div className="p-6">
-                    <h3 className="font-instrument font-semibold mb-3 text-xl text-gray-900">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                      {project.description}
-                    </p>
-                    <button
-                      onClick={() =>
-                        window.open(project.projectUrl || "#", "_blank")
-                      }
-                      className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 px-6 rounded-xl font-medium transition-all duration-200 border border-gray-200"
-                    >
-                      Open Website
-                    </button>
+                    
+                    {/* Content Section - Always on Right */}
+                    <div className="md:order-2 p-8 flex flex-col justify-center">
+                      <h3 className="font-instrument font-semibold mb-4 text-2xl lg:text-3xl text-gray-900">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed mb-6 text-base">
+                        {project.description}
+                      </p>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() =>
+                            window.open(project.projectUrl || "#", "_blank")
+                          }
+                          className="bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 px-8 rounded-xl font-medium transition-all duration-200 border border-gray-200"
+                        >
+                          Open Website
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
