@@ -6,13 +6,13 @@
     "footerLogoText": "Vizart"
   },
   "hero": {
-    "title": "Delivering Standout",
-    "titleHighlight": "Digital Solutions",
-    "subtitle": "through Effective Collaboration",
-    "stats": "20+ Successfully Completed Digital Projects\n\n",
-    "ctaText": "Get in Touch",
-    "acceptingText": "Available for New Projects.",
-    "toolsText": "Complemented by industry-standard tools:",
+    "title": "We Deliver Standot Websites",
+    "titleHighlight": "Standout Websites",
+    "subtitle": "with Effortless Collaboration",
+    "stats": "20+ Amazing Websites Created So Far\n\n",
+    "ctaText": "Book a Call",
+    "acceptingText": "Accepting new projects",
+    "toolsText": "We use industry standard tools like",
     "tools": [
       {
         "name": "Figma",
@@ -66,44 +66,43 @@
   "winningEdge": {
     "title": "Our Winning Edge",
     "subtitle": "Discover our unique strengths and distinctive value we offer",
+    "features": [
       {
-        "features": [
-          {
-            "title": "SEO Optimized",
-            "description": "SEO-focused design enhances your online visibility, driving organic traffic for improved search ranking.",
-            "icon": "Search",
-            "color": "blue-500"
-          },
-          {
-            "title": "High Converting Design",
-            "description": "Engaging design techniques significantly increase conversion rates through optimized user experience.",
-            "icon": "TrendingUp",
-            "color": "orange-500"
-          },
-          {
-            "title": "Peak Performance on Any Device",
-            "description": "Responsive digital solutions ensure flawless performance across all devices and screen sizes.",
-            "icon": "Gauge",
-            "color": "green-500"
-          },
-          {
-            "title": "Fast Turnaround Time",
-            "description": "Projects are completed swiftly, ensuring timely market access without compromising quality.",
-            "icon": "Clock",
-            "color": "purple-500"
-          },
-          {
-            "title": "Quality Without Hidden Costs",
-            "description": "Exceptional quality is provided transparently, ensuring value and trust without additional charges.",
-            "icon": "Star",
-            "color": "pink-500"
-          },
-          {
-            "title": "Seamless Experience",
-            "description": "An efficient process minimizes client involvement, saving time while maximizing efficiency.",
-            "icon": "Sparkles",
-            "color": "yellow-500"
-          }
+        "title": "SEO Optimized",
+        "description": "Our SEO-centric design approach enhances your online visibility, driving organic traffic by ensuring your site ranks high on Google searches.",
+        "icon": "Search",
+        "color": "blue-500"
+      },
+      {
+        "title": "High Converting Design",
+        "description": "Our engaging design techniques drive remarkable increases in conversion rates by optimizing user experience and encouraging action.",
+        "icon": "TrendingUp",
+        "color": "orange-500"
+      },
+      {
+        "title": "Peak Performance on Any Screen",
+        "description": "Our fluid website experience guarantees flawless performance across all screens, from desktops and laptops to tablets and mobile.",
+        "icon": "Gauge",
+        "color": "green-500"
+      },
+      {
+        "title": "Fast Turnaround Time",
+        "description": "Launch your landing pages swiftly within 7 to 14 days, ensuring fast access to online opportunities without sacrificing quality.",
+        "icon": "Clock",
+        "color": "purple-500"
+      },
+      {
+        "title": "Quality Without Overcharge",
+        "description": "Always receive exceptional quality without any additional costs, ensuring outstanding value and trust in every service we provide.",
+        "icon": "Star",
+        "color": "pink-500"
+      },
+      {
+        "title": "Effortless Experience",
+        "description": "Our streamlined process and world-class systems minimize your involvement, saving you time while maximizing efficiency.",
+        "icon": "Sparkles",
+        "color": "yellow-500"
+      }
     ]
   },
   "heroSectionsShowcase": {
