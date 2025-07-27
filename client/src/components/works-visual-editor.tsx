@@ -65,7 +65,7 @@ export function WorksVisualEditor() {
       description: "Project description",
       imageUrl: "/api/placeholder/400/300",
       projectUrl: "#",
-      category: "website",
+      category: "uiux",
       featured: false
     };
     

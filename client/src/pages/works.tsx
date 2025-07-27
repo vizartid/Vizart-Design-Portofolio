@@ -6,10 +6,10 @@ import { projects } from "@/data/projects";
 
 const categories = [
   { id: "all", label: "All Works" },
-  { id: "website", label: "Websites" },
+  { id: "uiux", label: "UI/UX" },
   { id: "branding", label: "Branding" },
-  { id: "app", label: "Mobile App" },
-  { id: "ecommerce", label: "E-commerce" },
+  { id: "mobileapp", label: "Mobile App" },
+  { id: "desktop", label: "Desktop Design" },
 ];
 
 interface WorksPageData {
@@ -118,61 +118,37 @@ export default function Works() {
       </section>
       {/* Project Grid */}
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-12">
+        <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 0 ? "" : "lg:grid-flow-col-dense"
-                  }`}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <div
-                    className={index % 2 === 0 ? "lg:order-1" : "lg:order-2"}
-                  >
-                    <motion.img
-                      src={project.imageUrl}
-                      alt={`${project.title} website design`}
-                      className="w-full rounded-xl shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </div>
-                  <div
-                    className={index % 2 === 0 ? "lg:order-2" : "lg:order-1"}
-                  >
-                    <h3 className="font-poppins font-semibold mb-4 text-[40px]">
+                  <div className="text-left">
+                    <h3 className="font-instrument font-medium mb-3 text-xl text-gray-900">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
                       {project.description}
                     </p>
-                    {project.longDescription && (
-                      <p className="text-gray-600 leading-relaxed mb-6">
-                        {project.longDescription}
-                      </p>
-                    )}
                     <button
                       onClick={() =>
                         window.open(project.projectUrl || "#", "_blank")
                       }
-                      className="bg-charcoal text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200"
+                      className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors duration-200 w-full"
                     >
-                      {project.category === "branding"
-                        ? "View Brand Guide"
-                        : "Open Website"}
+                      Open Website
                     </button>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </AnimatePresence>
         </div>
       </section>
