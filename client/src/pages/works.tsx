@@ -119,7 +119,7 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument custom-about-title mb-4 font-medium text-[80px]">
+            <h1 className="font-instrument custom-about-title mb-4 font-medium text-4xl md:text-[80px] leading-tight">
               Showcase of My <br />
               <span style={{ color: "#182baf" }}>Best Works</span>
             </h1>
@@ -127,20 +127,20 @@ export default function Works() {
 
           {/* Category Filters */}
           <motion.div
-            className="flex justify-center mb-12 ml-[10px] mr-[10px] text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px] text-[18px]"
+            className="flex justify-center mb-12 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div
-              className="rounded-xl p-1 inline-flex"
+              className="rounded-xl p-1 inline-flex flex-wrap gap-1 justify-center"
               style={{ backgroundColor: "#e6e6e6" }}
             >
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-2 rounded-xl font-medium transition-all duration-200 ${
+                  className={`px-3 md:px-6 py-2 rounded-xl font-medium transition-all duration-200 text-sm md:text-base ${
                     activeCategory === category.id
                       ? "bg-white shadow-sm text-charcoal"
                       : "text-gray-600 hover:text-charcoal hover:bg-white/50"
@@ -157,7 +157,7 @@ export default function Works() {
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -167,20 +167,21 @@ export default function Works() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                    {/* Image Section - Always on Left */}
+                  {/* Mobile: Vertical Stack, Desktop: Horizontal Layout */}
+                  <div className="block md:grid md:grid-cols-2 md:gap-0">
+                    {/* Image Section */}
                     <div className="md:order-1">
-                      <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                      <div className="aspect-[4/3] md:aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
-                        <div className="absolute inset-0 flex items-center justify-center p-8">
-                          {/* Multiple mock screenshots like in reference */}
-                          <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
-                            <div className="bg-gray-800 rounded-lg p-3 h-32">
+                        <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
+                          {/* Mobile: Single screenshot, Desktop: Multiple screenshots */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 w-full max-w-xs md:max-w-sm">
+                            <div className="bg-gray-800 rounded-lg p-3 h-24 md:h-32">
                               <div className="bg-gray-700 rounded h-2 w-3/4 mb-2"></div>
                               <div className="bg-gray-600 rounded h-1 w-full mb-1"></div>
                               <div className="bg-gray-600 rounded h-1 w-2/3"></div>
                             </div>
-                            <div className="bg-white border border-gray-200 rounded-lg p-3 h-32 shadow-sm">
+                            <div className="hidden md:block bg-white border border-gray-200 rounded-lg p-3 h-32 shadow-sm">
                               <div className="bg-gray-200 rounded h-2 w-3/4 mb-2"></div>
                               <div className="bg-gray-100 rounded h-1 w-full mb-1"></div>
                               <div className="bg-gray-100 rounded h-1 w-2/3"></div>
@@ -190,13 +191,13 @@ export default function Works() {
                       </div>
                     </div>
                     
-                    {/* Content Section - Always on Right */}
-                    <div className="md:order-2 p-6 flex flex-col justify-between">
+                    {/* Content Section */}
+                    <div className="md:order-2 p-4 md:p-6 flex flex-col justify-between">
                       <div>
-                        <h3 className="font-instrument font-semibold mb-3 text-xl text-gray-900">
+                        <h3 className="font-instrument font-semibold mb-2 md:mb-3 text-lg md:text-xl text-gray-900">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 text-sm md:text-sm">
                           {project.description}
                         </p>
                       </div>

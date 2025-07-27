@@ -96,11 +96,11 @@ export default function ServicesSection() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto mb-12">
+        <div className="flex flex-wrap gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
           {servicesData.services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] text-center"
+              className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -113,7 +113,7 @@ export default function ServicesSection() {
                   <Code className="w-8 h-8 text-electric-blue lucide-glow" />
                 )}
               </div>
-              <h3 className="font-instrument mb-3 font-medium text-[28px]">
+              <h3 className="font-instrument mb-3 font-medium text-xl md:text-[28px]">
                 <EditableText
                   value={service.title}
                   onChange={(value) =>
@@ -122,7 +122,7 @@ export default function ServicesSection() {
                   tag="span"
                 />
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 <EditableText
                   value={service.description}
                   onChange={(value) =>
