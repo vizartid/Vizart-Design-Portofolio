@@ -84,9 +84,8 @@ export default function Works() {
           >
             <h1 className="font-instrument custom-about-title mb-4 font-medium text-[80px]">
               Showcase of My <br />
-              <span style={{ color: '#182baf' }}>Best Works</span>
+              <span style={{ color: "#182baf" }}>Best Works</span>
             </h1>
-            
           </motion.div>
 
           {/* Category Filters */}
@@ -96,12 +95,15 @@ export default function Works() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-md p-1 inline-flex" style={{ backgroundColor: '#e6e6e6' }}>
+            <div
+              className="rounded-xl p-1 inline-flex"
+              style={{ backgroundColor: "#e6e6e6" }}
+            >
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`px-6 py-2 rounded-xl font-medium transition-all duration-200 ${
                     activeCategory === category.id
                       ? "bg-white shadow-sm text-charcoal"
                       : "text-gray-600 hover:text-charcoal hover:bg-white/50"
@@ -146,7 +148,7 @@ export default function Works() {
                   <div
                     className={index % 2 === 0 ? "lg:order-2" : "lg:order-1"}
                   >
-                    <h3 className="font-poppins font-semibold text-2xl mb-4">
+                    <h3 className="font-poppins font-semibold mb-4 text-[40px]">
                       {project.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
