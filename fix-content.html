@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fix Content JSON</title>
+</head>
+<body>
+    <h1>Content JSON Fixer</h1>
+    <button onclick="clearContent()">Clear Corrupted Content</button>
+    <button onclick="checkContent()">Check Current Content</button>
+    <div id="status"></div>
+
+    <script>
+        function clearContent() {
+            // Clear all content-related localStorage keys
+            localStorage.removeItem('contentData');
+            localStorage.removeItem('worksData');
+            localStorage.removeItem('sectionOrder');
+            
+            document.getElementById('status').innerHTML = '<p style="color: green;">✅ Cleared all localStorage content. Please refresh your main app.</p>';
+        }
+
+        function checkContent() {
+            const contentData = localStorage.getItem('contentData');
+            const worksData = localStorage.getItem('worksData');
+            
+            let status = '<h3>Current localStorage Status:</h3>';
+            status += '<p><strong>contentData:</strong> ' + (contentData ? 'Present (' + contentData.length + ' chars)' : 'Not found') + '</p>';
+            status += '<p><strong>worksData:</strong> ' + (worksData ? 'Present (' + worksData.length + ' chars)' : 'Not found') + '</p>';
+            
+            if (contentData) {
+                try {
+                    JSON.parse(contentData);
+                    status += '<p style="color: green;">✅ contentData JSON is valid</p>';
+                } catch (e) {
+                    status += '<p style="color: red;">❌ contentData JSON is corrupted: ' + e.message + '</p>';
+                }
+            }
+            
+            if (worksData) {
+                try {
+                    JSON.parse(worksData);
+                    status += '<p style="color: green;">✅ worksData JSON is valid</p>';
+                } catch (e) {
+                    status += '<p style="color: red;">❌ worksData JSON is corrupted: ' + e.message + '</p>';
+                }
+            }
+            
+            document.getElementById('status').innerHTML = status;
+        }
+
+        // Auto-check on load
+        window.onload = checkContent;
+    </script>
+</body>
+</html>
