@@ -46,6 +46,11 @@ export default function Works() {
     // Listen untuk perubahan works data
     const handleWorksDataChange = (event: CustomEvent) => {
       setWorksData(event.detail.worksData);
+      
+      // Sync with heroSectionsShowcase when works data changes
+      if (event.detail.worksData && event.detail.worksData.projects.length > 0) {
+        updateHeroShowcase(event.detail.worksData.projects);
+      }
     };
 
     window.addEventListener(
@@ -60,6 +65,38 @@ export default function Works() {
       );
     };
   }, []);
+
+  // Function to sync works data with hero showcase
+  const updateHeroShowcase = (projectsData: any[]) => {
+    try {
+      const contentData = JSON.parse(localStorage.getItem("contentData") || "{}");
+      
+      // Map project data to hero showcase images
+      const heroImages = projectsData.slice(0, 8).map((project, index) => ({
+        url: project.imageUrl || `https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300`,
+        alt: project.description || `${project.title} project showcase`,
+        overlay: project.category?.toUpperCase() || "Project"
+      }));
+      
+      // Update hero sections showcase
+      const updatedContent = {
+        ...contentData,
+        heroSectionsShowcase: {
+          ...contentData.heroSectionsShowcase,
+          images: heroImages
+        }
+      };
+      
+      localStorage.setItem("contentData", JSON.stringify(updatedContent));
+      
+      // Dispatch event to notify hero showcase of changes
+      window.dispatchEvent(new CustomEvent("contentDataChanged", {
+        detail: { contentData: updatedContent }
+      }));
+    } catch (error) {
+      console.error("Error syncing with hero showcase:", error);
+    }
+  };
 
   // Use custom projects if available, otherwise fallback to default
   const allProjects =
@@ -120,58 +157,47 @@ export default function Works() {
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 gap-8">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 max-w-md mx-auto w-full"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    {/* Image Section - Always on Left */}
-                    <div className="lg:order-1">
-                      <div className="h-64 lg:h-full bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
-                        <div className="absolute inset-0 flex items-center justify-center p-8">
-                          <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-                            {/* Mock screenshot images */}
-                            <div className="bg-gray-800 rounded-lg p-4 h-32">
-                              <div className="bg-gray-700 rounded h-2 w-3/4 mb-2"></div>
-                              <div className="bg-gray-600 rounded h-1 w-full mb-1"></div>
-                              <div className="bg-gray-600 rounded h-1 w-2/3"></div>
-                            </div>
-                            <div className="bg-white border border-gray-200 rounded-lg p-4 h-32 shadow-sm">
-                              <div className="bg-gray-200 rounded h-2 w-3/4 mb-2"></div>
-                              <div className="bg-gray-100 rounded h-1 w-full mb-1"></div>
-                              <div className="bg-gray-100 rounded h-1 w-2/3"></div>
-                            </div>
-                          </div>
-                        </div>
+                  {/* Square Image Section */}
+                  <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
+                    <div className="absolute inset-0 flex items-center justify-center p-8">
+                      {/* Single mock screenshot */}
+                      <div className="bg-white border border-gray-200 rounded-lg p-6 w-full max-w-xs shadow-sm">
+                        <div className="bg-gray-200 rounded h-3 w-3/4 mb-3"></div>
+                        <div className="bg-gray-100 rounded h-2 w-full mb-2"></div>
+                        <div className="bg-gray-100 rounded h-2 w-2/3 mb-2"></div>
+                        <div className="bg-gray-100 rounded h-2 w-4/5 mb-4"></div>
+                        <div className="bg-blue-500 rounded h-8 w-full"></div>
                       </div>
                     </div>
-                    
-                    {/* Content Section - Always on Right */}
-                    <div className="lg:order-2 p-8 flex flex-col justify-center">
-                      <h3 className="font-instrument font-semibold mb-4 text-2xl lg:text-3xl text-gray-900">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6 text-base">
-                        {project.description}
-                      </p>
-                      <div className="flex items-center">
-                        <button
-                          onClick={() =>
-                            window.open(project.projectUrl || "#", "_blank")
-                          }
-                          className="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-xl font-medium transition-all duration-200 border border-gray-200"
-                        >
-                          Open Website
-                        </button>
-                      </div>
-                    </div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="p-6">
+                    <h3 className="font-instrument font-semibold mb-3 text-xl text-gray-900">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                      {project.description}
+                    </p>
+                    <button
+                      onClick={() =>
+                        window.open(project.projectUrl || "#", "_blank")
+                      }
+                      className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 px-6 rounded-xl font-medium transition-all duration-200 border border-gray-200"
+                    >
+                      Open Website
+                    </button>
                   </div>
                 </motion.div>
               ))}
