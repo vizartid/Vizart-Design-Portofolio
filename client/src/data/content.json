@@ -6,12 +6,12 @@
     "footerLogoText": "Vizart"
   },
   "hero": {
-    "title": "We Deliver Standot Websites",
-    "titleHighlight": "Standout Websites",
-    "subtitle": "with Effortless Collaboration",
+    "title": "Delivering Standout",
+    "titleHighlight": "Digital Design",
+    "subtitle": "through Optimal Collaboration",
     "stats": "20+ Amazing Websites Created So Far\n\n",
-    "ctaText": "Book a Call",
-    "acceptingText": "Accepting new projects",
+    "ctaText": "Get in Touch",
+    "acceptingText": "Ready for New Projects.",
     "toolsText": "We use industry standard tools like",
     "tools": [
       {
@@ -65,7 +65,7 @@
   },
   "winningEdge": {
     "title": "Our Winning Edge",
-    "subtitle": "Discover our unique strengths and distinctive value we offer",
+    "subtitle": "Discover my unique strengths and distinctive value we offer",
     "features": [
       {
         "title": "SEO Optimized",
@@ -80,26 +80,26 @@
         "color": "orange-500"
       },
       {
-        "title": "Peak Performance on Any Screen",
-        "description": "Our fluid website experience guarantees flawless performance across all screens, from desktops and laptops to tablets and mobile.",
+        "title": "Peak Performance Across Devices",
+        "description": "Fluid digital experiences ensure optimal performance across all screen sizes and devices.",
         "icon": "Gauge",
         "color": "green-500"
       },
       {
         "title": "Fast Turnaround Time",
-        "description": "Launch your landing pages swiftly within 7 to 14 days, ensuring fast access to online opportunities without sacrificing quality.",
+        "description": "Projects are completed swiftly, ensuring timely market access without compromising quality.",
         "icon": "Clock",
         "color": "purple-500"
       },
       {
         "title": "Quality Without Overcharge",
-        "description": "Always receive exceptional quality without any additional costs, ensuring outstanding value and trust in every service we provide.",
+        "description": "Always receive exceptional quality without any additional costs, ensuring outstanding value and trust in every service provide.",
         "icon": "Star",
         "color": "pink-500"
       },
       {
-        "title": "Effortless Experience",
-        "description": "Our streamlined process and world-class systems minimize your involvement, saving you time while maximizing efficiency.",
+        "title": "Seamless Experience",
+        "description": "An efficient process minimizes client involvement, saving time while maximizing efficiency.",
         "icon": "Sparkles",
         "color": "yellow-500"
       }
@@ -108,7 +108,7 @@
   "heroSectionsShowcase": {
     "title": "Specialized in Crafting<br />Brand Defining Hero Sections",
     "subtitle": "We create compelling first impressions that convert visitors into customers",
-    "description": "Every hero section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
+    "description": "Every section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
     "images": [
       {
         "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
@@ -158,37 +158,37 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about our services and process",
+    "subtitle": "Answers to Common Questions.",
     "items": [
       {
         "id": 1,
-        "question": "How long does it take to complete a 1-page and 5-page website?",
-        "answer": "A 1-page website typically takes 1-2 weeks, while a 5-page website usually requires 3-4 weeks. This includes design, development, revisions, and testing. Timeline may vary based on project complexity and feedback response time."
+        "question": "What is the timeline for 1-page and 5-page digital design projects?",
+        "answer": "A 1-page project typically takes 1-2 weeks, a 5-page project 3-4 weeks. This includes design, revisions, and testing. Timelines may vary with project complexity and feedback."
       },
       {
         "id": 2,
         "question": "Do you offer ongoing support and maintenance services?",
-        "answer": "Yes, we provide comprehensive maintenance packages including security updates, content updates, performance optimization, and technical support. Our maintenance plans start at $99/month and can be customized based on your needs."
+        "answer": "Yes, comprehensive maintenance packages are available, including security/content updates, performance optimization, and technical support. Plans start at $99/month, customizable to your needs."
       },
       {
         "id": 3,
         "question": "How do I get started?",
-        "answer": "Simply book a free consultation call with our team. We'll discuss your project requirements, goals, and timeline. After that, we'll provide a detailed proposal with pricing and project scope. Once approved, we begin with a 50% deposit."
+        "answer": "Simply book a free consultation. I will discuss your project requirements, goals, and timeline. A detailed proposal with pricing and scope will then be provided. Work begins upon approval and a 50% deposit."
       },
       {
         "id": 4,
         "question": "What happens if I'm not satisfied with the final result?",
-        "answer": "We offer unlimited revisions during the design phase and a 30-day satisfaction guarantee after project completion. If you're not completely happy, we'll work with you to make it right or provide a full refund."
+        "answer": "Unlimited revisions are offered during the design phase, plus a 30-day satisfaction guarantee post-completion. If not satisfied, I will work with you to make it right or provide a full refund."
       },
       {
         "id": 5,
         "question": "Are there any additional costs I should be aware of?",
-        "answer": "Our quotes are comprehensive and include all design and development work. Additional costs may include premium plugins ($50-200), custom integrations, or third-party services like hosting ($10-50/month) and domain registration ($15/year)."
+        "answer": "My quotes are comprehensive, covering all design work. Additional costs may include premium plugins ($50-200), custom integrations, or third-party services (e.g., hosting $10-50/month, domain registration $15/year)."
       },
       {
         "id": 6,
-        "question": "Do you offer website re-design services?",
-        "answer": "Absolutely! We specialize in complete website redesigns to improve user experience, conversion rates, and modern design standards. We can work with your existing content or help create new content that better serves your goals."
+        "question": "Do you offer digital redesign services?",
+        "answer": "Absolutely! I specialize in complete digital redesigns to improve user experience, conversion rates, and modern design standards. I can work with existing content or help create new content that serves your goals."
       }
     ]
   },
