@@ -53,7 +53,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument custom-hero-title mb-6 font-light text-4xl md:text-6xl lg:text-[80px] leading-tight">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
             <EditableText
               value={content.hero.title}
               onChange={(value) => handleUpdateHero("title", value)}
@@ -73,7 +73,7 @@ export default function HeroSection() {
               className="inline"
             />
           </h1>
-          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-base md:text-lg font-medium px-4 md:px-0">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-[18px] font-medium">
             <EditableText
               value={content.hero.stats}
               onChange={(value) => handleUpdateHero("stats", value)}

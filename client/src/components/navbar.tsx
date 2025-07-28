@@ -196,23 +196,15 @@ export default function Navbar() {
       </div>
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border border-gray-200/60 shadow-xl rounded-2xl mx-3 mt-2">
-          <div className="px-6 py-6 space-y-4">
+        <div className="md:hidden bg-bone-white border-t border-gray-200">
+          <div className="px-4 py-6 space-y-4">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              <span className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
-                location === "/" 
-                  ? "bg-gray-100 text-charcoal" 
-                  : "text-gray-600 hover:text-charcoal hover:bg-gray-50"
-              }`}>Home</span>
+              <span className="block text-charcoal font-medium">Home</span>
             </Link>
             <Link href="/works" onClick={() => setIsMenuOpen(false)}>
-              <span className={`block font-medium py-2 px-3 rounded-lg transition-colors ${
-                location === "/works" 
-                  ? "bg-gray-100 text-charcoal" 
-                  : "text-gray-600 hover:text-charcoal hover:bg-gray-50"
-              }`}>Works</span>
+              <span className="block text-gray-600 font-medium">Works</span>
             </Link>
-            <button className="w-full bg-black text-white py-3 px-6 rounded-xl font-medium mt-4 hover:bg-gray-900 transition-colors">
+            <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4">
               <span>Book a Call</span>
             </button>
           </div>
