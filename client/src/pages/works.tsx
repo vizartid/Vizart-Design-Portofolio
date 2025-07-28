@@ -170,18 +170,18 @@ export default function Works() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image Section - Always on Left */}
                     <div className="md:order-1">
-                      <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
-                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <div className="absolute inset-0 flex items-center justify-center p-4">
                           {/* Multiple mock screenshots like in reference */}
-                          <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
-                            <div className="bg-gray-800 rounded-lg p-3 h-32">
-                              <div className="bg-gray-700 rounded h-2 w-3/4 mb-2"></div>
+                          <div className="grid grid-cols-2 gap-2 w-full max-w-xs">
+                            <div className="bg-gray-800 rounded-lg p-2 h-20">
+                              <div className="bg-gray-700 rounded h-1.5 w-3/4 mb-1.5"></div>
                               <div className="bg-gray-600 rounded h-1 w-full mb-1"></div>
                               <div className="bg-gray-600 rounded h-1 w-2/3"></div>
                             </div>
-                            <div className="bg-white border border-gray-200 rounded-lg p-3 h-32 shadow-sm">
-                              <div className="bg-gray-200 rounded h-2 w-3/4 mb-2"></div>
+                            <div className="bg-white border border-gray-200 rounded-lg p-2 h-20 shadow-sm">
+                              <div className="bg-gray-200 rounded h-1.5 w-3/4 mb-1.5"></div>
                               <div className="bg-gray-100 rounded h-1 w-full mb-1"></div>
                               <div className="bg-gray-100 rounded h-1 w-2/3"></div>
                             </div>
@@ -191,12 +191,12 @@ export default function Works() {
                     </div>
                     
                     {/* Content Section - Always on Right */}
-                    <div className="md:order-2 p-6 flex flex-col justify-between">
+                    <div className="md:order-2 p-4 flex flex-col justify-between">
                       <div>
-                        <h3 className="font-instrument font-semibold mb-3 text-xl text-gray-900">
+                        <h3 className="font-instrument font-semibold mb-2 text-lg text-gray-900">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-3 text-sm">
                           {project.description}
                         </p>
                       </div>
@@ -205,7 +205,7 @@ export default function Works() {
                           onClick={() =>
                             window.open(project.projectUrl || "#", "_blank")
                           }
-                          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-2.5 px-6 rounded-xl font-medium transition-all duration-200 border border-gray-200 text-sm"
+                          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-2 px-4 rounded-xl font-medium transition-all duration-200 border border-gray-200 text-sm"
                         >
                           Open Website
                         </button>
