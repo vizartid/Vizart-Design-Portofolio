@@ -1,15 +1,27 @@
 import { motion } from "framer-motion";
-import { Search, TrendingUp, Gauge, Clock, Star, Sparkles } from "lucide-react";
+import {
+  Search,
+  TrendingUp,
+  Gauge,
+  Clock,
+  Star,
+  Globe,
+  Target,
+  Cloud,
+  Rocket,
+  Bolt,
+  ChartBar,
+} from "lucide-react";
 import { useContent } from "@/hooks/use-content";
 
 // Icon mapping for the features
 const iconMap = {
-  "Search": Search,
-  "TrendingUp": TrendingUp,
-  "Gauge": Gauge,
-  "Clock": Clock,
-  "Star": Star,
-  "Sparkles": Sparkles,
+  Search: Search,
+  TrendingUp: TrendingUp,
+  Gauge: Gauge,
+  Clock: Clock,
+  Star: Star,
+  Sparkles: Sparkles,
 };
 
 // Color mapping for the features
@@ -42,7 +54,10 @@ export default function WinningEdgeSection() {
           </div>
           <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
             {[...Array(6)].map((_, index) => (
-              <div key={index} className="bg-gray-200 animate-pulse rounded-2xl h-48 w-full sm:w-[calc(50%-12px)]"></div>
+              <div
+                key={index}
+                className="bg-gray-200 animate-pulse rounded-2xl h-48 w-full sm:w-[calc(50%-12px)]"
+              ></div>
             ))}
           </div>
         </div>
@@ -62,7 +77,9 @@ export default function WinningEdgeSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">{title}</h2>
+          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">
+            {title}
+          </h2>
           <p className="text-gray-600 custom-about-text max-w-2xl mx-auto text-[18px]">
             {subtitle}
           </p>
@@ -71,8 +88,9 @@ export default function WinningEdgeSection() {
         <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
           {features.map((feature: Feature, index: number) => {
             const IconComponent = (iconMap as any)[feature.icon] || Search;
-            const colorClass = (colorMap as any)[feature.color] || "text-blue-500";
-            
+            const colorClass =
+              (colorMap as any)[feature.color] || "text-blue-500";
+
             return (
               <motion.div
                 key={feature.title}
