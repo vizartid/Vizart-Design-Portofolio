@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import { WorksVisualEditor } from "@/components/works-visual-editor";
 import { projects } from "@/data/projects";
 
+import profile_foto from "@assets/profile-foto.jpg";
+
 const categories = [
   { id: "all", label: "All Works" },
   { id: "uiux", label: "UI/UX" },
@@ -235,7 +237,7 @@ export default function Works() {
           </p>
           <button className="bg-charcoal text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
             <img
-              src="/profile-foto.png"
+              src={profile_foto}
               alt="Profile"
               className="w-8 h-8 rounded-full object-cover"
             />
