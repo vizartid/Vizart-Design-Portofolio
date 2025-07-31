@@ -11,6 +11,7 @@ import {
   Rocket,
   Bolt,
   ChartBar,
+  Sparkles,
 } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
 
