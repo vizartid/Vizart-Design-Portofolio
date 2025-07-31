@@ -6,6 +6,8 @@ import { projects } from "@/data/projects";
 
 import profile_foto from "@assets/profile-foto.jpg";
 
+import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+
 const categories = [
   { id: "all", label: "All Works" },
   { id: "uiux", label: "UI/UX" },
@@ -237,7 +239,7 @@ export default function Works() {
           </p>
           <button className="bg-charcoal text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
             <img
-              src={profile_foto}
+              src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
               className="w-8 h-8 rounded-full object-cover"
             />
