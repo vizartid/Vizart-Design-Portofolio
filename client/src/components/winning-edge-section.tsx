@@ -1,58 +1,57 @@
 import { motion } from "framer-motion";
 import { Search, TrendingUp, Gauge, Clock, Star, Sparkles } from "lucide-react";
+import { useContent } from "@/hooks/use-content";
 
-const features = [
-  {
-    icon: Search,
-    title: "SEO Optimized",
-    description:
-      "Our SEO-centric design approach enhances your online visibility, driving organic traffic by ensuring your site ranks high on Google searches.",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-  {
-    icon: TrendingUp,
-    title: "High Converting Design",
-    description:
-      "Our engaging design techniques drive remarkable increases in conversion rates by optimizing user experience and encouraging action.",
-    color: "text-orange-500",
-    bgColor: "bg-orange-500/10",
-  },
-  {
-    icon: Gauge,
-    title: "Peak Performance on Any Screen",
-    description:
-      "Our fluid website experience guarantees flawless performance across all screens, from desktops and laptops to tablets and mobile.",
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    icon: Clock,
-    title: "Fast Turnaround Time",
-    description:
-      "Launch your landing pages swiftly within 7 to 14 days, ensuring fast access to online opportunities without sacrificing quality.",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
-  },
-  {
-    icon: Star,
-    title: "Quality Without Overcharge",
-    description:
-      "Always receive exceptional quality without any additional costs, ensuring outstanding value and trust in every service we provide.",
-    color: "text-pink-500",
-    bgColor: "bg-pink-500/10",
-  },
-  {
-    icon: Sparkles,
-    title: "Effortless Experience",
-    description:
-      "Our streamlined process and world-class systems minimize your involvement, saving you time while maximizing efficiency.",
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-500/10",
-  },
-];
+// Icon mapping for the features
+const iconMap = {
+  "Search": Search,
+  "TrendingUp": TrendingUp,
+  "Gauge": Gauge,
+  "Clock": Clock,
+  "Star": Star,
+  "Sparkles": Sparkles,
+};
+
+// Color mapping for the features
+const colorMap = {
+  "blue-500": "text-blue-500",
+  "orange-500": "text-orange-500",
+  "green-500": "text-green-500",
+  "purple-500": "text-purple-500",
+  "pink-500": "text-pink-500",
+  "yellow-500": "text-yellow-500",
+};
+
+interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+}
 
 export default function WinningEdgeSection() {
+  const { data: content, isLoading } = useContent();
+
+  if (isLoading || !content?.winningEdge) {
+    return (
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="h-20 bg-gray-200 animate-pulse rounded-lg mb-4"></div>
+            <div className="h-6 bg-gray-200 animate-pulse rounded-lg max-w-2xl mx-auto"></div>
+          </div>
+          <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className="bg-gray-200 animate-pulse rounded-2xl h-48 w-full sm:w-[calc(50%-12px)]"></div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const { title, subtitle, features } = content.winningEdge;
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -63,37 +62,42 @@ export default function WinningEdgeSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">My Digital Edge</h2>
+          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">{title}</h2>
           <p className="text-gray-600 custom-about-text max-w-2xl mx-auto text-[18px]">
-            Discover our unique strengths and distinctive value we offer
+            {subtitle}
           </p>
         </motion.div>
 
         <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-center">
-                <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon
-                    className={`${feature.color} w-8 h-8 lucide-glow`}
-                  />
+          {features.map((feature: Feature, index: number) => {
+            const IconComponent = (iconMap as any)[feature.icon] || Search;
+            const colorClass = (colorMap as any)[feature.color] || "text-blue-500";
+            
+            return (
+              <motion.div
+                key={feature.title}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center">
+                  <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <IconComponent
+                      className={`${colorClass} w-8 h-8 lucide-glow`}
+                    />
+                  </div>
+                  <h3 className="font-instrument custom-project-title mb-3 text-[28px] font-medium">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 custom-project-desc leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="font-instrument custom-project-title mb-3 text-[28px] font-medium">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 custom-project-desc leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
