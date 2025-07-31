@@ -21,7 +21,12 @@ const iconMap = {
   Gauge: Gauge,
   Clock: Clock,
   Star: Star,
-  Sparkles: Sparkles,
+  Globe: Globe,
+  Target: Target,
+  Cloud: Cloud,
+  Rocket: Rocket,
+  Bolt: Bolt,
+  ChartBar: ChartBar,
 };
 
 // Color mapping for the features

@@ -42,20 +42,20 @@
       "Clear Brand Introduction Message",
       "Improved Conversion Rates"
     ],
-    "mainTitle": "Our Services",
+    "mainTitle": "My Services",
     "services": [
       {
-        "title": "Logo & Branding",
+        "title": "UI/UX & Branding",
         "description": "A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.",
         "icon": "Palette"
       },
       {
         "title": "Websites",
-        "description": "A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.",
+        "description": "A complete website from strategy to design and development, crafted to drive results and delivered in 2 to 3 weeks.",
         "icon": "Code"
       }
     ],
-    "additionalText": "We also offer other design services like pitch decks, social media creatives, and more.",
+    "additionalText": "We also offer other design services like digital Design, social media creatives, and more.",
     "features": [
       "Smooth Communication",
       "Flexible revisions",
@@ -106,8 +106,8 @@
     ]
   },
   "heroSectionsShowcase": {
-    "title": "Specialized in Crafting<br />Brand Defining Hero Sections",
-    "subtitle": "We create compelling first impressions that convert visitors into customers",
+    "title": "Specialized in Innovating<br />Comprehensive Digital Solutions",
+    "subtitle": "We craft integrated online experiences and powerful technical foundations that drive your brand's success and operational excellence.",
     "description": "Every section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
     "images": [
       {
@@ -196,7 +196,7 @@
     "home": {
       "title": "Ready to Launch Your Dream Project?",
       "subtitle": "Let's work together to create something amazing that drives real results for your business.",
-      "ctaText": "Book a Call Today"
+      "ctaText": "Get In Touch"
     },
     "works": {
       "title": "Let's Create Something Amazing Together",
@@ -205,7 +205,7 @@
     }
   },
   "works": {
-    "title": "Showcase of Our",
+    "title": "Showcase of My",
     "titleHighlight": "Best Works",
     "subtitle": "Explore our carefully curated portfolio of successful projects that demonstrate our expertise and creativity.",
     "categories": [

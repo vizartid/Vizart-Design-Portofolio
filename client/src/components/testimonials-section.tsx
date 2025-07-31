@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 text-yellow-400 fill-current lucide-glow"
+                    className="w-4 h-4 text-yellow-400 fill-current"
                   />
                 ))}
               </div>
