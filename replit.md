@@ -52,20 +52,22 @@ Preferred communication style: Simple, everyday language.
 ### Content Management
 - **TypeScript-based content system** - Each section has its own .ts file for easier editing
 - Individual files for each section (hero.ts, services.ts, faq.ts, etc.)
-- Automatic content loading from TypeScript files with JSON fallback
+- Automatic content loading from TypeScript files (JSON backup system removed)
+- Image connection system using attached_assets folder
+- API endpoints for content parsing and serving
 - Visual editors for sections (Works, Tools, Section Order)
 - Local storage for draft changes
-- API endpoints for content CRUD operations
-- Backward compatibility with existing JSON system
+- Hot reload support for TypeScript content files
 
 ## Data Flow
 
-1. **Content Loading**: Application fetches content from `/api/content` endpoint (now loads from TypeScript files)
+1. **Content Loading**: TypeScript files parsed by server and served via `/api/content` endpoint
 2. **Section Rendering**: Components use React Query to manage content state
 3. **Content Storage**: Each section stored in individual TypeScript files in `/client/src/data/`
-4. **Visual Editing**: Editors update local storage and sync via API (automatically updates .ts files)
-5. **Database Operations**: Projects and testimonials stored in PostgreSQL
-6. **Static Assets**: Images and files served from attached_assets directory
+4. **Image Management**: All images referenced from `/attached_assets/` directory
+5. **Visual Editing**: Editors update local storage and sync via API (automatically updates .ts files)
+6. **Database Operations**: Projects and testimonials stored in PostgreSQL
+7. **Static Assets**: Images served from attached_assets directory with proper routing
 
 ### Content File Structure
 - `branding.ts` - Logo and brand elements

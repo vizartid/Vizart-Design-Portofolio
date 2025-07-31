@@ -1,6 +1,6 @@
 export const branding = {
-  logoUrl: "",
+  logoUrl: "/attached_assets/Profile-foto.png",
   logoText: "Vizart",
-  footerLogoUrl: "=",
+  footerLogoUrl: "/attached_assets/Profile-foto.png",
   footerLogoText: "Vizart"
 };

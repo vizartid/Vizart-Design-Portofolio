@@ -1,72 +1,77 @@
 # Content Management System
 
-The content is now organized into separate TypeScript files for easier management and editing. Each section has its own file:
+This project now uses individual TypeScript files for easier content management. Each section of the website has its own `.ts` file for better organization and editing.
 
-## Content Structure
+## File Structure
 
-### Core Sections
-- `branding.ts` - Logo, brand text, and branding elements
-- `hero.ts` - Main hero section content, tools, and CTA
-- `services.ts` - Services section with features and offerings
-- `winning-edge.ts` - Features that highlight competitive advantages
-- `hero-sections-showcase.ts` - Portfolio showcase images and descriptions
+- `branding.ts` - Logo, favicon, and brand elements
+- `hero.ts` - Main hero section with tools carousel
+- `services.ts` - Service offerings and features  
+- `winning-edge.ts` - Competitive advantages and features
+- `hero-sections-showcase.ts` - Portfolio showcase gallery
+- `testimonials-content.ts` - Testimonials headers and text
+- `faq.ts` - FAQ questions and answers
+- `final-cta.ts` - Call-to-action sections
+- `works.ts` - Works page header content
+- `works-projects.ts` - Individual project data
+- `footer.ts` - Footer content and links
 
-### Content Sections
-- `testimonials-content.ts` - Testimonials section headers and content
-- `faq.ts` - Frequently asked questions and answers
-- `final-cta.ts` - Call-to-action sections for different pages
-- `footer.ts` - Footer content, links, and copyright information
+## Image Management
 
-### Works/Portfolio
-- `works.ts` - Works page headers and categories
-- `works-projects.ts` - Individual project data for the portfolio
+### Using Images from attached_assets
 
-### Main Export
-- `index.ts` - Combines all sections into a single content object
+All images are stored in the `attached_assets` folder and can be referenced in the TypeScript files using:
+
+```typescript
+// Correct way to reference images
+imageUrl: "/attached_assets/filename.png"
+logoUrl: "/attached_assets/Profile-foto.png"
+```
+
+### Available Images
+
+Current images in attached_assets folder:
+- `Profile-foto.png` - Used for logo/branding
+- `Screenshot 2025-07-24 140158_1753344628323.png` - Project screenshot
+- `Screenshot 2025-07-24 140507_1753341884909.png` - Project screenshot
+- Multiple other project screenshots and design images
+- Various `image_*.png` files for galleries and showcases
+
+### Projects Image Connections
+
+All projects in `works-projects.ts` now use real images from attached_assets:
+- Each project has `imageUrl` and `hoverImageUrl` properties
+- Images are properly connected to actual files
+- No more placeholder or external URLs
 
 ## How to Edit Content
 
-### 1. Direct File Editing
-Edit any individual file to update that section's content. For example:
-- Edit `hero.ts` to change hero section text
-- Edit `services.ts` to update service offerings
-- Edit `faq.ts` to add/remove FAQ items
+1. **Navigate to the file** you want to edit in `client/src/data/`
+2. **Edit the TypeScript object** - the structure is simple and self-explanatory
+3. **Save the file** - changes will be automatically detected and updated
+4. **Images**: Reference any file in attached_assets using `/attached_assets/filename.ext`
 
-### 2. File Structure
-Each file exports a constant with the section data:
+## Example
+
 ```typescript
-export const sectionName = {
-  // your content here
-};
+// In works-projects.ts
+export const worksProjects = [
+  {
+    id: 1,
+    title: "My Project",
+    description: "Project description here",
+    imageUrl: "/attached_assets/my-project-image.png",
+    hoverImageUrl: "/attached_assets/my-project-hover.png",
+    // ... other properties
+  }
+];
 ```
 
-### 3. API Integration
-The system automatically:
-- Loads content from TypeScript files
-- Falls back to the old JSON system if needed
-- Updates individual files when content changes
-- Maintains backward compatibility
+## System Architecture
 
-## Benefits
+- **Backend**: Automatically parses TypeScript files and serves content via API
+- **Frontend**: Uses React Query to fetch content from `/api/content`
+- **Hot Reload**: Changes to .ts files trigger automatic updates
+- **Backward Compatible**: System maintains compatibility while using TypeScript files
 
-✅ **Easy to Edit**: Each section is in its own file  
-✅ **Better Organization**: Clear separation of content areas  
-✅ **Type Safety**: TypeScript provides better error checking  
-✅ **Version Control**: Easy to track changes per section  
-✅ **Backup**: Old content.json is saved as content-backup.json
-
-## Quick Reference
-
-| Section | File | Purpose |
-|---------|------|---------|
-| Branding | `branding.ts` | Logo and brand elements |
-| Hero | `hero.ts` | Main landing section |
-| Services | `services.ts` | Service offerings |
-| Features | `winning-edge.ts` | Competitive advantages |
-| Showcase | `hero-sections-showcase.ts` | Portfolio display |
-| Testimonials | `testimonials-content.ts` | Client reviews header |
-| FAQ | `faq.ts` | Questions and answers |
-| CTA | `final-cta.ts` | Call-to-action content |
-| Works | `works.ts` | Portfolio page header |
-| Projects | `works-projects.ts` | Individual projects |
-| Footer | `footer.ts` | Footer content |
+The content management system is now much more organized and easier to maintain!

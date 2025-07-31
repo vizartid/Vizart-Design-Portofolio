@@ -28,10 +28,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Content management routes
   app.get("/api/content", async (req, res) => {
     try {
-      // Use backup JSON for now - TypeScript files are available for manual editing
-      const contentPath = path.join(process.cwd(), "client", "src", "data", "content-backup.json");
-      const contentData = await fs.readFile(contentPath, "utf-8");
-      const content = JSON.parse(contentData);
+      const content = await getAllSections();
       res.json(content);
     } catch (error) {
       console.error("Failed to fetch content:", error);

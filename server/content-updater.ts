@@ -37,36 +37,40 @@ export async function updateSectionFile(sectionName: string, data: any): Promise
 }
 
 export async function getAllSections(): Promise<Record<string, any>> {
-  try {
-    // For now, use the backup JSON while TypeScript parsing is being developed
-    const backupPath = path.join(process.cwd(), "client", "src", "data", "content-backup.json");
-    const contentData = await fs.readFile(backupPath, "utf-8");
-    return JSON.parse(contentData);
-  } catch (backupError) {
-    // If backup fails, try to parse TypeScript files with eval approach
+  const dataDir = path.join(process.cwd(), "client", "src", "data");
+  const sections: Record<string, any> = {};
+  
+  for (const [sectionName, fileName] of Object.entries(sectionFileMap)) {
     try {
-      const dataDir = path.join(process.cwd(), "client", "src", "data");
-      const sections: Record<string, any> = {};
+      const filePath = path.join(dataDir, fileName);
+      const fileContent = await fs.readFile(filePath, "utf-8");
       
-      for (const [sectionName, fileName] of Object.entries(sectionFileMap)) {
+      // Extract the exported object using eval in a safe context
+      const match = fileContent.match(/export const \w+ = ({[\s\S]*});/);
+      if (match) {
         try {
-          const filePath = path.join(dataDir, fileName);
-          const fileContent = await fs.readFile(filePath, "utf-8");
-          
-          // Extract the exported object using eval in a safe context
-          const match = fileContent.match(/export const \w+ = ({[\s\S]*});/);
-          if (match) {
-            const func = new Function('return ' + match[1]);
-            sections[sectionName] = func();
+          // Use Function constructor to safely evaluate the object
+          const func = new Function('return ' + match[1]);
+          sections[sectionName] = func();
+        } catch (evalError) {
+          console.warn(`Failed to evaluate section ${sectionName}:`, evalError);
+          // Try alternative parsing for simple objects
+          try {
+            let objectStr = match[1];
+            // Basic cleanup for common TypeScript patterns
+            objectStr = objectStr.replace(/(\w+):/g, '"$1":');
+            objectStr = objectStr.replace(/'/g, '"');
+            objectStr = objectStr.replace(/,(\s*[}\]])/g, '$1');
+            sections[sectionName] = JSON.parse(objectStr);
+          } catch (jsonError) {
+            console.error(`Failed to parse section ${sectionName} with both methods:`, jsonError);
           }
-        } catch (error) {
-          console.warn(`Failed to load section ${sectionName}:`, error);
         }
       }
-      
-      return sections;
     } catch (error) {
-      throw new Error("Failed to load content from both JSON backup and TypeScript files");
+      console.warn(`Failed to load section ${sectionName}:`, error);
     }
   }
+  
+  return sections;
 }

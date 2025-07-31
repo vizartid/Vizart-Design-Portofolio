@@ -19,8 +19,8 @@ export default function ProjectCarousel() {
     );
   }
 
-  // Use content.json projects if available, otherwise fallback to projects.ts
-  const allProjects = content.projects.length > 0 ? content.projects : projects;
+  // Use content projects if available, otherwise fallback to projects.ts
+  const allProjects = content.projects && content.projects.length > 0 ? content.projects : projects;
   const featuredProjects = allProjects.filter(
     (project: any) => project.featured,
   );
