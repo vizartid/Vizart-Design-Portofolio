@@ -28,5 +28,5 @@ export const services = {
     "Flexible revisions",
     "Post-Project Support",
   ],
-  ctaText: "Book a Call",
+  ctaText: "Get In Touch",
 };
