@@ -16,7 +16,7 @@ export const worksProjects = [
     description: "Perfect solution to automate workflows, enhance collaboration, and drive success.",
     longDescription: "Built with modern design principles and user-centric approach, Prismo provides an intuitive experience that scales with your growing business needs while maintaining peak performance.",
     category: "websites",
-    imageUrl: "/attached_assets/Screenshot 2025-07-24 141244_1753341884908.png",
+    imageUrl: "/home/project/attached_assets/profile-foto.jpg",
     hoverImageUrl: "/attached_assets/Screenshot 2025-07-24 141256_1753341884908.png",
     projectUrl: "#",
     featured: true
