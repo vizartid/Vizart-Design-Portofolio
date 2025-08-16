@@ -5,7 +5,7 @@ export const hero = {
   "stats": "20+ Amazing Websites Created So Far\n\n",
   "ctaText": "Get in Touch",
   "acceptingText": "Ready for New Projects.",
-  "toolsText": "eWduse industry standard tools like",
+  "toolsText": "We use industry standard tools like",
   "tools": [
     {
       "name": "Figma",
