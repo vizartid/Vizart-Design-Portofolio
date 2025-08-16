@@ -1,15 +1,3 @@
-// Import images from attached_assets using the @assets alias
-import supremaMain from "@assets/Screenshot 2025-07-24 140158_1753344628323.png";
-import supremaHover from "@assets/Screenshot 2025-07-24 140507_1753341884909.png";
-import profilePhoto from "@assets/profile-foto.jpg";
-import teamflowMain from "@assets/Screenshot 2025-07-24 141313_1753341884907.png";
-import teamflowHover from "@assets/Screenshot 2025-07-24 141327_1753341884906.png";
-import datavizMain from "@assets/Screenshot 2025-07-24 141334_1753341884906.png";
-import datavizHover from "@assets/image_1753343418686.png";
-import shopcraftMain from "@assets/image_1753469350760.png";
-import shopcraftHover from "@assets/image_1753552235741.png";
-import fintechMain from "@assets/image_1753553037568.png";
-import fintechHover from "@assets/image_1753553510411.png";
 
 export const projects = [
   // UI/UX Projects
