@@ -51,7 +51,10 @@ export default function Works() {
       setWorksData(event.detail.worksData);
 
       // Sync with heroSectionsShowcase when works data changes
-      if (event.detail.worksData && event.detail.worksData.projects.length > 0) {
+      if (
+        event.detail.worksData &&
+        event.detail.worksData.projects.length > 0
+      ) {
         updateHeroShowcase(event.detail.worksData.projects);
       }
     };
@@ -72,13 +75,17 @@ export default function Works() {
   // Function to sync works data with hero showcase
   const updateHeroShowcase = (projectsData: any[]) => {
     try {
-      const contentData = JSON.parse(localStorage.getItem("contentData") || "{}");
+      const contentData = JSON.parse(
+        localStorage.getItem("contentData") || "{}",
+      );
 
       // Map project data to hero showcase images
       const heroImages = projectsData.slice(0, 8).map((project, index) => ({
-        url: project.imageUrl || `https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300`,
+        url:
+          project.imageUrl ||
+          `https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300`,
         alt: project.description || `${project.title} project showcase`,
-        overlay: project.category?.toUpperCase() || "Project"
+        overlay: project.category?.toUpperCase() || "Project",
       }));
 
       // Update hero sections showcase
@@ -86,16 +93,18 @@ export default function Works() {
         ...contentData,
         heroSectionsShowcase: {
           ...contentData.heroSectionsShowcase,
-          images: heroImages
-        }
+          images: heroImages,
+        },
       };
 
       localStorage.setItem("contentData", JSON.stringify(updatedContent));
 
       // Dispatch event to notify hero showcase of changes
-      window.dispatchEvent(new CustomEvent("contentDataChanged", {
-        detail: { contentData: updatedContent }
-      }));
+      window.dispatchEvent(
+        new CustomEvent("contentDataChanged", {
+          detail: { contentData: updatedContent },
+        }),
+      );
     } catch (error) {
       console.error("Error syncing with hero showcase:", error);
     }
@@ -184,10 +193,10 @@ export default function Works() {
                     {/* Content Section - Always on Right */}
                     <div className="md:order-2 p-4 flex flex-col justify-between">
                       <div>
-                        <h2 className="font-instrument font-semibold mb-2 text-xl text-gray-900">
+                        <h2 className="font-instrument font-semibold mb-2 text-2xl text-gray-900">
                           {project.title}
                         </h2>
-                        <p className="text-gray-600 leading-relaxed mb-3 text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-3 text-ls">
                           {project.description}
                         </p>
                       </div>
