@@ -232,32 +232,9 @@
 
   /* Wave texture background */
   .wave-bg {
-    background-image: url("/attached_assets/backgound-wave.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    image-rendering: auto;
-  }
-
-  /* Alternative wave background for sections */
-  .wave-bg-section {
-    background-image: url("/attached_assets/backgound-wave.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    image-rendering: auto;
-  }
-
-  /* Full page wave background */
-  .wave-bg-full {
-    background-image: url("/attached_assets/backgound-wave.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    image-rendering: auto;
+    background-image: url("attached_assets/backgound-wave.jpg");
+    background-repeat: repeat-x;
+    background-position: bottom;
   }
 
   /* Custom scrollbar styling */
@@ -393,7 +370,7 @@
 
   .project-card:hover {
     transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 
   .project-image {
