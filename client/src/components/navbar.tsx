@@ -15,7 +15,7 @@ export default function Navbar() {
     "up" | "down" | "none"
   >("none");
   const [isAtTop, setIsAtTop] = useState(true);
-  const { data: content, isLoading } = useContent();
+  const { data: content } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,7 +87,7 @@ export default function Navbar() {
           >
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              {!isLoading && content?.branding?.logoUrl ? (
+              {content?.branding?.logoUrl ? (
                 <>
                   <img
                     src={content.branding.logoUrl}

@@ -72,13 +72,12 @@
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased text-foreground;
     background-color: var(--bone-white);
-    color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -254,7 +253,7 @@
 
   /* Wave texture background */
   .wave-bg {
-    background-image: url("/attached_assets/backgound-wave.jpg");
+    background-image: url("attached_assets/backgound-wave.jpg");
     background-repeat: repeat-x;
     background-position: bottom;
   }

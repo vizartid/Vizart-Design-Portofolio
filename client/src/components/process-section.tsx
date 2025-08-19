@@ -76,7 +76,8 @@ const iconMap = {
   Headphones,
 };
 
-export default function ProcessSection() { // Debug log
+export default function ProcessSection() {
+  console.log("ProcessSection component is rendering"); // Debug log
   const { data: content, isLoading } = useContent();
   const updateSection = useUpdateContentSection();
 

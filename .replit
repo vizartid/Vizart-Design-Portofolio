@@ -1,31 +1,12 @@
-modules = ["nodejs-20"]
-[workflows]
-runButton = "Dev Server"
+modules = ["nodejs-20", "web"]
+run = "npm run dev"
 
-[[workflows.workflow]]
-name = "Dev Server"
-author = 45454059
-mode = "sequential"
+[nix]
+channel = "stable-25_05"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd client && npm install"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd client && npm run dev"
-
-
-[[deployment.rewrites]]
-from = "/*"
-to = "/index.html"
+[deployment]
+run = ["sh", "-c", "npm run dev"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[deployment]
-publicDir = "dist/public"
-
-task = "shell.exec"
-args = "npm run dev"
