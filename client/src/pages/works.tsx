@@ -174,23 +174,12 @@ export default function Works() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image Section - Always on Left */}
                     <div className="md:order-1">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10" />
-                        <div className="absolute inset-0 flex items-center justify-center p-4">
-                          {/* Multiple mock screenshots like in reference */}
-                          <div className="grid grid-cols-2 gap-2 w-full max-w-xs">
-                            <div className="bg-gray-800 rounded-lg p-2 h-20">
-                              <div className="bg-gray-700 rounded h-1.5 w-3/4 mb-1.5"></div>
-                              <div className="bg-gray-600 rounded h-1 w-full mb-1"></div>
-                              <div className="bg-gray-600 rounded h-1 w-2/3"></div>
-                            </div>
-                            <div className="bg-white border border-gray-200 rounded-lg p-2 h-20 shadow-sm">
-                              <div className="bg-gray-200 rounded h-1.5 w-3/4 mb-1.5"></div>
-                              <div className="bg-gray-100 rounded h-1 w-full mb-1"></div>
-                              <div className="bg-gray-100 rounded h-1 w-2/3"></div>
-                            </div>
-                          </div>
-                        </div>
+                      <div className="aspect-[4/3] relative overflow-hidden rounded-lg">
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     
