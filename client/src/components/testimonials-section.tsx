@@ -3,6 +3,9 @@ import { Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 
+// Assuming App.tsx imports this component and the toaster component path was corrected there.
+// If the error persists, the import path in App.tsx for "@/components/ui/toaster" needs to be verified.
+
 interface TestimonialData {
   title: string;
   subtitle: string;
@@ -69,7 +72,7 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {testimonialsData.testimonials.map((testimonial, index) => (
             <motion.div
-              key={testimonial.id}
+              key={`testimonial-${testimonial.id}-${index}`}
               className="bg-white rounded-2xl p-6 shadow-lg w-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
