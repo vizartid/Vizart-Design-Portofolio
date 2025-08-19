@@ -29,7 +29,7 @@ export default function ToolsVisualEditor() {
       ...content.hero,
       tools: updatedTools,
     };
-    
+
     updateSection.mutate({
       section: "hero",
       data: updatedHero,
@@ -41,7 +41,7 @@ export default function ToolsVisualEditor() {
       ...(content.branding || {}),
       [field]: value,
     };
-    
+
     updateSection.mutate({
       section: "branding",
       data: updatedBranding,
@@ -141,7 +141,7 @@ export default function ToolsVisualEditor() {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div>
                       <Label htmlFor="navbar-logo-text">Logo Text</Label>
@@ -152,7 +152,7 @@ export default function ToolsVisualEditor() {
                         placeholder="Enter logo text"
                       />
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="navbar-logo-upload">Upload Logo Image</Label>
                       <div className="flex items-center space-x-2">
@@ -173,60 +173,6 @@ export default function ToolsVisualEditor() {
                         id="navbar-logo-url"
                         value={(content.branding as any)?.logoUrl || ''}
                         onChange={(e) => handleUpdateBranding('logoUrl', e.target.value)}
-                        placeholder="https://example.com/logo.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Footer Logo */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Footer Logo</h3>
-                  <div className="flex items-center justify-center h-24 bg-gray-100 rounded-lg">
-                    {(content.branding as any)?.footerLogoUrl ? (
-                      <img
-                        src={(content.branding as any).footerLogoUrl}
-                        alt="Footer Logo"
-                        className="max-h-16 max-w-32 object-contain"
-                      />
-                    ) : (
-                      <div className="text-2xl font-bold text-gray-500">
-                        {(content.branding as any)?.footerLogoText || "Lander"}
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div>
-                      <Label htmlFor="footer-logo-text">Logo Text</Label>
-                      <Input
-                        id="footer-logo-text"
-                        value={(content.branding as any)?.footerLogoText || ''}
-                        onChange={(e) => handleUpdateBranding('footerLogoText', e.target.value)}
-                        placeholder="Enter footer logo text"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="footer-logo-upload">Upload Logo Image</Label>
-                      <div className="flex items-center space-x-2">
-                        <Input
-                          id="footer-logo-upload"
-                          type="file"
-                          accept="image/*"
-                          onChange={(e) => handleBrandingImageUpload('footerLogoUrl', e)}
-                          className="flex-1"
-                        />
-                        <Upload className="h-4 w-4 text-gray-500" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="footer-logo-url">Or Paste Image URL</Label>
-                      <Input
-                        id="footer-logo-url"
-                        value={(content.branding as any)?.footerLogoUrl || ''}
-                        onChange={(e) => handleUpdateBranding('footerLogoUrl', e.target.value)}
                         placeholder="https://example.com/logo.png"
                       />
                     </div>
@@ -265,7 +211,7 @@ export default function ToolsVisualEditor() {
                   </div>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 {editingIndex === index ? (
                   <div className="space-y-4">
@@ -278,7 +224,7 @@ export default function ToolsVisualEditor() {
                         placeholder="Tool Name"
                       />
                     </div>
-                    
+
                     <div>
                       <Label htmlFor={`color-${index}`}>Color Class</Label>
                       <select
