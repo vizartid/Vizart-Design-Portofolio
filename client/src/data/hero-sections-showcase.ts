@@ -1,5 +1,5 @@
 export const heroSectionsShowcase = {
-  "title": "Specialized in Innovating Comprehensive Digital Solutions",
+  "title": "Specialized in Innovating\nComprehensive Digital Solutions",
   "subtitle": "We craft integrated online experiences and powerful technical foundations that drive your brand's success and operational excellence.",
   "description": "Every section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
   "images": [
