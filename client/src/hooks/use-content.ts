@@ -87,5 +87,3 @@ export function useUpdateContentSection() {
     },
   });
 }
-
-export { useContent, useUpdateContentSection };
