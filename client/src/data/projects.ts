@@ -1,17 +1,4 @@
 
-// Import statements for actual images (keeping existing ones)
-import supremaMain from "/attached_assets/Screenshot 2025-07-24 140158_1753344628323.png";
-import supremaHover from "/attached_assets/Screenshot 2025-07-24 140507_1753341884909.png";
-import teamflowMain from "/attached_assets/Screenshot 2025-07-24 141313_1753341884907.png";
-import teamflowHover from "/attached_assets/Screenshot 2025-07-24 141327_1753341884906.png";
-import datavizMain from "/attached_assets/Screenshot 2025-07-24 141334_1753341884906.png";
-import datavizHover from "/attached_assets/image_1753343418686.png";
-import shopcraftMain from "/attached_assets/image_1753469350760.png";
-import shopcraftHover from "/attached_assets/image_1753552235741.png";
-import fintechMain from "/attached_assets/image_1753553037568.png";
-import fintechHover from "/attached_assets/image_1753553510411.png";
-import profilePhoto from "/attached_assets/profile-foto.jpg";
-
 // Project images mapping function
 const getProjectImage = (projectId: number): string => {
   const projectImages: { [key: number]: string } = {
@@ -80,8 +67,8 @@ export const projects = [
     description:
       "Comprehensive admin dashboard for managing online stores with real-time analytics and intuitive user interface design.",
     category: "uiux",
-    imageUrl: getProjectImage(1) || supremaMain,
-    hoverImageUrl: getProjectHoverImage(1) || supremaHover,
+    imageUrl: getProjectImage(1) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(1) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/ecommerce-dashboard",
     featured: true,
   },
@@ -91,8 +78,8 @@ export const projects = [
     description:
       "Modern banking application interface focused on user experience and accessibility for all age groups.",
     category: "uiux",
-    imageUrl: getProjectImage(2) || profilePhoto,
-    hoverImageUrl: getProjectHoverImage(2) || supremaHover,
+    imageUrl: getProjectImage(2) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(2) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/banking-app",
     featured: true,
   },
@@ -101,8 +88,8 @@ export const projects = [
     title: "TeamFlow",
     description: "Revolutionary collaboration platform that connects teams across different time zones.",
     category: "uiux",
-    imageUrl: getProjectImage(3) || teamflowMain,
-    hoverImageUrl: getProjectHoverImage(3) || teamflowHover,
+    imageUrl: getProjectImage(3) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(3) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/food-delivery",
     featured: true,
   },
@@ -111,8 +98,8 @@ export const projects = [
     title: "DataViz",
     description: "Advanced analytics platform that transforms complex data into actionable insights.",
     category: "uiux",
-    imageUrl: getProjectImage(4) || datavizMain,
-    hoverImageUrl: getProjectHoverImage(4) || datavizHover,
+    imageUrl: getProjectImage(4) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(4) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/analytics-tool",
     featured: true,
   },
@@ -121,8 +108,8 @@ export const projects = [
     title: "ShopCraft",
     description: "Complete e-commerce solution designed to maximize conversions.",
     category: "uiux",
-    imageUrl: getProjectImage(5) || shopcraftMain,
-    hoverImageUrl: getProjectHoverImage(5) || shopcraftHover,
+    imageUrl: getProjectImage(5) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(5) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/healthcare-portal",
     featured: true,
   },
@@ -131,8 +118,8 @@ export const projects = [
     title: "FinTech Pro",
     description: "Modern financial dashboard with real-time analytics and secure transactions.",
     category: "uiux",
-    imageUrl: getProjectImage(6) || fintechMain,
-    hoverImageUrl: getProjectHoverImage(6) || fintechHover,
+    imageUrl: getProjectImage(6) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(6) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/fintech-pro",
     featured: true,
   },
@@ -144,8 +131,8 @@ export const projects = [
     description:
       "Complete brand identity design for innovative tech startup including logo, typography, and brand guidelines.",
     category: "branding",
-    imageUrl: getProjectImage(7) || profilePhoto,
-    hoverImageUrl: getProjectHoverImage(7) || supremaHover,
+    imageUrl: getProjectImage(7) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(7) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/tech-startup",
     featured: false,
   },
@@ -155,8 +142,8 @@ export const projects = [
     description:
       "Brand transformation for local coffee shop chain with focus on modern and approachable aesthetic.",
     category: "branding",
-    imageUrl: getProjectImage(8) || teamflowMain,
-    hoverImageUrl: getProjectHoverImage(8) || teamflowHover,
+    imageUrl: getProjectImage(8) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(8) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/coffee-shop",
     featured: false,
   },
@@ -166,8 +153,8 @@ export const projects = [
     description:
       "Dynamic brand identity for fitness company emphasizing energy, movement, and motivation.",
     category: "branding",
-    imageUrl: getProjectImage(9) || datavizMain,
-    hoverImageUrl: getProjectHoverImage(9) || datavizHover,
+    imageUrl: getProjectImage(9) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(9) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/fitness-brand",
     featured: false,
   },
@@ -177,8 +164,8 @@ export const projects = [
     description:
       "Sophisticated brand identity for luxury hotel chain focusing on elegance and premium experience.",
     category: "branding",
-    imageUrl: getProjectImage(10) || shopcraftMain,
-    hoverImageUrl: getProjectHoverImage(10) || shopcraftHover,
+    imageUrl: getProjectImage(10) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(10) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/luxury-hotel",
     featured: false,
   },
@@ -188,8 +175,8 @@ export const projects = [
     description:
       "Friendly and approachable brand design for online learning platform targeting young professionals.",
     category: "branding",
-    imageUrl: getProjectImage(11) || fintechMain,
-    hoverImageUrl: getProjectHoverImage(11) || fintechHover,
+    imageUrl: getProjectImage(11) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(11) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/education-platform",
     featured: false,
   },
@@ -201,8 +188,8 @@ export const projects = [
     description:
       "Mobile application for travelers with offline maps, itinerary planning, and local recommendations.",
     category: "mobileapp",
-    imageUrl: getProjectImage(12) || supremaMain,
-    hoverImageUrl: getProjectHoverImage(12) || supremaHover,
+    imageUrl: getProjectImage(12) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(12) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/travel-app",
     featured: false,
   },
@@ -212,8 +199,8 @@ export const projects = [
     description:
       "Comprehensive fitness application with workout tracking, nutrition planning, and progress monitoring.",
     category: "mobileapp",
-    imageUrl: getProjectImage(13) || teamflowMain,
-    hoverImageUrl: getProjectHoverImage(13) || teamflowHover,
+    imageUrl: getProjectImage(13) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(13) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/fitness-app",
     featured: false,
   },
@@ -223,8 +210,8 @@ export const projects = [
     description:
       "Community-focused social platform with emphasis on meaningful connections and content sharing.",
     category: "mobileapp",
-    imageUrl: getProjectImage(14) || datavizMain,
-    hoverImageUrl: getProjectHoverImage(14) || datavizHover,
+    imageUrl: getProjectImage(14) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(14) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/social-app",
     featured: false,
   },
@@ -234,8 +221,8 @@ export const projects = [
     description:
       "Personal finance app helping users track expenses, set budgets, and achieve financial goals.",
     category: "mobileapp",
-    imageUrl: getProjectImage(15) || shopcraftMain,
-    hoverImageUrl: getProjectHoverImage(15) || shopcraftHover,
+    imageUrl: getProjectImage(15) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(15) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/budget-app",
     featured: false,
   },
@@ -245,8 +232,8 @@ export const projects = [
     description:
       "Culinary app for discovering new recipes, meal planning, and cooking guidance with video tutorials.",
     category: "mobileapp",
-    imageUrl: getProjectImage(16) || fintechMain,
-    hoverImageUrl: getProjectHoverImage(16) || fintechHover,
+    imageUrl: getProjectImage(16) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(16) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/recipe-app",
     featured: false,
   },
@@ -258,8 +245,8 @@ export const projects = [
     description:
       "Desktop application for team collaboration and project tracking with advanced workflow management.",
     category: "desktop",
-    imageUrl: getProjectImage(17) || profilePhoto,
-    hoverImageUrl: getProjectHoverImage(17) || supremaHover,
+    imageUrl: getProjectImage(17) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(17) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/project-management",
     featured: false,
   },
@@ -269,8 +256,8 @@ export const projects = [
     description:
       "Professional video editing software with intuitive interface and powerful editing capabilities.",
     category: "desktop",
-    imageUrl: getProjectImage(18) || teamflowMain,
-    hoverImageUrl: getProjectHoverImage(18) || teamflowHover,
+    imageUrl: getProjectImage(18) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(18) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/video-editor",
     featured: false,
   },
@@ -280,8 +267,8 @@ export const projects = [
     description:
       "Desktop design application with focus on user workflow and creative process optimization.",
     category: "desktop",
-    imageUrl: getProjectImage(19) || datavizMain,
-    hoverImageUrl: getProjectHoverImage(19) || datavizHover,
+    imageUrl: getProjectImage(19) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(19) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/design-tool",
     featured: false,
   },
@@ -291,8 +278,8 @@ export const projects = [
     description:
       "Customer relationship management software with comprehensive client tracking and communication tools.",
     category: "desktop",
-    imageUrl: getProjectImage(20) || shopcraftMain,
-    hoverImageUrl: getProjectHoverImage(20) || shopcraftHover,
+    imageUrl: getProjectImage(20) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(20) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/crm-app",
     featured: false,
   },
@@ -302,8 +289,8 @@ export const projects = [
     description:
       "Modern code editor with syntax highlighting, plugin support, and developer-focused features.",
     category: "desktop",
-    imageUrl: getProjectImage(21) || fintechMain,
-    hoverImageUrl: getProjectHoverImage(21) || fintechHover,
+    imageUrl: getProjectImage(21) || "/attached_assets/profile-foto.jpg",
+    hoverImageUrl: getProjectHoverImage(21) || "/attached_assets/profile-foto.jpg",
     projectUrl: "https://example.com/code-editor",
     featured: false,
   },
