@@ -6,12 +6,12 @@ export const heroSectionsShowcase = {
     "Every section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
   images: [
     {
-      url: "/attached_assets/image_1753560005149.png",
+      url: "attached_assets/backgound-wave.jpg",
       alt: "E-commerce hero section design with conversion focus",
       overlay: "E-commerce Focus",
     },
     {
-      url: "/attached_assets/image_1753560670293.png",
+      url: "attached_assets/backgound-wave.jpg",
       alt: "SaaS landing page hero with product showcase",
       overlay: "SaaS Landing",
     },
