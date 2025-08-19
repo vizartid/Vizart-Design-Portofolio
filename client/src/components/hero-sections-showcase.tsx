@@ -7,6 +7,7 @@ export default function HeroSectionsShowcase() {
   const { data: content, isLoading } = useContent();
   const updateSection = useUpdateContentSection();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
 
   const handleUpdateShowcase = (field: string, value: any) => {
     if (!content) return;
@@ -73,7 +74,9 @@ export default function HeroSectionsShowcase() {
       {/* Showcase animation with boundaries - tidak sampai ujung desktop */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl">
-          <div className="flex space-x-6 hero-sections-carousel-safe">
+          <div 
+            className={`flex space-x-6 ${isCarouselPaused ? 'hero-sections-carousel-paused' : 'hero-sections-carousel-safe'}`}
+          >
             {/* Quintuple images untuk true seamless infinite scroll */}
             {[
               ...heroSectionsShowcase.images,
@@ -85,15 +88,21 @@ export default function HeroSectionsShowcase() {
               <div
                 key={`${image.alt}-${index}`}
                 className="flex-none group cursor-pointer"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseEnter={() => {
+                  setHoveredIndex(index);
+                  setIsCarouselPaused(true);
+                }}
+                onMouseLeave={() => {
+                  setHoveredIndex(null);
+                  setIsCarouselPaused(false);
+                }}
                 onClick={() => window.open("#case-study", "_blank")}
               >
                 <div className="relative w-[350px] h-[250px] lg:desktop-w-400 lg:desktop-h-280 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img
-                    src={image.url}
+                    src={hoveredIndex === index && image.hoverUrl ? image.hoverUrl : image.url}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                   />
 
                   {/* Detailed hover overlay */}

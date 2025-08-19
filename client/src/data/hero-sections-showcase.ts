@@ -1,3 +1,4 @@
+
 export const heroSectionsShowcase = {
   "title": "Specialized in Innovating\nComprehensive Digital Solutions",
   "subtitle": "We craft integrated online experiences and powerful technical foundations that drive your brand's success and operational excellence.",
@@ -5,41 +6,49 @@ export const heroSectionsShowcase = {
   "images": [
     {
       "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "E-commerce hero section design with conversion focus",
       "overlay": "E-commerce Focus"
     },
     {
       "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "SaaS landing page hero with product showcase",
       "overlay": "SaaS Landing"
     },
     {
-      "url": "/attached_assets/image_1753561360497.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Creative portfolio hero section",
       "overlay": "Portfolio Design"
     },
     {
-      "url": "/attached_assets/image_1753633421371.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Professional agency hero section",
       "overlay": "Agency Landing"
     },
     {
-      "url": "/attached_assets/image_1753634642878.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Tech startup hero with innovation focus",
       "overlay": "Tech Startup"
     },
     {
-      "url": "/attached_assets/Screenshot 2025-07-27 005958_1753553990600.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Healthcare hero section with trust elements",
       "overlay": "Healthcare"
     },
     {
-      "url": "/attached_assets/Screenshot 2025-07-27 232235_1753634311396.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Financial services hero section",
       "overlay": "FinTech"
     },
     {
-      "url": "/attached_assets/Screenshot 2025-07-27 234327_1753634891649.png",
+      "url": "attached_assets/backgound-wave.jpg",
+      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Educational platform hero design",
       "overlay": "Education"
     }
