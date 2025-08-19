@@ -112,7 +112,7 @@ export default function Works() {
       : allProjects.filter((project) => project.category === activeCategory);
 
   return (
-    <div>
+    <div className="wave-bg-full">
       <WorksVisualEditor />
       {/* Works Hero Section */}
       <section className="pt-40 pb-16 px-4 sm:px-6 lg:px-8">

@@ -233,8 +233,28 @@
   /* Wave texture background */
   .wave-bg {
     background-image: url("attached_assets/backgound-wave.jpg");
-    background-repeat: repeat-x;
-    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+  /* Alternative wave background for sections */
+  .wave-bg-section {
+    background-image: url("attached_assets/backgound-wave.jpg");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: center top;
+  }
+
+  /* Full page wave background */
+  .wave-bg-full {
+    background-image: url("attached_assets/backgound-wave.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   /* Custom scrollbar styling */

@@ -15,7 +15,7 @@ import backgound_wave from "@assets/backgound-wave.jpg";
 
 export default function Home() {
   return (
-    <div>
+    <div className="wave-bg-full">
       <HeroSection />
       <WinningEdgeSection />
       <HeroSectionsShowcase />
