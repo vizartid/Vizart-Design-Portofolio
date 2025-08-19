@@ -43,9 +43,6 @@ function Router() {
           </Switch>
         </motion.div>
       </AnimatePresence>
-      
-      {/* Bottom blur effect */}
-      <div className="fixed bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none z-10"></div>
     </div>
   );
 }

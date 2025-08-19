@@ -131,8 +131,7 @@ export default function HeroSectionsShowcase() {
                     </div>
                   </div>
 
-                  {/* Subtle shadow enhancement */}
-                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-80 h-8 bg-black/20 rounded-full blur-lg"></div>
+                  
                 </div>
               </div>
             ))}
