@@ -13,6 +13,7 @@ import {
   ChartBar,
 } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
+import { winningEdge } from "@/data/winning-edge";
 
 // Icon mapping for the features
 const iconMap = {
@@ -49,7 +50,15 @@ interface Feature {
 export default function WinningEdgeSection() {
   const { data: content, isLoading } = useContent();
 
-  if (isLoading || !content?.winningEdge) {
+  // Use fallback data if content is not available
+  const winningEdgeData = content?.winningEdge || winningEdge;
+  const { title, subtitle, features } = winningEdgeData;
+
+  if (!features || !Array.isArray(features)) {
+    return null;
+  }
+
+  if (isLoading) {
     return (
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -70,7 +79,6 @@ export default function WinningEdgeSection() {
     );
   }
 
-  const { title, subtitle, features } = content.winningEdge;
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -98,7 +106,7 @@ export default function WinningEdgeSection() {
 
             return (
               <motion.div
-                key={feature.title}
+                key={feature.title + index} // Using index to ensure uniqueness if titles are duplicated
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

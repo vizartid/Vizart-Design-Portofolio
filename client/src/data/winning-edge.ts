@@ -40,3 +40,33 @@ export const winningEdge = {
     }
   ]
 };
+export const winningEdge = {
+  title: "Why Choose Us",
+  subtitle: "What makes us different from the competition",
+  features: [
+    {
+      id: 1,
+      icon: "Zap",
+      title: "Lightning Fast",
+      description: "Optimized performance for the best user experience"
+    },
+    {
+      id: 2,
+      icon: "Shield",
+      title: "Secure & Reliable",
+      description: "Enterprise-grade security and 99.9% uptime guarantee"
+    },
+    {
+      id: 3,
+      icon: "Users",
+      title: "Expert Team",
+      description: "Experienced professionals dedicated to your success"
+    },
+    {
+      id: 4,
+      icon: "Award",
+      title: "Award Winning",
+      description: "Recognized excellence in design and development"
+    }
+  ]
+};

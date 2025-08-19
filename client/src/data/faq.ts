@@ -34,3 +34,29 @@ export const faq = {
     }
   ]
 };
+export const faq = {
+  title: "Frequently Asked Questions",
+  subtitle: "Everything you need to know about our services",
+  items: [
+    {
+      id: 1,
+      question: "How long does a typical project take?",
+      answer: "Project timelines vary depending on scope and complexity. Most websites take 2-4 weeks, while more complex applications can take 6-12 weeks."
+    },
+    {
+      id: 2,
+      question: "Do you provide ongoing support?",
+      answer: "Yes, we offer comprehensive support and maintenance packages to ensure your project continues to perform optimally after launch."
+    },
+    {
+      id: 3,
+      question: "What technologies do you use?",
+      answer: "We use modern, industry-standard technologies including React, Node.js, TypeScript, and cloud platforms for optimal performance and scalability."
+    },
+    {
+      id: 4,
+      question: "Can you work with our existing team?",
+      answer: "Absolutely! We're experienced in collaborating with in-house teams and can integrate seamlessly into your existing workflow."
+    }
+  ]
+};

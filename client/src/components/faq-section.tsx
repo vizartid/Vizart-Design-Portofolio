@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
+import { faq } from "@/data/faq";
 
 export default function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([]);
@@ -35,7 +36,13 @@ export default function FAQSection() {
     );
   }
 
-  const { faq } = content;
+  // Use fallback data if content is not available
+  const faqData = content?.faq || faq;
+  const { title, subtitle, items } = faqData;
+
+  if (!items || !Array.isArray(items)) {
+    return null;
+  }
 
   const toggleItem = (id: number) => {
     setOpenItems((prev) =>
@@ -57,7 +64,7 @@ export default function FAQSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {faq.title}
+            {title}
           </motion.h2>
           <motion.p
             className="custom-about-text text-charcoal/70 max-w-2xl mx-auto text-[18px]"
@@ -66,13 +73,13 @@ export default function FAQSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            {faq.subtitle}
+            {subtitle}
           </motion.p>
         </div>
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {faq.items.map((item: any, index: number) => (
+          {items.map((item: any, index: number) => (
             <motion.div
               key={item.id}
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md"
