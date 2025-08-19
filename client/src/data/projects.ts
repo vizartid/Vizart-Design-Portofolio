@@ -2,30 +2,30 @@
 // Project images mapping function
 const getProjectImage = (projectId: number): string => {
   const projectImages: { [key: number]: string } = {
-    1: "/attached_assets/profile-foto.jpg", // E-commerce Dashboard
-    2: "/attached_assets/profile-foto.jpg", // Banking Mobile App
-    3: "/attached_assets/profile-foto.jpg", // TeamFlow
-    4: "/attached_assets/profile-foto.jpg", // DataViz
-    5: "/attached_assets/profile-foto.jpg", // ShopCraft
-    6: "/attached_assets/profile-foto.jpg", // FinTech Pro
-    7: "/attached_assets/profile-foto.jpg", // Tech Startup Identity
-    8: "/attached_assets/profile-foto.jpg", // Coffee Shop Rebrand
-    9: "/attached_assets/profile-foto.jpg", // Fitness Brand Design
-    10: "/attached_assets/profile-foto.jpg", // Luxury Hotel Brand
-    11: "/attached_assets/profile-foto.jpg", // Educational Platform Brand
-    12: "/attached_assets/profile-foto.jpg", // Travel Companion App
-    13: "/attached_assets/profile-foto.jpg", // Fitness Tracking App
-    14: "/attached_assets/profile-foto.jpg", // Social Media App
-    15: "/attached_assets/profile-foto.jpg", // Budget Management App
-    16: "/attached_assets/profile-foto.jpg", // Recipe Discovery App
-    17: "/attached_assets/profile-foto.jpg", // Project Management Software
-    18: "/attached_assets/profile-foto.jpg", // Video Editing Suite
-    19: "/attached_assets/profile-foto.jpg", // Design Tool Interface
-    20: "/attached_assets/profile-foto.jpg", // CRM Desktop App
-    21: "/attached_assets/profile-foto.jpg", // Code Editor Interface
+    1: "/attached_assets/backgound-wave.jpg", // E-commerce Dashboard
+    2: "/attached_assets/backgound-wave.jpg", // Banking Mobile App
+    3: "/attached_assets/backgound-wave.jpg", // TeamFlow
+    4: "/attached_assets/backgound-wave.jpg", // DataViz
+    5: "/attached_assets/backgound-wave.jpg", // ShopCraft
+    6: "/attached_assets/backgound-wave.jpg", // FinTech Pro
+    7: "/attached_assets/backgound-wave.jpg", // Tech Startup Identity
+    8: "/attached_assets/backgound-wave.jpg", // Coffee Shop Rebrand
+    9: "/attached_assets/backgound-wave.jpg", // Fitness Brand Design
+    10: "/attached_assets/backgound-wave.jpg", // Luxury Hotel Brand
+    11: "/attached_assets/backgound-wave.jpg", // Educational Platform Brand
+    12: "/attached_assets/backgound-wave.jpg", // Travel Companion App
+    13: "/attached_assets/backgound-wave.jpg", // Fitness Tracking App
+    14: "/attached_assets/backgound-wave.jpg", // Social Media App
+    15: "/attached_assets/backgound-wave.jpg", // Budget Management App
+    16: "/attached_assets/backgound-wave.jpg", // Recipe Discovery App
+    17: "/attached_assets/backgound-wave.jpg", // Project Management Software
+    18: "/attached_assets/backgound-wave.jpg", // Video Editing Suite
+    19: "/attached_assets/backgound-wave.jpg", // Design Tool Interface
+    20: "/attached_assets/backgound-wave.jpg", // CRM Desktop App
+    21: "/attached_assets/backgound-wave.jpg", // Code Editor Interface
   };
   
-  return projectImages[projectId] || "/attached_assets/profile-foto.jpg";
+  return projectImages[projectId] || "/attached_assets/backgound-wave.jpg";
 };
 
 export const projects = [
