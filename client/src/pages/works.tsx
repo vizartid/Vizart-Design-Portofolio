@@ -165,7 +165,7 @@ export default function Works() {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -174,7 +174,7 @@ export default function Works() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image Section - Always on Left */}
                     <div className="md:order-1">
-                      <div className="aspect-[4/3] relative overflow-hidden rounded-lg">
+                      <div className="aspect-[4/3] overflow-hidden rounded-lg">
                         <img
                           src={project.imageUrl}
                           alt={project.title}
@@ -198,7 +198,7 @@ export default function Works() {
                           onClick={() =>
                             window.open(project.projectUrl || "#", "_blank")
                           }
-                          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-2 px-4 rounded-xl font-medium transition-all duration-200 border border-gray-200 text-sm"
+                          className="w-full bg-gray-100 text-gray-900 py-2 px-4 rounded-xl font-medium border border-gray-200 text-sm"
                         >
                           Open Website
                         </button>
