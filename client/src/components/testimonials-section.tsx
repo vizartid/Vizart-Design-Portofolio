@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { testimonials } from "../data/testimonials";
-import { useLocalStorage } from "@/hooks/use-local-storage";
+import { useLocalStorage } from "../hooks/use-local-storage";
 
 // Assuming App.tsx imports this component and the toaster component path was corrected there.
 // If the error persists, the import path in App.tsx for "@/components/ui/toaster" needs to be verified.
