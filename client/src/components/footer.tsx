@@ -12,7 +12,6 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="text-electric-blue text-xl" />
               <span className="font-poppins font-semibold text-xl">
                 Vizart
               </span>
