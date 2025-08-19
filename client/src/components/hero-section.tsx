@@ -53,7 +53,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
-            {content.hero.title}{" "}
+            {content.hero.title.replace("Comprehensive Digital Solutions", "Comprehensive Digital\nSolutions")}{" "}
             <span className="text-electric-blue">
               {content.hero.titleHighlight}
             </span>

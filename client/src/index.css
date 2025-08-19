@@ -89,12 +89,12 @@
       min-height: 44px;
       min-width: 44px;
     }
-    
+
     /* Better text scaling on mobile */
     html {
       -webkit-text-size-adjust: 100%;
     }
-    
+
     /* Prevent horizontal scrolling */
     body {
       overflow-x: hidden;
