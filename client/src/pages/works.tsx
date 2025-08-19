@@ -184,9 +184,9 @@ export default function Works() {
                     {/* Content Section - Always on Right */}
                     <div className="md:order-2 p-4 flex flex-col justify-between">
                       <div>
-                        <h3 className="font-instrument font-semibold mb-2 text-lg text-gray-900">
+                        <h2 className="font-instrument font-semibold mb-2 text-xl text-gray-900">
                           {project.title}
-                        </h3>
+                        </h2>
                         <p className="text-gray-600 leading-relaxed mb-3 text-sm">
                           {project.description}
                         </p>
