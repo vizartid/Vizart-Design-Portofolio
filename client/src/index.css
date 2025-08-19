@@ -78,6 +78,27 @@
   body {
     @apply font-sans antialiased text-foreground;
     background-color: var(--bone-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    /* Improve touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better text scaling on mobile */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Prevent horizontal scrolling */
+    body {
+      overflow-x: hidden;
+    }
   }
 }
 

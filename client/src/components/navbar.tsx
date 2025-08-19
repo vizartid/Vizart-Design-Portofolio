@@ -182,13 +182,13 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className="text-xl lucide-glow" />
+                <X className="w-6 h-6 text-gray-700" />
               ) : (
-                <Menu className="text-xl lucide-glow" />
+                <Menu className="w-6 h-6 text-gray-700" />
               )}
             </button>
           </div>
@@ -196,15 +196,19 @@ export default function Navbar() {
       </div>
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-bone-white border-t border-gray-200">
-          <div className="px-4 py-6 space-y-4">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/60 shadow-lg">
+          <div className="px-6 py-8 space-y-6">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              <span className="block text-charcoal font-medium">Home</span>
+              <span className="block text-charcoal font-medium text-lg py-3 border-b border-gray-100 last:border-b-0">
+                Home
+              </span>
             </Link>
             <Link href="/works" onClick={() => setIsMenuOpen(false)}>
-              <span className="block text-gray-600 font-medium">Works</span>
+              <span className="block text-charcoal font-medium text-lg py-3 border-b border-gray-100 last:border-b-0">
+                Works
+              </span>
             </Link>
-            <button className="w-full bg-charcoal text-white py-2 rounded-md font-medium mt-4">
+            <button className="w-full bg-black text-white py-4 px-6 rounded-xl font-medium text-lg mt-6 hover:bg-gray-900 transition-colors">
               <span>Book a Call</span>
             </button>
           </div>

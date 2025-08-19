@@ -6,9 +6,9 @@ export default function Footer() {
   const { data: content } = useContent();
 
   return (
-    <footer className="bg-bone-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -80,11 +80,11 @@ export default function Footer() {
         </div>
 
         {/* Social Media and Copyright */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-gray-200">
-          <p className="text-gray-600 text-sm mb-4 sm:mb-0">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t border-gray-200">
+          <p className="text-gray-600 text-sm mb-4 sm:mb-0 text-center sm:text-left">
             © 2025 Vizart Studio. All rights reserved.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex space-x-6">
             <a
               href="#"
               className="text-gray-600 hover:text-charcoal transition-colors"
