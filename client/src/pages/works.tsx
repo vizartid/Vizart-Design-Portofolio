@@ -122,15 +122,15 @@ export default function Works() {
   return (
     <div>
       {/* Works Hero Section */}
-      <section className="pt-40 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-instrument custom-about-title mb-4 font-medium text-[80px]">
+            <h1 className="font-instrument font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] mb-4 leading-tight">
               Showcase of My <br />
               <span style={{ color: "#182baf" }}>Best Works</span>
             </h1>
@@ -138,20 +138,20 @@ export default function Works() {
 
           {/* Category Filters */}
           <motion.div
-            className="flex justify-center mb-12 ml-[10px] mr-[10px] text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px] text-[18px]"
+            className="flex justify-center mb-8 sm:mb-10 lg:mb-12 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div
-              className="rounded-xl p-1 inline-flex"
+              className="rounded-xl p-1 inline-flex text-sm sm:text-base lg:text-lg"
               style={{ backgroundColor: "#e6e6e6" }}
             >
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-2 rounded-xl font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-2 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
                     activeCategory === category.id
                       ? "bg-white shadow-sm text-charcoal"
                       : "text-gray-600 hover:text-charcoal hover:bg-white/50"
@@ -165,10 +165,10 @@ export default function Works() {
         </div>
       </section>
       {/* Project Grid */}
-      <section className="pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -191,12 +191,12 @@ export default function Works() {
                     </div>
 
                     {/* Content Section - Always on Right */}
-                    <div className="md:order-2 p-4 flex flex-col justify-between">
+                    <div className="md:order-2 p-4 sm:p-6 flex flex-col justify-between">
                       <div>
-                        <h2 className="font-instrument font-semibold mb-2 text-2xl text-gray-900">
+                        <h2 className="font-instrument font-semibold mb-3 sm:mb-4 text-xl sm:text-2xl lg:text-2xl text-gray-900 leading-tight">
                           {project.title}
                         </h2>
-                        <p className="text-gray-600 leading-relaxed mb-3 text-ls">
+                        <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
                           {project.description}
                         </p>
                       </div>
@@ -205,7 +205,7 @@ export default function Works() {
                           onClick={() =>
                             window.open(project.projectUrl || "#", "_blank")
                           }
-                          className="w-full bg-gray-100 text-gray-900 py-2 px-4 rounded-xl font-medium border border-gray-200 text-sm"
+                          className="w-full bg-gray-100 text-gray-900 py-3 sm:py-2 px-4 rounded-xl font-medium border border-gray-200 text-sm sm:text-base transition-colors hover:bg-gray-200"
                         >
                           Open Website
                         </button>
@@ -220,24 +220,24 @@ export default function Works() {
       </section>
       {/* Works Final CTA */}
       <motion.section
-        className="py-16 px-4 sm:px-6 lg:px-8"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-instrument text-3xl sm:text-4xl lg:text-5xl mb-6">
+          <h2 className="font-instrument text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 leading-tight px-2">
             {worksData.ctaTitle}
           </h2>
-          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             {worksData.ctaDescription}
           </p>
-          <button className="bg-charcoal text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
+          <button className="bg-charcoal text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-medium text-base sm:text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
             <img
               src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
-              className="w-8 h-8 rounded-full object-cover"
+              className="w-6 sm:w-8 h-6 sm:h-8 rounded-full object-cover"
             />
             <span>{worksData.ctaButtonText}</span>
           </button>
