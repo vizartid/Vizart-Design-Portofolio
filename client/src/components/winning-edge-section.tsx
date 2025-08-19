@@ -72,6 +72,42 @@ export default function WinningEdgeSection() {
 
   const { title, subtitle, features } = content.winningEdge;
 
+  // Icon mapping for the features
+  const iconMap = {
+    Search: Search,
+    TrendingUp: TrendingUp,
+    Gauge: Gauge,
+    Clock: Clock,
+    Star: Star,
+    Globe: Globe,
+    Target: Target,
+    Cloud: Cloud,
+    Rocket: Rocket,
+    Bolt: Bolt,
+    ChartBar: ChartBar,
+  };
+
+  // Color mapping for the features
+  const colorMap = {
+    "blue-500": "text-blue-500",
+    "orange-500": "text-orange-500",
+    "green-500": "text-green-500",
+    "purple-500": "text-purple-500",
+    "pink-500": "text-pink-500",
+    "yellow-500": "text-yellow-500",
+  };
+
+  // Handle case where features might be undefined
+  if (!features || !Array.isArray(features)) {
+    return (
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-gray-500">Loading features...</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
