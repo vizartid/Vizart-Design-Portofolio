@@ -37,6 +37,17 @@ export default function FAQSection() {
 
   const { faq } = content;
 
+  // Handle case where faq or faq.items might be undefined
+  if (!faq || !faq.items || !Array.isArray(faq.items)) {
+    return (
+      <section className="py-24 bg-bone-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-500">Loading FAQ...</p>
+        </div>
+      </section>
+    );
+  }
+
   const toggleItem = (id: number) => {
     setOpenItems((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
