@@ -1,5 +1,5 @@
+
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 export interface ContentData {
   branding: {
@@ -29,16 +29,53 @@ export interface ContentData {
   footer: any;
 }
 
+// Default fallback data
+const defaultContent: ContentData = {
+  branding: {
+    logoText: "Vizart"
+  },
+  hero: {
+    title: "Creative Digital",
+    titleHighlight: "Solutions",
+    subtitle: "We create amazing digital experiences",
+    stats: "100+ Projects Completed",
+    ctaText: "Get Started",
+    acceptingText: "Now Accepting New Clients",
+    toolsText: "Tools We Use",
+    tools: [
+      { name: "React", color: "#61DAFB" },
+      { name: "TypeScript", color: "#3178C6" },
+      { name: "Figma", color: "#F24E1E" }
+    ]
+  },
+  services: {},
+  winningEdge: {},
+  heroSectionsShowcase: {},
+  testimonials: {},
+  faq: {},
+  finalCta: {},
+  works: {},
+  projects: [],
+  footer: {}
+};
+
 export function useContent() {
   return useQuery<ContentData>({
     queryKey: ["/api/content"],
     queryFn: async () => {
-      const response = await fetch("/api/content");
-      if (!response.ok) {
-        throw new Error("Failed to fetch content");
+      try {
+        const response = await fetch("/api/content");
+        if (!response.ok) {
+          return defaultContent;
+        }
+        return response.json();
+      } catch (error) {
+        console.warn("Failed to fetch content, using defaults:", error);
+        return defaultContent;
       }
-      return response.json();
     },
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    initialData: defaultContent
   });
 }
 
