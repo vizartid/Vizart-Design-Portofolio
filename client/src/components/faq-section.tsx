@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import { EditableText } from "./editable-text";
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
 export default function FAQSection() {
@@ -58,11 +57,7 @@ export default function FAQSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <EditableText
-              value={faq.title}
-              onChange={(value) => handleUpdateFAQ("title", value)}
-              tag="span"
-            />
+            {faq.title}
           </motion.h2>
           <motion.p
             className="custom-about-text text-charcoal/70 max-w-2xl mx-auto text-[18px]"
@@ -71,11 +66,7 @@ export default function FAQSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <EditableText
-              value={faq.subtitle}
-              onChange={(value) => handleUpdateFAQ("subtitle", value)}
-              tag="span"
-            />
+            {faq.subtitle}
           </motion.p>
         </div>
 
@@ -95,21 +86,7 @@ export default function FAQSection() {
                 className="w-full px-6 py-6 text-left flex items-center justify-between group focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-50"
               >
                 <h3 className="font-poppins font-semibold text-lg text-charcoal group-hover:text-electric-blue transition-colors duration-300 pr-4">
-                  <EditableText
-                    value={item.question}
-                    onChange={(value) => {
-                      const updatedItems = [...faq.items];
-                      const itemIndex = updatedItems.findIndex(
-                        (i) => i.id === item.id,
-                      );
-                      if (itemIndex !== -1) {
-                        updatedItems[itemIndex] = { ...item, question: value };
-                        handleUpdateFAQ("items", updatedItems);
-                      }
-                    }}
-                    tag="span"
-                    className="inline"
-                  />
+                  {item.question}
                 </h3>
                 <div
                   className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-all duration-300 ${
@@ -139,25 +116,7 @@ export default function FAQSection() {
                     <div className="px-6 pb-6">
                       <div className="border-t border-gray-100 pt-4">
                         <p className="text-charcoal/70 leading-relaxed">
-                          <EditableText
-                            value={item.answer}
-                            onChange={(value) => {
-                              const updatedItems = [...faq.items];
-                              const itemIndex = updatedItems.findIndex(
-                                (i) => i.id === item.id,
-                              );
-                              if (itemIndex !== -1) {
-                                updatedItems[itemIndex] = {
-                                  ...item,
-                                  answer: value,
-                                };
-                                handleUpdateFAQ("items", updatedItems);
-                              }
-                            }}
-                            tag="span"
-                            multiline={true}
-                            className="inline"
-                          />
+                          {item.answer}
                         </p>
                       </div>
                     </div>

@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Figma, Frame, Layers } from "lucide-react";
 import ProjectCarousel from "./project-carousel";
-import { EditableText } from "./editable-text";
-import { useContent, useUpdateContentSection } from "@/hooks/use-content";
+import { useContent } from "@/hooks/use-content";
 
 import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
@@ -54,30 +53,15 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
-            <EditableText
-              value={content.hero.title}
-              onChange={(value) => handleUpdateHero("title", value)}
-              className="inline"
-            />{" "}
+            {content.hero.title}{" "}
             <span className="text-electric-blue">
-              <EditableText
-                value={content.hero.titleHighlight}
-                onChange={(value) => handleUpdateHero("titleHighlight", value)}
-                className="inline"
-              />
+              {content.hero.titleHighlight}
             </span>
             <br />
-            <EditableText
-              value={content.hero.subtitle}
-              onChange={(value) => handleUpdateHero("subtitle", value)}
-              className="inline"
-            />
+            {content.hero.subtitle}
           </h1>
           <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-[18px] font-medium">
-            <EditableText
-              value={content.hero.stats}
-              onChange={(value) => handleUpdateHero("stats", value)}
-            />
+            {content.hero.stats}
           </p>
 
           <button className="bg-black text-white px-8 py-3 rounded-xl font-medium custom-button hover:bg-gray-900 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
@@ -87,23 +71,15 @@ export default function HeroSection() {
               className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
             />
             <span>
-              <EditableText
-                value={content.hero.ctaText}
-                onChange={(value) => handleUpdateHero("ctaText", value)}
-                className="inline"
-              />
+              {content.hero.ctaText}
             </span>
           </button>
 
           <div className="flex items-center justify-center space-x-2 custom-accepting text-gray-600">
             <Check className="w-4 h-4 lg:w-5 lg:h-5 text-green-500" />
-            <span>
-              <EditableText
-                value={content.hero.acceptingText}
-                onChange={(value) => handleUpdateHero("acceptingText", value)}
-                className="inline"
-              />
-            </span>
+            <p className="text-green-400 text-sm mb-4">
+              {content.hero.acceptingText}
+            </p>
           </div>
         </motion.div>
 
@@ -127,10 +103,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-gray-600 mb-6 text-[18px] font-normal">
-            <EditableText
-              value={content.hero.toolsText}
-              onChange={(value) => handleUpdateHero("toolsText", value)}
-            />
+            {content.hero.toolsText}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {content.hero.tools.map((tool, index) => {
@@ -162,15 +135,7 @@ export default function HeroSection() {
                     )}
                   </div>
                   <span className="font-medium text-gray-700">
-                    <EditableText
-                      value={tool.name}
-                      onChange={(value) => {
-                        const updatedTools = [...content.hero.tools];
-                        updatedTools[index] = { ...tool, name: value };
-                        handleUpdateHero("tools", updatedTools);
-                      }}
-                      className="inline"
-                    />
+                    {tool.name}
                   </span>
                 </div>
               );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/footer";
-import { WorksVisualEditor } from "@/components/works-visual-editor";
 import { projects } from "@/data/projects";
 
 import profile_foto from "@assets/profile-foto.jpg";
@@ -50,7 +49,7 @@ export default function Works() {
     // Listen untuk perubahan works data
     const handleWorksDataChange = (event: CustomEvent) => {
       setWorksData(event.detail.worksData);
-      
+
       // Sync with heroSectionsShowcase when works data changes
       if (event.detail.worksData && event.detail.worksData.projects.length > 0) {
         updateHeroShowcase(event.detail.worksData.projects);
@@ -74,14 +73,14 @@ export default function Works() {
   const updateHeroShowcase = (projectsData: any[]) => {
     try {
       const contentData = JSON.parse(localStorage.getItem("contentData") || "{}");
-      
+
       // Map project data to hero showcase images
       const heroImages = projectsData.slice(0, 8).map((project, index) => ({
         url: project.imageUrl || `https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300`,
         alt: project.description || `${project.title} project showcase`,
         overlay: project.category?.toUpperCase() || "Project"
       }));
-      
+
       // Update hero sections showcase
       const updatedContent = {
         ...contentData,
@@ -90,9 +89,9 @@ export default function Works() {
           images: heroImages
         }
       };
-      
+
       localStorage.setItem("contentData", JSON.stringify(updatedContent));
-      
+
       // Dispatch event to notify hero showcase of changes
       window.dispatchEvent(new CustomEvent("contentDataChanged", {
         detail: { contentData: updatedContent }
@@ -113,7 +112,6 @@ export default function Works() {
 
   return (
     <div>
-      <WorksVisualEditor />
       {/* Works Hero Section */}
       <section className="pt-40 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -182,7 +180,7 @@ export default function Works() {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Content Section - Always on Right */}
                     <div className="md:order-2 p-4 flex flex-col justify-between">
                       <div>
