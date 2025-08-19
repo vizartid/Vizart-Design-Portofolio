@@ -13,7 +13,8 @@ const sectionFileMap: Record<string, string> = {
   finalCta: "final-cta.ts",
   works: "works.ts",
   projects: "works-projects.ts",
-  footer: "footer.ts"
+  footer: "footer.ts",
+  process: "process.ts"
 };
 
 export async function updateSectionFile(sectionName: string, data: any): Promise<void> {

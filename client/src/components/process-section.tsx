@@ -25,53 +25,46 @@ interface ProcessData {
 }
 
 const DEFAULT_PROCESS_DATA: ProcessData = {
-  title: "Alur Kerja Kami",
-  subtitle:
-    "Proses terstruktur yang kami gunakan untuk menghadirkan hasil terbaik",
+  title: "Our Workflow",
+  subtitle: "A structured process we use to deliver the best results",
   steps: [
     {
       id: "planning",
       icon: "Lightbulb",
-      title: "Ide & Perencanaan",
-      description:
-        "Memahami kebutuhan Anda dan merencanakan strategi yang tepat untuk mencapai tujuan bisnis.",
+      title: "Ideas & Planning",
+      description: "Understanding your needs and planning the right strategy to achieve business goals."
     },
     {
       id: "design",
-      icon: "Palette",
-      title: "Desain Awal",
-      description:
-        "Membuat konsep visual yang menarik dan sesuai dengan identitas brand Anda.",
+      icon: "Palette", 
+      title: "Initial Design",
+      description: "Creating attractive visual concepts that align with your brand identity."
     },
     {
       id: "development",
       icon: "Code",
-      title: "Pengembangan",
-      description:
-        "Mengembangkan website atau aplikasi dengan teknologi terdepan dan kode yang berkualitas.",
+      title: "Development",
+      description: "Developing websites or applications with cutting-edge technology and quality code."
     },
     {
       id: "testing",
       icon: "TestTube",
-      title: "Uji Coba",
-      description:
-        "Melakukan testing menyeluruh untuk memastikan semua fitur berfungsi dengan sempurna.",
+      title: "Testing",
+      description: "Conducting comprehensive testing to ensure all features work perfectly."
     },
     {
       id: "launch",
       icon: "Rocket",
-      title: "Peluncuran",
-      description:
-        "Meluncurkan produk final dan memastikan semua sistem berjalan lancar di lingkungan live.",
+      title: "Launch",
+      description: "Launching the final product and ensuring all systems run smoothly in the live environment."
     },
     {
       id: "support",
       icon: "Headphones",
-      title: "Dukungan",
-      description:
-        "Memberikan dukungan berkelanjutan dan maintenance untuk memastikan performa optimal.",
-    },
-  ],
+      title: "Support",
+      description: "Providing ongoing support and maintenance to ensure optimal performance."
+    }
+  ]
 };
 
 const iconMap = {
