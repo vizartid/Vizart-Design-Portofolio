@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   Lightbulb,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react";
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 import { EditableText } from "./editable-text";
+import { Check } from "lucide-react"; // Import Check icon
 
 interface ProcessStep {
   id: string;
@@ -36,7 +36,7 @@ const DEFAULT_PROCESS_DATA: ProcessData = {
     },
     {
       id: "design",
-      icon: "Palette", 
+      icon: "Palette",
       title: "Initial Design",
       description: "Creating attractive visual concepts that align with your brand identity."
     },
@@ -174,22 +174,22 @@ export default function ProcessSection() {
                 glow: "drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]",
               },
               {
-                bg: "bg-white",
+                bg: "white",
                 icon: "text-green-500",
                 glow: "drop-shadow-[0_0_8px_rgba(34,197,94,0.4)]",
               },
               {
-                bg: "bg-white",
+                bg: "white",
                 icon: "text-blue-500",
                 glow: "drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]",
               },
               {
-                bg: "bg-white",
+                bg: "white",
                 icon: "text-red-500",
                 glow: "drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]",
               },
               {
-                bg: "bg-white",
+                bg: "white",
                 icon: "text-indigo-500",
                 glow: "drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]",
               },
