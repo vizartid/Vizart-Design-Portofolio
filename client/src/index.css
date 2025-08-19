@@ -254,7 +254,7 @@
 
   /* Wave texture background */
   .wave-bg {
-    background-image: url("attached_assets/backgound-wave.jpg");
+    background-image: url("/attached_assets/backgound-wave.jpg");
     background-repeat: repeat-x;
     background-position: bottom;
   }

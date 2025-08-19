@@ -7,5 +7,14 @@ author = 45454059
 mode = "sequential"
 
 [[workflows.workflow.tasks]]
+
+
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[deployment]
+publicDir = "dist/public"
+
 task = "shell.exec"
 args = "npm run dev"
