@@ -146,7 +146,7 @@ export default function ProcessSection() {
               tag="span"
             />
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto text-center">
             <EditableText
               value={processData.subtitle}
               onChange={(value) => handleUpdateField("subtitle", value)}
