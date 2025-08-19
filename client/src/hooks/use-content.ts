@@ -44,7 +44,7 @@ export function useContent() {
 
 export function useUpdateContent() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
     mutationFn: async (content: ContentData) => {
       const response = await fetch("/api/content", {
@@ -67,7 +67,7 @@ export function useUpdateContent() {
 
 export function useUpdateContentSection() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
     mutationFn: async ({ section, data }: { section: string; data: any }) => {
       const response = await fetch(`/api/content/${section}`, {
@@ -87,3 +87,5 @@ export function useUpdateContentSection() {
     },
   });
 }
+
+export { useContent, useUpdateContentSection };

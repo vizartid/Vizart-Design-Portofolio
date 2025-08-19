@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   Lightbulb,
@@ -7,7 +8,7 @@ import {
   Rocket,
   Headphones,
 } from "lucide-react";
-import { useLocalStorage } from "@/hooks/use-local-storage";
+import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 import { EditableText } from "./editable-text";
 
 interface ProcessStep {
@@ -84,26 +85,55 @@ const iconMap = {
 
 export default function ProcessSection() {
   console.log("ProcessSection component is rendering"); // Debug log
-  const [processData, setProcessData] = useLocalStorage<ProcessData>(
-    "processData",
-    DEFAULT_PROCESS_DATA,
-  );
+  const { data: content, isLoading } = useContent();
+  const updateSection = useUpdateContentSection();
+
+  // Get process data from content, fallback to default
+  const processData = content?.process || DEFAULT_PROCESS_DATA;
 
   const handleUpdateField = (field: keyof ProcessData, value: any) => {
-    setProcessData((prev) => ({
-      ...prev,
+    const updatedProcess = {
+      ...processData,
       [field]: value,
-    }));
+    };
+
+    updateSection.mutate({
+      section: "process",
+      data: updatedProcess,
+    });
   };
 
   const handleUpdateStep = (id: string, field: string, value: any) => {
-    setProcessData((prev) => ({
-      ...prev,
-      steps: prev.steps.map((step) =>
+    const updatedProcess = {
+      ...processData,
+      steps: processData.steps.map((step) =>
         step.id === id ? { ...step, [field]: value } : step,
       ),
-    }));
+    };
+
+    updateSection.mutate({
+      section: "process",
+      data: updatedProcess,
+    });
   };
+
+  if (isLoading || !content) {
+    return (
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-bone-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="animate-pulse">
+            <div className="h-24 bg-gray-200 rounded mb-6"></div>
+            <div className="h-8 bg-gray-200 rounded mb-8 max-w-2xl mx-auto"></div>
+            <div className="space-y-6">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-20 bg-gray-200 rounded"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-bone-white">
