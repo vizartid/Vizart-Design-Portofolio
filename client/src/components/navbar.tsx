@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Leaf, Menu, X } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
 
-import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 export default function Navbar() {
   const [location] = useLocation();

@@ -9,9 +9,9 @@ import Footer from "@/components/footer";
 
 import { motion } from "framer-motion";
 
-import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
-import backgound_wave from "@assets/backgound-wave.jpg";
+const backgound_wave = "/backgound-wave.jpg";
 
 export default function Home() {
   return (

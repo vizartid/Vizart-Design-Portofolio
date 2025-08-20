@@ -1,5 +1,8 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import type { ContentSection } from "@/lib/types";
+import { content as fallbackContent } from "@/data";
+
+const API_BASE = "/api";
 
 export interface ContentData {
   branding: {
@@ -30,15 +33,23 @@ export interface ContentData {
 }
 
 export function useContent() {
-  return useQuery<ContentData>({
-    queryKey: ["/api/content"],
+  return useQuery({
+    queryKey: ["content"],
     queryFn: async () => {
-      const response = await fetch("/api/content");
-      if (!response.ok) {
-        throw new Error("Failed to fetch content");
+      try {
+        const response = await fetch(`${API_BASE}/content`);
+        if (!response.ok) {
+          // Use fallback content if API fails (for static deployment)
+          return fallbackContent;
+        }
+        return response.json();
+      } catch (error) {
+        // Use fallback content if network fails
+        return fallbackContent;
       }
-      return response.json();
     },
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000, // 10 minutes
   });
 }
 
@@ -60,7 +71,7 @@ export function useUpdateContent() {
       return response.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/content"] });
+      queryClient.invalidateQueries({ queryKey: ["content"] });
     },
   });
 }
@@ -83,7 +94,7 @@ export function useUpdateContentSection() {
       return response.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/content"] });
+      queryClient.invalidateQueries({ queryKey: ["content"] });
     },
   });
 }
