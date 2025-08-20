@@ -6,25 +6,24 @@ export default function Footer() {
   const { data: content } = useContent();
 
   return (
-    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
-      <div className="max-w-6xl mx-auto">
-        {/* Main footer content */}
-        <div className="text-center">
-          {/* Logo positioned at the top */}
-          <div className="flex justify-center">
-            <img
-              src="/Vizart-studio.png"
-              alt="Vizart Studio"
-              className="h-24 object-contain"
-            />
-          </div>
+    <footer className="bg-bone-white py-8 sm:py-12 relative">
+      <div className="w-full">
+        {/* Logo positioned at the top */}
+        <div className="flex justify-center px-4 sm:px-6 lg:px-8">
+          <img
+            src="/Vizart-studio.png"
+            alt="Vizart Studio"
+            className="h-24 object-contain"
+          />
+        </div>
 
-          {/* Single border line below logo and above description */}
-          <div className="border-t-2 border-gray-200 pt-8">
-            {/* Description */}
+        {/* Full width border line below logo */}
+        <div className="border-t-2 border-gray-200 mt-6">
+          <div className="text-center px-4 sm:px-6 lg:px-8 pt-8">
+            {/* Description with line break */}
             <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
-              We commit fully to every project, delivering top-quality design
-              that reflects your vision.
+              We commit fully to every project, delivering top-quality<br />
+              design that reflects your vision.
             </p>
 
             {/* CTA Button with profile image */}
@@ -43,24 +42,26 @@ export default function Footer() {
             <p className="text-gray-600 text-sm mb-6">
               or Email us at vizartstudio37@gmail.com
             </p>
+          </div>
+        </div>
 
-            {/* Single border line above navigation */}
-            <div className="border-t-2 border-gray-200 pt-6">
-              {/* Navigation Links - Home and Works */}
-              <div className="flex justify-center space-x-8 text-gray-600">
-                <a
-                  href="/"
-                  className="hover:text-charcoal transition-colors text-sm font-medium"
-                >
-                  Home
-                </a>
-                <a
-                  href="/works"
-                  className="hover:text-charcoal transition-colors text-sm font-medium"
-                >
-                  Works
-                </a>
-              </div>
+        {/* Full width border line above navigation */}
+        <div className="border-t-2 border-gray-200">
+          <div className="text-center px-4 sm:px-6 lg:px-8 pt-6">
+            {/* Navigation Links - Home and Works */}
+            <div className="flex justify-center space-x-8 text-gray-600">
+              <a
+                href="/"
+                className="hover:text-charcoal transition-colors text-sm font-medium"
+              >
+                Home
+              </a>
+              <a
+                href="/works"
+                className="hover:text-charcoal transition-colors text-sm font-medium"
+              >
+                Works
+              </a>
             </div>
           </div>
         </div>
