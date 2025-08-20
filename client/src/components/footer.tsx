@@ -1,3 +1,4 @@
+
 import { Leaf } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
 import { useContent } from "@/hooks/use-content";
@@ -8,89 +9,51 @@ export default function Footer() {
   return (
     <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Vizart Studio Logo positioned above the border line */}
-        <div className="flex justify-center mb-4">
-          <div className="bg-bone-white px-4 -mb-4 relative z-10">
+        {/* Single continuous border line */}
+        <div className="border-t-2 border-gray-200 pt-8 mb-8"></div>
+        
+        {/* Main footer content */}
+        <div className="text-center space-y-6">
+          {/* Logo */}
+          <div className="flex justify-center">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
-              className="h-24 object-contain"
+              className="h-16 object-contain"
             />
           </div>
-        </div>
 
-        {/* Single continuous border line above all content */}
-        <div className="border-t-2 border-gray-200 pt-6 sm:pt-8 mb-6 sm:mb-8"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          {/* Logo and Description */}
-          <div className="md:col-span-2 text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <span className="font-poppins font-semibold text-xl">About</span>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              We deliver standout websites with effortless collaboration,
-              helping businesses create impactful digital experiences that drive
-              real results.
-            </p>
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            We commit fully to every project, delivering top-quality
+            design that reflects your vision.
+          </p>
+
+          {/* CTA Button */}
+          <div className="flex justify-center">
+            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200">
+              Book a Call
+            </button>
           </div>
 
-          {/* Services */}
-          <div className="text-center">
-            <h4 className="font-poppins font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-600">
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Website Design
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Logo & Branding
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Pitch Decks
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Social Media
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Contact Info */}
+          <p className="text-gray-600 text-sm">
+            or Email us at vizartstudio37@gmail.com
+          </p>
 
-          {/* Company */}
-          <div className="text-center">
-            <h4 className="font-poppins font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-600">
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-charcoal transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
+          {/* Navigation Links */}
+          <div className="flex justify-center space-x-8 text-gray-600">
+            <a href="#" className="hover:text-charcoal transition-colors text-sm">
+              Home
+            </a>
+            <a href="#" className="hover:text-charcoal transition-colors text-sm">
+              Works
+            </a>
           </div>
         </div>
 
-        {/* Social Media and Copyright */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t-2 border-gray-200">
+        {/* Bottom section with copyright and social media */}
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 mt-8 border-t-2 border-gray-200">
           <p className="text-gray-600 text-sm mb-4 sm:mb-0 text-center sm:text-left">
             © 2025 Vizart Studio. All rights reserved.
           </p>
