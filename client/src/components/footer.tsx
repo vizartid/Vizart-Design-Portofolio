@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Main footer content */}
         <div className="text-center space-y-6">
           {/* Logo positioned at the top */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
