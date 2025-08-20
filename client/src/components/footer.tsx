@@ -1,4 +1,3 @@
-
 import { Leaf } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
 import { useContent } from "@/hooks/use-content";
@@ -9,30 +8,35 @@ export default function Footer() {
   return (
     <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Single continuous border line */}
-        <div className="border-t-2 border-gray-200 pt-8 mb-8"></div>
-        
-        {/* Main footer content */}
-        <div className="text-center space-y-6">
-          {/* Logo */}
-          <div className="flex justify-center">
+        {/* Single continuous border line with logo touching it */}
+        <div className="border-t-2 border-gray-200 relative">
+          {/* Logo positioned to touch the border line */}
+          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
-              className="h-16 object-contain"
+              className="h-24 object-contain"
             />
           </div>
+        </div>
 
+        {/* Main footer content */}
+        <div className="text-center space-y-6 pt-16">
           {/* Description */}
           <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
             We commit fully to every project, delivering top-quality
             design that reflects your vision.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button with profile image */}
           <div className="flex justify-center">
-            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200">
-              Book a Call
+            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center justify-center space-x-3">
+              <img
+                src="/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg"
+                alt="Profile"
+                className="w-8 h-8 rounded-full object-cover"
+              />
+              <span>Book a Call</span>
             </button>
           </div>
 
@@ -41,46 +45,13 @@ export default function Footer() {
             or Email us at vizartstudio37@gmail.com
           </p>
 
-          {/* Navigation Links */}
-          <div className="flex justify-center space-x-8 text-gray-600">
-            <a href="#" className="hover:text-charcoal transition-colors text-sm">
+          {/* Navigation Links - Home and Works */}
+          <div className="flex justify-center space-x-8 text-gray-600 pt-4">
+            <a href="/" className="hover:text-charcoal transition-colors text-sm font-medium">
               Home
             </a>
-            <a href="#" className="hover:text-charcoal transition-colors text-sm">
+            <a href="/works" className="hover:text-charcoal transition-colors text-sm font-medium">
               Works
-            </a>
-          </div>
-        </div>
-
-        {/* Bottom section with copyright and social media */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 mt-8 border-t-2 border-gray-200">
-          <p className="text-gray-600 text-sm mb-4 sm:mb-0 text-center sm:text-left">
-            © 2025 Vizart Studio. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-charcoal transition-colors"
-            >
-              <FaTwitter className="text-xl" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-charcoal transition-colors"
-            >
-              <FaLinkedin className="text-xl" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-charcoal transition-colors"
-            >
-              <FaInstagram className="text-xl" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-charcoal transition-colors"
-            >
-              <FaDribbble className="text-xl" />
             </a>
           </div>
         </div>
