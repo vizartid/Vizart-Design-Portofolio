@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media and Copyright */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t-2 border-gray-300">
           <p className="text-gray-600 text-sm mb-4 sm:mb-0 text-center sm:text-left">
             © 2025 Vizart Studio. All rights reserved.
           </p>
