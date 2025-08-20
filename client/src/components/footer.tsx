@@ -9,16 +9,16 @@ export default function Footer() {
     <footer className="bg-bone-white py-8 sm:py-12 relative">
       <div className="w-full relative">
         {/* Full width border line */}
-        <div className="border-t-2 border-gray-200">
+        <div className="border-t-2 border-gray-200 relative">
           {/* Logo positioned to touch the border line */}
-          <div className="flex justify-center relative">
+          <div className="flex justify-center">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
-              className="h-24 object-contain absolute -top-12 bg-bone-white px-4"
+              className="h-24 object-contain -mt-12 bg-bone-white px-4"
             />
           </div>
-          <div className="text-center px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="text-center px-4 sm:px-6 lg:px-8 pt-2"></div>
             {/* Description with line break */}
             <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
               We commit fully to every project, delivering top-quality<br />
