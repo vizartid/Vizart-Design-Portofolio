@@ -1,4 +1,3 @@
-
 export const heroSectionsShowcase = {
   "title": "Specialized in Innovating\nComprehensive Digital Solutions",
   "subtitle": "We craft integrated online experiences and powerful technical foundations that drive your brand's success and operational excellence.",
@@ -35,20 +34,20 @@ export const heroSectionsShowcase = {
       "overlay": "Tech Startup"
     },
     {
-      "url": "attached_assets/backgound-wave.jpg",
-      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+      "url": "/backgound-wave.jpg",
+      "hoverUrl": "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Healthcare hero section with trust elements",
       "overlay": "Healthcare"
     },
     {
-      "url": "attached_assets/backgound-wave.jpg",
-      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+      "url": "/backgound-wave.jpg",
+      "hoverUrl": "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Financial services hero section",
       "overlay": "FinTech"
     },
     {
-      "url": "attached_assets/backgound-wave.jpg",
-      "hoverUrl": "attached_assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+      "url": "/backgound-wave.jpg",
+      "hoverUrl": "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
       "alt": "Educational platform hero design",
       "overlay": "Education"
     }

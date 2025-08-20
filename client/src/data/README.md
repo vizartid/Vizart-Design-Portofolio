@@ -18,19 +18,19 @@ This project now uses individual TypeScript files for easier content management.
 
 ## Image Management
 
-### Using Images from attached_assets
+### Using Images from public folder
 
-All images are stored in the `attached_assets` folder and can be referenced in the TypeScript files using:
+All images are stored in the `client/public` folder and can be referenced in the TypeScript files using:
 
 ```typescript
 // Correct way to reference images
-imageUrl: "/attached_assets/filename.png"
-logoUrl: "/attached_assets/Profile-foto.png"
+imageUrl: "/filename.png"
+logoUrl: "/Profile-foto.png"
 ```
 
 ### Available Images
 
-Current images in attached_assets folder:
+Current images in public folder:
 - `Profile-foto.png` - Used for logo/branding
 - `Screenshot 2025-07-24 140158_1753344628323.png` - Project screenshot
 - `Screenshot 2025-07-24 140507_1753341884909.png` - Project screenshot

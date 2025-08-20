@@ -1,3 +1,4 @@
+
 export const branding = {
   logoUrl: "/logo-vizart.png",
   logoText: "Vizart", 
