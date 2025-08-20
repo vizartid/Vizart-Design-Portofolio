@@ -18,7 +18,7 @@ export default function Footer() {
               className="h-24 object-contain -mt-12 bg-bone-white px-4"
             />
           </div>
-          <div className="text-center px-4 sm:px-6 lg:px-8 pt-2"></div>
+          <div className="text-center px-4 sm:px-6 lg:px-8 pt-2">
             {/* Description with line break */}
             <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
               We commit fully to every project, delivering top-quality<br />
