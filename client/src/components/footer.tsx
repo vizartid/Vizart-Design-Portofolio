@@ -12,9 +12,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <span className="font-poppins font-semibold text-xl">
-                Vizart
-              </span>
+              <span className="font-poppins font-semibold text-xl">About</span>
             </div>
             <p className="text-gray-600 leading-relaxed">
               We deliver standout websites with effortless collaboration,
