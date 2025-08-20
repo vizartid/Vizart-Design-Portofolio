@@ -11,6 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
+            <div className="border-t-2 border-gray-300 pt-4 mb-4"></div>
             <div className="flex items-center space-x-2 mb-4">
               <span className="font-poppins font-semibold text-xl">About</span>
             </div>
