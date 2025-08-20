@@ -11,11 +11,11 @@ export default function Footer() {
         {/* Full width border line */}
         <div className="border-t-2 border-gray-200 relative">
           {/* Logo positioned to touch the border line */}
-          <div className="flex justify-center">
+          <div className="flex justify-center absolute inset-x-0 -top-12">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
-              className="h-24 object-contain -mt-12 bg-bone-white px-4"
+              className="h-24 object-contain bg-bone-white px-4"
             />
           </div>
           <div className="text-center px-4 sm:px-6 lg:px-8 pt-2">
