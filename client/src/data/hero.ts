@@ -68,6 +68,17 @@ export const hero = {
       icon: "FileText",
       logoUrl: "https://cdn.simpleicons.org/typescript/3178C6",
     },
-
+    {
+      name: "Vercel",
+      color: "black",
+      icon: "Zap",
+      logoUrl: "https://skillicons.dev/icons?i=vercel",
+    },
+    {
+      name: "PostgreSQL",
+      color: "blue-700",
+      icon: "Database",
+      logoUrl: "https://skillicons.dev/icons?i=postgresql",
+    },
   ],
 };
