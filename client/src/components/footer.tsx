@@ -1,4 +1,3 @@
-
 import { Leaf } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaInstagram, FaDribbble } from "react-icons/fa";
 import { useContent } from "@/hooks/use-content";
@@ -9,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-bone-white py-8 sm:py-12 relative">
       {/* Logo positioned at the top */}
-      <div className="flex justify-center mb-8 px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-center mb-8">
         <img
           src="/Vizart-studio.png"
           alt="Vizart Studio"
