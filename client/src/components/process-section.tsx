@@ -140,19 +140,10 @@ export default function ProcessSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">
-            <EditableText
-              value={processData.title}
-              onChange={(value) => handleUpdateField("title", value)}
-              tag="span"
-            />
+            {processData.title}
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto text-center">
-            <EditableText
-              value={processData.subtitle}
-              onChange={(value) => handleUpdateField("subtitle", value)}
-              tag="span"
-              multiline={true}
-            />
+            {processData.subtitle}
           </p>
         </motion.div>
 
@@ -220,23 +211,10 @@ export default function ProcessSection() {
                   {/* Content */}
                   <div className="flex-1">
                     <h3 className="font-instrument font-medium mb-3 text-charcoal text-[28px]">
-                      <EditableText
-                        value={step.title}
-                        onChange={(value) =>
-                          handleUpdateStep(step.id, "title", value)
-                        }
-                        tag="span"
-                      />
+                      {step.title}
                     </h3>
                     <p className="text-gray-600 text-[18px]">
-                      <EditableText
-                        value={step.description}
-                        onChange={(value) =>
-                          handleUpdateStep(step.id, "description", value)
-                        }
-                        tag="span"
-                        multiline={true}
-                      />
+                      {step.description}
                     </p>
                   </div>
                 </div>

@@ -88,11 +88,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light">
-            <EditableText
-              value={servicesData.title}
-              onChange={(value) => handleUpdateField("title", value)}
-              tag="span"
-            />
+            {servicesData.title}
           </h2>
         </motion.div>
 
@@ -114,23 +110,10 @@ export default function ServicesSection() {
                 )}
               </div>
               <h3 className="font-instrument mb-3 font-medium text-[28px]">
-                <EditableText
-                  value={service.title}
-                  onChange={(value) =>
-                    handleUpdateService(service.id, "title", value)
-                  }
-                  tag="span"
-                />
+                {service.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                <EditableText
-                  value={service.description}
-                  onChange={(value) =>
-                    handleUpdateService(service.id, "description", value)
-                  }
-                  tag="span"
-                  multiline={true}
-                />
+                {service.description}
               </p>
             </motion.div>
           ))}
@@ -144,12 +127,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <p className="text-gray-600 custom-about-text mb-8">
-            <EditableText
-              value={servicesData.bottomText}
-              onChange={(value) => handleUpdateField("bottomText", value)}
-              tag="span"
-              multiline={true}
-            />
+            {servicesData.bottomText}
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
@@ -157,11 +135,7 @@ export default function ServicesSection() {
               <div key={index} className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-electric-blue rounded-full drop-shadow-[0_0_6px_rgba(59,130,246,0.6)]" />
                 <span className="custom-accepting">
-                  <EditableText
-                    value={feature.text}
-                    onChange={(value) => handleUpdateFeature(index, value)}
-                    tag="span"
-                  />
+                  {feature.text}
                 </span>
               </div>
             ))}
