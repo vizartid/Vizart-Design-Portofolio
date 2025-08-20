@@ -23,8 +23,8 @@ export default function Footer() {
           <div className="border-t-2 border-gray-200 pt-8">
             {/* Description */}
             <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
-              We commit fully to every project, delivering top-quality
-              design that reflects your vision.
+              We commit fully to every project, delivering top-quality design
+              that reflects your vision.
             </p>
 
             {/* CTA Button with profile image */}
@@ -48,10 +48,16 @@ export default function Footer() {
             <div className="border-t-2 border-gray-200 pt-6">
               {/* Navigation Links - Home and Works */}
               <div className="flex justify-center space-x-8 text-gray-600">
-                <a href="/" className="hover:text-charcoal transition-colors text-sm font-medium">
+                <a
+                  href="/"
+                  className="hover:text-charcoal transition-colors text-sm font-medium"
+                >
                   Home
                 </a>
-                <a href="/works" className="hover:text-charcoal transition-colors text-sm font-medium">
+                <a
+                  href="/works"
+                  className="hover:text-charcoal transition-colors text-sm font-medium"
+                >
                   Works
                 </a>
               </div>
