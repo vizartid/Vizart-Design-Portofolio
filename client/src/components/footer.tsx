@@ -23,6 +23,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
+            <div className="border-t-2 border-gray-300 pt-4 mb-4"></div>
             <h4 className="font-poppins font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-600">
               <li>
@@ -50,6 +51,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
+            <div className="border-t-2 border-gray-300 pt-4 mb-4"></div>
             <h4 className="font-poppins font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-600">
               <li>
