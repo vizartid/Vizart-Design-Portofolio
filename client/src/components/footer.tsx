@@ -8,51 +8,54 @@ export default function Footer() {
   return (
     <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Single continuous border line with logo touching it */}
-        <div className="border-t-2 border-gray-200 relative">
-          {/* Logo positioned to touch the border line */}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+        {/* Main footer content */}
+        <div className="text-center space-y-6">
+          {/* Logo positioned at the top */}
+          <div className="flex justify-center mb-8">
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
               className="h-24 object-contain"
             />
           </div>
-        </div>
 
-        {/* Main footer content */}
-        <div className="text-center space-y-6 pt-16">
-          {/* Description */}
-          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            We commit fully to every project, delivering top-quality
-            design that reflects your vision.
-          </p>
+          {/* Single border line below logo and above description */}
+          <div className="border-t-2 border-gray-200 pt-8">
+            {/* Description */}
+            <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+              We commit fully to every project, delivering top-quality
+              design that reflects your vision.
+            </p>
 
-          {/* CTA Button with profile image */}
-          <div className="flex justify-center">
-            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center justify-center space-x-3">
-              <img
-                src="/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg"
-                alt="Profile"
-                className="w-8 h-8 rounded-full object-cover"
-              />
-              <span>Book a Call</span>
-            </button>
-          </div>
+            {/* CTA Button with profile image */}
+            <div className="flex justify-center mb-4">
+              <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center justify-center space-x-3">
+                <img
+                  src="/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg"
+                  alt="Profile"
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <span>Book a Call</span>
+              </button>
+            </div>
 
-          {/* Contact Info */}
-          <p className="text-gray-600 text-sm">
-            or Email us at vizartstudio37@gmail.com
-          </p>
+            {/* Contact Info */}
+            <p className="text-gray-600 text-sm mb-6">
+              or Email us at vizartstudio37@gmail.com
+            </p>
 
-          {/* Navigation Links - Home and Works */}
-          <div className="flex justify-center space-x-8 text-gray-600 pt-4">
-            <a href="/" className="hover:text-charcoal transition-colors text-sm font-medium">
-              Home
-            </a>
-            <a href="/works" className="hover:text-charcoal transition-colors text-sm font-medium">
-              Works
-            </a>
+            {/* Single border line above navigation */}
+            <div className="border-t-2 border-gray-200 pt-6">
+              {/* Navigation Links - Home and Works */}
+              <div className="flex justify-center space-x-8 text-gray-600">
+                <a href="/" className="hover:text-charcoal transition-colors text-sm font-medium">
+                  Home
+                </a>
+                <a href="/works" className="hover:text-charcoal transition-colors text-sm font-medium">
+                  Works
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
