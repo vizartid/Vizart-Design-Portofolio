@@ -88,7 +88,6 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-        </div>
 
         {/* Social Media and Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t-2 border-gray-200">
