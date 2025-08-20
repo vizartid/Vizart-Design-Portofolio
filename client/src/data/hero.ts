@@ -8,28 +8,34 @@ export const hero = {
   toolsText: "We use industry standard tools like",
   tools: [
     {
+      name: "Figma",
+      color: "purple-500",
+      icon: "Frame",
+      logoUrl: "https://cdn.simpleicons.org/figma/F24E1E",
+    },
+    {
       name: "Adobe Photoshop",
       color: "blue-500",
       icon: "Image",
-      logoUrl: "https://cdn.simpleicons.org/adobephotoshop/31A8FF",
-    },
-    {
-      name: "Sketch",
-      color: "orange-500",
-      icon: "Pen",
-      logoUrl: "https://cdn.simpleicons.org/sketch/F7B500",
+      logoUrl: "https://skillicons.dev/icons?i=ps",
     },
     {
       name: "Adobe XD",
       color: "pink-500",
       icon: "Layers",
-      logoUrl: "https://cdn.simpleicons.org/adobexd/FF61F6",
+      logoUrl: "https://skillicons.dev/icons?i=xd",
     },
     {
       name: "Adobe Illustrator",
       color: "yellow-500",
       icon: "PenTool",
-      logoUrl: "https://cdn.simpleicons.org/adobeillustrator/FF9A00",
+      logoUrl: "https://skillicons.dev/icons?i=ai",
+    },
+    {
+      name: "Webflow",
+      color: "blue-600",
+      icon: "Globe",
+      logoUrl: "https://cdn.simpleicons.org/webflow/4353FF",
     },
     {
       name: "JavaScript",
@@ -60,12 +66,6 @@ export const hero = {
       color: "blue-600",
       icon: "FileText",
       logoUrl: "https://cdn.simpleicons.org/typescript/3178C6",
-    },
-    {
-      name: "Vercel",
-      color: "black",
-      icon: "Zap",
-      logoUrl: "https://cdn.simpleicons.org/vercel/000000",
     },
   ],
 };
