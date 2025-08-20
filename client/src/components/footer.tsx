@@ -22,9 +22,10 @@ export default function Footer() {
           {/* Single border line below logo and above description */}
           <div className="border-t-2 border-gray-200 pt-8">
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
-              We commit fully to every project, delivering top-quality design
-              that reflects your vision.
+            <p className="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-10">
+              We commit fully to every project, delivering top-quality
+              <br />
+              design that reflects your vision.
             </p>
 
             {/* CTA Button with profile image */}
