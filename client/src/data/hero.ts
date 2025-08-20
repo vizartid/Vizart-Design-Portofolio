@@ -57,22 +57,10 @@ export const hero = {
       logoUrl: "https://cdn.simpleicons.org/nodedotjs/339933",
     },
     {
-      name: "Vue.js",
-      color: "green-400",
-      icon: "Triangle",
-      logoUrl: "https://cdn.simpleicons.org/vuedotjs/4FC08D",
-    },
-    {
       name: "TypeScript",
       color: "blue-600",
       icon: "FileText",
       logoUrl: "https://cdn.simpleicons.org/typescript/3178C6",
-    },
-    {
-      name: "Vercel",
-      color: "black",
-      icon: "Zap",
-      logoUrl: "https://cdn.simpleicons.org/vercel/000000",
     },
     {
       name: "PostgreSQL",
