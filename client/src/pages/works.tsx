@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/footer";
 import { projects } from "@/data/projects";
 
-import profile_foto from "@assets/profile-foto.jpg";
+const profile_foto = "/profile-foto.jpg";
 
-import b48f5cac_0dd9_4e94_b48a_682921628c0b from "@assets/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 const categories = [
   { id: "all", label: "All Works" },

@@ -1,6 +1,8 @@
 import { projects } from "@/data/projects";
 import { useContent } from "@/hooks/use-content";
 
+const backgroundWave = "/backgound-wave.jpg";
+
 export default function ProjectCarousel() {
   const { data: content, isLoading } = useContent();
 

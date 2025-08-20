@@ -1,4 +1,3 @@
-
 // Project images mapping function
 const getProjectImage = (projectId: number): string => {
   const projectImages: { [key: number]: string } = {
@@ -24,7 +23,7 @@ const getProjectImage = (projectId: number): string => {
     20: "/backgound-wave.jpg", // CRM Desktop App
     21: "/backgound-wave.jpg", // Code Editor Interface
   };
-  
+
   return projectImages[projectId] || "/backgound-wave.jpg";
 };
 
