@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Single continuous border line above all content */}
-        <div className="border-t-2 border-gray-300 pt-6 sm:pt-8 mb-6 sm:mb-8">
+        <div className="border-t-2 border-gray-200 pt-6 sm:pt-8 mb-6 sm:mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {/* Logo and Description */}
             <div className="md:col-span-2">
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media and Copyright */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t-2 border-gray-300">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t-2 border-gray-200">
           <p className="text-gray-600 text-sm mb-4 sm:mb-0 text-center sm:text-left">
             © 2025 Vizart Studio. All rights reserved.
           </p>
