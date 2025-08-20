@@ -6,10 +6,21 @@ export default function Footer() {
   const { data: content } = useContent();
 
   return (
-    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
+        {/* Vizart Studio Logo positioned above the border line */}
+        <div className="flex justify-center mb-4">
+          <div className="bg-bone-white px-4 -mb-4 relative z-10">
+            <img 
+              src="/Vizart-studio.png" 
+              alt="Vizart Studio" 
+              className="h-12 sm:h-16 object-contain"
+            />
+          </div>
+        </div>
+        
         {/* Single continuous border line above all content */}
-        <div className="border-t-2 border-gray-200 pt-6 sm:pt-8 mb-6 sm:mb-8">
+        <div className="border-t-2 border-gray-200 pt-6 sm:pt-8 mb-6 sm:mb-8"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {/* Logo and Description */}
             <div className="md:col-span-2">
