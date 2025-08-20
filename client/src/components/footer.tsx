@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
         {/* Main footer content */}
-        <div className="text-center space-y-6">
+        <div className="text-center">
           {/* Logo positioned at the top */}
           <div className="flex justify-center">
             <img
@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Single border line below logo and above description */}
           <div className="border-t-2 border-gray-200 pt-8">
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+            <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
               We commit fully to every project, delivering top-quality design
               that reflects your vision.
             </p>
