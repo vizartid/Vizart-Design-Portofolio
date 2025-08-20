@@ -23,8 +23,8 @@ export default function Footer() {
         <div className="border-t-2 border-gray-200 pt-6 sm:pt-8 mb-6 sm:mb-8"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo and Description */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="md:col-span-2 text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="font-poppins font-semibold text-xl">About</span>
             </div>
             <p className="text-gray-600 leading-relaxed">
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-center">
             <h4 className="font-poppins font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-600">
               <li>
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="text-center">
             <h4 className="font-poppins font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-600">
               <li>
