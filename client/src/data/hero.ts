@@ -11,7 +11,8 @@ export const hero = {
       name: "Figma",
       color: "purple-500",
       icon: "Frame",
-      logoUrl: "https://cdn.simpleicons.org/figma/F24E1E",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     },
     {
       name: "Adobe Photoshop",
@@ -67,5 +68,6 @@ export const hero = {
       icon: "FileText",
       logoUrl: "https://cdn.simpleicons.org/typescript/3178C6",
     },
+
   ],
 };
