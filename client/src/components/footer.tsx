@@ -15,7 +15,7 @@ export default function Footer() {
             <img
               src="/Vizart-studio.png"
               alt="Vizart Studio"
-              className="h-24 object-contain"
+              className="h-25 object-contain"
             />
           </div>
 
