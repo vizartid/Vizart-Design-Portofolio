@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
 
             {/* Single border line above navigation */}
-            <div className="border-t-2 border-gray-200 pt-3">
+            <div className="border-t-2 border-gray-200 pt-2">
               {/* Navigation Links - Home and Works */}
               <div className="flex justify-center space-x-8 text-gray-600">
                 <a
