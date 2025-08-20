@@ -6,22 +6,21 @@ export default function Footer() {
   const { data: content } = useContent();
 
   return (
-    <footer className="bg-bone-white py-8 sm:py-12 relative">
-      {/* Logo positioned at the top */}
-      <div className="flex justify-center mb-8">
-        <img
-          src="/Vizart-studio.png"
-          alt="Vizart Studio"
-          className="h-25 object-contain"
-        />
-      </div>
-
-      {/* Full width border line below logo */}
-      <div className="border-t-2 border-gray-200"></div>
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-6xl mx-auto">
         {/* Main footer content */}
-        <div className="text-center pt-8">
+        <div className="text-center">
+          {/* Logo positioned at the top */}
+          <div className="flex justify-center">
+            <img
+              src="/Vizart-studio.png"
+              alt="Vizart Studio"
+              className="h-24 object-contain"
+            />
+          </div>
+
+          {/* Single border line below logo and above description */}
+          <div className="border-t-2 border-gray-200 pt-8">
             {/* Description */}
             <p className="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-10">
               We commit fully to every project, delivering top-quality
@@ -46,27 +45,25 @@ export default function Footer() {
               or Email us at vizartstudio37@gmail.com
             </p>
 
+            {/* Single border line above navigation */}
+            <div className="border-t-2 border-gray-200 pt-2">
+              {/* Navigation Links - Home and Works */}
+              <div className="flex justify-center space-x-8 text-gray-600">
+                <a
+                  href="/"
+                  className="hover:text-charcoal transition-colors text-sm font-medium"
+                >
+                  Home
+                </a>
+                <a
+                  href="/works"
+                  className="hover:text-charcoal transition-colors text-sm font-medium"
+                >
+                  Works
+                </a>
+              </div>
             </div>
-      </div>
-
-      {/* Full width border line above navigation */}
-      <div className="border-t-2 border-gray-200"></div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navigation Links - Home and Works */}
-        <div className="flex justify-center space-x-8 text-gray-600 pt-2">
-          <a
-            href="/"
-            className="hover:text-charcoal transition-colors text-sm font-medium"
-          >
-            Home
-          </a>
-          <a
-            href="/works"
-            className="hover:text-charcoal transition-colors text-sm font-medium"
-          >
-            Works
-          </a>
+          </div>
         </div>
       </div>
     </footer>
