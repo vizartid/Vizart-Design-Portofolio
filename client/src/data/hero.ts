@@ -72,13 +72,14 @@ export const hero = {
       name: "Vercel",
       color: "black",
       icon: "Zap",
-      logoUrl: "https://skillicons.dev/icons?i=vercel",
+      logoUrl: "https://cdn.simpleicons.org/vercel/000000",
     },
     {
       name: "PostgreSQL",
       color: "blue-700",
       icon: "Database",
-      logoUrl: "https://skillicons.dev/icons?i=postgresql",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     },
   ],
 };
