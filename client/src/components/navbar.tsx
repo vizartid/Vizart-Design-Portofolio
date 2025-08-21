@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
 
 const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
@@ -87,7 +87,7 @@ export default function Navbar() {
           >
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              {content?.branding?.logoUrl ? (
+              {content?.branding?.logoUrl && (
                 <>
                   <img
                     src={content.branding.logoUrl}
@@ -106,25 +106,17 @@ export default function Navbar() {
                     {content?.branding?.logoText || "Vizart"}
                   </span>
                 </>
-              ) : (
-                <>
-                  <Leaf
-                    className={`text-electric-blue lucide-glow transition-all duration-700 ease-out ${
-                      isScrolled
-                        ? "w-5 h-5 lg:w-6 lg:h-6"
-                        : "w-6 h-6 lg:w-8 lg:h-8"
-                    }`}
-                  />
-                  <span
-                    className={`font-poppins font-semibold transition-all duration-700 ease-out ${
-                      isScrolled
-                        ? "text-base lg:text-lg"
-                        : "text-xl lg:desktop-text-xl"
-                    }`}
-                  >
-                    {content?.branding?.logoText || "Vizart"}
-                  </span>
-                </>
+              )}
+              {!content?.branding?.logoUrl && (
+                <span
+                  className={`font-poppins font-semibold transition-all duration-700 ease-out ${
+                    isScrolled
+                      ? "text-base lg:text-lg"
+                      : "text-xl lg:desktop-text-xl"
+                  }`}
+                >
+                  {content?.branding?.logoText || "Vizart"}
+                </span>
               )}
             </Link>
 
