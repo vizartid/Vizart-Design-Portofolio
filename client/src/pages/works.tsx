@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/footer";
 import { projects } from "@/data/projects";
+import { useContent } from "@/hooks/use-content";
 
 const profile_foto = "/profile-foto.jpg";
 
@@ -114,10 +115,11 @@ export default function Works() {
   const allProjects =
     worksData.projects.length > 0 ? worksData.projects : projects;
 
-  const filteredProjects =
-    activeCategory === "all"
+  const filteredProjects = useMemo(() => {
+    return activeCategory === "all"
       ? allProjects
       : allProjects.filter((project) => project.category === activeCategory);
+  }, [activeCategory, allProjects]);
 
   return (
     <div>
