@@ -93,20 +93,20 @@ export default function ServicesSection() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto mb-12">
+        <div className="flex flex-wrap gap-8 max-w-5xl mx-auto mb-12">
           {servicesData.services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] text-center"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-16px)] text-center min-h-[280px] flex flex-col justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-instrument mb-3 font-medium text-[35px] md:text-[40px]">
+              <h3 className="font-instrument mb-4 font-medium text-[35px] md:text-[40px]">
                 {service.id === "branding" ? "Logo & Branding" : "Website"}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-base">
                 {service.description}
               </p>
             </motion.div>
