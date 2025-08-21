@@ -1,5 +1,5 @@
+
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -66,44 +66,45 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonialsData.testimonials.map((testimonial, index) => (
             <motion.div
               key={`testimonial-${testimonial.id}-${index}`}
-              className="bg-white rounded-2xl p-6 shadow-lg w-full"
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={`star-${testimonial.id}-${i}`}
-                    className="w-4 h-4 text-yellow-400 fill-current"
-                  />
-                ))}
-              </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                "{testimonial.content}"
-              </p>
-              <div className="flex items-center">
+              {/* Header with profile */}
+              <div className="flex items-center mb-6">
                 <img
                   src={testimonial.avatarUrl}
                   alt={`${testimonial.name} headshot`}
-                  className="w-12 h-12 rounded-full object-cover mr-3"
+                  className="w-12 h-12 rounded-full object-cover mr-4"
                 />
-                <div>
-                  <p className="font-medium">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 text-lg">
                     {testimonial.name}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonial.role}
-                    ,{" "}
-                    {testimonial.company}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {testimonial.role} at {testimonial.company}
                   </p>
                 </div>
               </div>
+
+              {/* Content */}
+              <p className="text-gray-700 leading-relaxed mb-6">
+                {testimonial.content}
+              </p>
+
+              {/* Visit Website link */}
+              <a 
+                href="#" 
+                className="text-gray-400 text-sm hover:text-gray-600 transition-colors inline-block"
+              >
+                Visit Website
+              </a>
             </motion.div>
           ))}
         </div>
