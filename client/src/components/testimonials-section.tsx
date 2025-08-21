@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { testimonials } from "@/data/testimonials";
 import { useLocalStorage } from "@/hooks/use-local-storage";
@@ -67,9 +66,9 @@ export default function TestimonialsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonialsData.testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              key={`testimonial-${testimonial.id}-${index}`}
+              key={testimonial.id}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
