@@ -103,15 +103,8 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                {service.icon === "Palette" ? (
-                  <Palette className="w-8 h-8 text-electric-blue lucide-glow" />
-                ) : (
-                  <Code className="w-8 h-8 text-electric-blue lucide-glow" />
-                )}
-              </div>
-              <h3 className="font-instrument mb-3 font-medium text-[28px]">
-                {service.title}
+              <h3 className="font-instrument mb-3 font-medium text-[45px] md:text-[50px]">
+                {service.id === "branding" ? "Logo & Branding" : "Website"}
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
