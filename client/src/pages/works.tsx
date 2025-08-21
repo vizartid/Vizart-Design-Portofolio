@@ -9,9 +9,9 @@ const profile_foto = "/profile-foto.jpg";
 const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 const categories = [
-  { id: "all", label: "All Works" },
   { id: "uiux", label: "UI/UX" },
-  { id: "branding", label: "Branding" },
+  { id: "branding", label: "Logo & Branding" },
+  { id: "websites", label: "Website" },
   { id: "mobileapp", label: "Mobile App" },
   { id: "desktop", label: "Desktop Design" },
 ];
@@ -37,7 +37,7 @@ const DEFAULT_WORKS_DATA: WorksPageData = {
 };
 
 export default function Works() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("uiux");
   const [worksData, setWorksData] = useState<WorksPageData>(DEFAULT_WORKS_DATA);
 
   useEffect(() => {
@@ -116,9 +116,7 @@ export default function Works() {
     worksData.projects.length > 0 ? worksData.projects : projects;
 
   const filteredProjects = useMemo(() => {
-    return activeCategory === "all"
-      ? allProjects
-      : allProjects.filter((project) => project.category === activeCategory);
+    return allProjects.filter((project) => project.category === activeCategory);
   }, [activeCategory, allProjects]);
 
   return (
