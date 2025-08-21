@@ -94,9 +94,10 @@
     background-attachment: fixed !important;
   }
 
-  /* Override any background that might be set by components */
+  /* Ensure root doesn't override background */
   #root {
-    background: transparent !important;
+    background: none !important;
+    min-height: 100vh;
   }
 
   
