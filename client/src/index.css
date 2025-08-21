@@ -15,7 +15,7 @@
 }
 
 :root {
-  --background: hsl(0, 0%, 96%);
+  --background: transparent;
   --foreground: hsl(0, 0%, 0%);
   --muted: hsl(210, 11%, 96%);
   --muted-foreground: hsl(215, 13%, 45%);
@@ -46,6 +46,9 @@
   --desktop-text-scale: 2.4;
   --desktop-spacing-scale: 1.15;
   --desktop-card-scale: 1.25;
+
+  /* Background pattern variable using bank-note.svg */
+  --bg-pattern: url("/bank-note.svg");
 }
 
 .dark {
