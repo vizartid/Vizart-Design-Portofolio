@@ -90,13 +90,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 40px 40px;
-    background-position: 0 0;
+    background-size: cover;
+    background-position: center center;
     background-repeat: repeat;
-    background-image: 
-      linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
-    opacity: 0.8;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath fill=%22%23e5e5e5%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 70h0c124.292 1.952 248.583 3.904 365 5s224.96 1.337 327-1c102.04-2.337 197.58-7.25 296-10 98.42-2.75 199.72-3.335 313 3s238.537 19.59 378 18c139.463-1.59 293.132-18.026 349-23 55.868-4.974 13.934 1.513 12 8%22 fill=%22none%22 stroke=%22%23292929%22 stroke-width=%222%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 140h0c111.697 5.01 223.394 10.021 331 12 107.606 1.979 211.12.925 334-2s265.128-7.723 376-10c110.872-2.277 190.368-2.033 280 0s189.401 5.855 330 3c140.599-2.855 322.028-12.387 387-14 64.972-1.613 13.486 4.694 2 11%22 fill=%22none%22 stroke=%22%239e9e9e%22 stroke-width=%222%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 210h0c133.86 6.203 267.72 12.405 367 10%22 fill=%22none%22 stroke=%22%23d1d1d1%22 stroke-width=%221.5%22 stroke-linecap=%22round%22%2F%3E%3C%2Fsvg%3E");
+    opacity: 0.4;
     z-index: -1;
     pointer-events: none;
   }
