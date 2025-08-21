@@ -20,6 +20,26 @@
   [tabindex]:not([tabindex="-1"]) {
     cursor: none !important;
   }
+  
+  /* Ensure blend mode works for animated cursor */
+  #animated-cursor {
+    mix-blend-mode: difference !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Alternative blend modes you can try */
+  .cursor-blend-difference {
+    mix-blend-mode: difference !important;
+  }
+  
+  .cursor-blend-exclusion {
+    mix-blend-mode: exclusion !important;
+  }
+  
+  .cursor-blend-multiply {
+    mix-blend-mode: multiply !important;
+  }
 }
 
 /* Show default cursor on mobile devices */
