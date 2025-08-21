@@ -77,18 +77,10 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    /* Use pattern from :root - no duplicate definition */
-    background-color: #ffffff;
+    /* Minimal test for pattern visibility */
     background-image: var(--bg-pattern-wave);
     background-size: 100px 20px;
     background-repeat: repeat;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /* Performance optimizations */
-    contain: layout style paint;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
   }
 
   /* Mobile optimizations */
@@ -598,9 +590,8 @@
   }
 }
 
-/* Ensure html has clean background - pattern handled by body */
+/* Clean html - no background to avoid conflict */
   html {
-    background-color: #ffffff;
     /* Performance optimizations */
     contain: layout;
   }
