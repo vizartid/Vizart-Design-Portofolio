@@ -76,7 +76,7 @@ export default function HeroSection() {
           </button>
 
           <div className="flex items-center justify-center space-x-2 custom-accepting text-gray-600 mb-4">
-            <div className="w-2 h-2 lg:w-3 lg:h-3 bg-green-500 rounded-full green-glow"></div>
+            <div className="w-2 h-2 lg:w-3 lg:h-3 bg-electric-blue rounded-full blue-glow"></div>
             <p className="text-black text-sm">
               {content.hero.acceptingText}
             </p>
