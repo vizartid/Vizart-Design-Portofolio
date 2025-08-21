@@ -25,7 +25,7 @@ export default function FAQSection() {
 
   if (isLoading || !content) {
     return (
-      <section className="py-24 bg-bone-white">
+      <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="animate-pulse">
             <div className="h-12 bg-gray-200 rounded mb-6 max-w-2xl mx-auto"></div>
@@ -53,7 +53,7 @@ export default function FAQSection() {
   const isOpen = (id: number) => openItems.includes(id);
 
   return (
-    <section className="py-24 bg-bone-white">
+    <section className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

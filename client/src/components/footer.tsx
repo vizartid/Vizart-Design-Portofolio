@@ -6,7 +6,7 @@ export default function Footer() {
   const { data: content } = useContent();
 
   return (
-    <footer className="bg-bone-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
+    <footer className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
         {/* Main footer content */}
         <div className="text-center">
