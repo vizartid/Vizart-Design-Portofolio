@@ -220,31 +220,10 @@ export default function Works() {
           </AnimatePresence>
         </div>
       </section>
-      {/* Works Final CTA */}
-      <motion.section
-        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-instrument text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 leading-tight px-2">
-            {worksData.ctaTitle}
-          </h2>
-          <p className="text-gray-600 text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
-            {worksData.ctaDescription}
-          </p>
-          <button className="bg-charcoal text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-medium text-base sm:text-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center space-x-3 mx-auto">
-            <img
-              src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
-              alt="Profile"
-              className="w-6 sm:w-8 h-6 sm:h-8 rounded-full object-cover"
-            />
-            <span>{worksData.ctaButtonText}</span>
-          </button>
-        </div>
-      </motion.section>
+      
+      {/* Spacing before footer */}
+      <div className="py-12 sm:py-16 lg:py-20"></div>
+      
       <Footer />
     </div>
   );
