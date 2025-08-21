@@ -1,3 +1,4 @@
+
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 
@@ -13,24 +14,13 @@ interface AnimatedCursorWrapperProps {
   showSystemCursor?: boolean;
 }
 
-// Optimized clickable selectors - reduced to essential ones for better performance
-const CLICKABLE_SELECTORS = [
-  'button',
-  'a',
-  '[role="button"]',
-  '.clickable',
-  'input',
-  'textarea',
-  'select'
-];
-
 export default function AnimatedCursorWrapper({
   innerSize = 8,
   outerSize = 35,
-  color = '0, 0, 0',
+  color = '193, 11, 111',
   outerAlpha = 0.3,
   innerScale = 0.7,
-  outerScale = 2.5,
+  outerScale = 5,
   trailingSpeed = 8,
   hasBlendMode = true,
   showSystemCursor = false
@@ -46,7 +36,28 @@ export default function AnimatedCursorWrapper({
       trailingSpeed={trailingSpeed}
       hasBlendMode={hasBlendMode}
       showSystemCursor={showSystemCursor}
-      clickables={CLICKABLE_SELECTORS}
+      clickables={[
+        'a',
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        'input[type="password"]',
+        'input[type="tel"]',
+        'input[type="url"]',
+        'input[type="search"]',
+        'label[for]',
+        'select',
+        'textarea',
+        'button',
+        '.link',
+        '.btn',
+        '.cursor-pointer',
+        '[role="button"]',
+        '[tabindex]:not([tabindex="-1"])',
+        '.clickable'
+      ]}
     />
   );
 }
