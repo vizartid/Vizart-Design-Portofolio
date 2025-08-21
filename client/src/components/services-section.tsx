@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Palette, Code, Circle } from "lucide-react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { EditableText } from "./editable-text";
 
 const b48f5cac_0dd9_4e94_b48a_682921628c0b =
   "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
@@ -10,7 +8,6 @@ interface ServiceData {
   title: string;
   services: Array<{
     id: string;
-    icon: string;
     title: string;
     description: string;
   }>;
@@ -25,14 +22,12 @@ const DEFAULT_SERVICES_DATA: ServiceData = {
   services: [
     {
       id: "branding",
-      icon: "Palette",
       title: "Logo & Branding",
       description:
         "A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.",
     },
     {
       id: "websites",
-      icon: "Code",
       title: "Websites",
       description:
         "A complete website from strategy to design and development, crafted to drive results and delivered in 3 to 4 weeks.",
@@ -60,23 +55,7 @@ export default function ServicesSection() {
     }));
   };
 
-  const handleUpdateService = (id: string, field: string, value: any) => {
-    setServicesData((prev) => ({
-      ...prev,
-      services: prev.services.map((service) =>
-        service.id === id ? { ...service, [field]: value } : service,
-      ),
-    }));
-  };
-
-  const handleUpdateFeature = (index: number, text: string) => {
-    setServicesData((prev) => ({
-      ...prev,
-      features: prev.features.map((feature, i) =>
-        i === index ? { ...feature, text } : feature,
-      ),
-    }));
-  };
+  
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
