@@ -8,6 +8,7 @@ import Navbar from "@/components/navbar";
 import Home from "@/pages/home";
 import Works from "@/pages/works";
 import NotFound from "@/pages/not-found";
+import AnimatedCursorWrapper from "@/components/animated-cursor";
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -54,6 +55,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <AnimatedCursorWrapper
+          innerSize={8}
+          outerSize={35}
+          color='59, 130, 246'
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5}
+          trailingSpeed={8}
+          hasBlendMode={true}
+          showSystemCursor={false}
+        />
         <Toaster />
         <Router />
       </TooltipProvider>

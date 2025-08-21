@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animated Cursor Styles */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+  
+  .clickable,
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    cursor: none !important;
+  }
+}
+
+/* Show default cursor on mobile devices */
+@media (max-width: 767px) {
+  * {
+    cursor: auto !important;
+  }
+}
+
 /* CSS Variables - Consolidated in single :root block */
 :root {
   /* Glow Effects */
