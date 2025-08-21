@@ -1,27 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { EditableText } from "./editable-text";
-import { useContent, useUpdateContentSection } from "@/hooks/use-content";
+import { useContent } from "@/hooks/use-content";
 
 export default function HeroSectionsShowcase() {
   const { data: content, isLoading } = useContent();
-  const updateSection = useUpdateContentSection();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
-
-  const handleUpdateShowcase = (field: string, value: any) => {
-    if (!content) return;
-
-    const updatedShowcase = {
-      ...content.heroSectionsShowcase,
-      [field]: value,
-    };
-
-    updateSection.mutate({
-      section: "heroSectionsShowcase",
-      data: updatedShowcase,
-    });
-  };
 
   // Loading state
   if (isLoading || !content) {
@@ -57,18 +41,10 @@ export default function HeroSectionsShowcase() {
         viewport={{ once: true }}
       >
         <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light whitespace-pre-line">
-          <EditableText
-            value={heroSectionsShowcase.title}
-            onChange={(value) => handleUpdateShowcase("title", value)}
-            tag="span"
-          />
+          {heroSectionsShowcase.title}
         </h2>
         <p className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">
-          <EditableText
-            value={heroSectionsShowcase.subtitle}
-            onChange={(value) => handleUpdateShowcase("subtitle", value)}
-            tag="span"
-          />
+          {heroSectionsShowcase.subtitle}
         </p>
       </motion.div>
       {/* Showcase animation with boundaries - tidak sampai ujung desktop */}
