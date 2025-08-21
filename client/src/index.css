@@ -46,6 +46,9 @@
   --desktop-text-scale: 2.4;
   --desktop-spacing-scale: 1.15;
   --desktop-card-scale: 1.25;
+
+  /* Background pattern variable using bank-note.svg */
+  --bg-pattern: url("/bank-note.svg");
 }
 
 .dark {
@@ -77,7 +80,12 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    background-color: var(--bone-white);
+    background-color: #ffffff !important;
+    background-image: var(--bg-pattern) !important;
+    background-repeat: repeat !important;
+    background-attachment: fixed !important;
+    background-size: 80px 80px !important;
+    background-opacity: 0.1 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -588,3 +596,12 @@
     transition: all 0.5s ease-in-out;
   }
 }
+
+/* Ensure pattern persists for all elements */
+  html {
+    background-color: #ffffff !important;
+    background-image: var(--bg-pattern) !important;
+    background-repeat: repeat !important;
+    background-attachment: fixed !important;
+    background-size: 80px 80px !important;
+  }
