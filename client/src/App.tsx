@@ -61,7 +61,7 @@ function App() {
           color='0, 0, 0'
           outerAlpha={0.3}
           innerScale={0.7}
-          outerScale={5}
+          outerScale={2.5}
           trailingSpeed={8}
           hasBlendMode={true}
           showSystemCursor={false}
