@@ -78,12 +78,12 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    /* Use wave pattern from root - loaded early */
-    background-color: #ffffff;
-    background-image: var(--bg-pattern-wave);
-    background-size: 100px 20px;
-    background-repeat: repeat;
-    background-attachment: fixed;
+    /* Use wave pattern from root - loaded early with !important to prevent override */
+    background-color: #ffffff !important;
+    background-image: var(--bg-pattern-wave) !important;
+    background-size: 100px 20px !important;
+    background-repeat: repeat !important;
+    background-attachment: fixed !important;
   }
 
   /* Mobile optimizations */

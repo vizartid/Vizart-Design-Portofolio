@@ -25,7 +25,7 @@ function Router() {
   const [location] = useLocation();
   
   return (
-    <div className="min-h-screen bg-bone-white relative">
+    <div className="min-h-screen relative">
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
