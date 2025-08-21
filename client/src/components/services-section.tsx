@@ -103,7 +103,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-instrument mb-3 font-medium text-[45px] md:text-[50px]">
+              <h3 className="font-instrument mb-3 font-medium text-[35px] md:text-[40px]">
                 {service.id === "branding" ? "Logo & Branding" : "Website"}
               </h3>
               <p className="text-gray-600 leading-relaxed">
