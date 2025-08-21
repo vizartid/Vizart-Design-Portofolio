@@ -42,7 +42,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <p className="text-gray-600 text-sm mb-6">
-              or Email us at vizartstudio37@gmail.com
+              or Email us at vizart.id@gmail.com
             </p>
 
             {/* Single border line above navigation */}
