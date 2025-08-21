@@ -15,7 +15,7 @@
 }
 
 :root {
-  --background: hsl(0, 0%, 96%);
+  --background: transparent;
   --foreground: hsl(0, 0%, 0%);
   --muted: hsl(210, 11%, 96%);
   --muted-foreground: hsl(215, 13%, 45%);
@@ -37,7 +37,7 @@
   --radius: 0.5rem;
 
   /* Custom colors */
-  --bone-white: transparent;
+  --bone-white: #f4f4f4;
   --electric-blue: #3554f4;
   --charcoal: hsl(0, 0%, 0%);
   --light-gray: hsl(210, 11%, 96%);
@@ -132,7 +132,7 @@
   }
 
   .bg-bone-white {
-    background-color: transparent;
+    background-color: var(--bone-white);
   }
 
   .text-electric-blue {
