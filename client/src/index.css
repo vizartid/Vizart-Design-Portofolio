@@ -46,13 +46,6 @@
   --desktop-text-scale: 2.4;
   --desktop-spacing-scale: 1.15;
   --desktop-card-scale: 1.25;
-
-  /* Background pattern variable using bank-note.svg */
-  --bg-pattern: url("/bank-note.svg");
-  
-  /* Apply wave pattern to root */
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .dark {
@@ -77,6 +70,89 @@
   --ring: hsl(240, 5%, 84%);
 }
 
+/* CRITICAL: Force wave pattern on ALL elements */
+* {
+  position: relative;
+}
+
+/* Global wave pattern - highest priority */
+html::before,
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -999999 !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+  background-size: 100px 20px !important;
+  background-repeat: repeat !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+/* Remove default backgrounds that might cover the pattern */
+html {
+  background: transparent !important;
+}
+
+body {
+  background: transparent !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+/* Ensure all main containers are transparent */
+#root,
+#__next,
+.app,
+main,
+[class*="container"],
+[class*="wrapper"],
+[class*="layout"] {
+  background-color: transparent !important;
+}
+
+/* Fix for sections that might have white background */
+section,
+div[class*="section"],
+div[class*="hero"],
+div[class*="content"] {
+  background-color: transparent !important;
+}
+
+/* Override any inline styles or component backgrounds */
+[style*="background-color: white"],
+[style*="background-color: #fff"],
+[style*="background-color: rgb(255"],
+[style*="background: white"],
+[style*="background: #fff"],
+[style*="background: rgb(255"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Additional pattern layer for extra visibility */
+body::after {
+  content: "" !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -999998 !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+  background-size: 100px 20px !important;
+  background-repeat: repeat !important;
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+  mix-blend-mode: multiply !important;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -84,16 +160,16 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   /* Mobile optimizations */
   @media (max-width: 768px) {
+
     /* Improve touch targets */
-    button, a {
+    button,
+    a {
       min-height: 44px;
       min-width: 44px;
     }
@@ -143,84 +219,83 @@
     background-color: var(--light-gray);
   }
 
-  /* DESKTOP SCALING SYSTEM - Mudah disesuaikan */
-  /* Untuk mengubah ukuran teks di desktop, ganti angka di bawah ini: */
-  @media (min-width: 1024px) {
+  /* Force pattern visibility class */
+  .show-pattern {
+    position: relative !important;
+    background-color: transparent !important;
+  }
 
-    /* TEXT SIZES - Ganti angka ini untuk memperbesar/memperkecil teks */
+  .show-pattern::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+    background-size: 100px 20px !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+  }
+
+  /* DESKTOP SCALING SYSTEM */
+  @media (min-width: 1024px) {
     .lg\:desktop-text-base {
       font-size: 1.4rem !important;
     }
 
-    /* Basic text */
     .lg\:desktop-text-lg {
       font-size: 1.6rem !important;
     }
 
-    /* Large text */
     .lg\:desktop-text-xl {
       font-size: 1.8rem !important;
     }
 
-    /* Extra large */
     .lg\:desktop-text-2xl {
       font-size: 2.1rem !important;
     }
 
-    /* 2X large */
     .lg\:desktop-text-3xl {
       font-size: 2.6rem !important;
     }
 
-    /* 3X large */
     .lg\:desktop-text-4xl {
       font-size: 3.2rem !important;
     }
 
-    /* 4X large */
     .lg\:desktop-text-5xl {
       font-size: 4.2rem !important;
     }
 
-    /* 5X large */
     .lg\:desktop-text-6xl {
       font-size: 5.3rem !important;
     }
 
-    /* 6X large */
     .lg\:desktop-text-7xl {
       font-size: 6.3rem !important;
     }
 
-    /* 7X large */
     .lg\:desktop-text-8xl {
       font-size: 8.4rem !important;
     }
 
-    /* 8X large */
-
-
-    /* SPACING SIZES - Ganti angka ini untuk memperbesar/memperkecil spacing */
     .lg\:desktop-p-8 {
       padding: 2.3rem !important;
     }
 
-    /* Padding 8 */
     .lg\:desktop-p-12 {
       padding: 3.5rem !important;
     }
 
-    /* Padding 12 */
     .lg\:desktop-p-16 {
       padding: 4.6rem !important;
     }
 
-    /* Padding 16 */
     .lg\:desktop-p-20 {
       padding: 5.8rem !important;
     }
 
-    /* Padding 20 */
     .lg\:desktop-py-16 {
       padding-top: 4.6rem !important;
       padding-bottom: 4.6rem !important;
@@ -236,27 +311,21 @@
       padding-bottom: 6.9rem !important;
     }
 
-    /* CARD SIZES - Ganti angka ini untuk memperbesar/memperkecil card */
     .lg\:desktop-w-400 {
       width: 600px !important;
     }
 
-    /* Card width */
     .lg\:desktop-h-280 {
       height: 450px !important;
     }
 
-    /* Card height */
     .lg\:desktop-w-320 {
       width: 400px !important;
     }
 
-    /* Small card width */
     .lg\:desktop-h-240 {
       height: 300px !important;
     }
-
-    /* Small card height */
   }
 
   /* Wave texture background */
@@ -326,24 +395,21 @@
     }
   }
 
-  /* Project carousel seamless infinite scroll - diperlambat */
+  /* Project carousel seamless infinite scroll */
   .project-carousel-scroll {
     animation: true-seamless-scroll 50s linear infinite;
     width: max-content;
   }
 
-  /* Hero sections carousel infinite scroll - no pause on hover */
   .hero-sections-carousel-scroll {
     animation: scroll-left-fast 50s linear infinite;
   }
 
-  /* Hero sections carousel dengan true seamless infinite scroll - diperlambat */
   .hero-sections-carousel-seamless {
     animation: true-seamless-scroll 40s linear infinite;
     width: max-content;
   }
 
-  /* Safe hero sections carousel with proper frame handling */
   .hero-sections-carousel-safe {
     animation: safe-seamless-scroll 40s linear infinite;
     width: max-content;
@@ -352,7 +418,6 @@
     perspective: 1000px;
   }
 
-  /* Paused carousel state */
   .hero-sections-carousel-paused {
     animation-play-state: paused;
     width: max-content;
@@ -392,7 +457,6 @@
     }
   }
 
-  /* Smooth pause on hover for individual items */
   .scroll-item {
     transition: transform 0.3s ease;
   }
@@ -401,7 +465,6 @@
     transform: scale(1.05) translateY(-4px);
   }
 
-  /* Project card hover effects */
   .project-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: perspective(1000px) rotateY(0deg);
@@ -420,12 +483,10 @@
     transform: scale(1.1);
   }
 
-  /* Enhanced shadow for showcase items */
   .shadow-3xl {
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
   }
 
-  /* Line clamp utility */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -433,7 +494,7 @@
     overflow: hidden;
   }
 
-  /* Glow Effects for Icons and Elements */
+  /* Glow Effects */
   .lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) var(--glow-color-primary));
     transition: filter 0.3s ease;
@@ -443,7 +504,6 @@
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) var(--glow-color-primary));
   }
 
-  /* Color-specific glow effects */
   .text-blue-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #3b82f6);
   }
@@ -492,14 +552,6 @@
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #eab308);
   }
 
-  .text-purple-500.lucide-glow {
-    filter: drop-shadow(0 0 var(--glow-intensity) #a855f7);
-  }
-
-  .text-purple-500.lucide-glow:hover {
-    filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #a855f7);
-  }
-
   .text-indigo-500.lucide-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #6366f1);
   }
@@ -508,7 +560,6 @@
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
   }
 
-  /* Icon container glow */
   .icon-glow {
     box-shadow:
       0 0 var(--glow-spread) rgba(59, 130, 246, 0.3),
@@ -522,13 +573,11 @@
       inset 0 0 calc(var(--glow-spread) * 1.5) rgba(59, 130, 246, 0.2);
   }
 
-  /* Blue dots/indicators glow */
   .blue-dot-glow {
     box-shadow: 0 0 var(--glow-intensity) var(--glow-color-primary);
     filter: drop-shadow(0 0 calc(var(--glow-intensity) / 2) var(--glow-color-primary));
   }
 
-  /* Step number glow for process section */
   .step-number-glow {
     box-shadow:
       0 0 var(--glow-spread) rgba(59, 130, 246, 0.6),
@@ -536,7 +585,6 @@
     filter: drop-shadow(0 0 var(--glow-intensity) rgba(59, 130, 246, 0.8));
   }
 
-  /* Color-specific glow effects for process cards */
   .blue-glow {
     filter: drop-shadow(0 0 var(--glow-intensity) #3b82f6);
     transition: filter 0.3s ease;
@@ -591,14 +639,7 @@
     filter: drop-shadow(0 0 calc(var(--glow-intensity) * 1.5) #6366f1);
   }
 
-  /* Animation for smooth transitions */
   .section-transition {
     transition: all 0.5s ease-in-out;
   }
 }
-
-/* Ensure pattern persists for all elements */
-  html {
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
-  }
