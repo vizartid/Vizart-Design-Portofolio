@@ -22,6 +22,11 @@ const getProjectImage = (projectId: number): string => {
     19: "/backgound-wave.jpg", // Design Tool Interface
     20: "/backgound-wave.jpg", // CRM Desktop App
     21: "/backgound-wave.jpg", // Code Editor Interface
+    22: "/backgound-wave.jpg", // Restaurant Landing Page
+    23: "/backgound-wave.jpg", // Portfolio Website
+    24: "/backgound-wave.jpg", // Real Estate Platform
+    25: "/backgound-wave.jpg", // News & Blog Website
+    26: "/backgound-wave.jpg", // Fitness Studio Website
   };
 
   return projectImages[projectId] || "/backgound-wave.jpg";
@@ -240,5 +245,76 @@ export const projects = [
     imageUrl: getProjectImage(21),
     projectUrl: "https://example.com/code-editor",
     featured: false,
+  },
+  // Website Projects
+  {
+    id: 7,
+    title: "Corporate Website",
+    description:
+      "Professional corporate website with modern design, content management system, and SEO optimization.",
+    category: "websites",
+    imageUrl: getProjectImage(7),
+    projectUrl: "https://example.com/corporate-site",
+    featured: true,
+  },
+  {
+    id: 8,
+    title: "E-learning Platform",
+    description:
+      "Comprehensive online learning platform with video streaming, progress tracking, and interactive quizzes.",
+    category: "websites",
+    imageUrl: getProjectImage(8),
+    projectUrl: "https://example.com/elearning",
+    featured: false,
+  },
+  {
+    id: 22,
+    title: "Restaurant Landing Page",
+    description:
+      "Modern restaurant website with online menu, reservation system, and responsive design for all devices.",
+    category: "websites",
+    imageUrl: getProjectImage(22),
+    projectUrl: "https://example.com/restaurant",
+    featured: true,
+  },
+  {
+    id: 23,
+    title: "Portfolio Website",
+    description:
+      "Creative portfolio website for artists and designers with gallery showcase and contact integration.",
+    category: "websites",
+    imageUrl: getProjectImage(23),
+    projectUrl: "https://example.com/portfolio",
+    featured: false,
+  },
+  {
+    id: 24,
+    title: "Real Estate Platform",
+    description:
+      "Comprehensive real estate website with property listings, search filters, and virtual tour integration.",
+    category: "websites",
+    imageUrl: getProjectImage(24),
+    projectUrl: "https://example.com/realestate",
+    featured: true,
+  },
+  {
+    id: 25,
+    title: "News & Blog Website",
+    description:
+      "Dynamic news website with article management, category filtering, and social media integration.",
+    category: "websites",
+    imageUrl: getProjectImage(25),
+    projectUrl: "https://example.com/news-blog",
+    featured: false,
+  },
+  {
+    id: 26,
+    title: "Fitness Studio Website",
+    description:
+      "Modern fitness studio website with class schedules, trainer profiles, and online booking system.",
+    category: "websites",
+    imageUrl: getProjectImage(26),
+    projectUrl: "https://example.com/fitness",
+    featured: true,
   },
 ];
