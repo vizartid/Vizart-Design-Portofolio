@@ -94,17 +94,9 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Content */}
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed">
                 {testimonial.content}
               </p>
-
-              {/* Visit Website link */}
-              <a 
-                href="#" 
-                className="text-gray-400 text-sm hover:text-gray-600 transition-colors inline-block"
-              >
-                Visit Website
-              </a>
             </motion.div>
           ))}
         </div>
