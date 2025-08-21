@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Palette, Code } from "lucide-react";
+import { Palette, Code, Circle } from "lucide-react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { EditableText } from "./editable-text";
 
