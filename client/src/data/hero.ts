@@ -1,22 +1,4 @@
-
-interface Tool {
-  name: string;
-  color: string;
-  logoUrl: string;
-}
-
-interface HeroData {
-  title: string;
-  titleHighlight: string;
-  subtitle: string;
-  stats: string;
-  ctaText: string;
-  acceptingText: string;
-  toolsText: string;
-  tools: Tool[];
-}
-
-export const hero: HeroData = {
+export const hero = {
   title: "Delivering Standout",
   titleHighlight: "Digital Creations",
   subtitle: "Through Seamless Partnership",
@@ -28,32 +10,41 @@ export const hero: HeroData = {
     {
       name: "Figma",
       color: "purple-500",
-      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      icon: "Frame",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     },
+
     {
-      name: "Adobe Illustrator", 
+      name: "Adobe Illustrator",
       color: "yellow-500",
+      icon: "PenTool",
       logoUrl: "https://skillicons.dev/icons?i=ai",
     },
     {
       name: "React",
       color: "blue-400",
+      icon: "Atom",
       logoUrl: "https://cdn.simpleicons.org/react/61DAFB",
     },
     {
       name: "Node.js",
-      color: "green-500", 
+      color: "green-500",
+      icon: "Server",
       logoUrl: "https://cdn.simpleicons.org/nodedotjs/339933",
     },
     {
       name: "TypeScript",
       color: "blue-600",
+      icon: "FileText",
       logoUrl: "https://cdn.simpleicons.org/typescript/3178C6",
     },
     {
       name: "PostgreSQL",
       color: "blue-700",
-      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      icon: "Database",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     },
   ],
 };
