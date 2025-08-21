@@ -191,7 +191,7 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={step.id}
-                className={`${colorTheme.bg} rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 w-full relative`}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
