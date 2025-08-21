@@ -3,7 +3,8 @@ import { Palette, Code, Circle } from "lucide-react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { EditableText } from "./editable-text";
 
-const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+const b48f5cac_0dd9_4e94_b48a_682921628c0b =
+  "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 interface ServiceData {
   title: string;
@@ -133,15 +134,13 @@ export default function ServicesSection() {
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
             {servicesData.features.map((feature, index) => (
               <div key={index} className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-                <span className="text-black">
-                  {feature.text}
-                </span>
+                <div className="w-2 h-2 bg-electric-blue rounded-full drop-shadow-[0_0_6px_rgba(59,130,246,0.6)]" />
+                <span className="custom-accepting">{feature.text}</span>
               </div>
             ))}
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-              <span className="text-black">Post-Project Support</span>
+              <div className="w-2 h-2 bg-electric-blue rounded-full drop-shadow-[0_0_6px_rgba(59,130,246,0.6)]" />
+              <span className="custom-accepting">Post-Project Support</span>
             </div>
           </div>
 
