@@ -139,7 +139,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="responsive-h2 mobile:mobile-section-header font-instrument font-light mb-4 text-charcoal lg:text-[70px]">
+          <h2 className="responsive-h2 font-instrument font-light mb-4 text-charcoal lg:desktop-text-6xl">
             {content.process.title}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto responsive-body lg:desktop-text-xl">

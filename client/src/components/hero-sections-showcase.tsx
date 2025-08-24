@@ -45,24 +45,14 @@ export default function HeroSectionsShowcase() {
         </h2>
         <div className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
-            {heroSectionsShowcase.subtitle.split("\n").map((point, index) => (
+            {heroSectionsShowcase.subtitle.split('\n').map((point, index) => (
               <div key={index} className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-electric-blue rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-3 h-3 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
+                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-sm sm:text-base font-normal">
-                  {point.replace("• ", "")}
-                </span>
+                <span className="text-sm sm:text-base font-normal">{point.replace('• ', '')}</span>
               </div>
             ))}
           </div>
@@ -70,9 +60,9 @@ export default function HeroSectionsShowcase() {
       </motion.div>
       {/* Showcase animation with boundaries - tidak sampai ujung desktop */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-md">
-          <div
-            className={`flex space-x-6 ${isCarouselPaused ? "hero-sections-carousel-paused" : "hero-sections-carousel-safe"}`}
+        <div className="relative overflow-hidden rounded-2xl">
+          <div 
+            className={`flex space-x-6 ${isCarouselPaused ? 'hero-sections-carousel-paused' : 'hero-sections-carousel-safe'}`}
           >
             {/* Quintuple images untuk true seamless infinite scroll */}
             {[
@@ -95,13 +85,9 @@ export default function HeroSectionsShowcase() {
                 }}
                 onClick={() => window.open("#case-study", "_blank")}
               >
-                <div className="relative w-[350px] h-[250px] lg:desktop-w-400 lg:desktop-h-280 rounded-md overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
+                <div className="relative w-[350px] h-[250px] lg:desktop-w-400 lg:desktop-h-280 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-105">
                   <img
-                    src={
-                      hoveredIndex === index && image.hoverUrl
-                        ? image.hoverUrl
-                        : image.url
-                    }
+                    src={hoveredIndex === index && image.hoverUrl ? image.hoverUrl : image.url}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                   />

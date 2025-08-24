@@ -90,13 +90,7 @@ export default function HeroSection() {
       </div>
       {/* Project Carousel Full Width - sampai ujung desktop */}
       <motion.div
-        className="mb-16 w-full relative overflow-hidden"
-        style={{ 
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
-          marginRight: 'calc(-50vw + 50%)',
-          maxWidth: '100vw'
-        }}
+        className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -130,6 +124,36 @@ export default function HeroSection() {
                 { node: <SiPython className="text-blue-400" />, title: "Python", href: "https://python.org" },
                 { node: <SiDocker className="text-blue-600" />, title: "Docker", href: "https://docker.com" },
                 { node: <SiWebflow className="text-blue-500" />, title: "Webflow", href: "https://webflow.com" },
+                ...content.hero.tools.map((tool, index) => {
+                  const IconComponent =
+                    iconMap[(tool as any).icon as keyof typeof iconMap];
+                  const hasCustomLogo =
+                    (tool as any).logoUrl && (tool as any).logoUrl.trim() !== "";
+
+                  if (hasCustomLogo) {
+                    return {
+                      src: (tool as any).logoUrl,
+                      alt: tool.name,
+                      title: tool.name,
+                    };
+                  } else if (IconComponent) {
+                    return {
+                      node: <IconComponent className={`text-${tool.color}`} />,
+                      title: tool.name,
+                    };
+                  } else {
+                    return {
+                      node: (
+                        <div
+                          className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}
+                        >
+                          {tool.name.charAt(0)}
+                        </div>
+                      ),
+                      title: tool.name,
+                    };
+                  }
+                })
               ]}
               speed={60}
               direction="left"
