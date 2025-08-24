@@ -129,6 +129,12 @@
     background-size: 100px 20px !important;
     background-repeat: repeat !important;
     background-attachment: fixed !important;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden !important;
+  }
+
+  html {
+    overflow-x: hidden !important;
   }
 
   /* Mobile optimizations */
@@ -147,8 +153,19 @@
     }
 
     /* Prevent horizontal scrolling */
-    body {
-      overflow-x: hidden;
+    body, html {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+    }
+
+    /* Ensure all containers don't exceed viewport */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Prevent elements from extending beyond viewport */
+    .w-screen {
+      max-width: 100vw !important;
     }
   }
 }
