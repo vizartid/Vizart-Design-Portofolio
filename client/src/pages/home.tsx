@@ -15,16 +15,14 @@ const backgound_wave = "/backgound-wave.jpg";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen">
       <HeroSection />
-      <WinningEdgeSection />
       <HeroSectionsShowcase />
+      <WinningEdgeSection />
       <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />
       <FAQSection />
-      {/* Spacer before footer */}
-      <div className="py-12"></div>
       <Footer />
     </div>
   );

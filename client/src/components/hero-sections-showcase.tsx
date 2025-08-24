@@ -40,16 +40,16 @@ export default function HeroSectionsShowcase() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light whitespace-pre-line">
+        <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-6 leading-tight font-light whitespace-pre-line">
           {heroSectionsShowcase.title}
         </h2>
-        <div className="text-charcoal/70 text-lg lg:desktop-text-xl max-w-3xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+        <div className="text-gray-600 text-lg max-w-4xl mx-auto mb-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
             {heroSectionsShowcase.subtitle.split("\n").map((point, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <div className="w-5 h-5 bg-electric-blue rounded-full flex items-center justify-center flex-shrink-0">
+              <div key={index} className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-3 h-3 text-white"
+                    className="w-4 h-4 text-white"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -60,7 +60,7 @@ export default function HeroSectionsShowcase() {
                     />
                   </svg>
                 </div>
-                <span className="text-sm sm:text-base font-normal">
+                <span className="text-base font-medium">
                   {point.replace("• ", "")}
                 </span>
               </div>
