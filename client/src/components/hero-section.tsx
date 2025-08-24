@@ -5,6 +5,9 @@ import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 
 const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
+import LogoLoop from './LogoLoop';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiFramer } from 'react-icons/si';
+
 const iconMap = {
   Figma,
   Frame,
@@ -95,7 +98,7 @@ export default function HeroSection() {
         <ProjectCarousel />
       </motion.div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Tools Used Section */}
+        {/* Tools Used Section with LogoLoop */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 40 }}
@@ -105,41 +108,56 @@ export default function HeroSection() {
           <p className="text-gray-600 mb-6 text-[18px] font-normal">
             {content.hero.toolsText}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {content.hero.tools.map((tool, index) => {
-              const IconComponent =
-                iconMap[(tool as any).icon as keyof typeof iconMap];
-              const hasCustomLogo =
-                (tool as any).logoUrl && (tool as any).logoUrl.trim() !== "";
+          <div className="mt-8">
+            <LogoLoop
+              logos={[
+                { node: <SiReact className="text-blue-500" />, title: "React", href: "https://react.dev" },
+                { node: <SiNextdotjs className="text-black" />, title: "Next.js", href: "https://nextjs.org" },
+                { node: <SiTypescript className="text-blue-600" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+                { node: <SiTailwindcss className="text-cyan-500" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+                { node: <SiFigma className="text-purple-500" />, title: "Figma", href: "https://figma.com" },
+                { node: <SiFramer className="text-pink-500" />, title: "Framer", href: "https://framer.com" },
+                ...content.hero.tools.map((tool, index) => {
+                  const IconComponent =
+                    iconMap[(tool as any).icon as keyof typeof iconMap];
+                  const hasCustomLogo =
+                    (tool as any).logoUrl && (tool as any).logoUrl.trim() !== "";
 
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 transition-all duration-300 cursor-pointer hover:scale-105"
-                >
-                  <div className="flex items-center justify-center">
-                    {hasCustomLogo ? (
-                      <img
-                        src={(tool as any).logoUrl}
-                        alt={tool.name}
-                        className="w-8 h-8 object-contain"
-                      />
-                    ) : IconComponent ? (
-                      <IconComponent className={`w-8 h-8 text-${tool.color}`} />
-                    ) : (
-                      <div
-                        className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}
-                      >
-                        {tool.name.charAt(0)}
-                      </div>
-                    )}
-                  </div>
-                  <span className="font-medium text-gray-700">
-                    {tool.name}
-                  </span>
-                </div>
-              );
-            })}
+                  if (hasCustomLogo) {
+                    return {
+                      src: (tool as any).logoUrl,
+                      alt: tool.name,
+                      title: tool.name,
+                    };
+                  } else if (IconComponent) {
+                    return {
+                      node: <IconComponent className={`text-${tool.color}`} />,
+                      title: tool.name,
+                    };
+                  } else {
+                    return {
+                      node: (
+                        <div
+                          className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}
+                        >
+                          {tool.name.charAt(0)}
+                        </div>
+                      ),
+                      title: tool.name,
+                    };
+                  }
+                })
+              ]}
+              speed={60}
+              direction="left"
+              logoHeight={48}
+              gap={40}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#ffffff"
+              ariaLabel="Technology partners and tools"
+            />
           </div>
         </motion.div>
       </div>
