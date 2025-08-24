@@ -60,16 +60,19 @@ export default function WinningEdgeSection() {
 
   if (isLoading) {
     return (
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="animate-pulse">
-            <div className="h-16 bg-gray-200 rounded mb-8 mx-auto max-w-md"></div>
-            <div className="h-6 bg-gray-200 rounded mb-12 mx-auto max-w-lg"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-64 bg-gray-200 rounded-xl"></div>
-              ))}
-            </div>
+          <div className="text-center mb-16">
+            <div className="h-20 bg-gray-200 animate-pulse rounded-lg mb-4"></div>
+            <div className="h-6 bg-gray-200 animate-pulse rounded-lg max-w-2xl mx-auto"></div>
+          </div>
+          <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
+            {[...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="bg-gray-200 animate-pulse rounded-2xl h-48 w-full sm:w-[calc(50%-12px)]"
+              ></div>
+            ))}
           </div>
         </div>
       </section>
@@ -78,7 +81,7 @@ export default function WinningEdgeSection() {
 
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -87,15 +90,15 @@ export default function WinningEdgeSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-instrument text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight font-light text-gray-900">
+          <h2 className="font-instrument custom-about-title mb-4 font-medium text-[70px]">
             {title}
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 custom-about-text max-w-2xl mx-auto text-[18px]">
             {subtitle}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-wrap gap-6 max-w-4xl mx-auto">
           {features.map((feature: Feature, index: number) => {
             const IconComponent = (iconMap as any)[feature.icon] || Search;
             const colorClass =
@@ -104,23 +107,25 @@ export default function WinningEdgeSection() {
             return (
               <motion.div
                 key={feature.title + index} // Using index to ensure uniqueness if titles are duplicated
-                className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)]"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <IconComponent
-                    className={`${colorClass} w-10 h-10 lucide-glow`}
-                  />
+                <div className="text-center">
+                  <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <IconComponent
+                      className={`${colorClass} w-8 h-8 lucide-glow`}
+                    />
+                  </div>
+                  <h3 className="font-instrument custom-project-title mb-3 text-[28px] font-medium">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 custom-project-desc leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-xl mb-4 text-gray-900">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-base">
-                  {feature.description}
-                </p>
               </motion.div>
             );
           })}

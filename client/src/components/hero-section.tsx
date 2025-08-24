@@ -55,19 +55,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument mb-6 font-light text-4xl mobile:text-4xl tablet:text-5xl lg:text-[80px] mobile:leading-tight tablet:leading-tight lg:leading-none">
-            {content.hero.title}{" "}
-            <span className="text-blue-500">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light text-4xl mobile:text-4xl tablet:text-5xl lg:text-[80px] mobile:leading-tight tablet:leading-tight lg:leading-none">
+            {content.hero.title.replace("Comprehensive Digital Solutions", "Comprehensive Digital\nSolutions")}{" "}
+            <span className="text-electric-blue">
               {content.hero.titleHighlight}
             </span>
             <br />
             {content.hero.subtitle}
           </h1>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-base mobile:text-base tablet:text-lg lg:text-[18px] font-medium mobile:leading-normal">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-base mobile:text-base tablet:text-lg lg:text-[18px] font-medium mobile:leading-normal">
             {content.hero.stats}
           </p>
 
-          <button className="bg-black text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-900 transition-colors duration-200 mb-6 flex items-center justify-center space-x-3 mx-auto">
+          <button className="bg-black text-white px-8 py-3 rounded-xl font-medium custom-button hover:bg-gray-900 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
               src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
               alt="Profile"
@@ -78,9 +78,9 @@ export default function HeroSection() {
             </span>
           </button>
 
-          <div className="flex items-center justify-center space-x-2 text-gray-600 mb-8">
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <p className="text-gray-700 text-sm font-medium">
+          <div className="flex items-center justify-center space-x-2 custom-accepting text-gray-600 mb-4">
+            <div className="w-2 h-2 lg:w-3 lg:h-3 bg-electric-blue rounded-full blue-glow"></div>
+            <p className="text-black text-sm">
               {content.hero.acceptingText}
             </p>
           </div>
