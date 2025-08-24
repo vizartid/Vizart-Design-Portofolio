@@ -1,28 +1,4 @@
 
-const express = require('express');
-const serverless = require('serverless-http');
-const path = require('path');
-
-const app = express();
-
-// Basic middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// CORS middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
-
-// Complete content data
 const content = {
   branding: {
     logoUrl: "/logo-vizart.png",
@@ -30,7 +6,7 @@ const content = {
   },
   hero: {
     title: "Delivering Standout",
-    titleHighlight: "Digital Creations",
+    titleHighlight: "Digital Creations", 
     subtitle: "Through Seamless Partnership",
     stats: "Trusted by 50+ clients worldwide with 200+ successful projects delivered",
     ctaText: "Let's Work Together",
@@ -49,7 +25,7 @@ const content = {
         color: "blue-500"
       },
       {
-        title: "User-Centric Design",
+        title: "User-Centric Design", 
         description: "I create designs that are not only visually appealing but also user-friendly and brand-strengthening. This ensures your digital presence is memorable and resonates with your audience.",
         icon: "Target",
         color: "orange-500"
@@ -63,7 +39,7 @@ const content = {
       {
         title: "Fast & Collaborative Workflow",
         description: "Using agile methods, I involve you every step of the way. Open communication ensures projects are completed on time with top-notch quality.",
-        icon: "Rocket",
+        icon: "Rocket", 
         color: "purple-500"
       }
     ]
@@ -71,51 +47,31 @@ const content = {
   heroSectionsShowcase: {
     title: "Hero Sections\nShowcase",
     subtitle: "• Conversion-focused design\n• Mobile-first approach\n• A/B tested layouts",
+    description: "Every section we design is meticulously crafted to capture your brand essence while maximizing conversion rates.",
     images: [
       {
-        url: "/image_1755575578878.png",
-        hoverUrl: "/image_1755575628697.png",
-        alt: "Hero Section 1",
-        overlay: "E-Commerce"
+        url: "/backgound-wave.jpg",
+        hoverUrl: "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+        alt: "E-commerce hero section design with conversion focus",
+        overlay: "E-commerce Focus"
       },
       {
-        url: "/Screenshot 2025-08-19 105331_1755575639122.png",
-        hoverUrl: "/image_1755570735915.png",
-        alt: "Hero Section 2",
-        overlay: "SaaS Platform"
+        url: "/backgound-wave.jpg", 
+        hoverUrl: "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+        alt: "SaaS landing page hero with product showcase",
+        overlay: "SaaS Landing"
       },
       {
-        url: "/image_1755570924945.png",
-        hoverUrl: "/image_1755571308106.png",
-        alt: "Hero Section 3",
-        overlay: "Analytics"
+        url: "/backgound-wave.jpg",
+        hoverUrl: "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg", 
+        alt: "Creative portfolio hero section",
+        overlay: "Portfolio Design"
       },
       {
-        url: "/image_1755572514238.png",
-        hoverUrl: "/image_1755574672785.png",
-        alt: "Hero Section 4",
-        overlay: "Portfolio"
-      }
-    ]
-  },
-  services: {
-    title: "Our Services",
-    subtitle: "Comprehensive digital solutions tailored to your business needs",
-    servicesList: [
-      {
-        title: "UI/UX Design",
-        description: "User-centered design that converts visitors into customers",
-        features: ["User Research", "Wireframing", "Prototyping", "User Testing"]
-      },
-      {
-        title: "Web Development",
-        description: "Modern, responsive websites built with cutting-edge technology",
-        features: ["React/Next.js", "TypeScript", "Responsive Design", "Performance Optimization"]
-      },
-      {
-        title: "Brand Identity",
-        description: "Complete brand identity systems that make you stand out",
-        features: ["Logo Design", "Color Palette", "Typography", "Brand Guidelines"]
+        url: "/backgound-wave.jpg",
+        hoverUrl: "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg",
+        alt: "Professional agency hero section", 
+        overlay: "Agency Landing"
       }
     ]
   },
@@ -124,89 +80,99 @@ const content = {
     subtitle: "A streamlined process that ensures quality results every time",
     steps: [
       {
+        id: "discovery",
+        icon: "Lightbulb", 
         title: "Discovery & Planning",
-        description: "We start by understanding your business goals and target audience to create a comprehensive project roadmap.",
-        duration: "1-2 weeks"
+        description: "We start by understanding your business goals and target audience to create a comprehensive project roadmap."
       },
       {
-        title: "Design & Prototyping",
-        description: "Creating wireframes and high-fidelity designs that align with your brand and user expectations.",
-        duration: "2-3 weeks"
+        id: "design",
+        icon: "Palette",
+        title: "Design & Prototyping", 
+        description: "Creating wireframes and high-fidelity designs that align with your brand and user expectations."
       },
       {
+        id: "development",
+        icon: "Code",
         title: "Development & Testing",
-        description: "Building your solution with clean, scalable code and thorough testing across all devices.",
-        duration: "3-4 weeks"
+        description: "Building your solution with clean, scalable code and thorough testing across all devices."
       },
       {
+        id: "launch",
+        icon: "Rocket",
         title: "Launch & Support",
-        description: "Deploying your project and providing ongoing support to ensure continued success.",
-        duration: "1 week + ongoing"
+        description: "Deploying your project and providing ongoing support to ensure continued success."
       }
     ]
   },
-  testimonialsData: {
-    title: "What Our Clients Say",
-    subtitle: "Don't just take our word for it - hear from some of our satisfied clients",
-    testimonials: [
-      {
-        name: "Sarah Johnson",
-        role: "CEO, TechStart",
-        content: "Working with this team was incredible. They delivered exactly what we needed, on time and within budget.",
-        rating: 5,
-        avatar: "/Profile-foto.png"
-      },
-      {
-        name: "Michael Chen",
-        role: "Founder, GrowthCo",
-        content: "The attention to detail and quality of work exceeded our expectations. Highly recommended!",
-        rating: 5,
-        avatar: "/Profile-foto.png"
-      }
-    ]
+  services: {
+    title: "What I Do Best",
+    services: [],
+    bottomText: "Ready to bring your vision to life?",
+    features: []
+  },
+  testimonials: {
+    title: "Client Success Stories",
+    subtitle: "What my clients say about working with me"
   },
   faq: {
     title: "Frequently Asked Questions",
-    subtitle: "Everything you need to know about working with us",
-    questions: [
-      {
-        question: "How long does a typical project take?",
-        answer: "Project timelines vary depending on scope and complexity. Most websites take 4-8 weeks from start to finish, while smaller projects may take 2-4 weeks."
-      },
-      {
-        question: "Do you provide ongoing support?",
-        answer: "Yes, we offer ongoing support and maintenance packages to keep your website updated, secure, and performing optimally."
-      },
-      {
-        question: "What's your design process?",
-        answer: "We start with discovery and research, create wireframes and prototypes, design high-fidelity mockups, and then develop the final solution with your feedback at every stage."
-      }
-    ]
+    questions: []
+  },
+  finalCta: {
+    title: "Ready to Get Started?",
+    description: "Let's discuss your project and bring your vision to life."
+  },
+  works: {
+    title: "My Work",
+    subtitle: "Selected projects showcasing my expertise"
+  },
+  projects: [],
+  footer: {
+    logoUrl: "/logo-vizart.png",
+    logoText: "Vizart"
   }
 };
 
-// API Routes
-app.get('/api/content', (req, res) => {
-  res.json(content);
-});
+exports.handler = async (event, context) => {
+  // Set CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Content-Type': 'application/json',
+  };
 
-app.get('/api/content/:section', (req, res) => {
-  const section = req.params.section;
-  if (content[section]) {
-    res.json(content[section]);
-  } else {
-    res.status(404).json({ error: 'Section not found' });
+  // Handle preflight requests
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: '',
+    };
   }
-});
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+  try {
+    const path = event.path.replace('/.netlify/functions/api', '') || '/';
 
-// Catch all for API routes
-app.use('/api/*', (req, res) => {
-  res.status(404).json({ error: 'API endpoint not found' });
-});
+    if (path === '/content' || path === '/') {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify(content),
+      };
+    }
 
-module.exports.handler = serverless(app);
+    return {
+      statusCode: 404,
+      headers,
+      body: JSON.stringify({ error: 'Not found' }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({ error: 'Internal server error', details: error.message }),
+    };
+  }
+};
