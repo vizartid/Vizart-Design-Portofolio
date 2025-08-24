@@ -301,6 +301,19 @@
     .mobile\:leading-normal {
       line-height: 1.5 !important;
     }
+
+    /* Section headers specific mobile sizing */
+    .mobile-section-header {
+      font-size: 2rem !important; /* 32px - untuk section headers utama */
+      line-height: 2.25rem !important;
+      font-weight: 600 !important;
+    }
+    
+    .mobile-winning-edge-header {
+      font-size: 1.75rem !important; /* 28px - untuk "My Digital Edge" */
+      line-height: 2rem !important;
+      font-weight: 600 !important;
+    }
   }
 
   /* TABLET TYPOGRAPHY ADJUSTMENTS */
