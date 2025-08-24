@@ -130,36 +130,6 @@ export default function HeroSection() {
                 { node: <SiPython className="text-blue-400" />, title: "Python", href: "https://python.org" },
                 { node: <SiDocker className="text-blue-600" />, title: "Docker", href: "https://docker.com" },
                 { node: <SiWebflow className="text-blue-500" />, title: "Webflow", href: "https://webflow.com" },
-                ...content.hero.tools.map((tool, index) => {
-                  const IconComponent =
-                    iconMap[(tool as any).icon as keyof typeof iconMap];
-                  const hasCustomLogo =
-                    (tool as any).logoUrl && (tool as any).logoUrl.trim() !== "";
-
-                  if (hasCustomLogo) {
-                    return {
-                      src: (tool as any).logoUrl,
-                      alt: tool.name,
-                      title: tool.name,
-                    };
-                  } else if (IconComponent) {
-                    return {
-                      node: <IconComponent className={`text-${tool.color}`} />,
-                      title: tool.name,
-                    };
-                  } else {
-                    return {
-                      node: (
-                        <div
-                          className={`w-8 h-8 bg-${tool.color} rounded-md flex items-center justify-center text-white font-bold text-sm`}
-                        >
-                          {tool.name.charAt(0)}
-                        </div>
-                      ),
-                      title: tool.name,
-                    };
-                  }
-                })
               ]}
               speed={60}
               direction="left"
