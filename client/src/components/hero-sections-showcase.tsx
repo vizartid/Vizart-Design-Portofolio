@@ -59,7 +59,7 @@ export default function HeroSectionsShowcase() {
         </div>
       </motion.div>
       {/* Showcase animation with boundaries - tidak sampai ujung desktop */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="relative overflow-hidden rounded-2xl">
           <div 
             className={`flex space-x-6 ${isCarouselPaused ? 'hero-sections-carousel-paused' : 'hero-sections-carousel-safe'}`}

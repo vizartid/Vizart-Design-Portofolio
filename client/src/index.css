@@ -129,6 +129,13 @@
     background-size: 100px 20px !important;
     background-repeat: repeat !important;
     background-attachment: fixed !important;
+    /* Prevent horizontal scrollbar */
+    overflow-x: hidden !important;
+  }
+
+  html {
+    /* Prevent horizontal scrollbar on root element */
+    overflow-x: hidden !important;
   }
 
   /* Mobile optimizations */
@@ -148,7 +155,13 @@
 
     /* Prevent horizontal scrolling */
     body {
-      overflow-x: hidden;
+      overflow-x: hidden !important;
+    }
+
+    /* Ensure no elements cause horizontal overflow */
+    * {
+      max-width: 100vw;
+      box-sizing: border-box;
     }
   }
 }

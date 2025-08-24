@@ -90,7 +90,7 @@ export default function HeroSection() {
       </div>
       {/* Project Carousel Full Width - sampai ujung desktop */}
       <motion.div
-        className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+        className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
