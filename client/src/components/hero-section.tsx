@@ -6,7 +6,7 @@ import { useContent, useUpdateContentSection } from "@/hooks/use-content";
 const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 import LogoLoop from './LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiFramer } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiFramer, SiSketch, SiExpress, SiJavascript, SiAdobexd, SiPython, SiDocker, SiWebflow } from 'react-icons/si';
 
 const iconMap = {
   Figma,
@@ -117,6 +117,13 @@ export default function HeroSection() {
                 { node: <SiTailwindcss className="text-cyan-500" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
                 { node: <SiFigma className="text-purple-500" />, title: "Figma", href: "https://figma.com" },
                 { node: <SiFramer className="text-pink-500" />, title: "Framer", href: "https://framer.com" },
+                { node: <SiSketch className="text-orange-500" />, title: "Sketch", href: "https://sketch.com" },
+                { node: <SiExpress className="text-gray-700" />, title: "Express.js", href: "https://expressjs.com" },
+                { node: <SiJavascript className="text-yellow-500" />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+                { node: <SiAdobexd className="text-purple-600" />, title: "Adobe XD", href: "https://adobe.com/products/xd" },
+                { node: <SiPython className="text-blue-400" />, title: "Python", href: "https://python.org" },
+                { node: <SiDocker className="text-blue-600" />, title: "Docker", href: "https://docker.com" },
+                { node: <SiWebflow className="text-blue-500" />, title: "Webflow", href: "https://webflow.com" },
                 ...content.hero.tools.map((tool, index) => {
                   const IconComponent =
                     iconMap[(tool as any).icon as keyof typeof iconMap];
