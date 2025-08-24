@@ -55,7 +55,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument custom-hero-title mb-6 font-light text-4xl mobile:text-4xl tablet:text-5xl lg:text-[80px] mobile:leading-tight tablet:leading-tight lg:leading-none">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
             {content.hero.title.replace("Comprehensive Digital Solutions", "Comprehensive Digital\nSolutions")}{" "}
             <span className="text-electric-blue">
               {content.hero.titleHighlight}
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <br />
             {content.hero.subtitle}
           </h1>
-          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-base mobile:text-base tablet:text-lg lg:text-[18px] font-medium mobile:leading-normal">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-[18px] font-medium">
             {content.hero.stats}
           </p>
 
@@ -90,13 +90,7 @@ export default function HeroSection() {
       </div>
       {/* Project Carousel Full Width - sampai ujung desktop */}
       <motion.div
-        className="mb-16 w-full relative overflow-hidden"
-        style={{ 
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
-          marginRight: 'calc(-50vw + 50%)',
-          maxWidth: '100vw'
-        }}
+        className="mb-16 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -111,7 +105,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-6 text-base mobile:text-base tablet:text-lg lg:text-[18px] font-normal mobile:leading-normal">
+          <p className="text-gray-600 mb-6 text-[18px] font-normal">
             {content.hero.toolsText}
           </p>
           <div className="mt-8">

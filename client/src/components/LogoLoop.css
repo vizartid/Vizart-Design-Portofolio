@@ -1,8 +1,7 @@
+
 .logoloop {
   position: relative;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
 
   --logoloop-gap: 32px;
   --logoloop-logoHeight: 28px;
@@ -25,8 +24,6 @@
   width: max-content;
   will-change: transform;
   user-select: none;
-  max-width: none;
-  overflow: visible;
 }
 
 .logoloop__list {

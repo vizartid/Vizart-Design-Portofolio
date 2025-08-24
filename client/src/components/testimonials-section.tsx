@@ -58,10 +58,10 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="responsive-h2 font-instrument font-light mb-4 text-charcoal lg:desktop-text-6xl">
+          <h2 className="font-instrument text-3xl sm:text-4xl md:text-5xl lg:text-[70px] mb-4 leading-tight font-light">
             {testimonialsData.title}
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto responsive-body lg:desktop-text-xl">
+          <p className="text-gray-600 text-lg">
             {testimonialsData.subtitle}
           </p>
         </motion.div>
