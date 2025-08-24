@@ -162,6 +162,47 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  /* Responsive Typography Utilities */
+  .responsive-h1 {
+    @apply text-4xl mobile:text-4xl tablet:text-5xl lg:text-6xl;
+    @apply mobile:leading-tight tablet:leading-tight lg:leading-tight;
+  }
+  
+  .responsive-h2 {
+    @apply text-3xl mobile:text-3xl tablet:text-4xl lg:text-5xl;
+    @apply mobile:leading-tight tablet:leading-tight lg:leading-tight;
+  }
+  
+  .responsive-h3 {
+    @apply text-2xl mobile:text-2xl tablet:text-3xl lg:text-4xl;
+    @apply mobile:leading-snug tablet:leading-snug lg:leading-snug;
+  }
+  
+  .responsive-h4 {
+    @apply text-xl mobile:text-xl tablet:text-2xl lg:text-3xl;
+    @apply mobile:leading-snug tablet:leading-snug lg:leading-snug;
+  }
+  
+  .responsive-h5 {
+    @apply text-lg mobile:text-lg tablet:text-xl lg:text-2xl;
+    @apply mobile:leading-normal tablet:leading-normal lg:leading-normal;
+  }
+  
+  .responsive-h6 {
+    @apply text-base mobile:text-base tablet:text-lg lg:text-xl;
+    @apply mobile:leading-normal tablet:leading-normal lg:leading-normal;
+  }
+  
+  .responsive-body {
+    @apply text-sm mobile:text-base tablet:text-base lg:text-lg;
+    @apply mobile:leading-normal tablet:leading-normal lg:leading-relaxed;
+  }
+  
+  .responsive-small {
+    @apply text-xs mobile:text-sm tablet:text-sm lg:text-base;
+    @apply mobile:leading-normal tablet:leading-normal lg:leading-normal;
+  }
+
   .bg-bone-white {
     background-color: var(--bone-white);
   }
@@ -184,6 +225,94 @@
 
   .bg-light-gray {
     background-color: var(--light-gray);
+  }
+
+  /* MOBILE TYPOGRAPHY HIERARCHY - Proper heading sizes for mobile */
+  @media (max-width: 767px) {
+    
+    /* Mobile heading hierarchy */
+    .mobile-h1, .mobile\:text-4xl {
+      font-size: 2.25rem !important; /* 36px */
+      line-height: 2.5rem !important;
+    }
+    
+    .mobile-h2, .mobile\:text-3xl {
+      font-size: 1.875rem !important; /* 30px */
+      line-height: 2.25rem !important;
+    }
+    
+    .mobile-h3, .mobile\:text-2xl {
+      font-size: 1.5rem !important; /* 24px */
+      line-height: 2rem !important;
+    }
+    
+    .mobile-h4, .mobile\:text-xl {
+      font-size: 1.25rem !important; /* 20px */
+      line-height: 1.75rem !important;
+    }
+    
+    .mobile-h5, .mobile\:text-lg {
+      font-size: 1.125rem !important; /* 18px */
+      line-height: 1.75rem !important;
+    }
+    
+    .mobile-h6, .mobile\:text-base {
+      font-size: 1rem !important; /* 16px */
+      line-height: 1.5rem !important;
+    }
+    
+    /* Mobile paragraph text */
+    .mobile\:text-sm {
+      font-size: 0.875rem !important; /* 14px */
+      line-height: 1.25rem !important;
+    }
+    
+    .mobile\:text-xs {
+      font-size: 0.75rem !important; /* 12px */
+      line-height: 1rem !important;
+    }
+    
+    /* Mobile specific utilities */
+    .mobile\:leading-tight {
+      line-height: 1.25 !important;
+    }
+    
+    .mobile\:leading-snug {
+      line-height: 1.375 !important;
+    }
+    
+    .mobile\:leading-normal {
+      line-height: 1.5 !important;
+    }
+  }
+
+  /* TABLET TYPOGRAPHY ADJUSTMENTS */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    
+    .tablet\:text-5xl {
+      font-size: 3rem !important; /* 48px */
+      line-height: 1.1 !important;
+    }
+    
+    .tablet\:text-4xl {
+      font-size: 2.5rem !important; /* 40px */
+      line-height: 1.1 !important;
+    }
+    
+    .tablet\:text-3xl {
+      font-size: 2rem !important; /* 32px */
+      line-height: 1.2 !important;
+    }
+    
+    .tablet\:text-2xl {
+      font-size: 1.75rem !important; /* 28px */
+      line-height: 1.3 !important;
+    }
+    
+    .tablet\:text-xl {
+      font-size: 1.375rem !important; /* 22px */
+      line-height: 1.4 !important;
+    }
   }
 
   /* DESKTOP SCALING SYSTEM - Mudah disesuaikan */

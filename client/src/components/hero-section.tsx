@@ -55,7 +55,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-instrument custom-hero-title mb-6 font-light text-[80px]">
+          <h1 className="font-instrument custom-hero-title mb-6 font-light text-4xl mobile:text-4xl tablet:text-5xl lg:text-[80px] mobile:leading-tight tablet:leading-tight lg:leading-none">
             {content.hero.title.replace("Comprehensive Digital Solutions", "Comprehensive Digital\nSolutions")}{" "}
             <span className="text-electric-blue">
               {content.hero.titleHighlight}
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <br />
             {content.hero.subtitle}
           </h1>
-          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-[18px] font-medium">
+          <p className="custom-hero-stats text-gray-600 mb-8 max-w-2xl mx-auto text-base mobile:text-base tablet:text-lg lg:text-[18px] font-medium mobile:leading-normal">
             {content.hero.stats}
           </p>
 
@@ -105,7 +105,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-gray-600 mb-6 text-[18px] font-normal">
+          <p className="text-gray-600 mb-6 text-base mobile:text-base tablet:text-lg lg:text-[18px] font-normal mobile:leading-normal">
             {content.hero.toolsText}
           </p>
           <div className="mt-8">
