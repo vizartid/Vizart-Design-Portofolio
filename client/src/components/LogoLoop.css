@@ -45,6 +45,8 @@
 .logoloop__node {
   display: inline-flex;
   align-items: center;
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
 }
 
 .logoloop__item img {
@@ -56,7 +58,8 @@
   -webkit-user-drag: none;
   pointer-events: none;
   /* Links handle interaction */
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
 }
 
 .logoloop--scale-hover .logoloop__item {
@@ -67,10 +70,17 @@
 .logoloop--scale-hover .logoloop__item:hover .logoloop__node {
   transform: scale(1.2);
   transform-origin: center center;
+  filter: grayscale(0%);
 }
 
 .logoloop--scale-hover .logoloop__node {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for non-scale version */
+.logoloop__item:hover img,
+.logoloop__item:hover .logoloop__node {
+  filter: grayscale(0%);
 }
 
 .logoloop__link {
