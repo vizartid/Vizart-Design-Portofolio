@@ -1,4 +1,4 @@
-# Vizart Portfolio Website
+# Vizart Portfolio Website (Beta)
 
 A modern portfolio website built with React, TypeScript, and Express.js.
 
