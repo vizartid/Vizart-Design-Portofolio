@@ -71,7 +71,7 @@ export default function HeroSection() {
             <img
               src="/Mavent-white.png"
               alt="Mavent Logo"
-              className="w-8 h-8 lg:w-10 lg:h-10 object-contain"
+              className="w-5 h-5 lg:w-6 lg:h-6 object-contain"
             />
             <span>
               {content.hero.ctaText}

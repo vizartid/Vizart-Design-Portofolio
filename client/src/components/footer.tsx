@@ -34,7 +34,7 @@ export default function Footer() {
                 <img
                   src="/Mavent-white.png"
                   alt="Mavent Logo"
-                  className="w-8 h-8 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
                 <span>Book a Call</span>
               </button>
