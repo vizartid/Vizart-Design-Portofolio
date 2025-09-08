@@ -32,9 +32,9 @@ export default function Footer() {
             <div className="flex justify-center mb-4">
               <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors duration-200 flex items-center justify-center space-x-3">
                 <img
-                  src="/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg"
-                  alt="Profile"
-                  className="w-8 h-8 rounded-full object-cover"
+                  src="/Mavent-white.png"
+                  alt="Mavent Logo"
+                  className="w-8 h-8 object-contain"
                 />
                 <span>Book a Call</span>
               </button>

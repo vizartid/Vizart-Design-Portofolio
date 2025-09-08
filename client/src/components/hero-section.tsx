@@ -69,9 +69,9 @@ export default function HeroSection() {
 
           <button className="bg-black text-white px-8 py-3 rounded-xl font-medium custom-button hover:bg-gray-900 transition-colors duration-200 mb-4 flex items-center justify-center space-x-3 mx-auto">
             <img
-              src={b48f5cac_0dd9_4e94_b48a_682921628c0b}
-              alt="Profile"
-              className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover"
+              src="/Mavent-white.png"
+              alt="Mavent Logo"
+              className="w-8 h-8 lg:w-10 lg:h-10 object-contain"
             />
             <span>
               {content.hero.ctaText}
