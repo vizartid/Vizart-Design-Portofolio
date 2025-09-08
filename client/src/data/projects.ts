@@ -10,10 +10,10 @@ const getProjectImage = (projectId: number): string => {
     7: "/backgound-wave.jpg", // Tech Startup Identity
     8: "/backgound-wave.jpg", // Coffee Shop Rebrand
     9: "/backgound-wave.jpg", // Fitness Brand Design
-    10: "/backgound-wave.jpg", // Luxury Hotel Brand
-    11: "/backgound-wave.jpg", // Educational Platform Brand
-    12: "/backgound-wave.jpg", // Travel Companion App
-    13: "/backgound-wave.jpg", // Fitness Tracking App
+    10: "/public/Vortexa.png", // Vortexa
+    11: "/backgound-wave.jpg", // Vizart
+    12: "/backgound-wave.jpg", // Vizziz
+    13: "/backgound-wave.jpg", // Vixoo
     14: "/backgound-wave.jpg", // Social Media App
     15: "/backgound-wave.jpg", // Budget Management App
     16: "/backgound-wave.jpg", // Recipe Discovery App
@@ -57,7 +57,8 @@ export const projects = [
   {
     id: 3,
     title: "TeamFlow",
-    description: "Revolutionary collaboration platform that connects teams across different time zones.",
+    description:
+      "Revolutionary collaboration platform that connects teams across different time zones.",
     category: "uiux",
     imageUrl: getProjectImage(3),
     projectUrl: "https://example.com/food-delivery",
@@ -66,7 +67,8 @@ export const projects = [
   {
     id: 4,
     title: "DataViz",
-    description: "Advanced analytics platform that transforms complex data into actionable insights.",
+    description:
+      "Advanced analytics platform that transforms complex data into actionable insights.",
     category: "uiux",
     imageUrl: getProjectImage(4),
     projectUrl: "https://example.com/analytics-tool",
@@ -75,7 +77,8 @@ export const projects = [
   {
     id: 5,
     title: "ShopCraft",
-    description: "Complete e-commerce solution designed to maximize conversions.",
+    description:
+      "Complete e-commerce solution designed to maximize conversions.",
     category: "uiux",
     imageUrl: getProjectImage(5),
     projectUrl: "https://example.com/healthcare-portal",
@@ -84,7 +87,8 @@ export const projects = [
   {
     id: 6,
     title: "FinTech Pro",
-    description: "Modern financial dashboard with real-time analytics and secure transactions.",
+    description:
+      "Modern financial dashboard with real-time analytics and secure transactions.",
     category: "uiux",
     imageUrl: getProjectImage(6),
     projectUrl: "https://example.com/fintech-pro",
@@ -249,11 +253,11 @@ export const projects = [
   // Website Projects
   {
     id: 7,
-    title: "Corporate Website",
+    title: "Vortexa",
     description:
       "Professional corporate website with modern design, content management system, and SEO optimization.",
     category: "websites",
-    imageUrl: getProjectImage(7),
+    imageUrl: getProjectImage(10),
     projectUrl: "https://example.com/corporate-site",
     featured: true,
   },
@@ -263,7 +267,7 @@ export const projects = [
     description:
       "Comprehensive online learning platform with video streaming, progress tracking, and interactive quizzes.",
     category: "websites",
-    imageUrl: getProjectImage(8),
+    imageUrl: getProjectImage(11),
     projectUrl: "https://example.com/elearning",
     featured: false,
   },
@@ -273,7 +277,7 @@ export const projects = [
     description:
       "Modern restaurant website with online menu, reservation system, and responsive design for all devices.",
     category: "websites",
-    imageUrl: getProjectImage(22),
+    imageUrl: getProjectImage(12),
     projectUrl: "https://example.com/restaurant",
     featured: true,
   },
