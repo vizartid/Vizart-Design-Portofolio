@@ -1,7 +1,7 @@
 
 export const branding = {
-  logoUrl: "/logo-vizart.png",
+  logoUrl: "/Mavent-logo.png",
   logoText: "Vizart", 
-  footerLogoUrl: "/logo-vizart.png",
+  footerLogoUrl: "/Mavent-logo.png",
   footerLogoText: "Vizart"
 };
