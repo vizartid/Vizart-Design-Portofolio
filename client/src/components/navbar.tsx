@@ -3,7 +3,8 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
 
-const b48f5cac_0dd9_4e94_b48a_682921628c0b = "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
+const b48f5cac_0dd9_4e94_b48a_682921628c0b =
+  "/b48f5cac-0dd9-4e94-b48a-682921628c0b.jpg";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -93,7 +94,7 @@ export default function Navbar() {
                     src={content.branding.logoUrl}
                     alt="Logo"
                     className={`object-contain transition-all duration-500 ease-in-out ${
-                      isScrolled ? "h-6 lg:h-8" : "h-8 lg:h-10"
+                      isScrolled ? "h-4 lg:h-8" : "h-8 lg:h-10"
                     }`}
                   />
                   <span
