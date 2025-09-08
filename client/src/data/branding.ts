@@ -1,5 +1,5 @@
 export const branding = {
-  logoUrl: "attached_assets/Mavent-redblack.png",
+  logoUrl: "Mavent-redblack.png",
   logoText: "Mavent",
   footerLogoUrl: "attached_assets/Mavent-redblack.png",
   footerLogoText: "Mavent",
