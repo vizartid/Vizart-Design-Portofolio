@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   Lightbulb,
   Palette,
@@ -7,9 +8,9 @@ import {
   Rocket,
   Headphones,
 } from "lucide-react";
+
 import { useContent, useUpdateContentSection } from "@/hooks/use-content";
-import { EditableText } from "./editable-text";
-import { Check } from "lucide-react"; // Import Check icon
+// Removed unused imports (EditableText, Check, ScrollStack) to fix build errors
 
 interface ProcessStep {
   id: string;
@@ -99,7 +100,7 @@ export default function ProcessSection() {
   const handleUpdateStep = (id: string, field: string, value: any) => {
     const updatedProcess = {
       ...processData,
-      steps: processData.steps.map((step) =>
+      steps: processData.steps.map((step: ProcessStep) =>
         step.id === id ? { ...step, [field]: value } : step,
       ),
     };
@@ -147,86 +148,89 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Process Steps - Single Column Compact Cards */}
-        <div className="flex flex-col gap-6 max-w-3xl mx-auto">
-          {processData.steps.map((step, index) => {
-            const IconComponent = iconMap[step.icon as keyof typeof iconMap];
-
-            // Define different colors for each card with clean styling
-            const cardColors = [
-              {
-                bg: "bg-white",
-                icon: "text-orange-500",
-                glow: "drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]",
-              },
-              {
-                bg: "bg-white",
-                icon: "text-purple-500",
-                glow: "drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]",
-              },
-              {
-                bg: "white",
-                icon: "text-green-500",
-                glow: "drop-shadow-[0_0_8px_rgba(34,197,94,0.4)]",
-              },
-              {
-                bg: "white",
-                icon: "text-blue-500",
-                glow: "drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]",
-              },
-              {
-                bg: "white",
-                icon: "text-red-500",
-                glow: "drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]",
-              },
-              {
-                bg: "white",
-                icon: "text-indigo-500",
-                glow: "drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]",
-              },
-            ];
-
-            const colorTheme = cardColors[index % cardColors.length];
-
-            return (
-              <motion.div
-                key={step.id}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full relative"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center space-x-6 text-center">
-                  {/* Icon with Glow Effect Only */}
-                  <div className="flex-shrink-0">
-                    {IconComponent && (
-                      <IconComponent
-                        className={`w-12 h-12 ${colorTheme.icon} ${colorTheme.glow} transition-all duration-300`}
-                      />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="font-instrument font-medium mb-3 text-charcoal text-[28px]">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 text-[18px]">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-                {/* Step Number - Small and Subtle */}
-                <div className="absolute top-4 right-4 w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs">
-                  {index + 1}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+        {/* Process Steps - Scroll Reactive Animated Cards (non-overlay) */}
+        <AnimatedProcessList steps={processData.steps} />
       </div>
     </section>
   );
 }
+
+// --- Animated list component extracted for clarity ---
+interface AnimatedProcessListProps {
+  steps: ProcessStep[];
+}
+
+const AnimatedProcessList = ({ steps }: AnimatedProcessListProps) => {
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
+
+  const cardColors = [
+    { icon: "text-orange-500", glow: "drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]" },
+    { icon: "text-purple-500", glow: "drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]" },
+    { icon: "text-green-500", glow: "drop-shadow-[0_0_8px_rgba(34,197,94,0.4)]" },
+    { icon: "text-blue-500", glow: "drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]" },
+    { icon: "text-red-500", glow: "drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]" },
+    { icon: "text-indigo-500", glow: "drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]" },
+  ];
+
+  return (
+    <div className="flex flex-col gap-6 max-w-3xl mx-auto relative">
+      {steps.map((step: ProcessStep, index: number) => {
+        const IconComponent = iconMap[step.icon as keyof typeof iconMap];
+        const theme = cardColors[index % cardColors.length];
+
+        // Compute dynamic stacking effect (previous cards compress subtly)
+        const isPast = index < activeIndex;
+        const depth = Math.min(activeIndex - index, 4); // limit effect spread
+        const scale = isPast ? 1 - depth * 0.015 : 1;
+        const translateY = isPast ? -depth * 6 : 0;
+        const shadowIntensity = isPast ? 10 + depth * 4 : 16;
+
+        return (
+          <motion.div
+            key={step.id}
+            className="bg-white rounded-2xl p-6 border border-gray-100 w-full relative group"
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            onViewportEnter={() => setActiveIndex((prev) => (index > prev ? index : prev))}
+            viewport={{ amount: 0.45, once: false }}
+            animate={{
+              scale,
+              y: translateY,
+              boxShadow: `0 8px ${shadowIntensity}px -4px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05)`
+            }}
+            transition={{ type: "spring", stiffness: 140, damping: 22, mass: 0.9 }}
+            whileHover={{ y: translateY - 4, scale: scale + 0.01 }}
+          >
+            <div className="flex items-center space-x-6">
+              <div className="flex-shrink-0 relative">
+                {IconComponent && (
+                  <IconComponent
+                    className={`w-12 h-12 ${theme.icon} ${theme.glow} transition-transform duration-300 group-hover:scale-110`}
+                  />
+                )}
+              </div>
+              <div className="flex-1">
+                <h3 className="font-instrument font-medium mb-3 text-charcoal text-[28px] tracking-tight">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 text-[18px] leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+            <div className="absolute top-4 right-4 w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs select-none">
+              {index + 1}
+            </div>
+            {/* Decorative gradient line when active */}
+            <motion.div
+              className="absolute left-0 bottom-0 h-1 rounded-br-2xl rounded-bl-2xl bg-gradient-to-r from-black/70 via-black/40 to-transparent"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: activeIndex >= index ? "100%" : 0, opacity: activeIndex >= index ? 1 : 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            />
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+};

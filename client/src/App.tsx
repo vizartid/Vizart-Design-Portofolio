@@ -9,6 +9,7 @@ import Home from "@/pages/home";
 import Works from "@/pages/works";
 import NotFound from "@/pages/not-found";
 import AnimatedCursorWrapper from "@/components/animated-cursor";
+import DemoScrollStackPage from "@/pages/scroll-stack-demo";
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -40,6 +41,7 @@ function Router() {
           <Switch location={location}>
             <Route path="/" component={Home} />
             <Route path="/works" component={Works} />
+            <Route path="/scroll-stack-demo" component={DemoScrollStackPage} />
             <Route component={NotFound} />
           </Switch>
         </motion.div>
