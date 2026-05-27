@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Home from "@/pages/home";
 import Works from "@/pages/works";
+import About from "@/pages/about";
 import NotFound from "@/pages/not-found";
 import AnimatedCursorWrapper from "@/components/animated-cursor";
-import DemoScrollStackPage from "@/pages/scroll-stack-demo";
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -25,7 +25,7 @@ const pageTransition = {
 
 function Router() {
   const [location] = useLocation();
-  
+
   return (
     <div className="min-h-screen relative">
       <Navbar />
@@ -40,13 +40,13 @@ function Router() {
         >
           <Switch location={location}>
             <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
             <Route path="/works" component={Works} />
-            <Route path="/scroll-stack-demo" component={DemoScrollStackPage} />
             <Route component={NotFound} />
           </Switch>
         </motion.div>
       </AnimatePresence>
-      
+
       {/* Bottom blur effect */}
       <div className="fixed bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-bone-white/80 via-bone-white/30 to-transparent backdrop-blur-xs pointer-events-none z-10"></div>
     </div>

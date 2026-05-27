@@ -1,6 +1,6 @@
 export const process = {
-  "title": "Our Workflow",
-  "subtitle": "A structured process we use to deliver the best results",
+  "title": "My Workflow",
+  "subtitle": "A structured process I use to deliver the best results",
   "steps": [
     {
       "id": "planning",

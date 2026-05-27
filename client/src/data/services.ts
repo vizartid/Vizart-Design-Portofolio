@@ -9,23 +9,35 @@ export const services = {
   mainTitle: "My Services",
   services: [
     {
-      title: "UI/UX & Branding",
+      title: "Fullstack Development",
       description:
-        "A strong, scalable brand identity including logo, colors, typography, and visual tone, delivered in 2-3 weeks.",
+        "I build scalable web applications from UI to backend API, using React, Node.js, TypeScript, and PostgreSQL.",
+      icon: "Code",
+    },
+    {
+      title: "UI/UX Design & Branding",
+      description:
+        "I create strong visual identities and intuitive user experiences — logo, design system, and interactive prototypes.",
       icon: "Palette",
     },
     {
-      title: "Websites",
+      title: "AI/ML Engineering",
       description:
-        "A complete website from strategy to design and development, crafted to drive results and delivered in 2 to 3 weeks.",
-      icon: "Code",
+        "I design and implement AI solutions — LLM integrations, RAG systems, and predictive ML models ready for production.",
+      icon: "Brain",
+    },
+    {
+      title: "DevOps & Network Engineering",
+      description:
+        "I ensure your infrastructure runs optimally — CI/CD pipelines, Docker, Kubernetes, and enterprise-grade network security.",
+      icon: "Server",
     },
   ],
   additionalText:
-    "We also offer other design services like digital Design, social media creatives, and more.",
+    "I also offer consulting, code reviews, and long-term collaboration for ongoing projects.",
   features: [
     "Smooth Communication",
-    "Flexible revisions",
+    "Flexible Revisions",
     "Post-Project Support",
   ],
   ctaText: "Get In Touch",

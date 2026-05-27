@@ -2,19 +2,17 @@ export const hero = {
   title: "Delivering Standout",
   titleHighlight: "Digital Creations",
   subtitle: "Through Seamless Partnership",
-  stats: "20+ Amazing Websites Created So Far\n\n",
+  stats: "20+ Amazing Projects Delivered So Far",
   ctaText: "Get in Touch",
   acceptingText: "Ready for New Projects.",
-  toolsText: "We use industry standard tools like",
+  toolsText: "I use industry standard tools like",
   tools: [
     {
       name: "Figma",
       color: "purple-500",
       icon: "Frame",
-      logoUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     },
-
     {
       name: "Adobe Illustrator",
       color: "yellow-500",
@@ -43,8 +41,7 @@ export const hero = {
       name: "PostgreSQL",
       color: "blue-700",
       icon: "Database",
-      logoUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     },
   ],
 };

@@ -1,0 +1,271 @@
+.lanyard-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lanyard-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  user-select: none;
+}
+
+/* Lanyard cord */
+.lanyard-cord-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lanyard-cord-svg {
+  width: 80px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.lanyard-clip {
+  width: 22px;
+  height: 28px;
+  background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 50%, #6b7280 100%);
+  border-radius: 3px 3px 6px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-top: -4px;
+}
+
+.lanyard-clip-inner {
+  width: 10px;
+  height: 14px;
+  background: linear-gradient(180deg, #e5e7eb 0%, #d1d5db 100%);
+  border-radius: 2px;
+}
+
+/* ID Card */
+.id-card {
+  width: 280px;
+  background: linear-gradient(145deg, #0f0f1a 0%, #1a1a2e 40%, #16213e 100%);
+  border-radius: 20px;
+  padding: 24px 22px 20px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  cursor: grab;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+}
+
+.id-card:hover {
+  cursor: grabbing;
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(99, 102, 241, 0.15),
+    0 0 0 1px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.id-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+.id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.id-card-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.id-card-logo-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.8);
+}
+
+.id-card-company {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.id-card-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #6366f1;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.id-card-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.id-card-avatar-inner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.id-card-avatar-initials {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.id-card-info {
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.id-card-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.id-card-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.id-card-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.id-card-footer {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 14px;
+}
+
+.id-card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.id-card-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.id-card-stat-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+}
+
+/* Holographic strip */
+.id-card-holo {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff,
+    #06ffa5,
+    #ffbe0b,
+    #ff006e
+  );
+  opacity: 0.3;
+  background-size: 200% 100%;
+  animation: holo-shine 3s linear infinite;
+}
+
+@keyframes holo-shine {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Barcode */
+.id-card-barcode {
+  position: absolute;
+  bottom: 16px;
+  left: 22px;
+  right: 22px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  gap: 1.5px;
+  opacity: 0.3;
+}
+
+.id-card-barcode-line {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* Background noise texture */
+.id-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
