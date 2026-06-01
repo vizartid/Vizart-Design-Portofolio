@@ -60,18 +60,17 @@ app.use((req, res, next) => {
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
+  // Default to 5001 to avoid system service conflicts.
   // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const basePort = parseInt(process.env.PORT || '5000', 10);
+  const basePort = parseInt(process.env.PORT || '5001', 10);
   const host = '0.0.0.0';
   
   // Generate a list of ports to try (primary + fallbacks)
   const generatePortList = (primary: number): number[] => {
     const ports: number[] = [primary];
-    // If using default port, try alternatives
-    if (primary === 5000) {
-      ports.push(5001, 5002, 5003, 5004, 5005);
+    // Try alternatives if primary port is busy
+    if (primary === 5001) {
+      ports.push(5002, 5003, 5004, 5005, 5006);
     } else {
       // If custom port, try a few alternatives nearby
       ports.push(primary + 1, primary + 2, primary + 3);
@@ -80,53 +79,46 @@ app.use((req, res, next) => {
   };
   
   const portList = generatePortList(basePort);
-  let currentPortIndex = 0;
   
-  // Try to listen on the specified port, with recursive fallback to alternative ports
+  // Fungsi terpisah untuk mencoba listen port dengan aman
   const tryListen = (portIndex: number) => {
     if (portIndex >= portList.length) {
       log(`ERROR: unable to find available port. Tried: ${portList.join(', ')}`);
       process.exit(1);
-      return;
     }
     
     const portToTry = portList[portIndex];
-    
-    // Create a new server for each attempt to avoid state issues
-    const attemptServer = server;
-    
-    try {
-      attemptServer.listen({
-        port: portToTry,
-        host,
-        reusePort: false, // Disable reusePort for Windows compatibility
-      }, () => {
-        log(`serving on ${host}:${portToTry}`);
-      });
-      
-      // Handle port in use error with proper cleanup
-      const errorHandler = (err: any) => {
-        if (err.code === 'EADDRINUSE') {
-          log(`port ${portToTry} is already in use`);
-          attemptServer.close(() => {
-            // Remove this error handler and try next port
-            attemptServer.removeListener('error', errorHandler);
-            log(`attempting port ${portList[portIndex + 1]} instead...`);
-            tryListen(portIndex + 1);
-          });
-        } else {
-          log(`server error: ${err.message}`);
-          throw err;
-        }
-      };
-      
-      attemptServer.once('error', errorHandler);
-    } catch (err) {
-      log(`failed to listen on port ${portToTry}: ${err}`);
-      tryListen(portIndex + 1);
-    }
+
+    // DEFINISIKAN HANDLER LEBIH DULU sebelum memanggil .listen()
+    const errorHandler = (err: any) => {
+      if (err.code === 'EADDRINUSE') {
+        log(`port ${portToTry} is already in use`);
+        
+        // Hapus listener agar tidak menumpuk di percobaan port berikutnya
+        server.off('error', errorHandler); 
+        
+        log(`attempting port ${portList[portIndex + 1]} instead...`);
+        tryListen(portIndex + 1);
+      } else {
+        log(`server error: ${err.message}`);
+        throw err;
+      }
+    };
+
+    // 1. Pasang error listener TERLEBIH DAHULU
+    server.once('error', errorHandler);
+
+    // 2. Baru jalankan perintah listen
+    server.listen({
+      port: portToTry,
+      host,
+    }, () => {
+      // Jika berhasil listen, hapus error handler agar tidak mengganggu kedepannya
+      server.off('error', errorHandler);
+      log(`serving on ${host}:${portToTry}`);
+    });
   };
   
-  // Start trying ports
-  tryListen(currentPortIndex);
+  // Start mencoba port pertama
+  tryListen(0);
 })();
