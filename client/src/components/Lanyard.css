@@ -1,3 +1,7 @@
+/* ============================================================================
+   Lanyard Wrapper
+   ============================================================================ */
+
 .lanyard-wrapper {
   position: relative;
   z-index: 0;
@@ -6,9 +10,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  touch-action: pan-y;
 }
 
-/* ─── CSS fallback card ─────────────────────────────────────── */
+/* ============================================================================
+   CSS Fallback Card
+   ============================================================================ */
+
 .lanyard-fallback {
   display: flex;
   flex-direction: column;
@@ -19,10 +27,11 @@
 }
 
 @keyframes lanyard-sway {
-  0%,100% { transform: rotate(-2deg); }
-  50%      { transform: rotate(2deg); }
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
 }
 
+/* Cord */
 .lanyard-fallback-cord {
   display: flex;
   flex-direction: column;
@@ -37,68 +46,81 @@
 .lanyard-fallback-clip {
   width: 20px;
   height: 26px;
-  background: linear-gradient(180deg,#d1d5db 0%,#9ca3af 50%,#6b7280 100%);
+  background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 50%, #6b7280 100%);
   border-radius: 3px 3px 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   margin-top: -3px;
 }
+
 .lanyard-fallback-clip-inner {
   width: 9px;
   height: 12px;
-  background: linear-gradient(180deg,#e5e7eb,#d1d5db);
+  background: linear-gradient(180deg, #e5e7eb, #d1d5db);
   border-radius: 2px;
 }
 
 /* Card */
 .lanyard-fallback-card {
   width: 260px;
-  background: linear-gradient(145deg,#0f0f1a 0%,#1a1a2e 40%,#16213e 100%);
+  background: linear-gradient(145deg, #0f0f1a 0%, #1a1a2e 40%, #16213e 100%);
   border-radius: 20px;
   padding: 20px 20px 16px;
-  border: 1px solid rgba(99,102,241,.3);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   box-shadow:
-    0 25px 60px rgba(0,0,0,.5),
-    0 0 0 1px rgba(255,255,255,.05),
-    inset 0 1px 0 rgba(255,255,255,.08);
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
   cursor: grab;
+  transition: box-shadow 0.3s ease;
 }
+
 .lanyard-fallback-card:hover {
   box-shadow:
-    0 35px 80px rgba(0,0,0,.6),
-    0 0 60px rgba(99,102,241,.15),
-    0 0 0 1px rgba(99,102,241,.4);
+    0 35px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(99, 102, 241, 0.15),
+    0 0 0 1px rgba(99, 102, 241, 0.4);
 }
+
+/* Header */
 .lfc-header {
   display: flex;
   align-items: center;
   gap: 6px;
   margin-bottom: 14px;
 }
+
 .lfc-dot {
-  width: 7px; height: 7px;
+  width: 7px;
+  height: 7px;
   background: #6366f1;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(99,102,241,.8);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.8);
+  flex-shrink: 0;
 }
+
 .lfc-co {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: .15em;
-  color: rgba(255,255,255,.45);
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.45);
   flex: 1;
 }
+
 .lfc-badge {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: .1em; color: #6366f1;
-  border: 1px solid rgba(99,102,241,.5);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #6366f1;
+  border: 1px solid rgba(99, 102, 241, 0.5);
   padding: 2px 7px;
   border-radius: 20px;
-  background: rgba(99,102,241,.1);
+  background: rgba(99, 102, 241, 0.1);
+  flex-shrink: 0;
 }
 
 /* Photo */
@@ -107,46 +129,282 @@
   justify-content: center;
   margin-bottom: 14px;
 }
+
 .lfc-photo-img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  border: 3px solid rgba(99,102,241,.5);
-  box-shadow: 0 0 0 2px rgba(99,102,241,.2), 0 0 20px rgba(99,102,241,.3);
+  border: 3px solid rgba(99, 102, 241, 0.5);
+  box-shadow: 
+    0 0 0 2px rgba(99, 102, 241, 0.2), 
+    0 0 20px rgba(99, 102, 241, 0.3);
 }
 
-.lfc-info { text-align: center; margin-bottom: 14px; }
-.lfc-name { font-size: 16px; font-weight: 600; color: #fff; margin: 0 0 3px; }
-.lfc-role { font-size: 11px; color: rgba(255,255,255,.4); margin: 0; }
+/* Info */
+.lfc-info {
+  text-align: center;
+  margin-bottom: 14px;
+}
 
+.lfc-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 3px;
+}
+
+.lfc-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* Divider */
 .lfc-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg,transparent,rgba(99,102,241,.4),transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
   margin-bottom: 12px;
 }
 
+/* Stats */
 .lfc-stats {
   display: flex;
   justify-content: space-around;
   margin-bottom: 12px;
 }
-.lfc-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.lfc-sv { font-size: 17px; font-weight: 700; color: #fff; }
-.lfc-sl { font-size: 9px; color: rgba(255,255,255,.3); letter-spacing: .05em; }
 
+.lfc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.lfc-sv {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.lfc-sl {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+/* Holographic effect */
 .lfc-holo {
   position: absolute;
-  bottom: 36px; left: 0; right: 0;
+  bottom: 36px;
+  left: 0;
+  right: 0;
   height: 5px;
-  background: linear-gradient(90deg,#ff006e,#8338ec,#3a86ff,#06ffa5,#ffbe0b,#ff006e);
-  opacity: .28;
+  background: linear-gradient(
+    90deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff,
+    #06ffa5,
+    #ffbe0b,
+    #ff006e
+  );
+  opacity: 0.28;
   background-size: 200% 100%;
   animation: holo 3s linear infinite;
 }
+
 @keyframes holo {
-  0%   { background-position: 0% 0%; }
+  0% { background-position: 0% 0%; }
   100% { background-position: 200% 0%; }
+}
+
+/* ============================================================================
+   Mobile Responsiveness
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .lanyard-wrapper {
+    height: auto;
+    min-height: 400px;
+    padding: 1rem 0;
+  }
+
+  .lanyard-fallback {
+    padding-top: 10px;
+    transform-origin: top center;
+  }
+
+  .lanyard-fallback-cord svg {
+    width: 50px;
+    height: 70px;
+  }
+
+  .lanyard-fallback-clip {
+    width: 16px;
+    height: 20px;
+  }
+
+  .lanyard-fallback-clip-inner {
+    width: 7px;
+    height: 10px;
+  }
+
+  .lanyard-fallback-card {
+    width: 220px;
+    padding: 16px 16px 14px;
+    border-radius: 16px;
+  }
+
+  .lfc-header {
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+
+  .lfc-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .lfc-co {
+    font-size: 9px;
+  }
+
+  .lfc-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .lfc-photo {
+    margin-bottom: 10px;
+  }
+
+  .lfc-photo-img {
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
+  }
+
+  .lfc-info {
+    margin-bottom: 10px;
+  }
+
+  .lfc-name {
+    font-size: 14px;
+  }
+
+  .lfc-role {
+    font-size: 10px;
+  }
+
+  .lfc-divider {
+    margin-bottom: 10px;
+  }
+
+  .lfc-stats {
+    margin-bottom: 10px;
+  }
+
+  .lfc-sv {
+    font-size: 15px;
+  }
+
+  .lfc-sl {
+    font-size: 8px;
+  }
+
+  .lfc-holo {
+    bottom: 30px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lanyard-wrapper {
+    min-height: 350px;
+  }
+
+  .lanyard-fallback {
+    padding-top: 5px;
+  }
+
+  .lanyard-fallback-cord svg {
+    width: 40px;
+    height: 55px;
+  }
+
+  .lanyard-fallback-card {
+    width: 200px;
+    padding: 14px 14px 12px;
+    border-radius: 14px;
+  }
+
+  .lfc-photo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .lfc-name {
+    font-size: 13px;
+  }
+
+  .lfc-role {
+    font-size: 9px;
+  }
+
+  .lfc-sv {
+    font-size: 14px;
+  }
+
+  .lfc-sl {
+    font-size: 7px;
+  }
+}
+
+/* ============================================================================
+   Larger Desktop Screens
+   ============================================================================ */
+
+@media (min-width: 1200px) {
+  .lanyard-fallback-card {
+    width: 300px;
+    padding: 24px 24px 20px;
+    border-radius: 24px;
+  }
+
+  .lfc-header {
+    margin-bottom: 18px;
+    gap: 8px;
+  }
+
+  .lfc-co {
+    font-size: 11px;
+  }
+
+  .lfc-badge {
+    font-size: 11px;
+  }
+
+  .lfc-photo-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .lfc-name {
+    font-size: 18px;
+  }
+
+  .lfc-role {
+    font-size: 12px;
+  }
+
+  .lfc-sv {
+    font-size: 19px;
+  }
+
+  .lfc-sl {
+    font-size: 10px;
+  }
 }
