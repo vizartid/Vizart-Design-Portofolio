@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <p className="text-gray-600 text-sm mb-6">or reach me at vizart.id@gmail.com</p>
+            <p className="text-gray-600 text-sm mb-6">or reach me at mavent.id@gmail.com</p>
 
             {/* Social links */}
             <div className="flex justify-center gap-5 mb-8">
