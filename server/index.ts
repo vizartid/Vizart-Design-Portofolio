@@ -63,13 +63,43 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
+  const basePort = parseInt(process.env.PORT || '5000', 10);
   const host = '0.0.0.0';
-  server.listen({
-    port,
-    host,
-    reusePort: false, // Disable reusePort for Windows compatibility
-  }, () => {
-    log(`serving on ${host}:${port}`);
-  });
+  
+  // Try to listen on the specified port, with fallback to alternative ports
+  const tryListen = (portToTry: number, alternativePort?: number) => {
+    try {
+      server.listen({
+        port: portToTry,
+        host,
+        reusePort: false, // Disable reusePort for Windows compatibility
+      }, () => {
+        log(`serving on ${host}:${portToTry}`);
+      });
+      
+      // Handle port in use error
+      server.on('error', (err: any) => {
+        if (err.code === 'EADDRINUSE') {
+          log(`port ${portToTry} is already in use`);
+          if (alternativePort && alternativePort !== portToTry) {
+            log(`attempting to use port ${alternativePort} instead`);
+            server.removeAllListeners('error');
+            tryListen(alternativePort);
+          } else {
+            log(`ERROR: unable to find available port`);
+            process.exit(1);
+          }
+        } else {
+          throw err;
+        }
+      });
+    } catch (err) {
+      log(`failed to listen on port ${portToTry}`);
+      throw err;
+    }
+  };
+  
+  // Try primary port, fallback to 5001 if not specified in env
+  const fallbackPort = basePort === 5000 ? 5001 : undefined;
+  tryListen(basePort, fallbackPort);
 })();
