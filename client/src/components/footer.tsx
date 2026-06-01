@@ -30,9 +30,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <p className="text-gray-600 text-sm mb-6">
-              or reach me at rizky@example.com
-            </p>
+            <p className="text-gray-600 text-sm mb-6">or reach me at vizart.id@gmail.com</p>
 
             {/* Social links */}
             <div className="flex justify-center gap-5 mb-8">
@@ -53,9 +51,7 @@ export default function Footer() {
                 <a href="/about" className="hover:text-charcoal transition-colors text-sm font-medium">About</a>
                 <a href="/works" className="hover:text-charcoal transition-colors text-sm font-medium">Works</a>
               </div>
-              <p className="text-gray-400 text-xs">
-                © 2025 Rizky Pratama. All rights reserved.
-              </p>
+              <p className="text-gray-400 text-xs">© 2025 Muhammad Yusuf Aditiya. All rights reserved.</p>
             </div>
           </div>
         </div>
