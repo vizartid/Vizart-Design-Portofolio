@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="text-center">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <img src="/Mavent-black.png" alt="Logo" className="h-16 object-contain" />
+            <img src="/Mavent-logo.png" alt="Logo" className="h-16 object-contain" />
           </div>
 
           <div className="border-t-2 border-gray-200 pt-8">

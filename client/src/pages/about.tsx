@@ -1,13 +1,12 @@
 import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import InfiniteMarquee from '@/components/InfiniteMarquee';
-import MagicBento from '@/components/MagicBento';
+import ScrollStack, { ScrollStackItem } from '@/components/ui/scroll-stack';
 import Footer from '@/components/footer';
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiPython, SiDocker,
+  SiReact, SiTypescript, SiPython, SiDocker,
   SiKubernetes, SiTensorflow, SiGithub, SiLinkedin,
 } from 'react-icons/si';
-import { Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, ExternalLink, Code, Palette, Brain, Server } from 'lucide-react';
 
 const Lanyard = lazy(() => import('@/components/Lanyard'));
 
@@ -25,6 +24,45 @@ const stats = [
   { value: '50+', label: 'Projects Delivered' },
   { value: '20+', label: 'Happy Clients' },
   { value: '8', label: 'Core Specializations' },
+];
+
+const roleCards = [
+  {
+    icon: Code,
+    color: '#3B82F6',
+    bg: '#EFF6FF',
+    label: '01',
+    title: 'Fullstack Developer',
+    body: 'Building end-to-end web applications with React, Next.js, Node.js, TypeScript, and PostgreSQL. From pixel-perfect UI to production-ready APIs.',
+    tags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL'],
+  },
+  {
+    icon: Palette,
+    color: '#8B5CF6',
+    bg: '#F5F3FF',
+    label: '02',
+    title: 'UI/UX Designer',
+    body: 'Designing intuitive, conversion-driven interfaces and cohesive brand identities — from wireframes to polished design systems and interactive prototypes.',
+    tags: ['Figma', 'Design System', 'Prototyping', 'Brand Identity'],
+  },
+  {
+    icon: Brain,
+    color: '#EC4899',
+    bg: '#FDF2F8',
+    label: '03',
+    title: 'AI / ML Engineer',
+    body: 'Engineering intelligent systems — LLM integrations, RAG pipelines, predictive ML models, and production-ready AI features that solve real problems.',
+    tags: ['Python', 'TensorFlow', 'LangChain', 'OpenAI', 'FastAPI'],
+  },
+  {
+    icon: Server,
+    color: '#10B981',
+    bg: '#ECFDF5',
+    label: '04',
+    title: 'DevOps & Network Engineer',
+    body: 'Keeping infrastructure fast, reliable, and secure — CI/CD automation, containerisation with Docker & Kubernetes, and enterprise-grade network monitoring.',
+    tags: ['Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Networking'],
+  },
 ];
 
 export default function About() {
@@ -158,63 +196,80 @@ export default function About() {
         </div>
       </section>
 
-      {/* Scroll Stack / Infinite Marquee — Roles */}
-      <section className="py-8 bg-gray-50 border-y border-gray-100 overflow-hidden">
+      {/* What I Do — ScrollStack */}
+      <section className="bg-gray-50 border-y border-gray-100">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-2 px-4">
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-400">
+          <div className="text-center pt-16 pb-4 px-4">
+            <span className="inline-block text-sm font-semibold tracking-widest uppercase text-blue-500 mb-3 border border-blue-200 px-4 py-1.5 rounded-full bg-blue-50">
               What I Do
-            </p>
+            </span>
+            <h2 className="font-instrument text-4xl sm:text-5xl font-light text-gray-900 mt-4 mb-2">
+              My Expertise
+            </h2>
+            <p className="text-gray-400 text-sm">Scroll down to explore</p>
           </div>
-          <InfiniteMarquee />
-        </motion.div>
-      </section>
 
-      {/* Magic Bento — Portfolio Showcase */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <motion.div
-          className="text-center mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase text-blue-500 mb-3 border border-blue-200 px-4 py-1.5 rounded-full bg-blue-50">
-            Portfolio
-          </span>
-          <h2 className="font-instrument text-4xl sm:text-5xl font-light text-gray-900 mt-4">
-            Selected Projects
-          </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            A curated showcase of the work I'm most proud of — spanning AI, fullstack, DevOps, and design.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="bento-section-wrapper" style={{ padding: '24px 0' }}>
-            <MagicBento
-              textAutoHide={false}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              spotlightRadius={350}
-              particleCount={10}
-              glowColor="132, 0, 255"
-            />
+          {/* ScrollStack container — needs a fixed height to scroll inside */}
+          <div style={{ height: '520px' }} className="overflow-hidden">
+            <ScrollStack
+              itemDistance={80}
+              itemScale={0.04}
+              itemStackDistance={28}
+              stackPosition="25%"
+              scaleEndPosition="12%"
+              baseScale={0.84}
+            >
+              {roleCards.map((card, i) => {
+                const Icon = card.icon;
+                return (
+                  <ScrollStackItem key={i}>
+                    <div
+                      className="w-full h-full rounded-[32px] flex flex-col justify-between p-8 sm:p-10"
+                      style={{ background: card.bg, border: `1.5px solid ${card.color}20` }}
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div
+                          className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                          style={{ background: `${card.color}15`, border: `1px solid ${card.color}30` }}
+                        >
+                          <Icon className="w-7 h-7" style={{ color: card.color }} />
+                        </div>
+                        <span className="font-mono text-xs text-gray-300 tracking-widest pt-1">{card.label}</span>
+                      </div>
+                      <div>
+                        <h3
+                          className="font-instrument text-3xl sm:text-4xl font-light mb-3"
+                          style={{ color: card.color }}
+                        >
+                          {card.title}
+                        </h3>
+                        <p className="text-gray-500 text-sm leading-relaxed mb-5">{card.body}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {card.tags.map(tag => (
+                            <span
+                              key={tag}
+                              className="text-xs font-medium px-2.5 py-1 rounded-full"
+                              style={{
+                                background: `${card.color}10`,
+                                border: `1px solid ${card.color}25`,
+                                color: card.color,
+                              }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollStackItem>
+                );
+              })}
+            </ScrollStack>
           </div>
         </motion.div>
       </section>

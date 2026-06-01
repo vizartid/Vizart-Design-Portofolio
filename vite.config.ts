@@ -17,11 +17,20 @@ export default defineConfig({
       : []),
   ],
   resolve: {
+    dedupe: ['three', '@react-three/fiber', '@react-three/drei'],
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
+  },
+  optimizeDeps: {
+    include: [
+      'three',
+      '@react-three/fiber',
+      '@react-three/drei',
+    ],
+    exclude: ['@react-three/rapier'],
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
@@ -30,6 +39,7 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.glb'],
   server: {
+    host: "0.0.0.0",
     fs: {
       strict: true,
       deny: ["**/.*"],
