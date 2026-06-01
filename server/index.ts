@@ -66,10 +66,37 @@ app.use((req, res, next) => {
   const basePort = parseInt(process.env.PORT || '5000', 10);
   const host = '0.0.0.0';
   
-  // Try to listen on the specified port, with fallback to alternative ports
-  const tryListen = (portToTry: number, alternativePort?: number) => {
+  // Generate a list of ports to try (primary + fallbacks)
+  const generatePortList = (primary: number): number[] => {
+    const ports: number[] = [primary];
+    // If using default port, try alternatives
+    if (primary === 5000) {
+      ports.push(5001, 5002, 5003, 5004, 5005);
+    } else {
+      // If custom port, try a few alternatives nearby
+      ports.push(primary + 1, primary + 2, primary + 3);
+    }
+    return ports;
+  };
+  
+  const portList = generatePortList(basePort);
+  let currentPortIndex = 0;
+  
+  // Try to listen on the specified port, with recursive fallback to alternative ports
+  const tryListen = (portIndex: number) => {
+    if (portIndex >= portList.length) {
+      log(`ERROR: unable to find available port. Tried: ${portList.join(', ')}`);
+      process.exit(1);
+      return;
+    }
+    
+    const portToTry = portList[portIndex];
+    
+    // Create a new server for each attempt to avoid state issues
+    const attemptServer = server;
+    
     try {
-      server.listen({
+      attemptServer.listen({
         port: portToTry,
         host,
         reusePort: false, // Disable reusePort for Windows compatibility
@@ -77,29 +104,29 @@ app.use((req, res, next) => {
         log(`serving on ${host}:${portToTry}`);
       });
       
-      // Handle port in use error
-      server.on('error', (err: any) => {
+      // Handle port in use error with proper cleanup
+      const errorHandler = (err: any) => {
         if (err.code === 'EADDRINUSE') {
           log(`port ${portToTry} is already in use`);
-          if (alternativePort && alternativePort !== portToTry) {
-            log(`attempting to use port ${alternativePort} instead`);
-            server.removeAllListeners('error');
-            tryListen(alternativePort);
-          } else {
-            log(`ERROR: unable to find available port`);
-            process.exit(1);
-          }
+          attemptServer.close(() => {
+            // Remove this error handler and try next port
+            attemptServer.removeListener('error', errorHandler);
+            log(`attempting port ${portList[portIndex + 1]} instead...`);
+            tryListen(portIndex + 1);
+          });
         } else {
+          log(`server error: ${err.message}`);
           throw err;
         }
-      });
+      };
+      
+      attemptServer.once('error', errorHandler);
     } catch (err) {
-      log(`failed to listen on port ${portToTry}`);
-      throw err;
+      log(`failed to listen on port ${portToTry}: ${err}`);
+      tryListen(portIndex + 1);
     }
   };
   
-  // Try primary port, fallback to 5001 if not specified in env
-  const fallbackPort = basePort === 5000 ? 5001 : undefined;
-  tryListen(basePort, fallbackPort);
+  // Start trying ports
+  tryListen(currentPortIndex);
 })();
